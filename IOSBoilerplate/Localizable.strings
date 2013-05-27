@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  airizu
+
+  Created by 唐志华 on 12-12-25.
+
+*/
+
+"400-890-2020" = "400-890-2020";
+"Release to refresh..." = "释放刷新...";
+"Last Updated" = "上次更新";
+"Release to refresh..." = "松开可刷新...";
+"Pull down to refresh..." = "下拉可刷新...";
+"Loading..." = "加载中...";
+"Incoming intent invalid" = "内部错误,请返回.";

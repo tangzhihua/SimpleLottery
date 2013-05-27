@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>zh_CN</string>
+	<key>CFBundleDisplayName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon.png</string>
+		<string>Icon@2x.png</string>
+		<string>Icon-72.png</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.airizu.airizu</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>airizu</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>5.2.0</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSMainNibFile~ipad</key>
+	<string></string>
+	<key>NSMainNibFile~iphone</key>
+	<string>MainWindow</string>
+	<key>Partner</key>
+	<string>2088701018009871</string>
+	<key>RSA private key</key>
+	<string>MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAJETHT3iSAYagQ+hVzk+eRz1L5QJezd5epC/LspHE9ROlB8ToPePRAjGNz8On1qOiyEVFRwOA9iRhp2KYB9JwxkFXH8zJ1mP+oLQb4TfBz6F5wwACS9B4+5hJJGBKZuYPP5lvAjBmf32jqlnRxGVg0TJZazpoP668iZFv+mU+bL1AgMBAAECgYAhxEcsHj0RXp3nm3AH3OinutHmLQbG9Ll4c2daoYyV/+wuB42R0YDOYgR94tNoaoErpBKTwxdWExk4FfsljS+hi42MgRLkGH6VvDzArPbjUJ1Xa2uCQdnXOrTwWgqs1oQ7qmOvy1fD/5X16MSX/3IAsZCKEgZzfq1rkKX3oyuzyQJBAMFmAiLugh98lmyZCZl/czTHllUIciD6rWKge4zXhQxw4ZOtZ7rUa97NXlomPCz8j3WdMoQ1iRynVWL2IC85ds8CQQDACL81n6GlJNaPGEl/36mgQhCGIgpn5j+b3Z6MHiX3SbWqOfVTCeuFT9GIrCYhoxGBAgxTwX6YRM3DYRfAp+r7AkEAmZV1yuHYCkM5fiKGghS5m8eIdhzP7arFOJazpyScL0YRjeJehvsccwJqlHLaxOsIzmE49c9CBLRKVd2Zr4cV9wJBAJtmuK3BZ8NHw2X7Rod3zUJGFC8n3vnjpzgQKVzEjP7IJH4D9xZi4bh5Nlx+y0DPQLwAl080N6krjMP+j4U1nf8CQEcaKEVe4P2K/kayIPCrbbI8dFebvhZBO7nQYRcqVLP8nw3nCilYPHbILpQj+NQC0Di/j98Ny5EvSOKktMwTFV0=</string>
+	<key>RSA public key</key>
+	<string>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPRUeko5MowKfeVkiE4VxtkZFzVxUOOC5EknC0/NoaISrAv1HfEgZaRKfmp3ypRqebAQBqqBKxAK505EIlTXphOLgU5WQ8aWzaS1cfvsdJPpKjbWo9fmRiYo9gcmx/SIrpjLs4fpnFa6ye4kjv4COEvIlcFgqBXIZl4ax512ElFwIDAQAB</string>
+	<key>Seller</key>
+	<string>2088701018009871</string>
+	<key>UIStatusBarHidden</key>
+	<false/>
+</dict>
+</plist>

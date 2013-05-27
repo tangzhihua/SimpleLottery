@@ -1,0 +1,76 @@
+//
+// Prefix header for all source files of the 'IOSBoilerplate' target in the 'IOSBoilerplate' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+// 这里是本项目中最常用的头文件, 放到这里, 就不需要单独引用了
+
+// 智能 debug 输出
+#import "PRPDebug.h"
+
+// 友盟SDK
+#import "MobClick.h"
+
+//
+#import "OrderedDictionary.h"
+
+// GlabalDataCache
+#import "GlobalDataCacheForMemorySingleton.h"
+#import "GlobalDataCacheForDataDictionary.h"
+#import "MacroConstantForString.h"
+#import "MacroConstantForImageName.h"
+#import "MacroConstantForThisProject.h"
+
+// Category
+#import "UIImage+ImageCompression.h"
+#import "NSDictionary+SafeValue.h"
+#import "NSString+isEmpty.h"
+ 
+
+// ToolUtils
+#import "SimpleCookieSingleton.h"
+#import "NetConnectionManageTools.h"
+#import "SimpleCallSingleton.h"
+#import "DeviceInformation.h"
+#import "ToolsFunctionForThisProgect.h"
+#import "SimpleLocationHelperForBaiduLBS.h"
+
+// DomainBean
+#import "IDomainNetRespondCallback.h"
+#import "DomainProtocolNetHelperSingleton.h"
+#import "NetErrorBean.h"
+#import "NetErrorTypeEnum.h"
+
+// UI Mediator
+#import "Message.h"
+#import "Intent.h"
+#import "Activity.h"
+#import "ListActivity.h"
+#import "IntentFilter.h"
+
+// 第三方库
+#import "AFNetworking.h"
+#import "SVProgressHUD.h"
+#import "UIDevice-Hardware.h"
+
+// URL
+#import "UrlConstantForThisProject.h"
+
+
+
+
+
+
+
+
+ 
+#endif

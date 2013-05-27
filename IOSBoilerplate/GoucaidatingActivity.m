@@ -220,7 +220,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 			break;
 		}
 		
-		Class lotteryActivityClass = [[GlobalDataCacheForDataDictionary sharedInstance].lotteryActivityClassDictionaryUseLotteryKeyQuery objectForKey:kLotteryKey_shuangseqiu];
+		Class lotteryActivityClass = [[GlobalDataCacheForDataDictionary sharedInstance].lotteryActivityClassDictionaryUseLotteryKeyQuery objectForKey:cell.lotteryKey];
 		if (nil == lotteryActivityClass) {
 			// 异常
 			NSAssert(NO, @"未找到目标彩票的Activity Class");

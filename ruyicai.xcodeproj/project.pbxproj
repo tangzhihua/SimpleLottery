@@ -350,7 +350,6 @@
 		68F6ECA2174B9D73003B1CC1 /* LotterySalesStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA1174B9D73003B1CC1 /* LotterySalesStatus.m */; };
 		68F6ECA5174BB532003B1CC1 /* LabelForTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA4174BB532003B1CC1 /* LabelForTitleBar.m */; };
 		68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */; };
-		D7B408631754847E009AD960 /* 利用dispatch_once创建单例 in Resources */ = {isa = PBXBuildFile; fileRef = D7B408621754847E009AD960 /* 利用dispatch_once创建单例 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -972,7 +971,6 @@
 		68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelForTitleBar.xib; sourceTree = "<group>"; };
 		C37BC8E3144C340600423D44 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		D7B408621754847E009AD960 /* 利用dispatch_once创建单例 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "利用dispatch_once创建单例"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1401,7 +1399,6 @@
 		587BA6A91601E6900093116A /* GlabalDataCache */ = {
 			isa = PBXGroup;
 			children = (
-				D7B408621754847E009AD960 /* 利用dispatch_once创建单例 */,
 				587BA6A41601B4750093116A /* GlobalDataCacheForMemorySingleton.h */,
 				587BA6A51601B4750093116A /* GlobalDataCacheForMemorySingleton.m */,
 				581ED7AF167EBC9000862985 /* GlobalDataCacheForNeedSaveToFileSystem.h */,
@@ -2641,7 +2638,6 @@
 				684177981748D5280090DBC6 /* nav_right_btn_bg_highlighted.png in Resources */,
 				68F6EC9F174B97EF003B1CC1 /* ShuangSeQiuBettingActivity.xib in Resources */,
 				68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */,
-				D7B408631754847E009AD960 /* 利用dispatch_once创建单例 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

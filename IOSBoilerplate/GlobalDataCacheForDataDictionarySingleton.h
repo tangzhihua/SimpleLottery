@@ -11,11 +11,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GlobalDataCacheForDataDictionary : NSObject {
+@interface GlobalDataCacheForDataDictionarySingleton : NSObject {
   
 }
 
-+ (GlobalDataCacheForDataDictionary *) sharedInstance;
++ (GlobalDataCacheForDataDictionarySingleton *) sharedInstance;
 
 // 所有网络接口都要使用到的 公有参数
 @property (nonatomic, readonly) NSDictionary *publicNetRequestParameters;

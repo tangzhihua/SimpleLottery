@@ -6,7 +6,7 @@
 //
 //
 
-#import "GlobalDataCacheForDataDictionary.h"
+#import "GlobalDataCacheForDataDictionarySingleton.h"
 #import "ToolsFunctionForThisProgect.h"
 #import "NetConnectionManageTools.h"
 #import "UIDevice+IdentifierAddition.h"
@@ -16,13 +16,9 @@
 #import "ShuangSeQiuBettingActivity.h"
 
 
+ 
 
-
-
-
-static const NSString *const TAG = @"<GlobalDataCacheForDataDictionary>";
-
-@implementation GlobalDataCacheForDataDictionary
+@implementation GlobalDataCacheForDataDictionarySingleton
 
 - (void) initPublicNetRequestParameters:(NSMutableDictionary *) dictionary {
 	UIDevice *device = [UIDevice currentDevice];
@@ -61,10 +57,24 @@ static const NSString *const TAG = @"<GlobalDataCacheForDataDictionary>";
 	[dictionary setObject:[ShuangSeQiuBettingActivity class] forKey:kLotteryKey_shuangseqiu];
 }
 
-static GlobalDataCacheForDataDictionary *singletonInstance = nil;
+#pragma mark -
+#pragma mark 单例方法群
 
-- (void) initialize {
-  @synchronized(self) {
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  NSAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
+
+// 真正的(私有)init方法
+-(id)initSingleton {
+  self = [super init];
+  if ((self = [super init])) {
+    // 初始化代码
+    
     //
     _publicNetRequestParameters = [[NSMutableDictionary alloc] init];
     [self initPublicNetRequestParameters:(NSMutableDictionary *)_publicNetRequestParameters];
@@ -73,22 +83,14 @@ static GlobalDataCacheForDataDictionary *singletonInstance = nil;
 		_lotteryActivityClassDictionaryUseLotteryKeyQuery = [[NSMutableDictionary alloc] init];
 		[self initLotteryActivityClassDictionary:(NSMutableDictionary *)_lotteryActivityClassDictionaryUseLotteryKeyQuery];
   }
+  
+  return self;
 }
 
-#pragma mark -
-#pragma mark 单例方法群
-
-+ (GlobalDataCacheForDataDictionary *) sharedInstance
-{
-  if (singletonInstance == nil)
-  {
-    singletonInstance = [[super allocWithZone:NULL] init];
-    
-    // initialize the first view controller
-    // and keep it with the singleton
-    [singletonInstance initialize];
-  }
-  
++ (GlobalDataCacheForDataDictionarySingleton *) sharedInstance {
+  static GlobalDataCacheForDataDictionarySingleton *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;
 }
 

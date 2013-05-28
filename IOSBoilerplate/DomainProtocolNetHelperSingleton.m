@@ -28,7 +28,7 @@
 
 #import "Activity.h"
 
-#import "GlobalDataCacheForDataDictionary.h"
+#import "GlobalDataCacheForDataDictionarySingleton.h"
 
 
 
@@ -63,65 +63,42 @@
 	NSMutableDictionary *_synchronousNetThreadBuf;
 }
 
-static DomainProtocolNetHelperSingleton *singletonInstance = nil;
-
-- (void) initialize {
-  //
-  _netRequestIndexCounter = 0;
-  //
-  _synchronousNetRequestEventBuf = [[NSMutableDictionary alloc] initWithCapacity:100];
-  //
-  _synchronousNetThreadBuf = [[NSMutableDictionary alloc] initWithCapacity:100];
-}
-
 #pragma mark -
 #pragma mark GlobalDataCacheForMemorySingleton Singleton Implementation
 
-+ (DomainProtocolNetHelperSingleton *) sharedInstance
-{
-  if (singletonInstance == nil)
-  {
-    singletonInstance = [[super allocWithZone:NULL] init];
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  NSAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
+
+// 真正的(私有)init方法
+-(id)initSingleton {
+  self = [super init];
+  if ((self = [super init])) {
+    // 初始化代码
     
-    // initialize the first view controller
-    // and keep it with the singleton
-    [singletonInstance initialize];
+    //
+    _netRequestIndexCounter = 0;
+    //
+    _synchronousNetRequestEventBuf = [[NSMutableDictionary alloc] initWithCapacity:100];
+    //
+    _synchronousNetThreadBuf = [[NSMutableDictionary alloc] initWithCapacity:100];
   }
   
+  return self;
+}
+
++ (DomainProtocolNetHelperSingleton *) sharedInstance {
+  static DomainProtocolNetHelperSingleton *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;
 }
 
-/*
- + (id) allocWithZone:(NSZone *)zone
- {
- return [[self sharedInstance] retain];
- }
- 
- - (id) copyWithZone:(NSZone*)zone
- {
- return self;
- }
- 
- - (id) retain
- {
- return self;
- }
- 
- - (NSUInteger) retainCount
- {
- return NSUIntegerMax;
- }
- 
- - (oneway void) release
- {
- // do nothing
- }
- 
- - (id) autorelease
- {
- return self;
- }
- */
 
 #pragma mark -
 #pragma mark 发起一个后台接口的网络请求线程
@@ -212,7 +189,7 @@ static DomainProtocolNetHelperSingleton *singletonInstance = nil;
 				/**
 				 * 由于我们的接口中有固定的参数那么我们需要在这里将固定的参数加入
 				 */
-				NSDictionary *publicDD = [GlobalDataCacheForDataDictionary sharedInstance].publicNetRequestParameters;
+				NSDictionary *publicDD = [GlobalDataCacheForDataDictionarySingleton sharedInstance].publicNetRequestParameters;
 				
         /**
          * 首先获取目标 "网络请求业务Bean" 对应的 "业务协议参数字典 domainParams" (字典由K和V组成,K是"终端应用与后台通信接口协议.doc" 文档中的业务协议关键字, V就是具体的值.)

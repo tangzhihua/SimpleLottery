@@ -15,61 +15,37 @@ static const NSString *const TAG = @"<SimpleCookieSingleton>";
 @end
 
 @implementation SimpleCookieSingleton
-
-static SimpleCookieSingleton *singletonInstance = nil;
-
-- (void) initialize {
-  _cookieCache = [[NSMutableDictionary alloc] initWithCapacity:10];
-}
-
+ 
 #pragma mark -
 #pragma mark 单例方法群
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  NSAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
 
-+ (SimpleCookieSingleton *) sharedInstance
-{
-  if (singletonInstance == nil)
-  {
-    singletonInstance = [[super allocWithZone:NULL] init];
-    
-    // initialize the first view controller
-    // and keep it with the singleton
-    [singletonInstance initialize];
+// 真正的(私有)init方法
+-(id)initSingleton {
+  self = [super init];
+  if ((self = [super init])) {
+    // 初始化代码
+    _cookieCache = [[NSMutableDictionary alloc] initWithCapacity:10];
   }
   
+  return self;
+}
+
++ (SimpleCookieSingleton *) sharedInstance {
+  static SimpleCookieSingleton *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;
 }
 
-/*
-+ (id) allocWithZone:(NSZone *)zone
-{
-  return [[self sharedInstance] retain];
-}
-
-- (id) copyWithZone:(NSZone*)zone
-{
-  return self;
-}
-
-- (id) retain
-{
-  return self;
-}
-
-- (NSUInteger) retainCount
-{
-  return NSUIntegerMax;
-}
-
-- (oneway void) release
-{
-  // do nothing
-}
-
-- (id) autorelease
-{
-  return self;
-}
-*/
+#pragma mark -
 #pragma mark 实例方法群
 - (void) clearCookie {
   [_cookieCache removeAllObjects];

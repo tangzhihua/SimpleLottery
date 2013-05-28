@@ -19,12 +19,38 @@ static const NSString *const TAG = @"<DeviceInformation>";
   return nil;
 }
 
-+ (CGFloat) screenWidth {
-	return [UIScreen mainScreen].applicationFrame.size.width;
+// 当前屏幕的宽度和高度(根据屏幕设备方向而变化)
++ (CGFloat) currentlyScreenWidth {
+  
+  UIInterfaceOrientation currentOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+  
+  CGFloat width = 0;
+  
+  if (currentOrientation == UIInterfaceOrientationPortrait || currentOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+    width = [UIScreen mainScreen].applicationFrame.size.width;
+  } else if (currentOrientation == UIInterfaceOrientationLandscapeLeft || currentOrientation == UIInterfaceOrientationLandscapeRight) {
+    width = [UIScreen mainScreen].applicationFrame.size.height;
+  } else {
+    width = [UIScreen mainScreen].applicationFrame.size.width;
+  }
+  
+  return width;
 }
 
-+ (CGFloat) screenHeight {
-	return [UIScreen mainScreen].applicationFrame.size.height;
++ (CGFloat) currentlyScreenHeight {
+  
+  UIInterfaceOrientation currentOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+  
+  CGFloat height = 0;
+  if (currentOrientation == UIInterfaceOrientationPortrait || currentOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+    height = [UIScreen mainScreen].applicationFrame.size.height;
+  } else if (currentOrientation == UIInterfaceOrientationLandscapeLeft || currentOrientation == UIInterfaceOrientationLandscapeRight) {
+    height = [UIScreen mainScreen].applicationFrame.size.width;
+  } else {
+    height = [UIScreen mainScreen].applicationFrame.size.height;
+  }
+  
+  return height;
 }
 
 + (BOOL) isIPhone5 {
@@ -54,6 +80,21 @@ static const NSString *const TAG = @"<DeviceInformation>";
   NSLog(@"    ");
   NSLog(@"-----------------------------");
   NSLog(@"    ");
+}
+
+// 根据字体大小计算label大小
++ (CGSize)calculateLabelSizeOfContent:(NSString *)text withFont:(UIFont *)font maxSize:(CGSize)maxSize {
+  const CGSize defaultSize = CGSizeMake(320, 22);
+  
+  if ([NSString isEmpty:text]) {
+    return defaultSize;
+  }
+  
+  CGSize labelSize = [text sizeWithFont:font constrainedToSize:maxSize lineBreakMode:UILineBreakModeWordWrap];
+  if (labelSize.height < defaultSize.height) {
+    labelSize.height = defaultSize.height;
+  }
+  return labelSize;
 }
 
 @end

@@ -25,7 +25,7 @@
 
 // GlabalDataCache
 #import "GlobalDataCacheForMemorySingleton.h"
-#import "GlobalDataCacheForDataDictionary.h"
+#import "GlobalDataCacheForDataDictionarySingleton.h"
 #import "MacroConstantForString.h"
 #import "MacroConstantForImageName.h"
 #import "MacroConstantForThisProject.h"

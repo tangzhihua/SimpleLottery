@@ -12,7 +12,7 @@
 
 @end
 
-/// 主URL
+/// 主URL 
 UIKIT_EXTERN NSString *const kUrlConstant_MainUrl;
 /// 主Path
 UIKIT_EXTERN NSString *const kUrlConstant_MainPtah;

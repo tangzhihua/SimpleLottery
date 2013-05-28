@@ -15,7 +15,7 @@
 #import "NSDate+Convenience.h"
 
 
-#import "GlobalDataCacheForDataDictionary.h"
+#import "GlobalDataCacheForDataDictionarySingleton.h"
 #import "MacroConstantForThisProject.h"
 #import "SimpleLocationHelperForBaiduLBS.h"
 

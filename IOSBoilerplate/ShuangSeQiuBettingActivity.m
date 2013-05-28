@@ -10,6 +10,7 @@
 
 //
 #import "TitleBarOfBetView.h"
+#import "IOSBoilerplateAppDelegate.h"
 
 @interface ShuangSeQiuBettingActivity ()
 @property (nonatomic, weak) TitleBarOfBetView *titleBar;
@@ -111,6 +112,7 @@
 				
 			case kTitleBarOfBetViewActionEnum_RightButtonClickedOne:{
 				// 跳往 帮助界面
+        [[IOSBoilerplateAppDelegate sharedAppDelegate] openURL:[NSURL URLWithString:@"www.baidu.com"]];
 			}break;
 			default:
 				break;

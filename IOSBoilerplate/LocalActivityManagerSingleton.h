@@ -11,7 +11,7 @@
 // startActivityForResult 方法中 requestCode 的默认值
 #define kRequestCode_None (-1)
 
-@interface LocalActivityManager : NSObject {
+@interface LocalActivityManagerSingleton : NSObject {
   
 }
 
@@ -20,7 +20,7 @@
  */
 @property (nonatomic, readonly, strong) Activity *rootViewController;
 
-+ (LocalActivityManager *) sharedInstance;
++ (LocalActivityManagerSingleton *) sharedInstance;
 
 - (void) finishActivity:(Activity *) sourceActivity
              resultCode:(int) resultCode

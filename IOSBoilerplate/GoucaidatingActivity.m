@@ -57,6 +57,11 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 
 #pragma mark -
 #pragma mark 生命周期
+-(void)dealloc{
+  
+  [self removeAllObserversOfCurrentIssueCountDown];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -64,8 +69,11 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 		// Custom initialization
 		self.netRequestIndexForLotterySalesStatus = IDLE_NETWORK_REQUEST_ID;
 		
-		
+		// 初始化 彩票列表所有的cell
 		[self initCellArrayOfLotteryList];
+    
+    // 注册 "KVO"
+    [self addAllObserversOfCurrentIssueCountDown];
 	}
 	return self;
 }
@@ -159,7 +167,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 - (NSInteger) tableView:(UITableView *) tableView
   numberOfRowsInSection:(NSInteger) section {
   
-  return [GlobalDataCacheForMemorySingleton sharedInstance].lotteryDictionaryList.count;
+  return self.cellArrayOfLotteryList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *) tableView
@@ -191,17 +199,15 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 }
 
 // After a row has the minus or plus button invoked (based on the UITableViewCellEditingStyle for the cell), the dataSource must commit the change
-- (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	NSLog(@"执行删除操作");
 }
 #pragma mark -
 #pragma mark 实现 UITableViewDelegate 接口
 
- 
- 
+
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   do {
@@ -213,17 +219,17 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     LotteryListTableCell *cell = self.cellArrayOfLotteryList[indexPath.row];
 		NSString *lotteryKey = cell.lotteryKey;
-		
+		PRPLog(@"当前选中的彩票的 key = %@", lotteryKey);
 		if ([NSString isEmpty:lotteryKey]) {
 			// 异常
 			NSAssert(NO, @"LotteryListTableCell 中的 lotteryKey 不能为空");
 			break;
 		}
 		
-		Class lotteryActivityClass = [[GlobalDataCacheForDataDictionary sharedInstance].lotteryActivityClassDictionaryUseLotteryKeyQuery objectForKey:cell.lotteryKey];
+		Class lotteryActivityClass = [[GlobalDataCacheForDataDictionarySingleton sharedInstance].lotteryActivityClassDictionaryUseLotteryKeyQuery objectForKey:cell.lotteryKey];
 		if (nil == lotteryActivityClass) {
 			// 异常
-			NSAssert(NO, @"未找到目标彩票的Activity Class");
+			//NSAssert(NO, @"未找到目标彩票的Activity Class");
 			break;
 		}
 		
@@ -243,6 +249,47 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark -
 #pragma mark 私有方法
+
+
+-(void)addAllObserversOfCurrentIssueCountDown {
+  for (LotteryListTableCell *cell in self.cellArrayOfLotteryList) {
+    CurrentIssueCountDown *currentIssueCountDown = [[CurrentLotteryIssueCountDownObserver sharedInstance].lotteryListOfCountDownObserver objectForKey:cell.lotteryKey];
+    if (currentIssueCountDown != nil) {
+      [currentIssueCountDown addObserver:cell
+                              forKeyPath:k_CurrentIssueCountDown_countDownSecond
+                                 options:NSKeyValueObservingOptionNew
+                                 context:NULL];
+			[currentIssueCountDown addObserver:cell
+                              forKeyPath:k_CurrentIssueCountDown_isNetworkDisconnected
+                                 options:NSKeyValueObservingOptionNew
+                                 context:NULL];
+			[currentIssueCountDown addObserver:cell
+                              forKeyPath:k_CurrentIssueCountDown_netRequestIndex
+                                 options:NSKeyValueObservingOptionNew
+                                 context:NULL];
+			[currentIssueCountDown addObserver:cell
+                              forKeyPath:k_CurrentIssueCountDown_countDownSecondOfRerequestNetwork
+                                 options:NSKeyValueObservingOptionNew
+                                 context:NULL];
+      
+    }
+  }
+}
+
+-(void)removeAllObserversOfCurrentIssueCountDown {
+  for (LotteryListTableCell *cell in self.cellArrayOfLotteryList) {
+    CurrentIssueCountDown *currentIssueCountDown = [[CurrentLotteryIssueCountDownObserver sharedInstance].lotteryListOfCountDownObserver objectForKey:cell.lotteryKey];
+    if (currentIssueCountDown != nil) {
+       
+      [currentIssueCountDown removeObserver:cell forKeyPath:k_CurrentIssueCountDown_countDownSecond];
+      [currentIssueCountDown removeObserver:cell forKeyPath:k_CurrentIssueCountDown_isNetworkDisconnected];
+      [currentIssueCountDown removeObserver:cell forKeyPath:k_CurrentIssueCountDown_netRequestIndex];
+      [currentIssueCountDown removeObserver:cell forKeyPath:k_CurrentIssueCountDown_countDownSecondOfRerequestNetwork];
+      
+    }
+  }
+}
+
 
 // 初始化全部的 彩票列表 cell
 -(void)initCellArrayOfLotteryList {
@@ -285,14 +332,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 		// 彩票销售信息
 		cell.lotteryOpenPrizeStatusEnum = kLotteryOpenPrizeStatusEnum_NONE;
 		
-		CurrentIssueCountDown *currentIssueCountDown = [[CurrentLotteryIssueCountDownObserver sharedInstance].lotteryListOfCountDownObserver objectForKey:lotteryDictionary.key];
-		if (currentIssueCountDown != nil) {
-			[currentIssueCountDown addObserver:cell forKeyPath:k_CurrentIssueCountDown_countDownSecond options:NSKeyValueObservingOptionNew context:NULL];
-			[currentIssueCountDown addObserver:cell forKeyPath:k_CurrentIssueCountDown_isNetworkDisconnected options:NSKeyValueObservingOptionNew context:NULL];
-			[currentIssueCountDown addObserver:cell forKeyPath:k_CurrentIssueCountDown_netRequestIndex options:NSKeyValueObservingOptionNew context:NULL];
-			[currentIssueCountDown addObserver:cell forKeyPath:k_CurrentIssueCountDown_countDownSecondOfRerequestNetwork options:NSKeyValueObservingOptionNew context:NULL];
-		}
-		[self.cellArrayOfLotteryList addObject:cell];
+    //
+    [self.cellArrayOfLotteryList addObject:cell];
 	}
 	
 }
@@ -314,7 +355,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark -
 #pragma mark 网络访问方法群
 - (NSInteger) requestLotterySalesStatus {
-  // 
+  //
   LotterySalesStatusNetRequestBean *netRequestBean = [[LotterySalesStatusNetRequestBean alloc] init];
   NSInteger netRequestIndex
   = [[DomainProtocolNetHelperSingleton sharedInstance] requestDomainProtocolWithContext:self

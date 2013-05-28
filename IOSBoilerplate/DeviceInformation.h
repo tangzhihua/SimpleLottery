@@ -14,11 +14,14 @@
   
 }
 
-+ (CGFloat) screenWidth;
-+ (CGFloat) screenHeight;
+// 当前屏幕的宽度和高度(根据屏幕设备方向而变化)
++ (CGFloat) currentlyScreenWidth;
++ (CGFloat) currentlyScreenHeight;
 
 + (BOOL) isIPhone5;
 + (BOOL) isSimulator;
 
 + (void) printDeviceInfo;
+
++ (CGSize)calculateLabelSizeOfContent:(NSString *)text withFont:(UIFont *)font maxSize:(CGSize)maxSize;
 @end

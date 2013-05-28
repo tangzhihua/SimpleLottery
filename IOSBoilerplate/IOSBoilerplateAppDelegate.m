@@ -5,7 +5,7 @@
 #import "BrowserViewController.h"
 
 #import "Intent.h"
-#import "LocalActivityManager.h"
+#import "LocalActivityManagerSingleton.h"
 #import "FirstActivity.h"
 
 
@@ -42,7 +42,7 @@
 #import "CommandOfImportantNetRequestAutoRefresh.h"
 
 
-#import "GlobalDataCacheForDataDictionary.h"
+#import "GlobalDataCacheForDataDictionarySingleton.h"
 
 
 
@@ -174,7 +174,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   
   //////////////////////////////////////////////////////////////
   // Add the view controller's view to the window and display.
-  LocalActivityManager *localActivityManager = [LocalActivityManager sharedInstance];
+  LocalActivityManagerSingleton *localActivityManager = [LocalActivityManagerSingleton sharedInstance];
   [_window addSubview:localActivityManager.rootViewController.view];
   [_window makeKeyAndVisible];
   

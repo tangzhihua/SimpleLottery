@@ -19,61 +19,37 @@ static const NSString *const TAG = @"<DomainBeanAbstractFactoryCacheSingleton>";
 
 @implementation DomainBeanAbstractFactoryCacheSingleton
 
-static DomainBeanAbstractFactoryCacheSingleton *singletonInstance = nil;
-
-- (void) initialize {
-  _strategyClassNameMapping = [[DomainBeanHelperClassNameMapping alloc] init];
-  _abstractFactoryObjectBufList = [[NSMutableDictionary alloc] initWithCapacity:100];
-}
-
 #pragma mark -
 #pragma mark GlobalDataCacheForMemorySingleton Singleton Implementation
 
-+ (DomainBeanAbstractFactoryCacheSingleton *) sharedInstance
-{
-  if (singletonInstance == nil)
-  {
-    singletonInstance = [[super allocWithZone:NULL] init];
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  NSAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
+
+// 真正的(私有)init方法
+-(id)initSingleton {
+  self = [super init];
+  if ((self = [super init])) {
+    // 初始化代码
     
-    // initialize the first view controller
-    // and keep it with the singleton
-    [singletonInstance initialize];
+    _strategyClassNameMapping = [[DomainBeanHelperClassNameMapping alloc] init];
+    _abstractFactoryObjectBufList = [[NSMutableDictionary alloc] initWithCapacity:100];
   }
   
+  return self;
+}
+
++ (DomainBeanAbstractFactoryCacheSingleton *) sharedInstance {
+  static DomainBeanAbstractFactoryCacheSingleton *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;
 }
-
-/*
-+ (id) allocWithZone:(NSZone *)zone
-{
-  return [[self sharedInstance] retain];
-}
-
-- (id) copyWithZone:(NSZone*)zone
-{
-  return self;
-}
-
-- (id) retain
-{
-  return self;
-}
-
-- (NSUInteger) retainCount
-{
-  return NSUIntegerMax;
-}
-
-- (oneway void) release
-{
-  // do nothing
-}
-
-- (id) autorelease
-{
-  return self;
-}
-*/
 
 #pragma mark
 #pragma mark getDomainBeanAbstractFactoryObjectByKey

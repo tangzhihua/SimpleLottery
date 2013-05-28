@@ -75,5 +75,7 @@
 @property (nonatomic, strong) NSMutableArray *lotteryListForHide;
 
 
+#pragma mark -
+#pragma mark 单例
 + (GlobalDataCacheForMemorySingleton *) sharedInstance;
 @end

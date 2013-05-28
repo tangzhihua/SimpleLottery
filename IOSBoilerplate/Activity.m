@@ -9,7 +9,7 @@
 #import "Activity.h"
 #import "Intent.h"
 #import "IntentFilter.h"
-#import "LocalActivityManager.h"
+#import "LocalActivityManagerSingleton.h"
 
 // 登录界面
 //#import "LoginActivity.h"
@@ -144,7 +144,7 @@ static const NSString *const TAG = @"<Activity>";
 - (void) startActivityForResult:(Intent *) intent
                     requestCode:(int) requestCode {
   @synchronized(self) {
-    [[LocalActivityManager sharedInstance] startActivityForResult:intent requestCode:requestCode];
+    [[LocalActivityManagerSingleton sharedInstance] startActivityForResult:intent requestCode:requestCode];
   }
 }
 
@@ -215,9 +215,9 @@ static const NSString *const TAG = @"<Activity>";
 - (void) finish {
   
   @synchronized (self) {
-    [[LocalActivityManager sharedInstance] finishActivity:self
-                                               resultCode:self.resultCode
-                                               resultData:self.resultData];
+    [[LocalActivityManagerSingleton sharedInstance] finishActivity:self
+                                                        resultCode:self.resultCode
+                                                        resultData:self.resultData];
   }
 }
 
@@ -362,8 +362,8 @@ static const NSString *const TAG = @"<Activity>";
 // 创建一个新的Activity, 并且插入到targetActivity之上, 并且移除targetActivity之上原来所有的Activity
 -(void)startActivityByIntent:(Intent *)intent andMoveToTheAboveTargetActivityClass:(Class)targetActivityClass {
   @synchronized(self) {
-    [[LocalActivityManager sharedInstance] startActivityByIntent:intent
-														andMoveToTheAboveTargetActivityClass:targetActivityClass];
+    [[LocalActivityManagerSingleton sharedInstance] startActivityByIntent:intent
+                                     andMoveToTheAboveTargetActivityClass:targetActivityClass];
   }
 }
 @end

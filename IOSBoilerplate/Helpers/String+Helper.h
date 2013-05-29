@@ -30,14 +30,19 @@
 
 @interface NSString (Helper)
 
+// 截取子字符串, 范围从 a~b
 - (NSString*)substringFrom:(NSInteger)a to:(NSInteger)b;
 
+// 查找目标索引 starts 之后的 第一个子字符串 索引
 - (NSInteger)indexOf:(NSString*)substring from:(NSInteger)starts;
 
+// 清除 "空格"
 - (NSString*)trim;
 
+// 检测当前字符串是否以 入参字符串s 开头
 - (BOOL)startsWith:(NSString*)s;
 
+// 检测当前字符串是否包含 入参字符串 aString
 - (BOOL)containsString:(NSString*)aString;
 
 - (NSString*)urlEncode;

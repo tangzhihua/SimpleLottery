@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   
 	@autoreleasepool {
     do {
-			_versionBean = [ToolsFunctionForThisProgect checkNewVersionAndReturnVersionBean];
+			_versionBean = [ToolsFunctionForThisProgect synchronousRequestAppNewVersionAndReturnVersionBean];
 			if (![_versionBean isKindOfClass:[VersionNetRespondBean class]]) {
 				break;
 			}

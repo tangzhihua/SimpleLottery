@@ -28,25 +28,40 @@
 
 #import "FastCell.h"
 
+
+
+
+
+
+
+#pragma mark -
+#pragma mark 
 @interface ContentView : UIView
 @end
 
 @implementation ContentView
 
-- (void)drawRect:(CGRect)r
-{
-	[(FastCell*)[self superview] drawContentView:r];
+- (void)drawRect:(CGRect)rect {
+	[(FastCell*)[self superview] drawContentView:rect];
 }
 
 @end
 
+
+
+
+
+#pragma mark -
+#pragma mark
 @implementation FastCell
 
 @synthesize backView;
 @synthesize contentView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+  
   if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
+    
     backView = [[UIView alloc] initWithFrame:CGRectZero];
     backView.opaque = YES;
     [self addSubview:backView];
@@ -58,22 +73,13 @@
   return self;
 }
 
-- (void)dealloc {
-	[backView removeFromSuperview];
-	//[backView release];
-  
-	[contentView removeFromSuperview];
-	//[contentView release];
-	//[super dealloc];
-}
-
-- (void)setFrame:(CGRect)f {
-	[super setFrame:f];
-	CGRect b = [self bounds];
-	b.size.height -= 1; // leave room for the seperator line
+- (void)setFrame:(CGRect)frame {
+	[super setFrame:frame];
+	CGRect bounds = [self bounds];
+	bounds.size.height -= 1; // leave room for the seperator line
 	
-  [backView setFrame:b];
-	[contentView setFrame:b];
+  [backView setFrame:bounds];
+	[contentView setFrame:bounds];
   [self setNeedsDisplay];
 }
 
@@ -83,7 +89,7 @@
 	[contentView setNeedsDisplay];
 }
 
-- (void)drawContentView:(CGRect)r {
+- (void)drawContentView:(CGRect)rect {
 	// subclasses should implement this
 }
 

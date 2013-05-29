@@ -2305,8 +2305,8 @@
 		68B0CC621733EF78001661A6 /* Base Class */ = {
 			isa = PBXGroup;
 			children = (
-				68B0CC061733DB52001661A6 /* PRPSmartTableViewCell.m */,
 				68B0CC071733DB52001661A6 /* PRPSmartTableViewCell.h */,
+				68B0CC061733DB52001661A6 /* PRPSmartTableViewCell.m */,
 				68B0CC081733DB52001661A6 /* PRPNibBasedTableViewCell.h */,
 				68B0CC091733DB52001661A6 /* PRPNibBasedTableViewCell.m */,
 			);

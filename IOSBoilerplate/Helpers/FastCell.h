@@ -32,10 +32,10 @@
 
 }
 
-@property (nonatomic, strong) UIView* backView;
-@property (nonatomic, strong) UIView* contentView;
+@property (nonatomic, strong) UIView *backView;
+@property (nonatomic, strong) UIView *contentView;
 
-
-- (void) drawContentView:(CGRect)r;
+// 这是 FastCell 的子类需要自己覆写的方法
+-(void)drawContentView:(CGRect)rect;
 
 @end

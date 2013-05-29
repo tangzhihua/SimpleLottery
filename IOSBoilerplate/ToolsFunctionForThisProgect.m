@@ -81,18 +81,12 @@
 
 
 
-// 检查新版本信息, 并且返回 VersionNetRespondBean
+// 同步网络请求App最新版本信息(一定要在子线程中调用此方法, 因为使用sendSynchronousRequest), 并且返回 VersionNetRespondBean
 #define APP_URL @"http://itunes.apple.com/lookup?id=494520120"
-+(VersionNetRespondBean *)checkNewVersionAndReturnVersionBean {
++(VersionNetRespondBean *)synchronousRequestAppNewVersionAndReturnVersionBean {
   VersionNetRespondBean *versionBean = nil;
   
   do {
-    
-    
-    
-    //break;
-    
-    
     
     NSString *URL = APP_URL;
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] init];
@@ -136,6 +130,7 @@
   return versionBean;
 }
 
+// 使用 Info.plist 中的 "Bundle version" 来保存本地App Version
 +(NSString *)localAppVersion {
   NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
   NSString *appVersion = [infoDic objectForKey:@"CFBundleVersion"];
@@ -162,9 +157,12 @@
 }
 
  
-
+// 将 "秒" 格式化成 "天小时分钟秒", 例如 : 入参是 118269(秒), 返回 "1天8时51分9秒"
 +(NSString *)formatSecondToDayHourMinuteSecond:(NSNumber *)secondSource {
-	
+	if (![secondSource isKindOfClass:[NSNumber class]] || [secondSource doubleValue] <= 0.0f) {
+    return @"0秒";
+  }
+  
 	double timeOfSecond = [secondSource doubleValue];
 	NSInteger day = timeOfSecond / 86400;
 	timeOfSecond -= 86400*day;

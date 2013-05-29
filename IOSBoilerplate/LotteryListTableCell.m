@@ -19,19 +19,27 @@
 
 @implementation LotteryListTableCell
 
- 
+static UIImage *kLotterySaleStatusImageOfKaijiang = nil;
+static UIImage *kLotterySaleStatusImageOfJiajiang = nil;
+static UIImage *kLotterySaleStatusImageOfKaijiangAndJiajiang = nil;
+
++(void) initialize {
+  kLotterySaleStatusImageOfKaijiang = [UIImage imageNamed:@"lottery_list_mark_for_kaijiang"];
+  kLotterySaleStatusImageOfJiajiang = [UIImage imageNamed:@"lottery_list_mark_for_jiajiang"];
+  kLotterySaleStatusImageOfKaijiangAndJiajiang = [UIImage imageNamed:@"lottery_list_mark_for_kaijiang_and_jiajiang"];
+}
 
 -(void)setLotteryOpenPrizeStatusEnum:(LotteryOpenPrizeStatusEnum)lotteryOpenPrizeStatusEnum {
 	
 	switch (lotteryOpenPrizeStatusEnum) {
 		case kLotteryOpenPrizeStatusEnum_TodayOpenPrize: {
-			_lotterySaleStatusImageView.image = [UIImage imageNamed:@"lottery_list_mark_for_kaijiang"];
+			_lotterySaleStatusImageView.image = kLotterySaleStatusImageOfKaijiang;
 		}break;
 		case kLotteryOpenPrizeStatusEnum_TodayAddAward: {
-			_lotterySaleStatusImageView.image = [UIImage imageNamed:@"lottery_list_mark_for_jiajiang"];
+			_lotterySaleStatusImageView.image = kLotterySaleStatusImageOfJiajiang;
 		}break;
 		case kLotteryOpenPrizeStatusEnum_TodayOpenPrizeAndAddAward: {
-			_lotterySaleStatusImageView.image = [UIImage imageNamed:@"lottery_list_mark_for_kaijiang_and_jiajiang"];
+			_lotterySaleStatusImageView.image = kLotterySaleStatusImageOfKaijiangAndJiajiang;
 		}break;
 		default:
 			break;

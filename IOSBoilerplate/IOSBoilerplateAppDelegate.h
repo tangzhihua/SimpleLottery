@@ -5,7 +5,7 @@
 @interface IOSBoilerplateAppDelegate : Activity <UIApplicationDelegate, UIAlertViewDelegate> {
  
 }
-
+ 
 // window 必须是strong
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 

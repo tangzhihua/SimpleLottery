@@ -20,7 +20,9 @@
 
 ///
 
+// 用户登录 相关信息
 + (void)readUserLoginInfoToGlobalDataCacheForMemorySingleton;
+// App配置 相关信息
 + (void)readAppConfigInfoToGlobalDataCacheForMemorySingleton;
 
 ///
@@ -28,6 +30,6 @@
 + (void)writeUserLoginInfoToFileSystem;
 + (void)writeAppConfigInfoToFileSystem;
 
-///
+/// 固化全部内存级缓存数据到本地文件系统中
 + (void)saveAllCacheDataToFileSystem;
 @end

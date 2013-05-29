@@ -81,7 +81,7 @@
 
 
 
-// 同步网络请求App最新版本信息(一定要在子线程中调用此方法, 因为使用sendSynchronousRequest), 并且返回 VersionNetRespondBean
+// 同步网络请求App最新版本信息(一定要在子线程中调用此方法, 因为使用sendSynchronousRequest发起的网络请求), 并且返回 VersionNetRespondBean
 #define APP_URL @"http://itunes.apple.com/lookup?id=494520120"
 +(VersionNetRespondBean *)synchronousRequestAppNewVersionAndReturnVersionBean {
   VersionNetRespondBean *versionBean = nil;

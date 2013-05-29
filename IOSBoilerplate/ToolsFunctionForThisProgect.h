@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class VersionNetRespondBean;
 @class UserLoggedInfo;
 @interface ToolsFunctionForThisProgect : NSObject {
@@ -18,7 +19,7 @@
 									passwordForLastSuccessfulLogon:(NSString *)passwordForLastSuccessfulLogon;
 
 
-// 同步网络请求App最新版本信息(一定要在子线程中调用此方法, 因为使用sendSynchronousRequest), 并且返回 VersionNetRespondBean
+// 同步网络请求App最新版本信息(一定要在子线程中调用此方法, 因为使用sendSynchronousRequest发起的网络请求), 并且返回 VersionNetRespondBean
 +(VersionNetRespondBean *)synchronousRequestAppNewVersionAndReturnVersionBean;
 
 // 使用 Info.plist 中的 "Bundle version" 来保存本地App Version

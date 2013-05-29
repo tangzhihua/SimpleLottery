@@ -26,12 +26,8 @@
 @property (nonatomic, assign, setter=setNeedShowBeginnerGuide:) BOOL isNeedShowBeginnerGuide;
 // 是否需要自动登录的标志
 @property (nonatomic, assign, setter=setNeedAutologin:) BOOL isNeedAutologin;
-// 客户端应用版本号
-@property (nonatomic, copy) NSString *clientVersion;
-// 客户端 Android 版本号
-@property (nonatomic, copy) NSString *clientAVersion;
-// 屏幕大小
-@property (nonatomic, copy) NSString *screenSize;
+
+ 
 
 // 
 @property (nonatomic, strong) SoftwareUpdateNetRespondBean *softwareUpdateNetRespondBean;

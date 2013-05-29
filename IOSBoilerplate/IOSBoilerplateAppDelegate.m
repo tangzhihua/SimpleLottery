@@ -121,9 +121,29 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 
 
 #pragma mark 1) 应用程序入口
+/*
+ 当应用程序启动时执行，应用程序启动入口。只在应用程序启动时执行一次。application参数用来获取应用程序的状态、变量等，
+ 值得注意的是字典参数：(NSDictionary *)launchOptions，该参数存储程序启动的原因。
+ 
+ 若用户直接启动，lauchOptions内无数据;
+ 
+ 若由其他应用程序通过openURL:启动，则UIApplicationLaunchOptionsURLKey对应的对象为启动URL（NSURL）,
+ UIApplicationLaunchOptionsSourceApplicationKey对应启动的源应用程序的bundle ID (NSString)；
+ 
+ 若由本地通知启动，则UIApplicationLaunchOptionsLocalNotificationKey对应的是为启动应用程序的的本地通知对象(UILocalNotification)；
+ 
+ 若由远程通知启动，则UIApplicationLaunchOptionsRemoteNotificationKey对应的是启动应用程序的的远程通知信息userInfo（NSDictionary）；
+ 
+ 其他key还有UIApplicationLaunchOptionsAnnotationKey,UIApplicationLaunchOptionsLocationKey,
+ UIApplicationLaunchOptionsNewsstandDownloadsKey。        
+ 如果要在启动时，做出一些区分，那就需要在下面的代码做处理。   
+ 比如：应用可以被某个其它应用调起（作为该应用的子应用），要实现单点登录，那就需要在启动代码的地方做出合理的验证，并跳过登录
+ */
 - (BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
   
-  PRPLog(@"init [0x%x]", [self hash]);
+  PRPLog(@">>>>>>>>>>>>>>     应用程序启动      <<<<<<<<<<<<<<<<<");
+  PRPLog(@">>>>>>>>>>>>>>     application:didFinishLaunchingWithOptions:      <<<<<<<<<<<<<<<<<");
+  PRPLog(@"launchOptions=%@", launchOptions);
 	
   id command = nil;
 	
@@ -175,8 +195,8 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   //////////////////////////////////////////////////////////////
   // Add the view controller's view to the window and display.
   LocalActivityManagerSingleton *localActivityManager = [LocalActivityManagerSingleton sharedInstance];
-  [_window addSubview:localActivityManager.rootViewController.view];
-  [_window makeKeyAndVisible];
+  [self.window addSubview:localActivityManager.rootViewController.view];
+  [self.window makeKeyAndVisible];
   
   // 启动App第一个界面
   Intent *intent = [Intent intentWithSpecificComponentClass:[FirstActivity class]];
@@ -208,32 +228,36 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 }
 
 #pragma mark 2) 应用程序被中断（如来电，来短信）
+// 当应用程序将要进入非活动状态时执行，在此期间，应用程序不接收消息或事件，比如来电话了
 - (void)applicationWillResignActive:(UIApplication *)application {
-  
+  PRPLog(@">>>>>>>>>>>>>>     applicationWillResignActive:      <<<<<<<<<<<<<<<<<");
 }
 #pragma mark 3) 进入后台(比如按下 home 按键)
+// 当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+  PRPLog(@">>>>>>>>>>>>>>     applicationDidEnterBackground:      <<<<<<<<<<<<<<<<<");
   // 在这里保存那些需要固化到文件系统的数据
   [GlobalDataCacheForNeedSaveToFileSystem saveAllCacheDataToFileSystem];
 }
 #pragma mark 4) 从后台返回前台
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-  
+// 当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反。
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+  PRPLog(@">>>>>>>>>>>>>>     applicationWillEnterForeground:      <<<<<<<<<<<<<<<<<");
 }
-#pragma mark 5)
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-  
+#pragma mark 5) 当应用程序将要进入非活动状态时执行，在此期间，应用程序不接收消息或事件，比如来电话了
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  PRPLog(@">>>>>>>>>>>>>>     applicationDidBecomeActive:      <<<<<<<<<<<<<<<<<");
 }
-#pragma mark 6)
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-  
+#pragma mark 6) 当程序将要退出是被调用，通常是用来保存数据和一些退出前的清理工作。
+// 这个需要要设置UIApplicationExitsOnSuspend的键值。
+- (void)applicationWillTerminate:(UIApplication *)application {
+  PRPLog(@">>>>>>>>>>>>>>     applicationWillTerminate:      <<<<<<<<<<<<<<<<<");
 }
 #pragma mark 7) 内存不足
+// iPhone设备只有有限的内存，如果为应用程序分配了太多内存操作系统会终止应用程序的运行，
+// 在终止前会执行这个方法，通常可以在这里进行内存清理工作防止程序被终止
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-  
+  PRPLog(@">>>>>>>>>>>>>>     applicationDidReceiveMemoryWarning:      <<<<<<<<<<<<<<<<<");
 }
 
 

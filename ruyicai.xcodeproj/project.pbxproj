@@ -46,9 +46,9 @@
 		5879C60E16A6994E001884AD /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5879C60916A6994A001884AD /* Icon-Small@2x.png */; };
 		5879C60F16A6994E001884AD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5879C60A16A6994D001884AD /* Default-568h@2x.png */; };
 		587ADA01169C2777006044EB /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ADA00169C2777006044EB /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		587ADA0D169C2976006044EB /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ADA04169C2976006044EB /* DataHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		587ADA0D169C2976006044EB /* Data+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ADA04169C2976006044EB /* Data+Helper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		587ADA0E169C2976006044EB /* FastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ADA06169C2976006044EB /* FastCell.m */; };
-		587ADA10169C2976006044EB /* StringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ADA0A169C2976006044EB /* StringHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		587ADA10169C2976006044EB /* String+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ADA0A169C2976006044EB /* String+Helper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		587ADA23169C2A42006044EB /* AFURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ADA14169C2A42006044EB /* AFURLCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		587ADA24169C2A42006044EB /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587ADA17169C2A42006044EB /* BrowserViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		587ADA25169C2A42006044EB /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587ADA18169C2A42006044EB /* BrowserViewController.xib */; };
@@ -424,12 +424,12 @@
 		5879C60A16A6994D001884AD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		587AD9FF169C2777006044EB /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		587ADA00169C2777006044EB /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
-		587ADA03169C2976006044EB /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
-		587ADA04169C2976006044EB /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
+		587ADA03169C2976006044EB /* Data+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Data+Helper.h"; sourceTree = "<group>"; };
+		587ADA04169C2976006044EB /* Data+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Data+Helper.m"; sourceTree = "<group>"; };
 		587ADA05169C2976006044EB /* FastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastCell.h; sourceTree = "<group>"; };
 		587ADA06169C2976006044EB /* FastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FastCell.m; sourceTree = "<group>"; };
-		587ADA09169C2976006044EB /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
-		587ADA0A169C2976006044EB /* StringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHelper.m; sourceTree = "<group>"; };
+		587ADA09169C2976006044EB /* String+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "String+Helper.h"; sourceTree = "<group>"; };
+		587ADA0A169C2976006044EB /* String+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "String+Helper.m"; sourceTree = "<group>"; };
 		587ADA13169C2A42006044EB /* AFURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLCache.h; sourceTree = "<group>"; };
 		587ADA14169C2A42006044EB /* AFURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLCache.m; sourceTree = "<group>"; };
 		587ADA16169C2A42006044EB /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
@@ -1338,12 +1338,12 @@
 		587ADA02169C2976006044EB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				587ADA03169C2976006044EB /* DataHelper.h */,
-				587ADA04169C2976006044EB /* DataHelper.m */,
+				587ADA03169C2976006044EB /* Data+Helper.h */,
+				587ADA04169C2976006044EB /* Data+Helper.m */,
 				587ADA05169C2976006044EB /* FastCell.h */,
 				587ADA06169C2976006044EB /* FastCell.m */,
-				587ADA09169C2976006044EB /* StringHelper.h */,
-				587ADA0A169C2976006044EB /* StringHelper.m */,
+				587ADA09169C2976006044EB /* String+Helper.h */,
+				587ADA0A169C2976006044EB /* String+Helper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2774,9 +2774,9 @@
 				58A823EB169AA979008F7BB8 /* BaiduLBSSingleton.mm in Sources */,
 				58A823EF169AA9A5008F7BB8 /* SimpleLocationHelperForBaiduLBS.m in Sources */,
 				587ADA01169C2777006044EB /* EGORefreshTableHeaderView.m in Sources */,
-				587ADA0D169C2976006044EB /* DataHelper.m in Sources */,
+				587ADA0D169C2976006044EB /* Data+Helper.m in Sources */,
 				587ADA0E169C2976006044EB /* FastCell.m in Sources */,
-				587ADA10169C2976006044EB /* StringHelper.m in Sources */,
+				587ADA10169C2976006044EB /* String+Helper.m in Sources */,
 				587ADA23169C2A42006044EB /* AFURLCache.m in Sources */,
 				587ADA24169C2A42006044EB /* BrowserViewController.m in Sources */,
 				587ADA2A169C2A42006044EB /* MyApplication.m in Sources */,

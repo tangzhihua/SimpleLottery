@@ -953,7 +953,6 @@
 		09885E851418F2E500CCE17A = {
 			isa = PBXGroup;
 			children = (
-				68D384C1175B227800B9C413 /* Security.framework */,
 				09885E9A1418F2E600CCE17A /* IOSBoilerplate */,
 				09885EBC1418F2E600CCE17A /* IOSBoilerplateTests */,
 				09885E931418F2E500CCE17A /* Frameworks */,
@@ -974,6 +973,7 @@
 		09885E931418F2E500CCE17A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68D384C1175B227800B9C413 /* Security.framework */,
 				C37BC8E3144C340600423D44 /* libz.dylib */,
 				09885EEC1418F3F900CCE17A /* CFNetwork.framework */,
 				09270768141E52BB00E778AE /* CoreLocation.framework */,

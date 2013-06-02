@@ -20,22 +20,23 @@
 
 @synthesize useOnlyWhiteImages, titleTextColor, titleAlternativeTextColor;
 @synthesize viewController;
-@synthesize open;
+@synthesize open, rowAnimation;
 
 #pragma mark -
 #pragma mark Initialisation
 
 - (id) initWithViewController:(UIViewController*) givenViewController {
 	if ((self = [super init])) {
-    if (![givenViewController respondsToSelector:@selector(tableView)]) {
-      //The view controller MUST have a tableView proprety
-      [NSException raise:@"Wrong view controller"
-                  format:@"The passed view controller to GCRetractableSectionController must respond to the tableView proprety"];
-    }
-    
+		if (![givenViewController respondsToSelector:@selector(tableView)]) {
+			//The view controller MUST have a tableView proprety
+			[NSException raise:@"Wrong view controller"
+									format:@"The passed view controller to GCRetractableSectionController must respond to the tableView proprety"];
+		}
+		
 		self.viewController = givenViewController;
 		self.open = NO;
-    self.useOnlyWhiteImages = NO;
+		self.useOnlyWhiteImages = NO;
+		self.rowAnimation = UITableViewRowAnimationTop;
 	}
 	return self;
 }
@@ -48,7 +49,7 @@
 }
 
 - (NSUInteger) numberOfRow {
-  return (self.open) ? self.contentNumberOfRow + 1 : 1;
+	return (self.open) ? self.contentNumberOfRow + 1 : 1;
 }
 
 - (NSUInteger) contentNumberOfRow {
@@ -87,13 +88,13 @@
 	if (self.contentNumberOfRow != 0) {
 		cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%i items",), self.contentNumberOfRow];
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    [self setAccessoryViewOnCell:cell];
+		[self setAccessoryViewOnCell:cell];
 	}
 	else {
 		cell.detailTextLabel.text = NSLocalizedString(@"No item",);
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryView = nil;
-    cell.textLabel.textColor = [UIColor blackColor];
+		cell.accessoryView = nil;
+		cell.textLabel.textColor = [UIColor blackColor];
 	}
 	
 	return cell;
@@ -117,8 +118,8 @@
 	NSString* path = nil;
 	if (self.open) {
 		path = @"UpAccessory";
-    if (self.titleAlternativeTextColor == nil) cell.textLabel.textColor =  [UIColor colorWithRed:0.191 green:0.264 blue:0.446 alpha:1.000];
-    else cell.textLabel.textColor = self.titleAlternativeTextColor;
+		if (self.titleAlternativeTextColor == nil) cell.textLabel.textColor =  [UIColor colorWithRed:0.191 green:0.264 blue:0.446 alpha:1.000];
+		else cell.textLabel.textColor = self.titleAlternativeTextColor;
 	}
 	else {
 		path = @"DownAccessory";
@@ -133,7 +134,7 @@
 		imageView = (UIImageView*) cell.accessoryView;
 		imageView.image = (self.useOnlyWhiteImages ? whiteAccessoryImage : accessoryImage);
 		imageView.highlightedImage = whiteAccessoryImage;
-  }
+	}
 	else {
 		imageView = [[UIImageView alloc] initWithImage:(self.useOnlyWhiteImages ? whiteAccessoryImage : accessoryImage)];
 		imageView.highlightedImage = whiteAccessoryImage;
@@ -166,8 +167,8 @@
 		[rowToInsert addObject:indexPathToInsert];
 	}
 	
-	if (self.open) [self.tableView insertRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
-	else [self.tableView deleteRowsAtIndexPaths:rowToInsert withRowAnimation:UITableViewRowAnimationTop];
+	if (self.open) [self.tableView insertRowsAtIndexPaths:rowToInsert withRowAnimation:self.rowAnimation];
+	else [self.tableView deleteRowsAtIndexPaths:rowToInsert withRowAnimation:self.rowAnimation];
 	[rowToInsert release];
 	
 	[self.tableView endUpdates];

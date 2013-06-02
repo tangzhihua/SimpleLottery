@@ -25,4 +25,18 @@ install_resource()
       ;;
   esac
 }
+install_resource 'DLStarRating/DLStarRating/images/star.png'
+install_resource 'DLStarRating/DLStarRating/images/star@2x.png'
+install_resource 'DLStarRating/DLStarRating/images/star_highlighted-darker.png'
+install_resource 'DLStarRating/DLStarRating/images/star_highlighted-darker@2x.png'
+install_resource 'DLStarRating/DLStarRating/images/star_highlighted.png'
+install_resource 'DLStarRating/DLStarRating/images/star_highlighted@2x.png'
+install_resource 'EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blackArrow.png'
+install_resource 'EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blackArrow@2x.png'
+install_resource 'EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blueArrow.png'
+install_resource 'EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blueArrow@2x.png'
+install_resource 'EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/grayArrow.png'
+install_resource 'EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/grayArrow@2x.png'
+install_resource 'EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/whiteArrow.png'
+install_resource 'EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/whiteArrow@2x.png'
 install_resource 'SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle'

@@ -12,6 +12,24 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 2
 #define COCOAPODS_VERSION_PATCH_AFNetworking 1
 
+// DLStarRating
+#define COCOAPODS_POD_AVAILABLE_DLStarRating
+#define COCOAPODS_VERSION_MAJOR_DLStarRating 1
+#define COCOAPODS_VERSION_MINOR_DLStarRating 1
+#define COCOAPODS_VERSION_PATCH_DLStarRating 0
+
+// EGOTableViewPullRefresh
+#define COCOAPODS_POD_AVAILABLE_EGOTableViewPullRefresh
+#define COCOAPODS_VERSION_MAJOR_EGOTableViewPullRefresh 0
+#define COCOAPODS_VERSION_MINOR_EGOTableViewPullRefresh 1
+#define COCOAPODS_VERSION_PATCH_EGOTableViewPullRefresh 0
+
+// FTUtils
+#define COCOAPODS_POD_AVAILABLE_FTUtils
+#define COCOAPODS_VERSION_MAJOR_FTUtils 1
+#define COCOAPODS_VERSION_MINOR_FTUtils 1
+#define COCOAPODS_VERSION_PATCH_FTUtils 1
+
 // JSONKit
 #define COCOAPODS_POD_AVAILABLE_JSONKit
 // This library does not follow semantic-versioning,
@@ -24,4 +42,10 @@
 #define COCOAPODS_VERSION_MAJOR_SVProgressHUD 0
 #define COCOAPODS_VERSION_MINOR_SVProgressHUD 9
 #define COCOAPODS_VERSION_PATCH_SVProgressHUD 0
+
+// ZGCountDownTimer
+#define COCOAPODS_POD_AVAILABLE_ZGCountDownTimer
+#define COCOAPODS_VERSION_MAJOR_ZGCountDownTimer 0
+#define COCOAPODS_VERSION_MINOR_ZGCountDownTimer 0
+#define COCOAPODS_VERSION_PATCH_ZGCountDownTimer 1
 

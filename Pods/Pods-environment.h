@@ -30,12 +30,24 @@
 #define COCOAPODS_VERSION_MINOR_FTUtils 1
 #define COCOAPODS_VERSION_PATCH_FTUtils 1
 
+// JGAFImageCache
+#define COCOAPODS_POD_AVAILABLE_JGAFImageCache
+#define COCOAPODS_VERSION_MAJOR_JGAFImageCache 1
+#define COCOAPODS_VERSION_MINOR_JGAFImageCache 0
+#define COCOAPODS_VERSION_PATCH_JGAFImageCache 0
+
 // JSONKit
 #define COCOAPODS_POD_AVAILABLE_JSONKit
 // This library does not follow semantic-versioning,
 // so we were not able to define version macros.
 // Please contact the author.
 // Version: 1.5pre.
+
+// QuadCurveMenu
+#define COCOAPODS_POD_AVAILABLE_QuadCurveMenu
+#define COCOAPODS_VERSION_MAJOR_QuadCurveMenu 0
+#define COCOAPODS_VERSION_MINOR_QuadCurveMenu 0
+#define COCOAPODS_VERSION_PATCH_QuadCurveMenu 1
 
 // SVProgressHUD
 #define COCOAPODS_POD_AVAILABLE_SVProgressHUD

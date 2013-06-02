@@ -3,7 +3,10 @@ PODS:
   - DLStarRating (1.1)
   - EGOTableViewPullRefresh (0.1.0)
   - FTUtils (1.1.1)
+  - JGAFImageCache (1.0.0):
+    - AFNetworking (~> 1.2.0)
   - JSONKit (1.5pre)
+  - QuadCurveMenu (0.0.1)
   - SVProgressHUD (0.9)
   - ZGCountDownTimer (0.0.1)
 
@@ -12,7 +15,9 @@ DEPENDENCIES:
   - DLStarRating (= 1.1)
   - EGOTableViewPullRefresh (= 0.1.0)
   - FTUtils (= 1.1.1)
+  - JGAFImageCache
   - JSONKit (= 1.5pre)
+  - QuadCurveMenu
   - SVProgressHUD (= 0.9)
   - ZGCountDownTimer (= 0.0.1)
 
@@ -21,7 +26,9 @@ SPEC CHECKSUMS:
   DLStarRating: 11ffb061ea68acd28cb9580e2bd0e718c6088e6f
   EGOTableViewPullRefresh: 6ba637ce6dd3186b503d2d91e6b3a08a26d650f5
   FTUtils: 7d4a9e255a9b0b1d0ec22f27d819862eb205c3bc
+  JGAFImageCache: d9eeaea8ea8d3cd8fb5b93b4b9d6b80f52139de1
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  QuadCurveMenu: 339756b3178e381fea80e424f8edc1b10af554c8
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
   ZGCountDownTimer: 2b410031e26b77f4da741d5e89611c3c24b5d2fe
 

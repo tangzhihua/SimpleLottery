@@ -120,22 +120,6 @@
 		58C016691682FA140016D389 /* HttpNetworkEngineForNSURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C016681682FA130016D389 /* HttpNetworkEngineForNSURLConnection.m */; };
 		58C0166D1682FDD90016D389 /* NetConnectionManageTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C0166C1682FDD90016D389 /* NetConnectionManageTools.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		58C0166E1682FF830016D389 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09885EEE1418F40200CCE17A /* SystemConfiguration.framework */; };
-		58C300B916EF6093006C1893 /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300A716EF6092006C1893 /* bg-addbutton-highlighted.png */; };
-		58C300BA16EF6093006C1893 /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300A816EF6092006C1893 /* bg-addbutton-highlighted@2x.png */; };
-		58C300BB16EF6093006C1893 /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300A916EF6092006C1893 /* bg-addbutton.png */; };
-		58C300BC16EF6093006C1893 /* bg-addbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300AA16EF6092006C1893 /* bg-addbutton@2x.png */; };
-		58C300BD16EF6093006C1893 /* bg-menuitem-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300AB16EF6092006C1893 /* bg-menuitem-highlighted.png */; };
-		58C300BE16EF6093006C1893 /* bg-menuitem-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300AC16EF6092006C1893 /* bg-menuitem-highlighted@2x.png */; };
-		58C300BF16EF6093006C1893 /* bg-menuitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300AD16EF6092006C1893 /* bg-menuitem.png */; };
-		58C300C016EF6093006C1893 /* bg-menuitem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300AE16EF6092006C1893 /* bg-menuitem@2x.png */; };
-		58C300C116EF6093006C1893 /* icon-plus-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300AF16EF6092006C1893 /* icon-plus-highlighted.png */; };
-		58C300C216EF6093006C1893 /* icon-plus-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300B016EF6092006C1893 /* icon-plus-highlighted@2x.png */; };
-		58C300C316EF6093006C1893 /* icon-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300B116EF6092006C1893 /* icon-plus.png */; };
-		58C300C416EF6093006C1893 /* icon-plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300B216EF6093006C1893 /* icon-plus@2x.png */; };
-		58C300C516EF6093006C1893 /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300B316EF6093006C1893 /* icon-star.png */; };
-		58C300C616EF6093006C1893 /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58C300B416EF6093006C1893 /* icon-star@2x.png */; };
-		58C300C716EF6093006C1893 /* QuadCurveMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C300B616EF6093006C1893 /* QuadCurveMenu.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		58C300C816EF6093006C1893 /* QuadCurveMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C300B816EF6093006C1893 /* QuadCurveMenuItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		58C48F7616FC0C7400CD9D0D /* CommandInvokerSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F7516FC0C7400CD9D0D /* CommandInvokerSingleton.m */; };
 		58C48F7916FC10D100CD9D0D /* CommandForPrintDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F7816FC10D100CD9D0D /* CommandForPrintDeviceInfo.m */; };
 		58C48F7C16FC121A00CD9D0D /* CommandForInitLBSLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F7B16FC121A00CD9D0D /* CommandForInitLBSLibrary.m */; };
@@ -643,24 +627,6 @@
 		58C016681682FA130016D389 /* HttpNetworkEngineForNSURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpNetworkEngineForNSURLConnection.m; sourceTree = "<group>"; };
 		58C0166B1682FDD90016D389 /* NetConnectionManageTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetConnectionManageTools.h; sourceTree = "<group>"; };
 		58C0166C1682FDD90016D389 /* NetConnectionManageTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetConnectionManageTools.m; sourceTree = "<group>"; };
-		58C300A716EF6092006C1893 /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
-		58C300A816EF6092006C1893 /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
-		58C300A916EF6092006C1893 /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton.png"; sourceTree = "<group>"; };
-		58C300AA16EF6092006C1893 /* bg-addbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton@2x.png"; sourceTree = "<group>"; };
-		58C300AB16EF6092006C1893 /* bg-menuitem-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem-highlighted.png"; sourceTree = "<group>"; };
-		58C300AC16EF6092006C1893 /* bg-menuitem-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem-highlighted@2x.png"; sourceTree = "<group>"; };
-		58C300AD16EF6092006C1893 /* bg-menuitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem.png"; sourceTree = "<group>"; };
-		58C300AE16EF6092006C1893 /* bg-menuitem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem@2x.png"; sourceTree = "<group>"; };
-		58C300AF16EF6092006C1893 /* icon-plus-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted.png"; sourceTree = "<group>"; };
-		58C300B016EF6092006C1893 /* icon-plus-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted@2x.png"; sourceTree = "<group>"; };
-		58C300B116EF6092006C1893 /* icon-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus.png"; sourceTree = "<group>"; };
-		58C300B216EF6093006C1893 /* icon-plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus@2x.png"; sourceTree = "<group>"; };
-		58C300B316EF6093006C1893 /* icon-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star.png"; sourceTree = "<group>"; };
-		58C300B416EF6093006C1893 /* icon-star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star@2x.png"; sourceTree = "<group>"; };
-		58C300B516EF6093006C1893 /* QuadCurveMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenu.h; sourceTree = "<group>"; };
-		58C300B616EF6093006C1893 /* QuadCurveMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenu.m; sourceTree = "<group>"; };
-		58C300B716EF6093006C1893 /* QuadCurveMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenuItem.h; sourceTree = "<group>"; };
-		58C300B816EF6093006C1893 /* QuadCurveMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenuItem.m; sourceTree = "<group>"; };
 		58C48F7416FC0C7400CD9D0D /* CommandInvokerSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandInvokerSingleton.h; sourceTree = "<group>"; };
 		58C48F7516FC0C7400CD9D0D /* CommandInvokerSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandInvokerSingleton.m; sourceTree = "<group>"; };
 		58C48F7716FC10D100CD9D0D /* CommandForPrintDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandForPrintDeviceInfo.h; sourceTree = "<group>"; };
@@ -1775,31 +1741,6 @@
 			path = inc;
 			sourceTree = "<group>";
 		};
-		58C300A616EF6092006C1893 /* QuadCurveMenu */ = {
-			isa = PBXGroup;
-			children = (
-				58C300A716EF6092006C1893 /* bg-addbutton-highlighted.png */,
-				58C300A816EF6092006C1893 /* bg-addbutton-highlighted@2x.png */,
-				58C300A916EF6092006C1893 /* bg-addbutton.png */,
-				58C300AA16EF6092006C1893 /* bg-addbutton@2x.png */,
-				58C300AB16EF6092006C1893 /* bg-menuitem-highlighted.png */,
-				58C300AC16EF6092006C1893 /* bg-menuitem-highlighted@2x.png */,
-				58C300AD16EF6092006C1893 /* bg-menuitem.png */,
-				58C300AE16EF6092006C1893 /* bg-menuitem@2x.png */,
-				58C300AF16EF6092006C1893 /* icon-plus-highlighted.png */,
-				58C300B016EF6092006C1893 /* icon-plus-highlighted@2x.png */,
-				58C300B116EF6092006C1893 /* icon-plus.png */,
-				58C300B216EF6093006C1893 /* icon-plus@2x.png */,
-				58C300B316EF6093006C1893 /* icon-star.png */,
-				58C300B416EF6093006C1893 /* icon-star@2x.png */,
-				58C300B516EF6093006C1893 /* QuadCurveMenu.h */,
-				58C300B616EF6093006C1893 /* QuadCurveMenu.m */,
-				58C300B716EF6093006C1893 /* QuadCurveMenuItem.h */,
-				58C300B816EF6093006C1893 /* QuadCurveMenuItem.m */,
-			);
-			path = QuadCurveMenu;
-			sourceTree = "<group>";
-		};
 		58C5E4FA169991A60070117B /* 第三方库 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1808,7 +1749,6 @@
 				68B0CC0E1733DBA3001661A6 /* UIDevice-Hardware-master */,
 				68291441172C0BF4007998E2 /* UIDeviceWithUniqueIdentifierForiOS5 */,
 				68A6FE27172299D600A79D25 /* base64 */,
-				58C300A616EF6092006C1893 /* QuadCurveMenu */,
 				58BB2E1A16D096830039C469 /* BaiduLBSHeads */,
 				58BB2DA616D092DB0039C469 /* AlixPay */,
 				587BE8C916C9F70D0058B8D7 /* GCRetractableSectionController */,
@@ -2401,20 +2341,6 @@
 				587BE8DD16C9F70D0058B8D7 /* UpAccessoryWhite@2x.png in Resources */,
 				58E7EBD416EB035700349ED3 /* BeginnerGuideActivity.xib in Resources */,
 				58D0EA8E16ED9CE5001657A3 /* beginner_guide_button.png in Resources */,
-				58C300B916EF6093006C1893 /* bg-addbutton-highlighted.png in Resources */,
-				58C300BA16EF6093006C1893 /* bg-addbutton-highlighted@2x.png in Resources */,
-				58C300BB16EF6093006C1893 /* bg-addbutton.png in Resources */,
-				58C300BC16EF6093006C1893 /* bg-addbutton@2x.png in Resources */,
-				58C300BD16EF6093006C1893 /* bg-menuitem-highlighted.png in Resources */,
-				58C300BE16EF6093006C1893 /* bg-menuitem-highlighted@2x.png in Resources */,
-				58C300BF16EF6093006C1893 /* bg-menuitem.png in Resources */,
-				58C300C016EF6093006C1893 /* bg-menuitem@2x.png in Resources */,
-				58C300C116EF6093006C1893 /* icon-plus-highlighted.png in Resources */,
-				58C300C216EF6093006C1893 /* icon-plus-highlighted@2x.png in Resources */,
-				58C300C316EF6093006C1893 /* icon-plus.png in Resources */,
-				58C300C416EF6093006C1893 /* icon-plus@2x.png in Resources */,
-				58C300C516EF6093006C1893 /* icon-star.png in Resources */,
-				58C300C616EF6093006C1893 /* icon-star@2x.png in Resources */,
 				587E60A116F824B100EE27AC /* FirstActivity_iphone5.xib in Resources */,
 				587E60A316F8260A00EE27AC /* MainNavigationActivity_iphone5.xib in Resources */,
 				6846EA2217216C1D006CA7B0 /* GoucaidatingActivity.xib in Resources */,
@@ -2654,8 +2580,6 @@
 				58E1302916E478B100D406E8 /* UrlConstantForThisProject.m in Sources */,
 				58BB0E8516E5BF5600493022 /* NSLogToFile.m in Sources */,
 				58E7EBD316EB035700349ED3 /* BeginnerGuideActivity.m in Sources */,
-				58C300C716EF6093006C1893 /* QuadCurveMenu.m in Sources */,
-				58C300C816EF6093006C1893 /* QuadCurveMenuItem.m in Sources */,
 				58C48F7616FC0C7400CD9D0D /* CommandInvokerSingleton.m in Sources */,
 				58C48F7916FC10D100CD9D0D /* CommandForPrintDeviceInfo.m in Sources */,
 				58C48F7C16FC121A00CD9D0D /* CommandForInitLBSLibrary.m in Sources */,

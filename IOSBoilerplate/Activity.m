@@ -75,7 +75,7 @@ static const NSString *const TAG = @"<Activity>";
     [newActivity onCreate:intent];
     return newActivity;
   } else {
-    NSAssert(NO, @"创建目标 Activity 失败 ! newActivity 为 nil, 或者类型不是 Activity.");
+    RNAssert(NO, @"创建目标 Activity 失败 ! newActivity 为 nil, 或者类型不是 Activity.");
     return nil;
   }
 }

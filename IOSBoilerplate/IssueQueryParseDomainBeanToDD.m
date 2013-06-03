@@ -28,11 +28,11 @@
 }
 
 - (NSDictionary *) parseDomainBeanToDataDictionary:(in id) netRequestDomainBean {
-  NSAssert(netRequestDomainBean != nil, @"入参为空 !");
+  RNAssert(netRequestDomainBean != nil, @"入参为空 !");
   
   do {
     if (! [netRequestDomainBean isMemberOfClass:[IssueQueryNetRequestBean class]]) {
-      NSAssert(NO, @"传入的业务Bean的类型不符 !");
+      RNAssert(NO, @"传入的业务Bean的类型不符 !");
       break;
     }
     
@@ -50,7 +50,7 @@
 		//彩种
 		value = requestBean.lotteryCode;
 		if ([NSString isEmpty:value]) {
-      NSAssert(NO, @"丢失关键参数 : lotno");
+      RNAssert(NO, @"丢失关键参数 : lotno");
       break;
 		}
 		[params setObject:value forKey:k_IssueQuery_RequestKey_lotno];

@@ -34,7 +34,7 @@ static const NSString *const TAG = @"<NetEntityDataToolsFactoryMethodSingleton>"
 // 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
 -(id)init {
   // 禁止调用 -init 或 +new
-  NSAssert(NO, @"Cannot create instance of Singleton");
+  RNAssert(NO, @"Cannot create instance of Singleton");
   
   // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
   return nil;

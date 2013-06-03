@@ -28,11 +28,11 @@
 }
 
 - (NSDictionary *) parseDomainBeanToDataDictionary:(in id) netRequestDomainBean {
-  NSAssert(netRequestDomainBean != nil, @"入参为空 !");
+  RNAssert(netRequestDomainBean != nil, @"入参为空 !");
   
   do {
     if (! [netRequestDomainBean isMemberOfClass:[LogonNetRequestBean class]]) {
-      NSAssert(NO, @"传入的业务Bean的类型不符 !");
+      RNAssert(NO, @"传入的业务Bean的类型不符 !");
       break;
     }
     
@@ -49,14 +49,14 @@
 		//
 		value = requestBean.phonenum;
 		if ([NSString isEmpty:value]) {
-      NSAssert(NO, @"丢失关键参数 : phonenum");
+      RNAssert(NO, @"丢失关键参数 : phonenum");
       break;
 		}
 		[params setObject:value forKey:k_Login_RequestKey_phonenum];
     //
     value = requestBean.password;
 		if ([NSString isEmpty:value]) {
-      NSAssert(NO, @"丢失关键参数 : password");
+      RNAssert(NO, @"丢失关键参数 : password");
       break;
 		}
     [params setObject:value forKey:k_Login_RequestKey_password];

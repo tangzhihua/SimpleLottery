@@ -879,6 +879,7 @@
 		68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelForTitleBar.xib; sourceTree = "<group>"; };
 		C37BC8E3144C340600423D44 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D7572D14175C9C2600632A74 /* RNAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNAssert.h; sourceTree = "<group>"; };
 		D7A8D57E175C34D300BC5CBF /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regular_expressions_keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -924,7 +925,6 @@
 		09885E851418F2E500CCE17A = {
 			isa = PBXGroup;
 			children = (
-				D7A8D57E175C34D300BC5CBF /* libicucore.dylib */,
 				09885E9A1418F2E600CCE17A /* IOSBoilerplate */,
 				09885EBC1418F2E600CCE17A /* IOSBoilerplateTests */,
 				09885E931418F2E500CCE17A /* Frameworks */,
@@ -945,6 +945,7 @@
 		09885E931418F2E500CCE17A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7A8D57E175C34D300BC5CBF /* libicucore.dylib */,
 				68D384C1175B227800B9C413 /* Security.framework */,
 				C37BC8E3144C340600423D44 /* libz.dylib */,
 				09885EEC1418F3F900CCE17A /* CFNetwork.framework */,
@@ -1469,6 +1470,7 @@
 		587FA6B116803FDB00C90D4C /* ToolUtils */ = {
 			isa = PBXGroup;
 			children = (
+				D7572D14175C9C2600632A74 /* RNAssert.h */,
 				587FA6B216803FF900C90D4C /* SimpleCookieSingleton.h */,
 				587FA6B316803FF900C90D4C /* SimpleCookieSingleton.m */,
 				58C0166B1682FDD90016D389 /* NetConnectionManageTools.h */,

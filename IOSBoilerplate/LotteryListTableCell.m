@@ -99,6 +99,11 @@ static UIImage *kLotterySaleStatusImageOfKaijiangAndJiajiang = nil;
 #pragma mark -
 #pragma mark 数据绑定
 -(void) bind:(LotteryDictionary *)lotteryDictionaryToBeDisplayed {
+  if (![lotteryDictionaryToBeDisplayed isKindOfClass:[LotteryDictionary class]]) {
+    RNAssert(NO, @"入参 lotteryDictionaryToBeDisplayed 无效.");
+    return;
+  }
+  
   // 彩票代码
   if ([lotteryDictionaryToBeDisplayed.key isEqualToString:kLotteryKey_jingcai_basketball]) {
     self.lotteryCode = @"JC_L";

@@ -41,7 +41,7 @@
 // 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
 -(id)init {
   // 禁止调用 -init 或 +new
-  NSAssert(NO, @"Cannot create instance of Singleton");
+  RNAssert(NO, @"Cannot create instance of Singleton");
   
   // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
   return nil;
@@ -83,24 +83,24 @@
   do {
     
     if (nil == _activeActivity) {
-      NSAssert(NO, @"activeActivity is null!");
+      RNAssert(NO, @"activeActivity is null!");
       break;
     }
     if (nil == intent) {
-      NSAssert(NO, @"入参 intent 不能为空 ! ");
+      RNAssert(NO, @"入参 intent 不能为空 ! ");
       break;
     }
     if (nil == intent.component) {
-      NSAssert(NO, @"入参 intent.component 不能为空 ! ");
+      RNAssert(NO, @"入参 intent.component 不能为空 ! ");
       break;
     }
     if ([NSString isEmpty:intent.component.className]) {
-      NSAssert(NO, @"入参 intent.component.className 不能为空 ! ");
+      RNAssert(NO, @"入参 intent.component.className 不能为空 ! ");
       break;
     }
     Class targetActivityClass = NSClassFromString(intent.component.className);
     if (nil == targetActivityClass) {
-      NSAssert(NO, @"要启动的目标 Activity 无效 ! ");
+      RNAssert(NO, @"要启动的目标 Activity 无效 ! ");
       break;
     }
     
@@ -158,14 +158,14 @@
              resultData:(Intent *) resultData {
   
   if (![sourceActivity isKindOfClass:[Activity class]]) {
-    NSAssert(NO, @"入参 sourceActivity 无效");
+    RNAssert(NO, @"入参 sourceActivity 无效");
     return;
   }
   
   do {
     
     if (sourceActivity != _activeActivity) {
-      NSAssert(NO, @"如果想要关闭当前Activity后, 启动一个新的Activity, 必须先调用 finish方法, 然后在调用 startActivity 方法");
+      RNAssert(NO, @"如果想要关闭当前Activity后, 启动一个新的Activity, 必须先调用 finish方法, 然后在调用 startActivity 方法");
       break;
     }
     self.resultCode = resultCode;
@@ -230,7 +230,7 @@
   if ([animationID isEqualToString:@"PopChildView"]) {
     do {
       if (nil == _activeActivity) {
-        NSAssert(NO, @"_activeActivity 为 nil");
+        RNAssert(NO, @"_activeActivity 为 nil");
         break;
       }
       if (_activeActivity.requestCode == kRequestCode_None) {
@@ -269,7 +269,7 @@
   
   do {
     if (nil == _activeActivity || nil == _activeActivity.view) {
-      NSAssert(NO, @"curView or curViewController is null!");
+      RNAssert(NO, @"curView or curViewController is null!");
       break;
     }
     
@@ -278,7 +278,7 @@
     // 上一个 Controller
     Activity *prevActivity = (Activity *)_activeActivity.parentViewController;
     if (nil == prevView || nil == prevActivity) {
-      NSAssert(NO, @"prevView or prevViewController is null!");
+      RNAssert(NO, @"prevView or prevViewController is null!");
       break;
     }
     
@@ -362,28 +362,28 @@
   
   do {
     if (nil == targetActivityClass) {
-      NSAssert(NO, @"activeActivity is null!");
+      RNAssert(NO, @"activeActivity is null!");
       break;
     }
     if (nil == _activeActivity) {
-      NSAssert(NO, @"activeActivity is null!");
+      RNAssert(NO, @"activeActivity is null!");
       break;
     }
     if (nil == intent) {
-      NSAssert(NO, @"入参 intent 不能为空 ! ");
+      RNAssert(NO, @"入参 intent 不能为空 ! ");
       break;
     }
     if (nil == intent.component) {
-      NSAssert(NO, @"入参 intent.component 不能为空 ! ");
+      RNAssert(NO, @"入参 intent.component 不能为空 ! ");
       break;
     }
     if ([NSString isEmpty:intent.component.className]) {
-      NSAssert(NO, @"入参 intent.component.className 不能为空 ! ");
+      RNAssert(NO, @"入参 intent.component.className 不能为空 ! ");
       break;
     }
     Class newActivityClass = NSClassFromString(intent.component.className);
     if (nil == newActivityClass) {
-      NSAssert(NO, @"要启动的目标 Activity 无效 ! ");
+      RNAssert(NO, @"要启动的目标 Activity 无效 ! ");
       break;
     }
     

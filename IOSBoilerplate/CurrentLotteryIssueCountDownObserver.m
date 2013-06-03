@@ -202,7 +202,7 @@ static CurrentLotteryIssueCountDownObserver *singletonInstance = nil;
 }
 
 -(CurrentIssueCountDown *)queryCurrentIssueCountDownByNetRequestIndex:(NSInteger)netRequestIndex {
-	NSAssert(netRequestIndex != IDLE_NETWORK_REQUEST_ID, @"入参 netRequestIndex 无效");
+	RNAssert(netRequestIndex != IDLE_NETWORK_REQUEST_ID, @"入参 netRequestIndex 无效");
 	
 	NSArray *lotteryList = [self.lotteryListOfCountDownObserver allValues];
 	for (CurrentIssueCountDown *currentIssueCountDown in lotteryList) {

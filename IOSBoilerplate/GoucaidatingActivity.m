@@ -213,7 +213,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   do {
     if (indexPath.row < 0 || indexPath.row >= self.cellArrayOfLotteryList.count) {
 			// 异常
-			NSAssert(NO, @"tableView:didSelectRowAtIndexPath: 入参 indexPath.row 超出数据源范围");
+			RNAssert(NO, @"tableView:didSelectRowAtIndexPath: 入参 indexPath.row 超出数据源范围");
 			break;
 		}
     
@@ -222,7 +222,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 		PRPLog(@"当前选中的彩票的 key = %@", lotteryKey);
 		if ([NSString isEmpty:lotteryKey]) {
 			// 异常
-			NSAssert(NO, @"LotteryListTableCell 中的 lotteryKey 不能为空");
+			RNAssert(NO, @"LotteryListTableCell 中的 lotteryKey 不能为空");
 			break;
 		}
 		
@@ -293,7 +293,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 
 // 初始化全部的 彩票列表 cell
 -(void)initCellArrayOfLotteryList {
-	NSAssert(self.cellArrayOfLotteryList == nil, @"不能重复初始化cellArrayOfLotteryList");
+	RNAssert(self.cellArrayOfLotteryList == nil, @"不能重复初始化cellArrayOfLotteryList");
 	
 	self.cellArrayOfLotteryList = [NSMutableArray arrayWithCapacity:[GlobalDataCacheForMemorySingleton sharedInstance].lotteryDictionaryList.count];
 	

@@ -16,6 +16,7 @@
 
 // 智能 debug 输出
 #import "PRPDebug.h"
+#import "RNAssert.h"
 
 // 友盟SDK
 #import "MobClick.h"

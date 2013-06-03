@@ -25,7 +25,7 @@ static const NSString *const TAG = @"<DomainBeanAbstractFactoryCacheSingleton>";
 // 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
 -(id)init {
   // 禁止调用 -init 或 +new
-  NSAssert(NO, @"Cannot create instance of Singleton");
+  RNAssert(NO, @"Cannot create instance of Singleton");
   
   // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
   return nil;
@@ -58,7 +58,7 @@ static const NSString *const TAG = @"<DomainBeanAbstractFactoryCacheSingleton>";
 - (id<IDomainBeanAbstractFactory>) getDomainBeanAbstractFactoryObjectByKey : (NSString *) key {
   do{
     if([key length] <= 0){
-      NSAssert(NO, @"入参 key 不能为空 ! ");
+      RNAssert(NO, @"入参 key 不能为空 ! ");
       break;
     }
     
@@ -66,13 +66,13 @@ static const NSString *const TAG = @"<DomainBeanAbstractFactoryCacheSingleton>";
     if (abstractFactoryObject == nil) {
       NSString *className = [_strategyClassNameMapping getTargetClassNameForKey:key];
       if([className length] <= 0){
-        NSAssert(NO, @"找不到 key 对应的抽象工厂类 ! ");
+        RNAssert(NO, @"找不到 key 对应的抽象工厂类 ! ");
         break;
       }
       
       abstractFactoryObject = [[NSClassFromString(className) alloc] init];
       if(abstractFactoryObject == nil){
-        NSAssert(NO, @"反射创建抽象工厂类失败 ! ");
+        RNAssert(NO, @"反射创建抽象工厂类失败 ! ");
         break;
       }
       

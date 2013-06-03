@@ -41,12 +41,12 @@
 									passwordForLastSuccessfulLogon:(NSString *)passwordForLastSuccessfulLogon {
   
   if (userLoggedInfo == nil) {
-    NSAssert(NO, @"userLoggedInfo is null !");
+    RNAssert(NO, @"userLoggedInfo is null !");
     return;
   }
   
   if ([NSString isEmpty:usernameForLastSuccessfulLogon] || [NSString isEmpty:passwordForLastSuccessfulLogon]) {
-    NSAssert(NO, @"username or password is empty ! ");
+    RNAssert(NO, @"username or password is empty ! ");
     return;
   }
   

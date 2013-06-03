@@ -29,7 +29,7 @@ static const NSString *const TAG = @"<StrategyClassNameMappingBase>";
 #pragma mark 通过 key 查找 对应的抽象工厂类 (专为子类准备的)
 - (NSString *) getTargetClassNameForKey:(id) key {
   
-  NSAssert(key != nil, @"入参 key 不能为空 ! ");
+  RNAssert(key != nil, @"入参 key 不能为空 ! ");
   
   NSString *className = [strategyClassesNameMappingList objectForKey:key];
   return className;

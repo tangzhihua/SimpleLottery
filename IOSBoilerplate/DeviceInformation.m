@@ -14,7 +14,7 @@ static const NSString *const TAG = @"<DeviceInformation>";
 
 @implementation DeviceInformation
 - (id) init {
-  NSAssert(NO, @"Can not use the default init method!");
+  RNAssert(NO, @"Can not use the default init method!");
   
   return nil;
 }

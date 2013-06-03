@@ -18,7 +18,7 @@
 }
 
 + (id)cellFromNib:(UINib *)nib {
-	NSAssert([nib isKindOfClass:[UINib class]], @"入参 nib 类型不为 UINib");
+	RNAssert([nib isKindOfClass:[UINib class]], @"入参 nib 类型不为 UINib");
 	
 	NSArray *nibObjects = [nib instantiateWithOwner:nil options:nil];
 	

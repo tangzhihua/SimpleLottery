@@ -1,0 +1,1 @@
+../../QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemCloseAnimation.h

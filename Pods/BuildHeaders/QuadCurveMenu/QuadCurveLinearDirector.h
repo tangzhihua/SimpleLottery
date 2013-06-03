@@ -1,0 +1,1 @@
+../../QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveLinearDirector.h

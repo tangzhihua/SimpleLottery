@@ -49,6 +49,12 @@
 #define COCOAPODS_VERSION_MINOR_QuadCurveMenu 0
 #define COCOAPODS_VERSION_PATCH_QuadCurveMenu 1
 
+// RegexKitLite
+#define COCOAPODS_POD_AVAILABLE_RegexKitLite
+#define COCOAPODS_VERSION_MAJOR_RegexKitLite 4
+#define COCOAPODS_VERSION_MINOR_RegexKitLite 0
+#define COCOAPODS_VERSION_PATCH_RegexKitLite 0
+
 // SVProgressHUD
 #define COCOAPODS_POD_AVAILABLE_SVProgressHUD
 #define COCOAPODS_VERSION_MAJOR_SVProgressHUD 0

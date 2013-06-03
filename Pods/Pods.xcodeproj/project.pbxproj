@@ -10,47 +10,36 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>0235BD75851440FD9FE7645A</key>
+		<key>00CC727D53B445EF9D41EE4C</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>E05AB2CD40364A42A5BD69F5</string>
+				<string>523FED5DFE96479EAA508CD4</string>
+				<string>F89B80921B9E4B129C8FC189</string>
+				<string>6098FDCC23C448FBBDE4A3F8</string>
+				<string>2E829C6EC3174A85B9E838DB</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>bg-addbutton.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/bg-addbutton.png</string>
+			<string>Frameworks</string>
 			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>0258AA403D3F411F88739F7D</key>
+		<key>00F9B6B4B810408EB2F4E618</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F61E4F20CA564ACC80C6DD8B</string>
+			<string>CA6A554CE48D4EF692E192D2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>031BA8B06A5240A4858593F9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIImageView+AFNetworking.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/UIImageView+AFNetworking.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0326D8EF3F1C42ECB5866C29</key>
+		<key>03585B7DAD0B45919DF8F667</key>
 		<dict>
 			<key>fileRef</key>
-			<string>35FC6BD3998B4BA2BA3F5FE7</string>
+			<string>6B66FFDA121C42008738CB4A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -59,7 +48,64 @@
 				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>040CD45EAFA34096BC8324A5</key>
+		<key>03A9D1A89268479392E91E2B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bg-menuitem-highlighted@2x.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/bg-menuitem-highlighted@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>040A54D61C6A4ED1B386600E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>icon-plus-highlighted@2x.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/icon-plus-highlighted@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>04438A3EB39548A1A43BB368</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E01A82AB69B547B2AD5E4E85</string>
+				<string>2D44CD5F915849D69B7D1A12</string>
+				<string>6CAB9421380E4B8CA30FD31B</string>
+				<string>D1FD8BEF3CE4465E8A89365C</string>
+				<string>B1372D60EB9747F7B0C515D8</string>
+				<string>A6C71DEBA62C400CB27D1AFF</string>
+				<string>6218C6A676724C178177ECC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>049441165064473B98637E58</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2687067AB1E645819A1BA969</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>051F1E16141D402CB5930C7E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -68,13 +114,506 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JSONKit.h</string>
+			<string>QuadCurveRadialDirector.h</string>
 			<key>path</key>
-			<string>JSONKit/JSONKit.h</string>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveRadialDirector.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>042E72B26D944BD789836DCB</key>
+		<key>08A327EFECB348038F2D7705</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A88F1AD615D2416DA1071FF4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>08FA38E1055D4A1197B10579</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveMenuItem.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenuItem.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>090176FFBC41468CB2B581A0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4C18870B530F447A87B444D5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>0AAC549194D24409B5861586</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3816F92E027941A58553A256</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>0AAE6A8A93BF4D548C66D7B6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B7C1CD5BDE5F4615B8AA8FC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>0AEEE91E82CB4AC6A0A29E68</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1CB4AB30F41B4E008A8B7292</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>0C08AAB716184044B0A5F01B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIView+Subviews.h</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/UIView+Subviews.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>10577619C53B4F1489010053</key>
+		<dict>
+			<key>fileRef</key>
+			<string>08FA38E1055D4A1197B10579</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>1144C1F23E7044ED8C7E7F9D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bg-addbutton-highlighted@2x.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/bg-addbutton-highlighted@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1238387D7BBD48AE880C6ACC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFXMLRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>12AF45E3727447DCBFD0CA64</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>blackArrow.png</string>
+			<key>path</key>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blackArrow.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1BE711CC31144409B947068B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>38BB0E7F393049F098026BA2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>1CB4AB30F41B4E008A8B7292</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFURLConnectionOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1CC0CB0CBBE84F3E879988FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFHTTPRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1EA321D038E54B3AB2861660</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>SVProgressHUD.m</string>
+			<key>path</key>
+			<string>SVProgressHUD/SVProgressHUD/SVProgressHUD.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1FFE2DAE94BD408E89EAFDC8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FTUtils+UIGestureRecognizer.m</string>
+			<key>path</key>
+			<string>FTUtils/Classes/FTUtils+UIGestureRecognizer.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2185D38730D34D888343E296</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7BA1A114C704B62A0B9A53D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>22E5104AF5694436B89B0A08</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>RegexKitLite.m</string>
+			<key>path</key>
+			<string>RegexKitLite/RegexKitLite.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2301E2982C7847A6BF2227AB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>26D4E4C5946748228126A6FA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>23907DD343F14EB1871F5B6B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AGMedallionView.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/AGMedallionView.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>26788BAB95134CFC996AD095</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>ACA4F40A8C924BFCA78D05B4</string>
+				<string>4088B9BDC6DB4BC68877EB88</string>
+				<string>C986595C0A7F4DB7AADC0A99</string>
+				<string>08A327EFECB348038F2D7705</string>
+				<string>FBAEA484DC4D409ABE6E8D8A</string>
+				<string>60F73A26440047E7B37DAC8F</string>
+				<string>8E5ADA968C044A5D956E2A63</string>
+				<string>0AEEE91E82CB4AC6A0A29E68</string>
+				<string>6F2C60A3A2B74A3692239BC3</string>
+				<string>00F9B6B4B810408EB2F4E618</string>
+				<string>D9FA74EA5110466DA7788CC3</string>
+				<string>DFE35BF991EC48CC9789B3CF</string>
+				<string>60F9A1B2E369473791E5B53F</string>
+				<string>855135B05DC143189FB46E3B</string>
+				<string>760CE218AE7646B888D83491</string>
+				<string>A0BB7C484D794E08B925F70A</string>
+				<string>D8D4AED96098464C9E30AACC</string>
+				<string>F7ADF1EAD6694E928CB0DD1A</string>
+				<string>B7F21E4A9CB243A0B8D0FA28</string>
+				<string>9A9ABF72D9A94E019C5E3217</string>
+				<string>BABCAA62BF354E3DAABFE3C5</string>
+				<string>39B333F630824B1BBCD1C94A</string>
+				<string>710375D4CBBF4719B97485E8</string>
+				<string>B7F89FE3F1AB4B799BD41971</string>
+				<string>F26032C20A5742429F5A194A</string>
+				<string>6A57844B67A14CBC9CA983FC</string>
+				<string>448AB64F4B9D4593AB1D3926</string>
+				<string>9F2BC6016ABB4EA0B69F27F4</string>
+				<string>2185D38730D34D888343E296</string>
+				<string>E5576283B88F478EAAC1FB02</string>
+				<string>6DECE8EEA27A4CEB82A72431</string>
+				<string>B3CB0379D76E4FC79343955A</string>
+				<string>7EB9E6B1A48145CA8A8B9B27</string>
+				<string>10577619C53B4F1489010053</string>
+				<string>8DB4CC0F79A94DFCAA7DB232</string>
+				<string>B6C0D6C254EE4365B8B0AF32</string>
+				<string>50B3A16EA70F471A8525DBBE</string>
+				<string>3785682B76BF4437B485EA74</string>
+				<string>0AAE6A8A93BF4D548C66D7B6</string>
+				<string>D6C1AA8131CF4A1BBCB730F4</string>
+				<string>A7A0A171330C40F7BC2B32FC</string>
+				<string>3D552440722F4678A41CDBDA</string>
+				<string>1BE711CC31144409B947068B</string>
+				<string>9858EB26E54F41CF9DC09944</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>2687067AB1E645819A1BA969</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>QuadCurveLinearDirector.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveLinearDirector.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>26C0959FBD8C4DB8A4C3C636</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveDefaultMenuItemFactory.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveDefaultMenuItemFactory.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>26D4E4C5946748228126A6FA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFImageRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFImageRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>27195A5A9F9E40438B736055</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>39D63C2D68F64E728B7DE85C</string>
+				<string>D6B5F3AB8E0A422E80378613</string>
+				<string>B4444A112DBA46339146723D</string>
+				<string>AAF35057FFA34B05AE2A152C</string>
+				<string>E683803D76174A8081F64AFE</string>
+				<string>91CD479EDCEC470381BC5D41</string>
+				<string>F178763B763E465A860EEE46</string>
+				<string>A6982F1F236A4D2EBAA1364B</string>
+				<string>B8C30B5D0F2749D7836674FE</string>
+				<string>81D7FBD6ED334CE1AA4E8EBB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CDE902EFC14199B560D2CD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIView+Subviews.m</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/UIView+Subviews.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>28B1557CE22C41A5B2A95A69</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>QuadCurveItemExpandAnimation.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemExpandAnimation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>29ED33B35E9A4C03AE84FE91</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E2395EAB29464481AE5B51AB</string>
+				<string>6DC7B96A908046619D86EF26</string>
+				<string>9C484C2DCB904BEB995AFD62</string>
+				<string>669E32A3A35C4247A492A8AA</string>
+				<string>93342399BF73408EA0CA49E0</string>
+				<string>AD230EFF47A24B9DBD25BA42</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>DLStarRating</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D44CD5F915849D69B7D1A12</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-environment.h</string>
+			<key>path</key>
+			<string>Pods-environment.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2E829C6EC3174A85B9E838DB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SystemConfiguration.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>31FBE0DD5B814DD8BD805231</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JSONKit.m</string>
+			<key>path</key>
+			<string>JSONKit/JSONKit.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3240D5EC10424E83921D7558</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>icon-plus-highlighted.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/icon-plus-highlighted.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>335E8B1E62974A5EB1837D66</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bg-menuitem@2x.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/bg-menuitem@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3372AEB28D5748F79547A344</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -89,134 +628,31 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>0485AB899700490A95A00327</key>
-		<dict>
-			<key>fileRef</key>
-			<string>65E21F2382564BE289D46CFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>06AF662BA876432CA7092DA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EE5EB8027AC742E6AB90FCC1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>06F30CD3236D42B2AA726E61</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D30AFE94CF364D95BA995922</string>
-				<string>4035607C97DF4E3E96D7331F</string>
-				<string>7F4D2357BF1B4C29A275CC65</string>
-				<string>48BC75E58B9C45C7A6CDA68C</string>
-				<string>7667F8F9B2414B96BE3F3144</string>
-				<string>C967657F171F44A0A34238B6</string>
-				<string>076EA54FA0AB47C4B45FC4E9</string>
-				<string>4F57F0CC49F6471FB6011D27</string>
-				<string>DE399795D22C416A84D1F007</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>076EA54FA0AB47C4B45FC4E9</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AEE8B0436DD84383BA39A378</string>
-				<string>DACA17498BE541CCB6A64B91</string>
-				<string>978BF48E5FEA4B79BB56B86D</string>
-				<string>7D5C3437D124447080C9DA52</string>
-				<string>62D0902CFE4D4B73960C76B4</string>
-				<string>3F7ABEDE967E40829E6795AA</string>
-				<string>148849C76DE746009ADFBD66</string>
-				<string>35FC6BD3998B4BA2BA3F5FE7</string>
-				<string>54F08388854A4CFDB87DC942</string>
-				<string>2D819A0BC55E4539B13BAF51</string>
-				<string>8AD188D33A2E4C0DA4273F8A</string>
-				<string>3FFD0D037A9A4B959DA9E340</string>
-				<string>2FE220788F3946818D7EE271</string>
-				<string>9340B9B572C24197802320C2</string>
-				<string>86E4FFB302EF4FAA9F087AA4</string>
-				<string>5D04BED97A21447F8AD339A0</string>
-				<string>9CCA99DC70CD457CABB0F839</string>
-				<string>28088855E41B4474AFDBBB46</string>
-				<string>EE5EB8027AC742E6AB90FCC1</string>
-				<string>32CEC4836B8644B98578296F</string>
-				<string>BA9F15B027B74742AB53E7B5</string>
-				<string>8C050CC7F16643D3B4072A95</string>
-				<string>2D94C3F894744BD6992B0D77</string>
-				<string>939380710BCA4DE59483F8ED</string>
-				<string>85D84C23BD174B2082561E23</string>
-				<string>AC0DF90D76AA42EFA92F186A</string>
-				<string>D1FC67FD49EA405FABA6FF1F</string>
-				<string>A6DD65BEB1E844329CFA2C11</string>
-				<string>5C6241D610E944F7A7161BBB</string>
-				<string>B83E4FEE61604675BE830E18</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>QuadCurveMenu</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>09ABF25369E1427695459926</key>
-		<dict>
-			<key>fileRef</key>
-			<string>390A57A726764591B1C46E53</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>09F335D4F2D84C9FAF44702C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F88CD3C05ABF42E58DCD29E9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>0A670DCF2FA748AFAEB8E095</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2F17EDCC4F064830BCB04535</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>0B6D03B1DF894F919502F06B</key>
+		<key>34CED958259C41D1AD4EF19E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>bg-menuitem-highlighted.png</string>
+			<string>QuadCurveMenuItemEventDelegate.h</string>
 			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/bg-menuitem-highlighted.png</string>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenuItemEventDelegate.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>0BF3BDC2DAF8491888165781</key>
+		<key>353C41FF29D3424B98C6E19C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CDE902EFC14199B560D2CD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>374FE335978A4922AA8B75B4</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -225,18 +661,269 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>AFJSONRequestOperation.m</string>
+			<string>JGAFImageCache.m</string>
 			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.m</string>
+			<string>JGAFImageCache/JGAFImageCache.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>0C84204A164D49A3AAC0989C</key>
+		<key>3785682B76BF4437B485EA74</key>
+		<dict>
+			<key>fileRef</key>
+			<string>051F1E16141D402CB5930C7E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>3816F92E027941A58553A256</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSString+JGAFSHA1.m</string>
+			<key>path</key>
+			<string>JGAFImageCache/NSString+JGAFSHA1.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>38BB0E7F393049F098026BA2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SVProgressHUD.h</string>
+			<key>path</key>
+			<string>SVProgressHUD/SVProgressHUD/SVProgressHUD.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>39B333F630824B1BBCD1C94A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>761DFA2A40C0452EA3FBA661</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>39D63C2D68F64E728B7DE85C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CCE2411A3F974E6FB0341093</string>
+				<string>AAE8310B5CEF4F2CA9C56D8E</string>
+				<string>1CC0CB0CBBE84F3E879988FC</string>
+				<string>C13F979263BE4F649AE99753</string>
+				<string>3372AEB28D5748F79547A344</string>
+				<string>26D4E4C5946748228126A6FA</string>
+				<string>A88F1AD615D2416DA1071FF4</string>
+				<string>8D6C6E2FECEF4C1A9BFC79EE</string>
+				<string>C3B1DC738C524B18B816B149</string>
+				<string>FE94871E3C1A4EE6BF049B85</string>
+				<string>FA813820E9D84F7E9471EE30</string>
+				<string>468EB5D332DF42C4A2225640</string>
+				<string>4C18870B530F447A87B444D5</string>
+				<string>1CB4AB30F41B4E008A8B7292</string>
+				<string>F0A5BDCDEE69466C9CD9D6BE</string>
+				<string>1238387D7BBD48AE880C6ACC</string>
+				<string>A8B58F7FA75A4022A8BD8A2C</string>
+				<string>CA6A554CE48D4EF692E192D2</string>
+				<string>D9FFC5BC102147429D394CCF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>AFNetworking</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D552440722F4678A41CDBDA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EAF276283FA142358030AEE3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>3F3E73B684A34B5DB0315048</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>48F37EFA3F3341DC97FBF638</string>
+				<string>1144C1F23E7044ED8C7E7F9D</string>
+				<string>48663BE0C0CB45AD867FBF76</string>
+				<string>7B231A456D5F4A9DB3D59C2B</string>
+				<string>6B5F122A27C2455D81A9CFD0</string>
+				<string>03A9D1A89268479392E91E2B</string>
+				<string>9DBC16E70B12465EB5298CFC</string>
+				<string>335E8B1E62974A5EB1837D66</string>
+				<string>3240D5EC10424E83921D7558</string>
+				<string>040A54D61C6A4ED1B386600E</string>
+				<string>B42D7CCB38E5435497EFCDCA</string>
+				<string>BDBBC78D73904AE0922D3A1C</string>
+				<string>53DFDA30D5304A5FA135B888</string>
+				<string>8F18D40B7B024E8EA5FD5E09</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>QuadCurveMenu</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4088B9BDC6DB4BC68877EB88</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1CC0CB0CBBE84F3E879988FC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>4139F47F73FC4D51B32614A8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>QuadCurveItemCloseAnimation.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemCloseAnimation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>419DE1C0B16E4B32B0A90477</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>QuadCurveRadialDirector.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveRadialDirector.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>43B9EE34F4754593940FAC1C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTUtils+NSObject.h</string>
+			<key>path</key>
+			<string>FTUtils/Headers/FTUtils/FTUtils+NSObject.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>448AB64F4B9D4593AB1D3926</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B203D450A1874FE9A9565646</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>448B781802A14C259CBCF81B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>22E5104AF5694436B89B0A08</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>468EB5D332DF42C4A2225640</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFPropertyListRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4845A85BE28A4E248F86B90B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6218C6A676724C178177ECC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>48663BE0C0CB45AD867FBF76</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bg-addbutton.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/bg-addbutton.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>48F37EFA3F3341DC97FBF638</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bg-addbutton-highlighted.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/bg-addbutton-highlighted.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4C18870B530F447A87B444D5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFPropertyListRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4CAF53F305C44D2FBA508C5D</key>
 		<dict>
 			<key>buildConfigurations</key>
 			<array>
-				<string>37FBB8F0477F4677918C9289</string>
-				<string>10A5CA450AF94B84A176F361</string>
+				<string>9EE3CF445B1A4E3D9A8B0F1D</string>
+				<string>AE7C231FFD41482BB61ACCFF</string>
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
@@ -245,89 +932,190 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>0CE856EE59CB43488CD69B16</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods-resources.sh</string>
-			<key>path</key>
-			<string>Pods-resources.sh</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0D0CA190257C468CA6AAB574</key>
+		<key>50B3A16EA70F471A8525DBBE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D434E87D977B4F15AD63D75B</string>
+			<string>B99DB4CC40D04E078344584A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>0E267408B3A04E299C092508</key>
+		<key>50E951161D4A49DCA1AB5000</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>04438A3EB39548A1A43BB368</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>523FED5DFE96479EAA508CD4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MobileCoreServices.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>52E4CB4A08734274B9CB178B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>bg-menuitem.png</string>
+			<string>whiteArrow.png</string>
 			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/bg-menuitem.png</string>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/whiteArrow.png</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>0E96D919FF614FEF977F407E</key>
+		<key>53DFDA30D5304A5FA135B888</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>star@2x.png</string>
+			<string>icon-star.png</string>
 			<key>path</key>
-			<string>DLStarRating/DLStarRating/images/star@2x.png</string>
+			<string>QuadCurveMenu/AwesomeMenu/Images/icon-star.png</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>0EB8319E937E44AA902F3FF6</key>
+		<key>5489946F7C1848289114FD34</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>DLStarRatingControl.h</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/DLStarRatingControl.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5807A168D8094C40B646FD03</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTAnimation.h</string>
+			<key>path</key>
+			<string>FTUtils/Headers/FTUtils/FTAnimation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5ADC78F608194636B99BCEE5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EGORefreshTableHeaderView.h</string>
+			<key>path</key>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Classes/View/EGORefreshTableHeaderView.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5AE32D1A41CF4AC68EE7DD51</key>
 		<dict>
 			<key>fileRef</key>
-			<string>86E4FFB302EF4FAA9F087AA4</string>
+			<string>8D6C6E2FECEF4C1A9BFC79EE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>5DDB6752F3FC4FAB9B145B8A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C13F979263BE4F649AE99753</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>6098FDCC23C448FBBDE4A3F8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Security.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Security.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>60F73A26440047E7B37DAC8F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA813820E9D84F7E9471EE30</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>0EF480BD80E54435AD4D2A26</key>
+		<key>60F9A1B2E369473791E5B53F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2ECB5691501849EB9282360A</string>
+			<string>0C08AAB716184044B0A5F01B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>10230194DF5045F1891CBB2B</key>
+		<key>6218C6A676724C178177ECC2</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>bg-addbutton@2x.png</string>
+			<string>Pods-dummy.m</string>
 			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/bg-addbutton@2x.png</string>
+			<string>Pods-dummy.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>10A5CA450AF94B84A176F361</key>
+		<key>6269F41B0AB84009AAACCCC1</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>918D055D70264D50BC046A91</string>
+			<string>E01A82AB69B547B2AD5E4E85</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -381,33 +1169,85 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>1323AACD4B484439A24DECD1</key>
+		<key>6336E356773943BB8A8A5347</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveTiltAnimation.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveTiltAnimation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>654A703DC4BD471F8F5DF615</key>
 		<dict>
 			<key>fileRef</key>
-			<string>86F8BFDCBBA3459BB69D2E2F</string>
+			<string>694C2133D6F74223BF3DF12B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
-			<dict/>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
 		</dict>
-		<key>13466EA562F0430D88AC36BE</key>
+		<key>669E32A3A35C4247A492A8AA</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>56BC9570E2804F33917D2B73</string>
-				<string>BAEDBF1CE0C44CECBA0380E3</string>
-				<string>EFB0807D97454CEFBDE05905</string>
-				<string>169B1B1E42B7417B9049FC14</string>
-				<string>3D7F469EF58E48058CA7830A</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Frameworks</string>
+			<string>star_highlighted-darker@2x.png</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/images/star_highlighted-darker@2x.png</string>
 			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>13B4CE7A64DA41DCA2E318C6</key>
+		<key>67092AC6AC6940FB98A96A05</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>grayArrow.png</string>
+			<key>path</key>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/grayArrow.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>67C7C4969BE348159E550E4B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>blueArrow.png</string>
+			<key>path</key>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blueArrow.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6818B176802A465F84D6FCBE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4139F47F73FC4D51B32614A8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>694C2133D6F74223BF3DF12B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -416,110 +1256,22 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>EGORefreshTableHeaderView.m</string>
+			<string>QuadCurveShrinkAnimation.m</string>
 			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Classes/View/EGORefreshTableHeaderView.m</string>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveShrinkAnimation.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>148849C76DE746009ADFBD66</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveDefaultMenuItemFactory.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveDefaultMenuItemFactory.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>14C8D8D9A9E346589F0D1326</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>whiteArrow.png</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/whiteArrow.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>169B1B1E42B7417B9049FC14</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Security.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Security.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>18FC4A3364C740A0B0065ADC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ZGCountDownTimer.h</string>
-			<key>path</key>
-			<string>ZGCountDownTimer/Class/ZGCountDownTimer.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>1AC1208592C24A40A19A3F63</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFNetworkActivityIndicatorManager.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>1B5255EA3DC4495FBCD408AB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FTUtils.h</string>
-			<key>path</key>
-			<string>FTUtils/Headers/FTUtils/FTUtils.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>1BCCD98E1BCC4EF4BC874C25</key>
+		<key>6A57844B67A14CBC9CA983FC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B349B97820F247F78F60A88F</string>
+			<string>9450808BD5D245D6B9EFE229</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>1BD09BCCA0A34CDFB0526A36</key>
+		<key>6AA54F542A1B4F3F96E1105B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -528,186 +1280,26 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>UIView+Subviews.h</string>
+			<string>FTAnimationManager.h</string>
 			<key>path</key>
-			<string>DLStarRating/DLStarRating/UIView+Subviews.h</string>
+			<string>FTUtils/Headers/FTUtils/FTAnimationManager.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>1CB8D6EB44CB4B369B6EF282</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C194277C16EA45EB8CCF9370</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>2200261E5EEE4F409551F4F4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EC74D10A2D2C4331BA452037</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>2276FE3C371E43EFB56F815F</key>
+		<key>6B5F122A27C2455D81A9CFD0</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>AFNetworkActivityIndicatorManager.m</string>
+			<string>bg-menuitem-highlighted.png</string>
 			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m</string>
+			<string>QuadCurveMenu/AwesomeMenu/Images/bg-menuitem-highlighted.png</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>237B054E2ABE4F948001D27B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>56BC9570E2804F33917D2B73</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>278C3142BB0C4FB8913FE8D4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DLStarRatingControl.h</string>
-			<key>path</key>
-			<string>DLStarRating/DLStarRating/DLStarRatingControl.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>28088855E41B4474AFDBBB46</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveMenuItem.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenuItem.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>281DD324C91E4528B636923B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5C6241D610E944F7A7161BBB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>2A12D5ACED5E484DAE3B6C9F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EA1A00B244284FB0862BC714</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>2AC471F3A13041B6AD2F2BE6</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>32BAA1D6B6654A898B7E0073</string>
-				<string>616884A831C5497CB6212DD7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2B5A8356F6554434949D4D3E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>18FC4A3364C740A0B0065ADC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>2C3407E17D75424CB390C354</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FTAnimation+UIView.h</string>
-			<key>path</key>
-			<string>FTUtils/Headers/FTUtils/FTAnimation+UIView.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2D819A0BC55E4539B13BAF51</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveItemCloseAnimation.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemCloseAnimation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2D94C3F894744BD6992B0D77</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveRadialDirector.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveRadialDirector.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2ECB5691501849EB9282360A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFPropertyListRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2F17EDCC4F064830BCB04535</key>
+		<key>6B66FFDA121C42008738CB4A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -722,7 +1314,57 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>2FE220788F3946818D7EE271</key>
+		<key>6CAB9421380E4B8CA30FD31B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6DC7B96A908046619D86EF26</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>star@2x.png</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/images/star@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6DECE8EEA27A4CEB82A72431</key>
+		<dict>
+			<key>fileRef</key>
+			<string>99C24169152C41F1B2981C5F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>6DFAE8588BAB4038AFF9836C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>DLStarView.m</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/DLStarView.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6F24745B25644980BCFD2CDB</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -731,25 +1373,22 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QuadCurveLinearDirector.h</string>
+			<string>QuadCurveMenuDelegate.h</string>
 			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveLinearDirector.h</string>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenuDelegate.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>320BA69C760741E3B2607140</key>
+		<key>6F2C60A3A2B74A3692239BC3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>978BF48E5FEA4B79BB56B86D</string>
+			<string>1238387D7BBD48AE880C6ACC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
+			<dict/>
 		</dict>
-		<key>3217B8CD2E9B4F79BC76DCE2</key>
+		<key>7063DF383E9048319236018B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -764,16 +1403,594 @@
 			<key>xcLanguageSpecificationIdentifier</key>
 			<string>xcode.lang.ruby</string>
 		</dict>
-		<key>32927AC170E842E2A5B7853D</key>
+		<key>70FD03926F98418093135951</key>
 		<dict>
 			<key>fileRef</key>
-			<string>148849C76DE746009ADFBD66</string>
+			<string>EF7CA3222AB147E5BC207285</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>710375D4CBBF4719B97485E8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>890B0DE4215A4F20A31FE71F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>32BAA1D6B6654A898B7E0073</key>
+		<key>7391E113FCFE43E6AF1D748D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>ZGCountDownTimer.h</string>
+			<key>path</key>
+			<string>ZGCountDownTimer/Class/ZGCountDownTimer.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>760CE218AE7646B888D83491</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A5C21E4BFC554D488ACF85DA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>761DFA2A40C0452EA3FBA661</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSString+JGAFSHA1.h</string>
+			<key>path</key>
+			<string>JGAFImageCache/NSString+JGAFSHA1.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>78B24D70D8C94704855F2C16</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>blueArrow@2x.png</string>
+			<key>path</key>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blueArrow@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>7AA837FC24864E0D8ED2F8F6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>DLStarRatingControl.m</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/DLStarRatingControl.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>7B231A456D5F4A9DB3D59C2B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bg-addbutton@2x.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/bg-addbutton@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>7EB9E6B1A48145CA8A8B9B27</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6F24745B25644980BCFD2CDB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>80D7E7356F4146FABE92B89C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>DLStarView.h</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/DLStarView.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>81D7FBD6ED334CE1AA4E8EBB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7391E113FCFE43E6AF1D748D</string>
+				<string>6B66FFDA121C42008738CB4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ZGCountDownTimer</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>83762EB1AEE549D283E81172</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>grayArrow@2x.png</string>
+			<key>path</key>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/grayArrow@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>83F7A3160948419081EBA017</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C99D2F988D6D443E93518E29</string>
+				<string>5DDB6752F3FC4FAB9B145B8A</string>
+				<string>2301E2982C7847A6BF2227AB</string>
+				<string>5AE32D1A41CF4AC68EE7DD51</string>
+				<string>F6CD853AD6C64D9AB7512029</string>
+				<string>090176FFBC41468CB2B581A0</string>
+				<string>FEC9345A4E614392B4486123</string>
+				<string>FBCC92BF385849B78FD52422</string>
+				<string>CB0ABEA9FC0E48DA8C677182</string>
+				<string>AF9A8242229A4EB0A4197ADA</string>
+				<string>84EDF84B1FD749A789A52E28</string>
+				<string>353C41FF29D3424B98C6E19C</string>
+				<string>ADFF26661479412DBE4FB762</string>
+				<string>DC8A88C3B2784611BD345C40</string>
+				<string>A25E2B02130E40B383BD0514</string>
+				<string>ECDA5181C12D48EE933B22C3</string>
+				<string>8C3C14AB41B1440296631D92</string>
+				<string>C1194A4A651B4EA4AD357915</string>
+				<string>0AAC549194D24409B5861586</string>
+				<string>C5ED5E915BA74CC08C650E68</string>
+				<string>EC9812F075BB45A5B0935412</string>
+				<string>70FD03926F98418093135951</string>
+				<string>F365C24EA14C4F389204F3F8</string>
+				<string>6818B176802A465F84D6FCBE</string>
+				<string>8D6C272B60264985BF5BB7C8</string>
+				<string>049441165064473B98637E58</string>
+				<string>8E51F0E377D844FD832F60F4</string>
+				<string>DAA0B2FA18294258930DF61B</string>
+				<string>F640B860109548FDA17F4227</string>
+				<string>654A703DC4BD471F8F5DF615</string>
+				<string>FD8501E4443E4606B584BAE0</string>
+				<string>9B31944236AE462E8C592D07</string>
+				<string>448B781802A14C259CBCF81B</string>
+				<string>F5B776F684FA408C9532763C</string>
+				<string>03585B7DAD0B45919DF8F667</string>
+				<string>4845A85BE28A4E248F86B90B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>84A986B34DF0400998D5715E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0450</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>4CAF53F305C44D2FBA508C5D</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>9855A7B4130B427EB00144B2</string>
+			<key>productRefGroup</key>
+			<string>CC04DBCCDC5B477CBFCDECEC</string>
+			<key>projectReferences</key>
+			<array/>
+			<key>targets</key>
+			<array>
+				<string>FD23B15D8CBD420BA52E5C34</string>
+			</array>
+		</dict>
+		<key>84EDF84B1FD749A789A52E28</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6DFAE8588BAB4038AFF9836C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>855135B05DC143189FB46E3B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5ADC78F608194636B99BCEE5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>87039AC97C7D43F0B348F7DA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>A8A5B9001E364111889B45E5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>890B0DE4215A4F20A31FE71F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JSONKit.h</string>
+			<key>path</key>
+			<string>JSONKit/JSONKit.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8BFBD8F8EF474CAD8B7712A8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveMenuItemFactory.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenuItemFactory.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8C3C14AB41B1440296631D92</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1FFE2DAE94BD408E89EAFDC8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>8C9682353BCA49059B982CA7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>whiteArrow@2x.png</string>
+			<key>path</key>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/whiteArrow@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8D57A6CE8C3C4773AEB4B21F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JGAFImageCache.h</string>
+			<key>path</key>
+			<string>JGAFImageCache/JGAFImageCache.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8D6C272B60264985BF5BB7C8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>28B1557CE22C41A5B2A95A69</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>8D6C6E2FECEF4C1A9BFC79EE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFJSONRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8DB4CC0F79A94DFCAA7DB232</key>
+		<dict>
+			<key>fileRef</key>
+			<string>34CED958259C41D1AD4EF19E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>8E51F0E377D844FD832F60F4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>92AE358A3C6E48BEB1DAE1BF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>8E5ADA968C044A5D956E2A63</key>
+		<dict>
+			<key>fileRef</key>
+			<string>468EB5D332DF42C4A2225640</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>8F18D40B7B024E8EA5FD5E09</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>icon-star@2x.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/icon-star@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>916D8970C6D84429A41C15FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTUtils.h</string>
+			<key>path</key>
+			<string>FTUtils/Headers/FTUtils/FTUtils.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>91BBEC1E5050415082014A79</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>SVProgressHUD.bundle</string>
+			<key>path</key>
+			<string>SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>91CD479EDCEC470381BC5D41</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>890B0DE4215A4F20A31FE71F</string>
+				<string>31FBE0DD5B814DD8BD805231</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JSONKit</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>92AE358A3C6E48BEB1DAE1BF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>QuadCurveMenu.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenu.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>93342399BF73408EA0CA49E0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>star_highlighted.png</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/images/star_highlighted.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9450808BD5D245D6B9EFE229</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveDataSourceDelegate.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveDataSourceDelegate.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9855A7B4130B427EB00144B2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>00CC727D53B445EF9D41EE4C</string>
+				<string>27195A5A9F9E40438B736055</string>
+				<string>CC04DBCCDC5B477CBFCDECEC</string>
+				<string>B1871BF1E4E2417A8AA9FC1C</string>
+				<string>50E951161D4A49DCA1AB5000</string>
+				<string>7063DF383E9048319236018B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9858EB26E54F41CF9DC09944</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7391E113FCFE43E6AF1D748D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>99C24169152C41F1B2981C5F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveLinearDirector.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveLinearDirector.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9A9ABF72D9A94E019C5E3217</key>
+		<dict>
+			<key>fileRef</key>
+			<string>916D8970C6D84429A41C15FC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>9B31944236AE462E8C592D07</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EB9C8CBED64347E28FF2D292</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>9C484C2DCB904BEB995AFD62</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>star_highlighted-darker.png</string>
+			<key>path</key>
+			<string>DLStarRating/DLStarRating/images/star_highlighted-darker.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9DBC16E70B12465EB5298CFC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>bg-menuitem.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/bg-menuitem.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9EE31DD06C24461A9BA64B77</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>QuadCurveBlowupAnimation.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveBlowupAnimation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9EE3CF445B1A4E3D9A8B0F1D</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -785,7 +2002,79 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>32CEC4836B8644B98578296F</key>
+		<key>9F2BC6016ABB4EA0B69F27F4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>26C0959FBD8C4DB8A4C3C636</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>A07137F17D3847AF88118A25</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>FTAnimation+UIView.m</string>
+			<key>path</key>
+			<string>FTUtils/Classes/FTAnimation+UIView.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A0BB7C484D794E08B925F70A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5807A168D8094C40B646FD03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>A23D864C3AFF411BAB9C597F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A25E2B02130E40B383BD0514</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A6EF03E2A73147E0AD8120D7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>A31B33E4782D45B99DAF16F2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EGORefreshTableHeaderView.m</string>
+			<key>path</key>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Classes/View/EGORefreshTableHeaderView.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A5C21E4BFC554D488ACF85DA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -794,13 +2083,40 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QuadCurveMenuItemEventDelegate.h</string>
+			<string>FTAnimation+UIView.h</string>
 			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenuItemEventDelegate.h</string>
+			<string>FTUtils/Headers/FTUtils/FTAnimation+UIView.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>332584ECA702474FBF415A76</key>
+		<key>A6982F1F236A4D2EBAA1364B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EAF276283FA142358030AEE3</string>
+				<string>22E5104AF5694436B89B0A08</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>RegexKitLite</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A6C71DEBA62C400CB27D1AFF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A6EF03E2A73147E0AD8120D7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -809,40 +2125,46 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>FTUtils+UIGestureRecognizer.m</string>
+			<string>FTAnimationManager.m</string>
 			<key>path</key>
-			<string>FTUtils/Classes/FTUtils+UIGestureRecognizer.m</string>
+			<string>FTUtils/Classes/FTAnimationManager.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>334EC3EC7FD04518B1EC5195</key>
+		<key>A7A0A171330C40F7BC2B32FC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>952C5C24445143639058606F</string>
+			<string>23907DD343F14EB1871F5B6B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>33F564CB46DD42088D10E2D2</key>
+		<key>A88F1AD615D2416DA1071FF4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFJSONRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A8A5B9001E364111889B45E5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FBB3E11A210044E69062402D</string>
+			<string>E05AB2CD40364A42A5BD69F5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>34454C8C97564CF09012367D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BA9F15B027B74742AB53E7B5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>34594132E34A413D80C69019</key>
+		<key>A8B58F7FA75A4022A8BD8A2C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -851,13 +2173,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>JSONKit.m</string>
+			<string>AFXMLRequestOperation.m</string>
 			<key>path</key>
-			<string>JSONKit/JSONKit.m</string>
+			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>35FC6BD3998B4BA2BA3F5FE7</key>
+		<key>A950D088F9CD4DF2A61EAC72</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -872,10 +2194,10 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>37FBB8F0477F4677918C9289</key>
+		<key>A98C3DFC37E24A99A218EC24</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>918D055D70264D50BC046A91</string>
+			<string>E01A82AB69B547B2AD5E4E85</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -930,124 +2252,7 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>390A57A726764591B1C46E53</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>FTAnimation+UIView.m</string>
-			<key>path</key>
-			<string>FTUtils/Classes/FTAnimation+UIView.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>39A1920F20BD4B5AB61FD083</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods.a</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3B8729068C3D4A7DB0AD9AA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2276FE3C371E43EFB56F815F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>3D7F469EF58E48058CA7830A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SystemConfiguration.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>3D989096417D45129B2EFDC3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A6DD65BEB1E844329CFA2C11</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>3F7ABEDE967E40829E6795AA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveDefaultDataSource.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveDefaultDataSource.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>3FFD0D037A9A4B959DA9E340</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveItemExpandAnimation.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemExpandAnimation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>4035607C97DF4E3E96D7331F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>278C3142BB0C4FB8913FE8D4</string>
-				<string>FFD62719631A4A83B09A08BC</string>
-				<string>D9A3AA387DD44DBA816192EB</string>
-				<string>69B3ED218DCC4A68A2E83276</string>
-				<string>1BD09BCCA0A34CDFB0526A36</string>
-				<string>86F8BFDCBBA3459BB69D2E2F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>DLStarRating</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4410E3F1D7DA469C8A4A183E</key>
+		<key>AAE8310B5CEF4F2CA9C56D8E</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1062,33 +2267,20 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>44C18475DE2E4B5EB3CA60E9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>blueArrow.png</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blueArrow.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>48BC75E58B9C45C7A6CDA68C</key>
+		<key>AAF35057FFA34B05AE2A152C</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>390A57A726764591B1C46E53</string>
-				<string>EA1A00B244284FB0862BC714</string>
-				<string>A5EB623946E145CE8FD98B26</string>
-				<string>332584ECA702474FBF415A76</string>
-				<string>2C3407E17D75424CB390C354</string>
-				<string>B60B18E736CC425594C9CE2B</string>
-				<string>CE28E07AC01641EE82F77B91</string>
-				<string>FBB3E11A210044E69062402D</string>
-				<string>6B801895EE4D47009AFA1BB3</string>
-				<string>1B5255EA3DC4495FBCD408AB</string>
+				<string>A07137F17D3847AF88118A25</string>
+				<string>A6EF03E2A73147E0AD8120D7</string>
+				<string>CC46F48ED1A3420F9F6BDC88</string>
+				<string>1FFE2DAE94BD408E89EAFDC8</string>
+				<string>A5C21E4BFC554D488ACF85DA</string>
+				<string>5807A168D8094C40B646FD03</string>
+				<string>6AA54F542A1B4F3F96E1105B</string>
+				<string>43B9EE34F4754593940FAC1C</string>
+				<string>FF589EA9C8B64062A990D4A0</string>
+				<string>916D8970C6D84429A41C15FC</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1097,248 +2289,38 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>4E7E557D45244D6FBB821124</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JGAFImageCache.h</string>
-			<key>path</key>
-			<string>JGAFImageCache/JGAFImageCache.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>4F57F0CC49F6471FB6011D27</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B349B97820F247F78F60A88F</string>
-				<string>8F3A62CE5D1E4512A0586854</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>SVProgressHUD</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4F5FE695AD7C4A18A563C717</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>blackArrow@2x.png</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blackArrow@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5092F2D63A1646DABE5B67CF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>13466EA562F0430D88AC36BE</string>
-				<string>06F30CD3236D42B2AA726E61</string>
-				<string>CB17B66848B64AFC839D7D13</string>
-				<string>AE91E722F8874061A5B4A47C</string>
-				<string>6C6F2BA865C4467A84A52406</string>
-				<string>3217B8CD2E9B4F79BC76DCE2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>50DBA031962349B19CF90550</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>SVProgressHUD.bundle</string>
-			<key>path</key>
-			<string>SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5242070862B34B9E88B14CA4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>bg-addbutton-highlighted@2x.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/bg-addbutton-highlighted@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>52ADB80AC84C41A184DD1773</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>918D055D70264D50BC046A91</string>
-				<string>6D74E23504DE4F7E8FE0A767</string>
-				<string>D275D81C966F4FEAA31452A0</string>
-				<string>0CE856EE59CB43488CD69B16</string>
-				<string>D481EDF1ACA54D77AE72932A</string>
-				<string>C1688495ADE94F2EA1F9844A</string>
-				<string>C194277C16EA45EB8CCF9370</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>531A7FEE64F8481583190477</key>
+		<key>ACA4F40A8C924BFCA78D05B4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>332584ECA702474FBF415A76</string>
+			<string>CCE2411A3F974E6FB0341093</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>54F08388854A4CFDB87DC942</key>
+		<key>AD230EFF47A24B9DBD25BA42</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>QuadCurveItemCloseAnimation.h</string>
+			<string>star_highlighted@2x.png</string>
 			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemCloseAnimation.h</string>
+			<string>DLStarRating/DLStarRating/images/star_highlighted@2x.png</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>54F1F680CEB744D5A7B59A7D</key>
+		<key>ADFF26661479412DBE4FB762</key>
 		<dict>
 			<key>fileRef</key>
-			<string>9FD1EEC87CA34C90B9C76293</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>56BC9570E2804F33917D2B73</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>5B0C9A4CA7BA4C2E898B46EC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>blueArrow@2x.png</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blueArrow@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5B86BCF737CB419B84E6406F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>031BA8B06A5240A4858593F9</string>
+			<string>A31B33E4782D45B99DAF16F2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>5C6132764670460D8FB6E342</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>icon-plus@2x.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/icon-plus@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5C6241D610E944F7A7161BBB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AGMedallionView.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/AGMedallionView.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5D04BED97A21447F8AD339A0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveMenu.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenu.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5FB1B06806434082A034636D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F60B24D203BA4DC6BDD208B3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>604AC9A4E197437187C99B6B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>50DBA031962349B19CF90550</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>SVProgressHUD</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>616884A831C5497CB6212DD7</key>
+		<key>AE7C231FFD41482BB61ACCFF</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -1350,7 +2332,45 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>62D0902CFE4D4B73960C76B4</key>
+		<key>AF9A8242229A4EB0A4197ADA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7AA837FC24864E0D8ED2F8F6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>B1372D60EB9747F7B0C515D8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-acknowledgements.plist</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>B1871BF1E4E2417A8AA9FC1C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>29ED33B35E9A4C03AE84FE91</string>
+				<string>C514935367494EC692D39627</string>
+				<string>3F3E73B684A34B5DB0315048</string>
+				<string>ECD88F0A0709482EB883F6FD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B203D450A1874FE9A9565646</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1365,283 +2385,34 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>653EC98BF88C4D949A158795</key>
+		<key>B3CB0379D76E4FC79343955A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D1FC67FD49EA405FABA6FF1F</string>
+			<string>E5E4999339284484BCE631ED</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>65E21F2382564BE289D46CFA</key>
+		<key>B42D7CCB38E5435497EFCDCA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>AFNetworking.h</string>
+			<string>icon-plus.png</string>
 			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFNetworking.h</string>
+			<string>QuadCurveMenu/AwesomeMenu/Images/icon-plus.png</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>65EBE475D24A48ACA719C7E3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JGAFImageCache.m</string>
-			<key>path</key>
-			<string>JGAFImageCache/JGAFImageCache.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>66E522061CD843FAB9F819A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>040CD45EAFA34096BC8324A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>674FEF6E0AFA4A4E990F8FFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2FE220788F3946818D7EE271</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>68DF20AEF06F48E7821799E3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8AD188D33A2E4C0DA4273F8A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>69B3ED218DCC4A68A2E83276</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DLStarView.m</string>
-			<key>path</key>
-			<string>DLStarRating/DLStarRating/DLStarView.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>6B801895EE4D47009AFA1BB3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FTUtils+UIGestureRecognizer.h</string>
-			<key>path</key>
-			<string>FTUtils/Headers/FTUtils/FTUtils+UIGestureRecognizer.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>6C6497596EFE4CC990675F80</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9340B9B572C24197802320C2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>6C6F2BA865C4467A84A52406</key>
+		<key>B4444A112DBA46339146723D</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>52ADB80AC84C41A184DD1773</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6CDD462DE8834AC89DD869E0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>whiteArrow@2x.png</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/whiteArrow@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>6D06829D642D42378C77AA4D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFPropertyListRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>6D74E23504DE4F7E8FE0A767</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Pods-environment.h</string>
-			<key>path</key>
-			<string>Pods-environment.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>70CD0A2F008C45919645A47D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4410E3F1D7DA469C8A4A183E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>714F43E47FDE4F88AD58DDF1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>grayArrow@2x.png</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/grayArrow@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>7400B137084A4B5685777CE7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFURLConnectionOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>7667F8F9B2414B96BE3F3144</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4E7E557D45244D6FBB821124</string>
-				<string>65EBE475D24A48ACA719C7E3</string>
-				<string>F60B24D203BA4DC6BDD208B3</string>
-				<string>9FD1EEC87CA34C90B9C76293</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>JGAFImageCache</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>78693BE2363F4F5886F2EC80</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7932DA690B4E438381B1EC70</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>78DD681D8F514CAA9E655CFE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>65EBE475D24A48ACA719C7E3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>7932DA690B4E438381B1EC70</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFHTTPClient.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPClient.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>7D5C3437D124447080C9DA52</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveDataSourceDelegate.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveDataSourceDelegate.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>7F4D2357BF1B4C29A275CC65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>EC74D10A2D2C4331BA452037</string>
-				<string>13B4CE7A64DA41DCA2E318C6</string>
+				<string>5ADC78F608194636B99BCEE5</string>
+				<string>A31B33E4782D45B99DAF16F2</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1650,34 +2421,16 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>800B100B12274F75963BF197</key>
+		<key>B6C0D6C254EE4365B8B0AF32</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7D5C3437D124447080C9DA52</string>
+			<string>8BFBD8F8EF474CAD8B7712A8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>8224F56D201D478CA6CA21A1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9CCA99DC70CD457CABB0F839</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>825922FFD7C9499886D80C18</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE28E07AC01641EE82F77B91</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>85D84C23BD174B2082561E23</key>
+		<key>B7C1CD5BDE5F4615B8AA8FC2</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1692,166 +2445,39 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>8618AF0F2A6F4F30B862FEE2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>78693BE2363F4F5886F2EC80</string>
-				<string>0258AA403D3F411F88739F7D</string>
-				<string>D60EB88B11E64354B1EA4A41</string>
-				<string>09F335D4F2D84C9FAF44702C</string>
-				<string>DE0F5531BA1B4A0590436C86</string>
-				<string>0485AB899700490A95A00327</string>
-				<string>0EF480BD80E54435AD4D2A26</string>
-				<string>0D0CA190257C468CA6AAB574</string>
-				<string>334EC3EC7FD04518B1EC5195</string>
-				<string>5B86BCF737CB419B84E6406F</string>
-				<string>D58700180E4D4898B237BEA1</string>
-				<string>EA48E0BF7C3F4BF0B2429FDA</string>
-				<string>F969A7D9D8884C97817E165A</string>
-				<string>2200261E5EEE4F409551F4F4</string>
-				<string>FF648F9CB833475198271D59</string>
-				<string>9D185E78A9AD4AF69D07154D</string>
-				<string>825922FFD7C9499886D80C18</string>
-				<string>33F564CB46DD42088D10E2D2</string>
-				<string>F03FF47F822F4726B60A1B6D</string>
-				<string>9DCCD7300AA14BBCA33203E8</string>
-				<string>FA697512CB104C4EADC88521</string>
-				<string>5FB1B06806434082A034636D</string>
-				<string>66E522061CD843FAB9F819A5</string>
-				<string>E0B64145D0864F7FA2F0A097</string>
-				<string>A0E4FFFA61C0463FB1A615EF</string>
-				<string>800B100B12274F75963BF197</string>
-				<string>D1C06D5635CB44A98A4CB2EC</string>
-				<string>32927AC170E842E2A5B7853D</string>
-				<string>EA9604FC810F46D3B3C29073</string>
-				<string>68DF20AEF06F48E7821799E3</string>
-				<string>674FEF6E0AFA4A4E990F8FFA</string>
-				<string>0EB8319E937E44AA902F3FF6</string>
-				<string>8224F56D201D478CA6CA21A1</string>
-				<string>CB7D9B0E8B7942538432A7DA</string>
-				<string>C27F644074DC49628E97229F</string>
-				<string>34454C8C97564CF09012367D</string>
-				<string>86C109D8A3BE48BC9A4E9B4B</string>
-				<string>8E649F5E20E44318A368018C</string>
-				<string>975106392FCB47209FF9C916</string>
-				<string>653EC98BF88C4D949A158795</string>
-				<string>281DD324C91E4528B636923B</string>
-				<string>1BCCD98E1BCC4EF4BC874C25</string>
-				<string>2B5A8356F6554434949D4D3E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>86999190FD3246DAACC89A1E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>star_highlighted@2x.png</string>
-			<key>path</key>
-			<string>DLStarRating/DLStarRating/images/star_highlighted@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>86C109D8A3BE48BC9A4E9B4B</key>
+		<key>B7F21E4A9CB243A0B8D0FA28</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8C050CC7F16643D3B4072A95</string>
+			<string>FF589EA9C8B64062A990D4A0</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>86E4FFB302EF4FAA9F087AA4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveMenu.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenu.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>86F8BFDCBBA3459BB69D2E2F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIView+Subviews.m</string>
-			<key>path</key>
-			<string>DLStarRating/DLStarRating/UIView+Subviews.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>875800B821484C7B8482B2F7</key>
+		<key>B7F89FE3F1AB4B799BD41971</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8F3A62CE5D1E4512A0586854</string>
+			<string>DD6CB65D1E674ABCA7A2069B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
+			<dict/>
 		</dict>
-		<key>8A4039F84D8E462DB5AAF14E</key>
+		<key>B8C30B5D0F2749D7836674FE</key>
 		<dict>
-			<key>fileRef</key>
-			<string>2D819A0BC55E4539B13BAF51</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>8A74AD38F3F345C4B377032A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
+			<key>children</key>
 			<array>
-				<string>237B054E2ABE4F948001D27B</string>
+				<string>38BB0E7F393049F098026BA2</string>
+				<string>1EA321D038E54B3AB2861660</string>
 			</array>
 			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8AD188D33A2E4C0DA4273F8A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>QuadCurveItemExpandAnimation.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemExpandAnimation.h</string>
+			<string>SVProgressHUD</string>
 			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>8C050CC7F16643D3B4072A95</key>
+		<key>B99DB4CC40D04E078344584A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1866,140 +2492,32 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>8E2FC7CF91F54BE1AEC076D4</key>
+		<key>BABCAA62BF354E3DAABFE3C5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>34594132E34A413D80C69019</string>
+			<string>8D57A6CE8C3C4773AEB4B21F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>8E649F5E20E44318A368018C</key>
+		<key>BDBBC78D73904AE0922D3A1C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>icon-plus@2x.png</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/Images/icon-plus@2x.png</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C1194A4A651B4EA4AD357915</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2D94C3F894744BD6992B0D77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>8F3A62CE5D1E4512A0586854</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SVProgressHUD.m</string>
-			<key>path</key>
-			<string>SVProgressHUD/SVProgressHUD/SVProgressHUD.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>918D055D70264D50BC046A91</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>92564BEAB065405B97E14954</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>grayArrow.png</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/grayArrow.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>9340B9B572C24197802320C2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveLinearDirector.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveLinearDirector.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>939380710BCA4DE59483F8ED</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveRadialDirector.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveRadialDirector.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>952C5C24445143639058606F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFXMLRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>975106392FCB47209FF9C916</key>
-		<dict>
-			<key>fileRef</key>
-			<string>85D84C23BD174B2082561E23</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>978BF48E5FEA4B79BB56B86D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveBlowupAnimation.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveBlowupAnimation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>98341DB874FC45739D70C79F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B83E4FEE61604675BE830E18</string>
+			<string>374FE335978A4922AA8B75B4</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2008,414 +2526,7 @@
 				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>990A54BED58746109DBE152B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>70CD0A2F008C45919645A47D</string>
-				<string>E8FAF3B094BE4D1DB0CCD1E0</string>
-				<string>A3D4AFD615B74381B92AA9BA</string>
-				<string>A7DFF38359DF479AAF670476</string>
-				<string>3B8729068C3D4A7DB0AD9AA6</string>
-				<string>F9A2416CF7744BF8B3AAAA7E</string>
-				<string>997462BF7AE64BCAB907EAC4</string>
-				<string>DF175C4AF963470DA2E5116A</string>
-				<string>D2D9227F042F488DA6252100</string>
-				<string>C2404060EA34430682AB5480</string>
-				<string>DEE358F36B894D6F84A75F5A</string>
-				<string>1323AACD4B484439A24DECD1</string>
-				<string>D7CF4DA6B61140D39EB040AC</string>
-				<string>09ABF25369E1427695459926</string>
-				<string>2A12D5ACED5E484DAE3B6C9F</string>
-				<string>F19A2A24351A4704B71C63FB</string>
-				<string>531A7FEE64F8481583190477</string>
-				<string>78DD681D8F514CAA9E655CFE</string>
-				<string>54F1F680CEB744D5A7B59A7D</string>
-				<string>8E2FC7CF91F54BE1AEC076D4</string>
-				<string>320BA69C760741E3B2607140</string>
-				<string>B890C30A08DF45BCB28E299F</string>
-				<string>0326D8EF3F1C42ECB5866C29</string>
-				<string>8A4039F84D8E462DB5AAF14E</string>
-				<string>9E7BA870F16E4B458574629D</string>
-				<string>6C6497596EFE4CC990675F80</string>
-				<string>E95D1A644A794F8FA5ADF951</string>
-				<string>06AF662BA876432CA7092DA6</string>
-				<string>EC6D3B408C1A403C856B4108</string>
-				<string>B34BB2EEF55149AE8DED0A92</string>
-				<string>3D989096417D45129B2EFDC3</string>
-				<string>98341DB874FC45739D70C79F</string>
-				<string>875800B821484C7B8482B2F7</string>
-				<string>0A670DCF2FA748AFAEB8E095</string>
-				<string>1CB8D6EB44CB4B369B6EF282</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>997462BF7AE64BCAB907EAC4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7400B137084A4B5685777CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>9CCA99DC70CD457CABB0F839</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveMenuDelegate.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenuDelegate.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>9D185E78A9AD4AF69D07154D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B60B18E736CC425594C9CE2B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>9DC91A6D5F004B7DA11DC017</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>blackArrow.png</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blackArrow.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>9DCCD7300AA14BBCA33203E8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1B5255EA3DC4495FBCD408AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>9E29F3D7112242518EB9818C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>icon-star.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/icon-star.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>9E7BA870F16E4B458574629D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3FFD0D037A9A4B959DA9E340</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>9FD1EEC87CA34C90B9C76293</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSString+JGAFSHA1.m</string>
-			<key>path</key>
-			<string>JGAFImageCache/NSString+JGAFSHA1.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A0E4FFFA61C0463FB1A615EF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DACA17498BE541CCB6A64B91</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>A3D4AFD615B74381B92AA9BA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F60217A096254FA184FD82CD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>A5EB623946E145CE8FD98B26</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>FTUtils+NSObject.m</string>
-			<key>path</key>
-			<string>FTUtils/Classes/FTUtils+NSObject.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A6DD65BEB1E844329CFA2C11</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveTiltAnimation.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveTiltAnimation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A778A9E1790A4C319658BE70</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>icon-plus-highlighted@2x.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/icon-plus-highlighted@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A7DFF38359DF479AAF670476</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0BF3BDC2DAF8491888165781</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>AC0DF90D76AA42EFA92F186A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>QuadCurveShrinkAnimation.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveShrinkAnimation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>AE91E722F8874061A5B4A47C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F47772EE8BFD413C84329379</string>
-				<string>C84EC85E4ED54C52A7BB4523</string>
-				<string>DFCB5FA3CDED44A3B8619F04</string>
-				<string>604AC9A4E197437187C99B6B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEE8B0436DD84383BA39A378</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveAnimation.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveAnimation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B0AC9D3F1D3D440BAF86F49B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFXMLRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B349B97820F247F78F60A88F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SVProgressHUD.h</string>
-			<key>path</key>
-			<string>SVProgressHUD/SVProgressHUD/SVProgressHUD.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B34BB2EEF55149AE8DED0A92</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AC0DF90D76AA42EFA92F186A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>B60B18E736CC425594C9CE2B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FTAnimation.h</string>
-			<key>path</key>
-			<string>FTUtils/Headers/FTUtils/FTAnimation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B83E4FEE61604675BE830E18</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AGMedallionView.m</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/AGMedallionView.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B85F3139819A4990B2141F37</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>bg-addbutton-highlighted.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/bg-addbutton-highlighted.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B890C30A08DF45BCB28E299F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3F7ABEDE967E40829E6795AA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>BA9F15B027B74742AB53E7B5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveMenuItemFactory.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenuItemFactory.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>BAEDBF1CE0C44CECBA0380E3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>MobileCoreServices.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>BCDA67F78E0F48599A485281</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>bg-menuitem@2x.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/bg-menuitem@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>BE62DE1C101E4ABBBDF736A7</key>
+		<key>C13F979263BE4F649AE99753</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2430,52 +2541,112 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>BFFFCF3186944853A423D662</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0450</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2AC471F3A13041B6AD2F2BE6</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>5092F2D63A1646DABE5B67CF</string>
-			<key>productRefGroup</key>
-			<string>CB17B66848B64AFC839D7D13</string>
-			<key>projectReferences</key>
-			<array/>
-			<key>targets</key>
-			<array>
-				<string>E7D971E77A6747ED92ACB9D8</string>
-			</array>
-		</dict>
-		<key>C1688495ADE94F2EA1F9844A</key>
+		<key>C3B1DC738C524B18B816B149</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>Pods-acknowledgements.markdown</string>
+			<string>AFNetworkActivityIndicatorManager.h</string>
 			<key>path</key>
-			<string>Pods-acknowledgements.markdown</string>
+			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>C194277C16EA45EB8CCF9370</key>
+		<key>C514935367494EC692D39627</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>12AF45E3727447DCBFD0CA64</string>
+				<string>FDCA829E8EC14B91A120CD77</string>
+				<string>67C7C4969BE348159E550E4B</string>
+				<string>78B24D70D8C94704855F2C16</string>
+				<string>67092AC6AC6940FB98A96A05</string>
+				<string>83762EB1AEE549D283E81172</string>
+				<string>52E4CB4A08734274B9CB178B</string>
+				<string>8C9682353BCA49059B982CA7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>EGOTableViewPullRefresh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C5ED5E915BA74CC08C650E68</key>
+		<dict>
+			<key>fileRef</key>
+			<string>31FBE0DD5B814DD8BD805231</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>C986595C0A7F4DB7AADC0A99</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3372AEB28D5748F79547A344</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>C99D2F988D6D443E93518E29</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AAE8310B5CEF4F2CA9C56D8E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>CA6A554CE48D4EF692E192D2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIImageView+AFNetworking.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/UIImageView+AFNetworking.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>CB0ABEA9FC0E48DA8C677182</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D9FFC5BC102147429D394CCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>CC04DBCCDC5B477CBFCDECEC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A23D864C3AFF411BAB9C597F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CC46F48ED1A3420F9F6BDC88</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2484,13 +2655,116 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>Pods-dummy.m</string>
+			<string>FTUtils+NSObject.m</string>
 			<key>path</key>
-			<string>Pods-dummy.m</string>
+			<string>FTUtils/Classes/FTUtils+NSObject.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>C22B74BCF81D485287284DAA</key>
+		<key>CCD8D0C111AD4BCDA25CAFEB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>QuadCurveTiltAnimation.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveTiltAnimation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>CCE2411A3F974E6FB0341093</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFHTTPClient.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPClient.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D09FF0C8FFFF4D18AD6827FE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveItemExpandAnimation.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemExpandAnimation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D1FD8BEF3CE4465E8A89365C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-resources.sh</string>
+			<key>path</key>
+			<string>Pods-resources.sh</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D6B5F3AB8E0A422E80378613</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5489946F7C1848289114FD34</string>
+				<string>7AA837FC24864E0D8ED2F8F6</string>
+				<string>80D7E7356F4146FABE92B89C</string>
+				<string>6DFAE8588BAB4038AFF9836C</string>
+				<string>0C08AAB716184044B0A5F01B</string>
+				<string>27CDE902EFC14199B560D2CD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>DLStarRating</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D6C1AA8131CF4A1BBCB730F4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6336E356773943BB8A8A5347</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>D8D4AED96098464C9E30AACC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AA54F542A1B4F3F96E1105B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>D9FA74EA5110466DA7788CC3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5489946F7C1848289114FD34</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>D9FFC5BC102147429D394CCF</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2505,25 +2779,82 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>C2404060EA34430682AB5480</key>
+		<key>DAA0B2FA18294258930DF61B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FFD62719631A4A83B09A08BC</string>
+			<string>EB0885CF6A134798A5EBC15A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>DC8A88C3B2784611BD345C40</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A07137F17D3847AF88118A25</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>C27F644074DC49628E97229F</key>
+		<key>DD6CB65D1E674ABCA7A2069B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveAnimation.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveAnimation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>DFE35BF991EC48CC9789B3CF</key>
 		<dict>
 			<key>fileRef</key>
-			<string>32CEC4836B8644B98578296F</string>
+			<string>80D7E7356F4146FABE92B89C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>C42A6B5F90E34F6782841BD0</key>
+		<key>E01A82AB69B547B2AD5E4E85</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E05AB2CD40364A42A5BD69F5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>E2395EAB29464481AE5B51AB</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2536,63 +2867,16 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>C84EC85E4ED54C52A7BB4523</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9DC91A6D5F004B7DA11DC017</string>
-				<string>4F5FE695AD7C4A18A563C717</string>
-				<string>44C18475DE2E4B5EB3CA60E9</string>
-				<string>5B0C9A4CA7BA4C2E898B46EC</string>
-				<string>92564BEAB065405B97E14954</string>
-				<string>714F43E47FDE4F88AD58DDF1</string>
-				<string>14C8D8D9A9E346589F0D1326</string>
-				<string>6CDD462DE8834AC89DD869E0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>EGOTableViewPullRefresh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C967657F171F44A0A34238B6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>040CD45EAFA34096BC8324A5</string>
-				<string>34594132E34A413D80C69019</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>JSONKit</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB17B66848B64AFC839D7D13</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>39A1920F20BD4B5AB61FD083</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB7D9B0E8B7942538432A7DA</key>
+		<key>E5576283B88F478EAAC1FB02</key>
 		<dict>
 			<key>fileRef</key>
-			<string>28088855E41B4474AFDBBB46</string>
+			<string>D09FF0C8FFFF4D18AD6827FE</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>CE28E07AC01641EE82F77B91</key>
+		<key>E5E4999339284484BCE631ED</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2601,106 +2885,29 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>FTAnimationManager.h</string>
+			<string>QuadCurveMenu.h</string>
 			<key>path</key>
-			<string>FTUtils/Headers/FTUtils/FTAnimationManager.h</string>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveMenu.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>D0D3B86D345049109C489B13</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>icon-plus.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/icon-plus.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D1C06D5635CB44A98A4CB2EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>62D0902CFE4D4B73960C76B4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>D1FC67FD49EA405FABA6FF1F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveTiltAnimation.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveTiltAnimation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D275D81C966F4FEAA31452A0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods-prefix.pch</string>
-			<key>path</key>
-			<string>Pods-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D2D9227F042F488DA6252100</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C22B74BCF81D485287284DAA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>D30AFE94CF364D95BA995922</key>
+		<key>E683803D76174A8081F64AFE</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>7932DA690B4E438381B1EC70</string>
-				<string>4410E3F1D7DA469C8A4A183E</string>
-				<string>F61E4F20CA564ACC80C6DD8B</string>
-				<string>BE62DE1C101E4ABBBDF736A7</string>
-				<string>042E72B26D944BD789836DCB</string>
-				<string>F60217A096254FA184FD82CD</string>
-				<string>F88CD3C05ABF42E58DCD29E9</string>
-				<string>0BF3BDC2DAF8491888165781</string>
-				<string>1AC1208592C24A40A19A3F63</string>
-				<string>2276FE3C371E43EFB56F815F</string>
-				<string>65E21F2382564BE289D46CFA</string>
-				<string>2ECB5691501849EB9282360A</string>
-				<string>6D06829D642D42378C77AA4D</string>
-				<string>D434E87D977B4F15AD63D75B</string>
-				<string>7400B137084A4B5685777CE7</string>
-				<string>952C5C24445143639058606F</string>
-				<string>B0AC9D3F1D3D440BAF86F49B</string>
-				<string>031BA8B06A5240A4858593F9</string>
-				<string>C22B74BCF81D485287284DAA</string>
+				<string>8D57A6CE8C3C4773AEB4B21F</string>
+				<string>374FE335978A4922AA8B75B4</string>
+				<string>761DFA2A40C0452EA3FBA661</string>
+				<string>3816F92E027941A58553A256</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>AFNetworking</string>
+			<string>JGAFImageCache</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D434E87D977B4F15AD63D75B</key>
+		<key>EAF276283FA142358030AEE3</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2709,336 +2916,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>AFURLConnectionOperation.h</string>
+			<string>RegexKitLite.h</string>
 			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.h</string>
+			<string>RegexKitLite/RegexKitLite.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>D481EDF1ACA54D77AE72932A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods-acknowledgements.plist</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D58700180E4D4898B237BEA1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>278C3142BB0C4FB8913FE8D4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>D60EB88B11E64354B1EA4A41</key>
-		<dict>
-			<key>fileRef</key>
-			<string>042E72B26D944BD789836DCB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>D6E277A2E3A14A588708DF85</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>star_highlighted.png</string>
-			<key>path</key>
-			<string>DLStarRating/DLStarRating/images/star_highlighted.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D7CF4DA6B61140D39EB040AC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>13B4CE7A64DA41DCA2E318C6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>D9A3AA387DD44DBA816192EB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DLStarView.h</string>
-			<key>path</key>
-			<string>DLStarRating/DLStarRating/DLStarView.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>DAB0103D376C40E38C80E84A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>bg-menuitem-highlighted@2x.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/bg-menuitem-highlighted@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>DACA17498BE541CCB6A64B91</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>QuadCurveBlowupAnimation.h</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveBlowupAnimation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>DE0F5531BA1B4A0590436C86</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1AC1208592C24A40A19A3F63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>DE399795D22C416A84D1F007</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>18FC4A3364C740A0B0065ADC</string>
-				<string>2F17EDCC4F064830BCB04535</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ZGCountDownTimer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DEE358F36B894D6F84A75F5A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>69B3ED218DCC4A68A2E83276</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>DEECFDCE65BA4E2DB1124E40</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>icon-plus-highlighted.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/icon-plus-highlighted.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>DF175C4AF963470DA2E5116A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B0AC9D3F1D3D440BAF86F49B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>DF1DA8E18B36451CB9ECF4E2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>star_highlighted-darker.png</string>
-			<key>path</key>
-			<string>DLStarRating/DLStarRating/images/star_highlighted-darker.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>DFCB5FA3CDED44A3B8619F04</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B85F3139819A4990B2141F37</string>
-				<string>5242070862B34B9E88B14CA4</string>
-				<string>0235BD75851440FD9FE7645A</string>
-				<string>10230194DF5045F1891CBB2B</string>
-				<string>0B6D03B1DF894F919502F06B</string>
-				<string>DAB0103D376C40E38C80E84A</string>
-				<string>0E267408B3A04E299C092508</string>
-				<string>BCDA67F78E0F48599A485281</string>
-				<string>DEECFDCE65BA4E2DB1124E40</string>
-				<string>A778A9E1790A4C319658BE70</string>
-				<string>D0D3B86D345049109C489B13</string>
-				<string>5C6132764670460D8FB6E342</string>
-				<string>9E29F3D7112242518EB9818C</string>
-				<string>F41EFC05A0344E34AF85A870</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>QuadCurveMenu</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E0B64145D0864F7FA2F0A097</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEE8B0436DD84383BA39A378</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>E2AA147F37F74F79B01C10D5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>star_highlighted-darker@2x.png</string>
-			<key>path</key>
-			<string>DLStarRating/DLStarRating/images/star_highlighted-darker@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>E7D971E77A6747ED92ACB9D8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>0C84204A164D49A3AAC0989C</string>
-			<key>buildPhases</key>
-			<array>
-				<string>990A54BED58746109DBE152B</string>
-				<string>8A74AD38F3F345C4B377032A</string>
-				<string>8618AF0F2A6F4F30B862FEE2</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>39A1920F20BD4B5AB61FD083</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>E8FAF3B094BE4D1DB0CCD1E0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BE62DE1C101E4ABBBDF736A7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>E95D1A644A794F8FA5ADF951</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5D04BED97A21447F8AD339A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>EA1A00B244284FB0862BC714</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>FTAnimationManager.m</string>
-			<key>path</key>
-			<string>FTUtils/Classes/FTAnimationManager.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>EA48E0BF7C3F4BF0B2429FDA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D9A3AA387DD44DBA816192EB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>EA9604FC810F46D3B3C29073</key>
-		<dict>
-			<key>fileRef</key>
-			<string>54F08388854A4CFDB87DC942</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>EC6D3B408C1A403C856B4108</key>
-		<dict>
-			<key>fileRef</key>
-			<string>939380710BCA4DE59483F8ED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>EC74D10A2D2C4331BA452037</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>EGORefreshTableHeaderView.h</string>
-			<key>path</key>
-			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Classes/View/EGORefreshTableHeaderView.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>EE5EB8027AC742E6AB90FCC1</key>
+		<key>EB0885CF6A134798A5EBC15A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3053,7 +2937,209 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>EFB0807D97454CEFBDE05905</key>
+		<key>EB9C8CBED64347E28FF2D292</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AGMedallionView.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/AGMedallionView.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EC9812F075BB45A5B0935412</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EE31DD06C24461A9BA64B77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>ECD88F0A0709482EB883F6FD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>91BBEC1E5050415082014A79</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>SVProgressHUD</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ECDA5181C12D48EE933B22C3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CC46F48ED1A3420F9F6BDC88</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>EF7CA3222AB147E5BC207285</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>QuadCurveDefaultDataSource.m</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveDefaultDataSource.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F0A5BDCDEE69466C9CD9D6BE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFURLConnectionOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F178763B763E465A860EEE46</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>DD6CB65D1E674ABCA7A2069B</string>
+				<string>FFC5FBA9DC864A5C93093146</string>
+				<string>9EE31DD06C24461A9BA64B77</string>
+				<string>9450808BD5D245D6B9EFE229</string>
+				<string>B203D450A1874FE9A9565646</string>
+				<string>EF7CA3222AB147E5BC207285</string>
+				<string>26C0959FBD8C4DB8A4C3C636</string>
+				<string>A950D088F9CD4DF2A61EAC72</string>
+				<string>F7BA1A114C704B62A0B9A53D</string>
+				<string>4139F47F73FC4D51B32614A8</string>
+				<string>D09FF0C8FFFF4D18AD6827FE</string>
+				<string>28B1557CE22C41A5B2A95A69</string>
+				<string>99C24169152C41F1B2981C5F</string>
+				<string>2687067AB1E645819A1BA969</string>
+				<string>E5E4999339284484BCE631ED</string>
+				<string>92AE358A3C6E48BEB1DAE1BF</string>
+				<string>6F24745B25644980BCFD2CDB</string>
+				<string>08FA38E1055D4A1197B10579</string>
+				<string>EB0885CF6A134798A5EBC15A</string>
+				<string>34CED958259C41D1AD4EF19E</string>
+				<string>8BFBD8F8EF474CAD8B7712A8</string>
+				<string>B99DB4CC40D04E078344584A</string>
+				<string>051F1E16141D402CB5930C7E</string>
+				<string>419DE1C0B16E4B32B0A90477</string>
+				<string>B7C1CD5BDE5F4615B8AA8FC2</string>
+				<string>694C2133D6F74223BF3DF12B</string>
+				<string>6336E356773943BB8A8A5347</string>
+				<string>CCD8D0C111AD4BCDA25CAFEB</string>
+				<string>23907DD343F14EB1871F5B6B</string>
+				<string>EB9C8CBED64347E28FF2D292</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>QuadCurveMenu</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F26032C20A5742429F5A194A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FFC5FBA9DC864A5C93093146</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>F365C24EA14C4F389204F3F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A950D088F9CD4DF2A61EAC72</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>F5B776F684FA408C9532763C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1EA321D038E54B3AB2861660</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>F640B860109548FDA17F4227</key>
+		<dict>
+			<key>fileRef</key>
+			<string>419DE1C0B16E4B32B0A90477</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>F6CD853AD6C64D9AB7512029</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FE94871E3C1A4EE6BF049B85</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>F7ADF1EAD6694E928CB0DD1A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>43B9EE34F4754593940FAC1C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>F7BA1A114C704B62A0B9A53D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveItemCloseAnimation.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemCloseAnimation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F89B80921B9E4B129C8FC189</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3068,71 +3154,7 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>F03FF47F822F4726B60A1B6D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B801895EE4D47009AFA1BB3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>F19A2A24351A4704B71C63FB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A5EB623946E145CE8FD98B26</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>F41EFC05A0344E34AF85A870</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>icon-star@2x.png</string>
-			<key>path</key>
-			<string>QuadCurveMenu/AwesomeMenu/Images/icon-star@2x.png</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F47772EE8BFD413C84329379</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C42A6B5F90E34F6782841BD0</string>
-				<string>0E96D919FF614FEF977F407E</string>
-				<string>DF1DA8E18B36451CB9ECF4E2</string>
-				<string>E2AA147F37F74F79B01C10D5</string>
-				<string>D6E277A2E3A14A588708DF85</string>
-				<string>86999190FD3246DAACC89A1E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>DLStarRating</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F60217A096254FA184FD82CD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFImageRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFImageRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F60B24D203BA4DC6BDD208B3</key>
+		<key>FA813820E9D84F7E9471EE30</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3141,55 +3163,25 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>NSString+JGAFSHA1.h</string>
+			<string>AFNetworking.h</string>
 			<key>path</key>
-			<string>JGAFImageCache/NSString+JGAFSHA1.h</string>
+			<string>AFNetworking/AFNetworking/AFNetworking.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>F61E4F20CA564ACC80C6DD8B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFHTTPRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F88CD3C05ABF42E58DCD29E9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFJSONRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F969A7D9D8884C97817E165A</key>
+		<key>FBAEA484DC4D409ABE6E8D8A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1BD09BCCA0A34CDFB0526A36</string>
+			<string>C3B1DC738C524B18B816B149</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>F9A2416CF7744BF8B3AAAA7E</key>
+		<key>FBCC92BF385849B78FD52422</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6D06829D642D42378C77AA4D</string>
+			<string>A8B58F7FA75A4022A8BD8A2C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3198,40 +3190,57 @@
 				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>FA697512CB104C4EADC88521</key>
+		<key>FD23B15D8CBD420BA52E5C34</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>FF1BA733019C47E0BF860410</string>
+			<key>buildPhases</key>
+			<array>
+				<string>83F7A3160948419081EBA017</string>
+				<string>87039AC97C7D43F0B348F7DA</string>
+				<string>26788BAB95134CFC996AD095</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>A23D864C3AFF411BAB9C597F</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>FD8501E4443E4606B584BAE0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4E7E557D45244D6FBB821124</string>
+			<string>CCD8D0C111AD4BCDA25CAFEB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
-			<dict/>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
 		</dict>
-		<key>FBB3E11A210044E69062402D</key>
+		<key>FDCA829E8EC14B91A120CD77</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>FTUtils+NSObject.h</string>
+			<string>blackArrow@2x.png</string>
 			<key>path</key>
-			<string>FTUtils/Headers/FTUtils/FTUtils+NSObject.h</string>
+			<string>EGOTableViewPullRefresh/EGOTableViewPullRefresh/Resources/blackArrow@2x.png</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>FF648F9CB833475198271D59</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2C3407E17D75424CB390C354</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>FFD62719631A4A83B09A08BC</key>
+		<key>FE94871E3C1A4EE6BF049B85</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3240,14 +3249,70 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>DLStarRatingControl.m</string>
+			<string>AFNetworkActivityIndicatorManager.m</string>
 			<key>path</key>
-			<string>DLStarRating/DLStarRating/DLStarRatingControl.m</string>
+			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>FEC9345A4E614392B4486123</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F0A5BDCDEE69466C9CD9D6BE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>FF1BA733019C47E0BF860410</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A98C3DFC37E24A99A218EC24</string>
+				<string>6269F41B0AB84009AAACCCC1</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FF589EA9C8B64062A990D4A0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>FTUtils+UIGestureRecognizer.h</string>
+			<key>path</key>
+			<string>FTUtils/Headers/FTUtils/FTUtils+UIGestureRecognizer.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>FFC5FBA9DC864A5C93093146</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>QuadCurveBlowupAnimation.h</string>
+			<key>path</key>
+			<string>QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveBlowupAnimation.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
-	<string>BFFFCF3186944853A423D662</string>
+	<string>84A986B34DF0400998D5715E</string>
 </dict>
 </plist>

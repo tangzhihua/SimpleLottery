@@ -7,6 +7,7 @@ PODS:
     - AFNetworking (~> 1.2.0)
   - JSONKit (1.5pre)
   - QuadCurveMenu (0.0.1)
+  - RegexKitLite (4.0)
   - SVProgressHUD (0.9)
   - ZGCountDownTimer (0.0.1)
 
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - JGAFImageCache
   - JSONKit (= 1.5pre)
   - QuadCurveMenu
+  - RegexKitLite
   - SVProgressHUD (= 0.9)
   - ZGCountDownTimer (= 0.0.1)
 
@@ -29,6 +31,7 @@ SPEC CHECKSUMS:
   JGAFImageCache: d9eeaea8ea8d3cd8fb5b93b4b9d6b80f52139de1
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
   QuadCurveMenu: 339756b3178e381fea80e424f8edc1b10af554c8
+  RegexKitLite: 293ff6f3cf8f34277989a37802162c6961a2b35a
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
   ZGCountDownTimer: 2b410031e26b77f4da741d5e89611c3c24b5d2fe
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pi_pei_zhong_wen_zi_fu</key>
+	<string>[\u4e00-\u9fa5]</string>
+	<key>pi_pei_shuang_zi_jie_zi_fu</key>
+	<string>[^\x00-\xff]</string>
+	<key>pi_pei_kong_bai_hang</key>
+	<string>\n\s*\r</string>
+	<key>pi_pei_HTML_biao_ji</key>
+	<string>&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;</string>
+	<key>pi_pei_shou_wei_kong_bai_zi_fu</key>
+	<string>^\s*|\s*$</string>
+	<key>pi_pei_EMAIL_di_zhi</key>
+	<string>\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*</string>
+	<key>pi_pei_wang_zhi_URL</key>
+	<string>[a-zA-z]+://[^\s]*</string>
+	<key>pi_pei_zhang_hao_he_fa_xing</key>
+	<string>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</string>
+	<key>pi_pei_guo_nei_dian_hua_hao_ma</key>
+	<string>\d{3}-\d{8}|\d{4}-\d{7}</string>
+	<key>pi_pei_QQ_hao_ma</key>
+	<string>[1-9][0-9]{4,}</string>
+	<key>pi_pei_zhong_guo_you_zheng_hao_ma</key>
+	<string>[1-9]\d{5}(?!\d)</string>
+	<key>pi_pei_IP_di_zhi</key>
+	<string>\d+\.\d+\.\d+\.\d+</string>
+</dict>
+</plist>

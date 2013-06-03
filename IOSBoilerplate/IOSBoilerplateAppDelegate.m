@@ -23,9 +23,6 @@
 #import "JSONKit.h"
 
 
-
-
-
 #import "CommandInvokerSingleton.h"
 
 #import "CommandForPrintDeviceInfo.h"
@@ -220,7 +217,9 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   //////////////////////////////////////////////////////////////
   
 	
-	
+	///// test
+     
+  /////
 	
 	
   

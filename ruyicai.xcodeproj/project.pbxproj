@@ -309,6 +309,8 @@
 		68F6ECA2174B9D73003B1CC1 /* LotterySalesStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA1174B9D73003B1CC1 /* LotterySalesStatus.m */; };
 		68F6ECA5174BB532003B1CC1 /* LabelForTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA4174BB532003B1CC1 /* LabelForTitleBar.m */; };
 		68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */; };
+		D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A8D57E175C34D300BC5CBF /* libicucore.dylib */; };
+		D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -877,6 +879,8 @@
 		68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelForTitleBar.xib; sourceTree = "<group>"; };
 		C37BC8E3144C340600423D44 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D7A8D57E175C34D300BC5CBF /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regular_expressions_keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -884,6 +888,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */,
 				68D384C2175B227800B9C413 /* Security.framework in Frameworks */,
 				68A2E1C7172FC73D00F9CF6E /* MobileCoreServices.framework in Frameworks */,
 				587F1BE716BF96D700FF967C /* libz.dylib in Frameworks */,
@@ -919,6 +924,7 @@
 		09885E851418F2E500CCE17A = {
 			isa = PBXGroup;
 			children = (
+				D7A8D57E175C34D300BC5CBF /* libicucore.dylib */,
 				09885E9A1418F2E600CCE17A /* IOSBoilerplate */,
 				09885EBC1418F2E600CCE17A /* IOSBoilerplateTests */,
 				09885E931418F2E500CCE17A /* Frameworks */,
@@ -983,6 +989,7 @@
 				58A4D3BD16899C5100D4F751 /* Localizable.strings */,
 				68B0CC69173406CF001661A6 /* lottery_list.plist */,
 				6801F40017468013006E1D2B /* expand_lottery_code.plist */,
+				D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2412,6 +2419,7 @@
 				684177981748D5280090DBC6 /* nav_right_btn_bg_highlighted.png in Resources */,
 				68F6EC9F174B97EF003B1CC1 /* ShuangSeQiuBettingActivity.xib in Resources */,
 				68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */,
+				D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

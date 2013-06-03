@@ -2714,7 +2714,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng xu (C843XNK92D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: tang zhihua (N7NJHUS98A)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2734,7 +2734,7 @@
 				ORDER_FILE = "";
 				OTHER_CFLAGS = "-DPRPDEBUG";
 				OTHER_LDFLAGS = "-all_load";
-				PROVISIONING_PROFILE = "187BA8DE-7B6C-4925-8F59-9E2B7C641685";
+				PROVISIONING_PROFILE = "FAE27E8D-D642-4F50-98F5-8B66F1759399";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
@@ -2745,7 +2745,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng xu (C843XNK92D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: tang zhihua (N7NJHUS98A)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2758,7 +2758,7 @@
 				ORDER_FILE = "";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-all_load";
-				PROVISIONING_PROFILE = "187BA8DE-7B6C-4925-8F59-9E2B7C641685";
+				PROVISIONING_PROFILE = "FAE27E8D-D642-4F50-98F5-8B66F1759399";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2769,7 +2769,7 @@
 			baseConfigurationReference = C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng xu (C843XNK92D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IOSBoilerplate/ruyicai-Prefix.pch";
@@ -2796,7 +2796,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "简单彩票";
-				PROVISIONING_PROFILE = "187BA8DE-7B6C-4925-8F59-9E2B7C641685";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -2808,7 +2808,7 @@
 			baseConfigurationReference = C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng xu (C843XNK92D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IOSBoilerplate/ruyicai-Prefix.pch";
@@ -2835,7 +2835,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "简单彩票";
-				PROVISIONING_PROFILE = "187BA8DE-7B6C-4925-8F59-9E2B7C641685";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

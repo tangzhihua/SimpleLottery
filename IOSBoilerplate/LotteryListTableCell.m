@@ -15,7 +15,7 @@
 #import "DomainProtocolNetHelperSingleton.h"
 #import "NSString+isEmpty.h"
 #import "CurrentIssueCountDownDatabaseFieldsConstant.h"
-
+#import "LotteryDictionary.h"
 
 @implementation LotteryListTableCell
 
@@ -95,5 +95,38 @@ static UIImage *kLotterySaleStatusImageOfKaijiangAndJiajiang = nil;
 	}
 	
 }
- 
+
+#pragma mark -
+#pragma mark 数据绑定
+-(void) bind:(LotteryDictionary *)lotteryDictionaryToBeDisplayed {
+  // 彩票代码
+  if ([lotteryDictionaryToBeDisplayed.key isEqualToString:kLotteryKey_jingcai_basketball]) {
+    self.lotteryCode = @"JC_L";
+  } else if ([lotteryDictionaryToBeDisplayed.key isEqualToString:kLotteryKey_jingcai_football]) {
+    self.lotteryCode = @"JC_Z";
+  } else if ([lotteryDictionaryToBeDisplayed.key isEqualToString:kLotteryKey_zucai]) {
+    self.lotteryCode = @"ZC";
+  } else {
+    self.lotteryCode = lotteryDictionaryToBeDisplayed.code;
+  }
+  
+  // 彩票 key
+  self.lotteryKey = lotteryDictionaryToBeDisplayed.key;
+  
+  
+  // 彩票 icon
+  self.iconImageView.image = lotteryDictionaryToBeDisplayed.icon;
+  // 彩票 name
+  self.nameLabel.text = lotteryDictionaryToBeDisplayed.name;
+  // 彩票 广告
+  self.adLabel.text = lotteryDictionaryToBeDisplayed.ad;
+  
+  // 彩票 固定信息(比如竞彩足球, 就是会固定显示 "返奖率高达69%")
+  if (![NSString isEmpty:lotteryDictionaryToBeDisplayed.fixedInformation]) {
+    self.countdownForCurrentIssueToEnd.text = lotteryDictionaryToBeDisplayed.fixedInformation;
+  }
+  
+  // 彩票销售信息
+  self.lotteryOpenPrizeStatusEnum = kLotteryOpenPrizeStatusEnum_NONE;
+}
 @end

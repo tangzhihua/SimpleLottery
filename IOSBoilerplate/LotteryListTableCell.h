@@ -9,6 +9,7 @@
 #import "PRPNibBasedTableViewCell.h"
 #import "MacroConstantForThisProject.h"
 
+@class LotteryDictionary;
 @interface LotteryListTableCell : PRPNibBasedTableViewCell {
 	
 }
@@ -33,4 +34,10 @@
 @property (nonatomic, copy) NSString *lotteryCode;
 // 彩票 key (key是给程序员识别的彩票关键字, 例如 : 时时彩 的 key 是 shishicai
 @property (nonatomic, copy) NSString *lotteryKey;
+
+
+
+// "数据绑定 (data binding)"
+// 数据绑定最好的办法是将你的数据模型对象传递到自定义的表视图单元并让其绑定数据.
+-(void) bind:(LotteryDictionary *)lotteryDictionaryToBeDisplayed;
 @end

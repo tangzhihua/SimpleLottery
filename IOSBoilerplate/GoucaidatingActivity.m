@@ -302,35 +302,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 	for (LotteryDictionary *lotteryDictionary in lotteryDictionaryList) {
     LotteryListTableCell *cell = [LotteryListTableCell cellFromNib:self.lotteryListTableCellNib];
 		
-		// 彩票代码
-		if ([lotteryDictionary.key isEqualToString:kLotteryKey_jingcai_basketball]) {
-			cell.lotteryCode = @"JC_L";
-		} else if ([lotteryDictionary.key isEqualToString:kLotteryKey_jingcai_football]) {
-			cell.lotteryCode = @"JC_Z";
-		} else if ([lotteryDictionary.key isEqualToString:kLotteryKey_zucai]) {
-			cell.lotteryCode = @"ZC";
-		} else {
-			cell.lotteryCode = lotteryDictionary.code;
-		}
-		
-		// 彩票 key
-		cell.lotteryKey = lotteryDictionary.key;
-		
-		
-		// 彩票 icon
-		cell.iconImageView.image = lotteryDictionary.icon;
-		// 彩票 name
-		cell.nameLabel.text = lotteryDictionary.name;
-		// 彩票 广告
-		cell.adLabel.text = lotteryDictionary.ad;
-		
-		// 彩票 固定信息(比如竞彩足球, 就是会固定显示 "返奖率高达69%")
-		if (![NSString isEmpty:lotteryDictionary.fixedInformation]) {
-			cell.countdownForCurrentIssueToEnd.text = lotteryDictionary.fixedInformation;
-		}
-		
-		// 彩票销售信息
-		cell.lotteryOpenPrizeStatusEnum = kLotteryOpenPrizeStatusEnum_NONE;
+		[cell bind:lotteryDictionary];
 		
     //
     [self.cellArrayOfLotteryList addObject:cell];

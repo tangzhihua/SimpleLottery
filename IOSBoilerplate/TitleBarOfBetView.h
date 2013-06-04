@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CustomControlDelegate.h"
+
 
 typedef NS_ENUM(NSUInteger, TitleBarOfBetViewActionEnum)  {
   //
@@ -19,7 +19,8 @@ typedef NS_ENUM(NSUInteger, TitleBarOfBetViewActionEnum)  {
 	kTitleBarOfBetViewActionEnum_RightButtonClickedTwo
 };
 
-@interface TitleBarOfBetView : UIView <CustomControlDelegate> {
+@protocol CustomControlDelegate;
+@interface TitleBarOfBetView : UIView {
 	
 }
 

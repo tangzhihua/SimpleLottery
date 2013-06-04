@@ -21,7 +21,10 @@
 
 #import "ShuangSeQiuBettingActivity.h"
 
-@interface GoucaidatingActivity ()
+#import "CustomControlDelegate.h"
+
+@interface GoucaidatingActivity () <UITableViewDelegate, UITableViewDataSource, IDomainNetRespondCallback, CustomControlDelegate, UIAlertViewDelegate>
+
 // 彩票列表 - cell 对应的 nib
 @property (nonatomic, strong) UINib *lotteryListTableCellNib;
 

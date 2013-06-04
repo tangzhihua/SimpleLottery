@@ -8,9 +8,9 @@
 
 #import "TitleBarOfBetView.h"
 #import "LabelForTitleBar.h"
+#import "CustomControlDelegate.h"
 
-
-@interface TitleBarOfBetView ()
+@interface TitleBarOfBetView () <CustomControlDelegate> 
 @property (nonatomic, weak) LabelForTitleBar *labelForTitleBar;
 @end
 

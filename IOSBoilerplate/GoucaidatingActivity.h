@@ -7,14 +7,9 @@
 //
 
 #import "Activity.h"
-#import "CustomControlDelegate.h"
+ 
 
-@interface GoucaidatingActivity : ListActivity
-<UITableViewDelegate,
-UITableViewDataSource,
-IDomainNetRespondCallback,
-CustomControlDelegate,
-UIAlertViewDelegate> {
+@interface GoucaidatingActivity : ListActivity {
 	
 }
 

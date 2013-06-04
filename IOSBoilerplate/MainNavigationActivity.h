@@ -10,9 +10,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CustomControlDelegate.h"
 
-@interface MainNavigationActivity : Activity <UITabBarDelegate, CustomControlDelegate>{
+
+@interface MainNavigationActivity : Activity {
   
 }
 

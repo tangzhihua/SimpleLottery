@@ -1,8 +1,8 @@
 
 #import <UIKit/UIKit.h>
  
-
-@interface IOSBoilerplateAppDelegate : Activity <UIApplicationDelegate, UIAlertViewDelegate> {
+#import "cocos2d.h"
+@interface IOSBoilerplateAppDelegate : Activity <UIApplicationDelegate> {
  
 }
  

@@ -25,17 +25,10 @@
 #import "GengduoActivity.h"
 
 
+#import "CustomControlDelegate.h"
 
 
-
-
-
-
-static const NSString *const TAG = @"<MainNavigationActivity>";
-
-
-
-
+ 
 
 
 
@@ -48,7 +41,7 @@ static const NSString *const TAG = @"<MainNavigationActivity>";
 
 
 
-@interface MainNavigationActivity ()
+@interface MainNavigationActivity () <UITabBarDelegate, CustomControlDelegate>
 
 
 @end
@@ -100,8 +93,6 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
 
 - (void)dealloc {
   
-  PRPLog(@"dealloc: %@ [0x%x]", TAG, [self hash]);
-  
   // 一定要注销广播消息接收器
   [self unregisterReceiver];
   
@@ -120,7 +111,7 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
   
   if (self) {
     // Custom initialization
-    PRPLog(@"init %@ [0x%x]", TAG, [self hash]);
+    PRPLog(@"init [0x%x]", [self hash]);
     
   }
   return self;
@@ -128,7 +119,7 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
 
 - (void)viewDidLoad
 {
-  PRPLog(@"%@ --> viewDidLoad ", TAG);
+  PRPLog(@" --> viewDidLoad ");
   
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
@@ -140,7 +131,7 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
 
 - (void)viewDidUnload
 {
-  PRPLog(@"%@ --> viewDidUnload ", TAG);
+  PRPLog(@" --> viewDidUnload ");
 	
   _goucaidatingActivity = nil;
 	_hemaidatingActivity = nil;
@@ -161,7 +152,7 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
 #pragma mark -
 #pragma mark Activity 生命周期
 -(void)onCreate:(Intent *)intent {
-  PRPLog(@"%@ --> onCreate ", TAG);
+  PRPLog(@"--> onCreate ");
   
   // 接收 : 用户登录成功
   // 接收 : 获取用户地址成功
@@ -169,14 +160,14 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
   [self registerBroadcastReceiver];
 }
 -(void)onPause {
-  PRPLog(@"%@ --> onPause ", TAG);
+  PRPLog(@"--> onPause ");
   
   if (_activeActivity != nil) {
     [_activeActivity onPause];
   }
 }
 -(void)onResume {
-  PRPLog(@"%@ --> onResume ", TAG);
+  PRPLog(@"--> onResume ");
   
   if (_activeActivity != nil) {
     [_activeActivity onResume];

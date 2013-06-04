@@ -309,6 +309,13 @@
 		68F6ECA2174B9D73003B1CC1 /* LotterySalesStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA1174B9D73003B1CC1 /* LotterySalesStatus.m */; };
 		68F6ECA5174BB532003B1CC1 /* LabelForTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA4174BB532003B1CC1 /* LabelForTitleBar.m */; };
 		68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */; };
+		D7A2C54A175D89D600D823F0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C549175D89D600D823F0 /* CoreText.framework */; };
+		D7A2C54C175D89E400D823F0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C54B175D89E400D823F0 /* CoreMotion.framework */; };
+		D7A2C54E175D89F900D823F0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C54D175D89F900D823F0 /* OpenGLES.framework */; };
+		D7A2C550175D8A0900D823F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C54F175D8A0900D823F0 /* AVFoundation.framework */; };
+		D7A2C552175D8A1200D823F0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C551175D8A1200D823F0 /* AudioToolbox.framework */; };
+		D7A2C554175D8A1C00D823F0 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C553175D8A1C00D823F0 /* OpenAL.framework */; };
+		D7A2C556175D8A2300D823F0 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C555175D8A2300D823F0 /* GameKit.framework */; };
 		D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A8D57E175C34D300BC5CBF /* libicucore.dylib */; };
 		D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */; };
 /* End PBXBuildFile section */
@@ -880,6 +887,13 @@
 		C37BC8E3144C340600423D44 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		D7572D14175C9C2600632A74 /* RNAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNAssert.h; sourceTree = "<group>"; };
+		D7A2C549175D89D600D823F0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D7A2C54B175D89E400D823F0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		D7A2C54D175D89F900D823F0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D7A2C54F175D8A0900D823F0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D7A2C551175D8A1200D823F0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D7A2C553175D8A1C00D823F0 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		D7A2C555175D8A2300D823F0 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		D7A8D57E175C34D300BC5CBF /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regular_expressions_keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -889,6 +903,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A2C556175D8A2300D823F0 /* GameKit.framework in Frameworks */,
+				D7A2C554175D8A1C00D823F0 /* OpenAL.framework in Frameworks */,
+				D7A2C552175D8A1200D823F0 /* AudioToolbox.framework in Frameworks */,
+				D7A2C550175D8A0900D823F0 /* AVFoundation.framework in Frameworks */,
+				D7A2C54E175D89F900D823F0 /* OpenGLES.framework in Frameworks */,
+				D7A2C54C175D89E400D823F0 /* CoreMotion.framework in Frameworks */,
+				D7A2C54A175D89D600D823F0 /* CoreText.framework in Frameworks */,
 				D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */,
 				68D384C2175B227800B9C413 /* Security.framework in Frameworks */,
 				68A2E1C7172FC73D00F9CF6E /* MobileCoreServices.framework in Frameworks */,
@@ -945,6 +966,13 @@
 		09885E931418F2E500CCE17A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7A2C555175D8A2300D823F0 /* GameKit.framework */,
+				D7A2C553175D8A1C00D823F0 /* OpenAL.framework */,
+				D7A2C551175D8A1200D823F0 /* AudioToolbox.framework */,
+				D7A2C54F175D8A0900D823F0 /* AVFoundation.framework */,
+				D7A2C54D175D89F900D823F0 /* OpenGLES.framework */,
+				D7A2C54B175D89E400D823F0 /* CoreMotion.framework */,
+				D7A2C549175D89D600D823F0 /* CoreText.framework */,
 				D7A8D57E175C34D300BC5CBF /* libicucore.dylib */,
 				68D384C1175B227800B9C413 /* Security.framework */,
 				C37BC8E3144C340600423D44 /* libz.dylib */,
@@ -2781,7 +2809,6 @@
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"$(SRCROOT)/IOSBoilerplate/BaiduLBSHeads/inc\"",
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/Utilities\"",
-					"\"$(SRCROOT)/IOSBoilerplate/cocos2d/libs/kazmath/include\"",
 				);
 				INFOPLIST_FILE = "IOSBoilerplate/ruyicai-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -2794,13 +2821,7 @@
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/Utilities\"",
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/openssllibs\"",
 				);
-				OTHER_LDFLAGS = (
-					"-lbaidumapapi",
-					"-all_load",
-					"-lz",
-					"-lsqlite3",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "-lbaidumapapi";
 				PRODUCT_NAME = "简单彩票";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -2824,7 +2845,6 @@
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"$(SRCROOT)/IOSBoilerplate/BaiduLBSHeads/inc\"",
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/Utilities\"",
-					"\"$(SRCROOT)/IOSBoilerplate/cocos2d/libs/kazmath/include\"",
 				);
 				INFOPLIST_FILE = "IOSBoilerplate/ruyicai-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -2837,13 +2857,7 @@
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/Utilities\"",
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/openssllibs\"",
 				);
-				OTHER_LDFLAGS = (
-					"-lbaidumapapi",
-					"-all_load",
-					"-lz",
-					"-lsqlite3",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "-lbaidumapapi";
 				PRODUCT_NAME = "简单彩票";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

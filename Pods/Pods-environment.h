@@ -67,3 +67,10 @@
 #define COCOAPODS_VERSION_MINOR_ZGCountDownTimer 0
 #define COCOAPODS_VERSION_PATCH_ZGCountDownTimer 1
 
+// cocos2d
+#define COCOAPODS_POD_AVAILABLE_cocos2d
+// This library does not follow semantic-versioning,
+// so we were not able to define version macros.
+// Please contact the author.
+// Version: 2.1-rc2.
+

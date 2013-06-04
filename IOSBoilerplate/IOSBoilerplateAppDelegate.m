@@ -92,6 +92,18 @@
 
 
 
+
+
+
+@interface IOSBoilerplateAppDelegate () <UIAlertViewDelegate>
+
+@end
+
+
+
+
+
+
 @implementation IOSBoilerplateAppDelegate
 
 typedef NS_ENUM(NSInteger, AlertTypeEnum) {

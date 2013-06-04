@@ -2781,6 +2781,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"$(SRCROOT)/IOSBoilerplate/BaiduLBSHeads/inc\"",
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/Utilities\"",
+					"\"$(SRCROOT)/IOSBoilerplate/cocos2d/libs/kazmath/include\"",
 				);
 				INFOPLIST_FILE = "IOSBoilerplate/ruyicai-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -2796,6 +2797,9 @@
 				OTHER_LDFLAGS = (
 					"-lbaidumapapi",
 					"-all_load",
+					"-lz",
+					"-lsqlite3",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "简单彩票";
 				PROVISIONING_PROFILE = "";
@@ -2820,6 +2824,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 					"\"$(SRCROOT)/IOSBoilerplate/BaiduLBSHeads/inc\"",
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/Utilities\"",
+					"\"$(SRCROOT)/IOSBoilerplate/cocos2d/libs/kazmath/include\"",
 				);
 				INFOPLIST_FILE = "IOSBoilerplate/ruyicai-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -2835,6 +2840,9 @@
 				OTHER_LDFLAGS = (
 					"-lbaidumapapi",
 					"-all_load",
+					"-lz",
+					"-lsqlite3",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "简单彩票";
 				PROVISIONING_PROFILE = "";

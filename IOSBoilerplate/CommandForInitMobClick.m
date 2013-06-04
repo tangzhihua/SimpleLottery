@@ -16,7 +16,7 @@
  
  */
 -(void)execute {
-  [MobClick startWithAppkey:@"510f598c527015239500000c" reportPolicy:BATCH channelId:kCoopid];
+  [MobClick startWithAppkey:@"51ac6bd456240b1826074e2d" reportPolicy:BATCH channelId:kCoopid];
 }
 
 +(id)commandForInitMobClick {

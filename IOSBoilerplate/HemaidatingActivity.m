@@ -7,6 +7,7 @@
 //
 
 #import "HemaidatingActivity.h"
+#import "LuckyPickActivity.h"
 
 @interface HemaidatingActivity ()
 
@@ -33,6 +34,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onClickListener:(id)sender {
+  
+  Intent *intent = [Intent intentWithSpecificComponentClass:[LuckyPickActivity class]];
+  [self startActivity:intent];
 }
 
 @end

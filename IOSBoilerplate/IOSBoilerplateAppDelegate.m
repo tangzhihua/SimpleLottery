@@ -37,7 +37,7 @@
 #import "CommandForNewAppVersionCheck.h"
 #import "CommandForCurrentLotteryIssueCountDownObserver.h"
 #import "CommandOfImportantNetRequestAutoRefresh.h"
-
+#import "CommandForSettingCocos2d.h"
 
 #import "GlobalDataCacheForDataDictionarySingleton.h"
 
@@ -158,6 +158,10 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 	
   // 打印当前设备的信息
   command = [CommandForPrintDeviceInfo commandForPrintDeviceInfo];
+  [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
+  
+  // 设置 cocos2d 引擎
+  command = [CommandForSettingCocos2d commandForSettingCocos2d];
   [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
   
 	// 从服务器获取重要的信息

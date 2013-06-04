@@ -316,6 +316,14 @@
 		D7A2C552175D8A1200D823F0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C551175D8A1200D823F0 /* AudioToolbox.framework */; };
 		D7A2C554175D8A1C00D823F0 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C553175D8A1C00D823F0 /* OpenAL.framework */; };
 		D7A2C556175D8A2300D823F0 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C555175D8A2300D823F0 /* GameKit.framework */; };
+		D7A2C55E175DAF6A00D823F0 /* LuckyPickActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2C55C175DAF6A00D823F0 /* LuckyPickActivity.m */; };
+		D7A2C55F175DAF6A00D823F0 /* LuckyPickActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A2C55D175DAF6A00D823F0 /* LuckyPickActivity.xib */; };
+		D7A2C562175DB5AC00D823F0 /* LuckyPickScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2C561175DB5AC00D823F0 /* LuckyPickScene.m */; };
+		D7A2C566175DBC2300D823F0 /* CommandForSettingCocos2d.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2C565175DBC2300D823F0 /* CommandForSettingCocos2d.m */; };
+		D7A2C569175DC37400D823F0 /* LuckyPickMainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2C568175DC37300D823F0 /* LuckyPickMainLayer.m */; };
+		D7A2C56C175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2C56B175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.m */; };
+		D7A2C56F175DD5CA00D823F0 /* LuckyPickNumberDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A2C56E175DD5C900D823F0 /* LuckyPickNumberDisplayView.m */; };
+		D7A2C571175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */; };
 		D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A8D57E175C34D300BC5CBF /* libicucore.dylib */; };
 		D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */; };
 /* End PBXBuildFile section */
@@ -894,6 +902,20 @@
 		D7A2C551175D8A1200D823F0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D7A2C553175D8A1C00D823F0 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D7A2C555175D8A2300D823F0 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		D7A2C55B175DAF6A00D823F0 /* LuckyPickActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyPickActivity.h; sourceTree = "<group>"; };
+		D7A2C55C175DAF6A00D823F0 /* LuckyPickActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyPickActivity.m; sourceTree = "<group>"; };
+		D7A2C55D175DAF6A00D823F0 /* LuckyPickActivity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuckyPickActivity.xib; sourceTree = "<group>"; };
+		D7A2C560175DB5AC00D823F0 /* LuckyPickScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyPickScene.h; sourceTree = "<group>"; };
+		D7A2C561175DB5AC00D823F0 /* LuckyPickScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyPickScene.m; sourceTree = "<group>"; };
+		D7A2C564175DBC2300D823F0 /* CommandForSettingCocos2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandForSettingCocos2d.h; sourceTree = "<group>"; };
+		D7A2C565175DBC2300D823F0 /* CommandForSettingCocos2d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandForSettingCocos2d.m; sourceTree = "<group>"; };
+		D7A2C567175DC37300D823F0 /* LuckyPickMainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyPickMainLayer.h; sourceTree = "<group>"; };
+		D7A2C568175DC37300D823F0 /* LuckyPickMainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyPickMainLayer.m; sourceTree = "<group>"; };
+		D7A2C56A175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyPickNumberDisplayLayer.h; sourceTree = "<group>"; };
+		D7A2C56B175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyPickNumberDisplayLayer.m; sourceTree = "<group>"; };
+		D7A2C56D175DD5C800D823F0 /* LuckyPickNumberDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckyPickNumberDisplayView.h; sourceTree = "<group>"; };
+		D7A2C56E175DD5C900D823F0 /* LuckyPickNumberDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckyPickNumberDisplayView.m; sourceTree = "<group>"; };
+		D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuckyPickNumberDisplayView.xib; sourceTree = "<group>"; };
 		D7A8D57E175C34D300BC5CBF /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regular_expressions_keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -973,9 +995,7 @@
 				D7A2C54D175D89F900D823F0 /* OpenGLES.framework */,
 				D7A2C54B175D89E400D823F0 /* CoreMotion.framework */,
 				D7A2C549175D89D600D823F0 /* CoreText.framework */,
-				D7A8D57E175C34D300BC5CBF /* libicucore.dylib */,
 				68D384C1175B227800B9C413 /* Security.framework */,
-				C37BC8E3144C340600423D44 /* libz.dylib */,
 				09885EEC1418F3F900CCE17A /* CFNetwork.framework */,
 				09270768141E52BB00E778AE /* CoreLocation.framework */,
 				09885E961418F2E500CCE17A /* Foundation.framework */,
@@ -986,6 +1006,8 @@
 				09885EEE1418F40200CCE17A /* SystemConfiguration.framework */,
 				09885E941418F2E500CCE17A /* UIKit.framework */,
 				09885E981418F2E600CCE17A /* CoreGraphics.framework */,
+				C37BC8E3144C340600423D44 /* libz.dylib */,
+				D7A8D57E175C34D300BC5CBF /* libicucore.dylib */,
 				099272B502AE48D2BB41FEF4 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -1261,6 +1283,7 @@
 		58546CB815FDF4580028AEC3 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				D7A2C55A175DAE9100D823F0 /* 幸运选号 */,
 				68F6EC9A174B9766003B1CC1 /* 双色球 */,
 				587F6FA6168589C20004A23B /* first_activity */,
 				587F6FA7168589D80004A23B /* beginner_guide */,
@@ -1380,6 +1403,7 @@
 				587D141B16F98B500010B374 /* 打印当前设备信息 */,
 				68440597173E56EA00FD90DB /* 启动彩票排期倒计时检测 */,
 				6801F4021746843B006E1D2B /* 启动重要的网络接口自动刷新模块 */,
+				D7A2C563175DBBD800D823F0 /* 配置cocos2d */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -2274,6 +2298,34 @@
 			name = "双色球";
 			sourceTree = "<group>";
 		};
+		D7A2C55A175DAE9100D823F0 /* 幸运选号 */ = {
+			isa = PBXGroup;
+			children = (
+				D7A2C55B175DAF6A00D823F0 /* LuckyPickActivity.h */,
+				D7A2C55C175DAF6A00D823F0 /* LuckyPickActivity.m */,
+				D7A2C55D175DAF6A00D823F0 /* LuckyPickActivity.xib */,
+				D7A2C560175DB5AC00D823F0 /* LuckyPickScene.h */,
+				D7A2C561175DB5AC00D823F0 /* LuckyPickScene.m */,
+				D7A2C567175DC37300D823F0 /* LuckyPickMainLayer.h */,
+				D7A2C568175DC37300D823F0 /* LuckyPickMainLayer.m */,
+				D7A2C56A175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.h */,
+				D7A2C56B175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.m */,
+				D7A2C56D175DD5C800D823F0 /* LuckyPickNumberDisplayView.h */,
+				D7A2C56E175DD5C900D823F0 /* LuckyPickNumberDisplayView.m */,
+				D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */,
+			);
+			name = "幸运选号";
+			sourceTree = "<group>";
+		};
+		D7A2C563175DBBD800D823F0 /* 配置cocos2d */ = {
+			isa = PBXGroup;
+			children = (
+				D7A2C564175DBC2300D823F0 /* CommandForSettingCocos2d.h */,
+				D7A2C565175DBC2300D823F0 /* CommandForSettingCocos2d.m */,
+			);
+			name = "配置cocos2d";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2450,6 +2502,8 @@
 				68F6EC9F174B97EF003B1CC1 /* ShuangSeQiuBettingActivity.xib in Resources */,
 				68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */,
 				D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */,
+				D7A2C55F175DAF6A00D823F0 /* LuckyPickActivity.xib in Resources */,
+				D7A2C571175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2673,6 +2727,12 @@
 				68F6EC9E174B97EF003B1CC1 /* ShuangSeQiuBettingActivity.m in Sources */,
 				68F6ECA2174B9D73003B1CC1 /* LotterySalesStatus.m in Sources */,
 				68F6ECA5174BB532003B1CC1 /* LabelForTitleBar.m in Sources */,
+				D7A2C55E175DAF6A00D823F0 /* LuckyPickActivity.m in Sources */,
+				D7A2C562175DB5AC00D823F0 /* LuckyPickScene.m in Sources */,
+				D7A2C566175DBC2300D823F0 /* CommandForSettingCocos2d.m in Sources */,
+				D7A2C569175DC37400D823F0 /* LuckyPickMainLayer.m in Sources */,
+				D7A2C56C175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.m in Sources */,
+				D7A2C56F175DD5CA00D823F0 /* LuckyPickNumberDisplayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

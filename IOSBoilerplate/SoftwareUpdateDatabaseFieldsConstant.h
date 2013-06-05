@@ -42,7 +42,7 @@
 #define k_BatchCodeInfo_RespondKey_endSecond				  @"endSecond"
 
 
-//广播消息返回bean的key
+// 广播消息返回bean的key
 //
 #define k_BroadcastMessage_RespondKey_broadcastmessage @"broadcastmessage"
 //
@@ -52,7 +52,7 @@
 //
 #define k_BroadcastMessage_RespondKey_message				   @"message"
 
-//用户自动登录信息返回bean的key
+// 用户自动登录信息返回bean的key
 //
 #define k_AutoLogin_RespondKey_autoLogin				       @"autoLogin"
 //
@@ -71,7 +71,7 @@
 #define k_AutoLogin_RespondKey_sessionid				       @"sessionid"
 
 
-//获取新闻和下次联网时间返回bean的key
+// 获取新闻和下次联网时间返回bean的key
 //
 #define k_News_RespondKey_news				                 @"news"
 //

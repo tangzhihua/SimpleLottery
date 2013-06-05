@@ -82,7 +82,6 @@
       
     }
 		
-		
 		// 自动登录用户信息
 		UserLoggedInfo *userLoggedInfo = nil;
 		NSDictionary *jsonDictionaryForAutoLogin = [jsonRootNSDictionary safeDictionaryObjectForKey:k_AutoLogin_RespondKey_autoLogin];

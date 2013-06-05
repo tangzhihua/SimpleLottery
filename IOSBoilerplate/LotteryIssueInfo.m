@@ -7,6 +7,7 @@
 //
 
 #import "LotteryIssueInfo.h"
+#import "SoftwareUpdateDatabaseFieldsConstant.h"
 
 @interface LotteryIssueInfo ()
 // 提示信息
@@ -25,42 +26,16 @@
 
 @implementation LotteryIssueInfo
 
--(id)initWithMessage:(NSString *)message
-					 batchcode:(NSNumber *)batchcode
-			syscurrenttime:(NSNumber *)syscurrenttime
-					 starttime:(NSString *)starttime
-						 endtime:(NSString *)endtime
-			time_remaining:(NSNumber *)time_remaining {
-	
-	
-  if ((self = [super init])) {
-		PRPLog(@"init [0x%x]", [self hash]);
-    
-    _message = [message copy];
-		_batchcode = [batchcode copy];
-		_syscurrenttime = [syscurrenttime copy];
-		_starttime = [starttime copy];
-		_endtime = [endtime copy];
-		_time_remaining = [time_remaining copy];
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+  if([key isEqualToString:k_BatchCodeInfo_RespondKey_batchCode]) {
+    self.batchcode = value;
+  } else if([key isEqualToString:k_BatchCodeInfo_RespondKey_endTime]) {
+    self.endtime = value;
+  } else if([key isEqualToString:k_BatchCodeInfo_RespondKey_endSecond]) {
+    self.time_remaining = value;
+  } else {
+    [super setValue:value forUndefinedKey:key];
   }
-  
-  return self;
-	
-}
-
-+(id)lotteryIssueInfoWithMessage:(NSString *)message
-											 batchcode:(NSNumber *)batchcode
-									syscurrenttime:(NSNumber *)syscurrenttime
-											 starttime:(NSString *)starttime
-												 endtime:(NSString *)endtime
-									time_remaining:(NSNumber *)time_remaining {
-	
-	return [[LotteryIssueInfo alloc] initWithMessage:message
-																				 batchcode:batchcode
-																		syscurrenttime:syscurrenttime
-																				 starttime:starttime
-																					 endtime:endtime
-																		time_remaining:time_remaining];
 }
 
 - (NSString *)description {

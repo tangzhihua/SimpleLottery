@@ -24,14 +24,4 @@
 // 期结剩余时间	单位：秒
 @property (nonatomic, readonly, strong) NSNumber *time_remaining;
 
-
-#pragma mark -
-#pragma mark 方便构造
-
-+(id)lotteryIssueInfoWithMessage:(NSString *)message
-											 batchcode:(NSNumber *)batchcode
-									syscurrenttime:(NSNumber *)syscurrenttime
-											 starttime:(NSString *)starttime
-												 endtime:(NSString *)endtime
-									time_remaining:(NSNumber *)time_remaining;
 @end

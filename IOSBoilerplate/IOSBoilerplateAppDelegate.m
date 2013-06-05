@@ -43,7 +43,7 @@
 
 
 
-
+#import "DDLog.h"
 
 
 
@@ -234,7 +234,20 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   
 	
 	///// test
-  //NSAssert(NO, @"tttttttttttttt");
+  
+  static const int ddLogLevel = LOG_LEVEL_DEBUG;
+  [DDLog addLogger:[DDASLLogger sharedInstance]];
+	[DDLog addLogger:[DDTTYLogger sharedInstance]];
+	
+	DDLogFatal(@"Fatal");
+	DDLogError(@"Error");
+	DDLogWarn(@"Warn");
+	DDLogNotice(@"Notice");
+	DDLogInfo(@"Info");
+	DDLogDebug(@"Debug");
+  
+  
+
   /////
 	
 	

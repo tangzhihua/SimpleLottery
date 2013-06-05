@@ -33,9 +33,9 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-		CCSprite *background;
+		CCSprite *background = [CCSprite spriteWithCGImage:image.CGImage key:nil];
+    
 		
-		background = [CCSprite spriteWithCGImage:image.CGImage key:@"test"];
     
 		background.position = ccp(160, size.height+170);
     

@@ -309,6 +309,7 @@
 		68F6ECA2174B9D73003B1CC1 /* LotterySalesStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA1174B9D73003B1CC1 /* LotterySalesStatus.m */; };
 		68F6ECA5174BB532003B1CC1 /* LabelForTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA4174BB532003B1CC1 /* LabelForTitleBar.m */; };
 		68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */; };
+		D7892709175ECE81005B7353 /* PodfileBack in Resources */ = {isa = PBXBuildFile; fileRef = D7892708175ECE81005B7353 /* PodfileBack */; };
 		D7A2C54A175D89D600D823F0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C549175D89D600D823F0 /* CoreText.framework */; };
 		D7A2C54C175D89E400D823F0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C54B175D89E400D823F0 /* CoreMotion.framework */; };
 		D7A2C54E175D89F900D823F0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A2C54D175D89F900D823F0 /* OpenGLES.framework */; };
@@ -895,6 +896,8 @@
 		C37BC8E3144C340600423D44 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		D7572D14175C9C2600632A74 /* RNAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNAssert.h; sourceTree = "<group>"; };
+		D7892708175ECE81005B7353 /* PodfileBack */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodfileBack; sourceTree = "<group>"; };
+		D789270A175ED48D005B7353 /* MYLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYLog.h; sourceTree = "<group>"; };
 		D7A2C549175D89D600D823F0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		D7A2C54B175D89E400D823F0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D7A2C54D175D89F900D823F0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1818,6 +1821,7 @@
 				587ADA12169C2A42006044EB /* AFURLCache */,
 				587ADA15169C2A42006044EB /* BrowserViewController */,
 				587ADA02169C2976006044EB /* Helpers */,
+				D7892708175ECE81005B7353 /* PodfileBack */,
 			);
 			name = "第三方库";
 			sourceTree = "<group>";
@@ -1847,6 +1851,7 @@
 		58DD57B116C250BE000AAD2E /* PRPDebug */ = {
 			isa = PBXGroup;
 			children = (
+				D789270A175ED48D005B7353 /* MYLog.h */,
 				58DD57B216C250BE000AAD2E /* PRPDebug.h */,
 				58DD57B316C250BE000AAD2E /* PRPDebug.m */,
 				58BB0E8316E5BF5500493022 /* NSLogToFile.h */,
@@ -2504,6 +2509,7 @@
 				D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */,
 				D7A2C55F175DAF6A00D823F0 /* LuckyPickActivity.xib in Resources */,
 				D7A2C571175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib in Resources */,
+				D7892709175ECE81005B7353 /* PodfileBack in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

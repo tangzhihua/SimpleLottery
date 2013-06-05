@@ -18,7 +18,7 @@
 
 
 
-static CommandForUserAutoLogin *singletonInstance = nil;
+
 
 
 
@@ -66,6 +66,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   }
 }
 
+static CommandForUserAutoLogin *singletonInstance = nil;
 +(id)commandForUserAutoLogin {
   if (nil == singletonInstance) {
     singletonInstance = [[CommandForUserAutoLogin alloc] init];

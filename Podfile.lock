@@ -1,41 +1,34 @@
 PODS:
   - AFNetworking (1.2.1)
+  - CocoaLumberjack (1.6.2)
   - cocos2d (2.1-rc2)
-  - DLStarRating (1.1)
   - EGOTableViewPullRefresh (0.1.0)
-  - FTUtils (1.1.1)
-  - JGAFImageCache (1.0.0):
-    - AFNetworking (~> 1.2.0)
   - JSONKit (1.5pre)
-  - QuadCurveMenu (0.0.1)
+  - MKNetworkKit (0.87):
+    - Reachability (~> 3.1.0)
+  - Reachability (3.1.0)
   - RegexKitLite (4.0)
   - SVProgressHUD (0.9)
-  - ZGCountDownTimer (0.0.1)
 
 DEPENDENCIES:
   - AFNetworking (= 1.2.1)
+  - CocoaLumberjack (= 1.6.2)
   - cocos2d (= 2.1-rc2)
-  - DLStarRating (= 1.1)
   - EGOTableViewPullRefresh (= 0.1.0)
-  - FTUtils (= 1.1.1)
-  - JGAFImageCache
   - JSONKit (= 1.5pre)
-  - QuadCurveMenu
+  - MKNetworkKit (= 0.87)
   - RegexKitLite
   - SVProgressHUD (= 0.9)
-  - ZGCountDownTimer (= 0.0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
+  CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
   cocos2d: 0ec3eee4f48030787bf7639ca7cbcad8db7aa6c9
-  DLStarRating: 11ffb061ea68acd28cb9580e2bd0e718c6088e6f
   EGOTableViewPullRefresh: 6ba637ce6dd3186b503d2d91e6b3a08a26d650f5
-  FTUtils: 7d4a9e255a9b0b1d0ec22f27d819862eb205c3bc
-  JGAFImageCache: d9eeaea8ea8d3cd8fb5b93b4b9d6b80f52139de1
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
-  QuadCurveMenu: 339756b3178e381fea80e424f8edc1b10af554c8
+  MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
+  Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
   RegexKitLite: 293ff6f3cf8f34277989a37802162c6961a2b35a
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
-  ZGCountDownTimer: 2b410031e26b77f4da741d5e89611c3c24b5d2fe
 
 COCOAPODS: 0.20.2

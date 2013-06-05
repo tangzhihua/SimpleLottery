@@ -1,1 +1,0 @@
-../../QuadCurveMenu/AwesomeMenu/QuadCurveMenu/QuadCurveItemExpandAnimation.h

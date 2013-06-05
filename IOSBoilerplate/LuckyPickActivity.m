@@ -97,7 +97,8 @@
 	[self.bodyLayout addSubview:[CCDirector sharedDirector].view];
   
 	// for rotation and other messages
-	[[CCDirector sharedDirector] setDelegate:self];
+  //[[CCDirector sharedDirector] setDelegate:self];
+  [[CCDirector sharedDirector] pushScene:[LuckyPickScene scene]];
 }
 
 #pragma mark -
@@ -120,6 +121,7 @@
   switch (action) {
       
     case kTitleBarActionEnum_RightButtonClicked:{// "返回"
+      [[CCDirector sharedDirector] popToRootScene];
       [[CCDirector sharedDirector] setDelegate:nil];
       [self finish];
     }break;
@@ -141,7 +143,8 @@
 	if(director.runningScene == nil) {
 		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
 		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-		[director runWithScene: [LuckyPickScene scene]];
+    [director pushScene:[LuckyPickScene scene]];
+		//[director runWithScene: [LuckyPickScene scene]];
 	}
 }
 @end

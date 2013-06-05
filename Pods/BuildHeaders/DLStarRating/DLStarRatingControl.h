@@ -1,1 +1,0 @@
-../../DLStarRating/DLStarRating/DLStarRatingControl.h

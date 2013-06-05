@@ -1,1 +1,0 @@
-../../JGAFImageCache/NSString+JGAFSHA1.h

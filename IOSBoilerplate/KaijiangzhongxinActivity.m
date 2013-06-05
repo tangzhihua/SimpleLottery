@@ -35,4 +35,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)testbutton:(id)sender {
+  NSMutableArray *t = [NSMutableArray arrayWithCapacity:2];
+  t[100];
+}
 @end

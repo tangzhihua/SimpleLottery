@@ -130,6 +130,12 @@
   return versionBean;
 }
 
+/*
+Xcode4有两个版本号，一个是Version,另一个是Build,对应于Info.plist的字段名分别为CFBundleShortVersionString,CFBundleVersion。
+友盟SDK为了兼容Xcode3的工程，默认取的是Build号，如果需要取Xcode4的Version，可以使用下面的方法。
+
+NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+*/
 // 使用 Info.plist 中的 "Bundle version" 来保存本地App Version
 +(NSString *)localAppVersion {
   NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];

@@ -85,21 +85,9 @@
 		NSDictionary *jsonDictionaryForAdImage = [jsonRootNSDictionary safeDictionaryObjectForKey:k_AdImage_RespondKey_image];
     if (jsonDictionaryForAdImage != nil) {
 			
-			//  
-			NSString *errorCode = [jsonDictionaryForAdImage safeStringObjectForKey:k_AdImage_RespondKey_errorCode withDefaultValue:defaultValueForString];
-			BOOL isShowAdImageFromServer = YES;
-			if ([errorCode isEqualToString:@"true"]) {
-				isShowAdImageFromServer = YES;
-			} else {
-				isShowAdImageFromServer = NO;
-			}
-			//  
-			NSString *ID = [jsonDictionaryForAdImage safeStringObjectForKey:k_AdImage_RespondKey_id withDefaultValue:defaultValueForString];
-			//  
-			NSString *imageUrl = [jsonDictionaryForAdImage safeStringObjectForKey:k_AdImage_RespondKey_imageUrl withDefaultValue:defaultValueForString];
-			
-			adImageInWelcomePageRespondBean = [AdImageInWelcomePageNetRespondBean adImageInWelcomePageNetRespondBeanWithIsShowAdImageFromServer:isShowAdImageFromServer ID:ID imageUrl:imageUrl];
-		}
+			adImageInWelcomePageRespondBean = [[AdImageInWelcomePageNetRespondBean alloc] initWithDictionary:jsonDictionaryForAdImage];
+      
+    }
 		
 		
 		// 自动登录用户信息

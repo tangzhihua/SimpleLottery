@@ -49,7 +49,7 @@
       break;
     }
     
-		
+		/*
     // 关键数据字段检测
     NSString *defaultValueForString = @"";
 		NSString *tmp = nil;
@@ -81,7 +81,11 @@
     
 		LotteryIssueInfo *lotteryIssueInfo = [LotteryIssueInfo lotteryIssueInfoWithMessage:message batchcode:batchcode syscurrenttime:syscurrenttime starttime:starttime endtime:endtime time_remaining:time_remaining];
     return lotteryIssueInfo;
-		
+		*/
+    
+    
+    LotteryIssueInfo *lotteryIssueInfo = [[LotteryIssueInfo alloc] initWithDictionary:jsonRootNSDictionary];
+    return lotteryIssueInfo;
   } while (NO);
   
   return nil;

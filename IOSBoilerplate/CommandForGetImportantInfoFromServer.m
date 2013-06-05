@@ -159,8 +159,8 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 			
 		  if (adImageInWelcomePageNetRespondBean.isShowAdImageFromServer) {
 				if (![NSString isEmpty:adImageInWelcomePageNetRespondBean.imageUrl]
-						&& ![NSString isEmpty:adImageInWelcomePageNetRespondBean.ID]
-						&& ![adImageInWelcomePageNetRespondBean.ID isEqualToString:[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest]) {
+						&& ![NSString isEmpty:adImageInWelcomePageNetRespondBean.imageID]
+						&& ![adImageInWelcomePageNetRespondBean.imageID isEqualToString:[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest]) {
 					
 					// 要从服务器下载广告图片
 					NSURL *url = [NSURL URLWithString:adImageInWelcomePageNetRespondBean.imageUrl];
@@ -178,7 +178,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 																																NSData *imageDataForPNG = UIImagePNGRepresentation(image);
 																																[imageDataForPNG writeToFile:adImagePath atomically:YES];
 																																
-																																[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest = adImageInWelcomePageNetRespondBean.ID;
+																																[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest = adImageInWelcomePageNetRespondBean.imageID;
 																															}
 																															failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
 																																PRPLog(@"下载开机广告图片失败, error=%@", error);

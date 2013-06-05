@@ -8,6 +8,25 @@
 
 #import "UserLoggedInfo.h"
 
+@interface UserLoggedInfo ()
+// 提示信息
+@property (nonatomic, readwrite, strong) NSString *message;
+// 用户编号
+@property (nonatomic, readwrite, strong) NSString *userno;
+// 身份证号
+@property (nonatomic, readwrite, strong) NSString *certid;
+// 手机号
+@property (nonatomic, readwrite, strong) NSString *mobileid;
+// 真实姓名
+@property (nonatomic, readwrite, strong) NSString *name;
+// 用户名
+@property (nonatomic, readwrite, strong) NSString *userName;
+// SessionId
+@property (nonatomic, readwrite, strong) NSString *sessionid;
+// 用户自动登录
+@property (nonatomic, readwrite, strong) NSString *randomNumber;
+@end
+
 @implementation UserLoggedInfo
 - (id) initWithMessage:(NSString *)message
 								userno:(NSString *)userno
@@ -54,14 +73,6 @@
 																				userName:userName
 																			 sessionid:sessionid
 																		randomNumber:randomNumber];
-}
-
-#pragma mark
-#pragma mark 不能使用默认的init方法初始化对象, 而必须使用当前类特定的 "初始化方法" 初始化所有参数
-- (id) init {
-  RNAssert(NO, @"Can not use the default init method!");
-  
-  return nil;
 }
 
 - (NSString *)description {

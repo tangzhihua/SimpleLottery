@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel.h"
 
-@interface LotteryIssueInfo : NSObject
+@interface LotteryIssueInfo : JSONModel
+
 // 提示信息
 @property (nonatomic, readonly, strong) NSString *message;
 // 期号 如：2012557、2012153

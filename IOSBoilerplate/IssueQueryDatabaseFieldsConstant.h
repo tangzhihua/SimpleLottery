@@ -28,10 +28,10 @@
 #define k_IssueQuery_RespondKey_message						 @"message"
 // 期号
 #define k_IssueQuery_RespondKey_batchcode          @"batchcode"
-//  
-#define k_IssueQuery_RespondKey_starttime          @"starttime"
 // 系统当前时间
 #define k_IssueQuery_RespondKey_syscurrenttime     @"syscurrenttime"
+//  
+#define k_IssueQuery_RespondKey_starttime          @"starttime"
 // 投注截止时间	
 #define k_IssueQuery_RespondKey_endtime						 @"endtime"
 // 期结剩余时间	单位：秒

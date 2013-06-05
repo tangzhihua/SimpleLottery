@@ -8,6 +8,21 @@
 
 #import "LotteryIssueInfo.h"
 
+@interface LotteryIssueInfo ()
+// 提示信息
+@property (nonatomic, readwrite, strong) NSString *message;
+// 期号 如：2012557、2012153
+@property (nonatomic, readwrite, strong) NSNumber *batchcode;
+//
+@property (nonatomic, readwrite, strong) NSNumber *syscurrenttime;
+//
+@property (nonatomic, readwrite, strong) NSString *starttime;
+// 投注截止时间 如：12-07-16 20:59、12-07-18 22:00
+@property (nonatomic, readwrite, strong) NSString *endtime;
+// 期结剩余时间	单位：秒
+@property (nonatomic, readwrite, strong) NSNumber *time_remaining;
+@end
+
 @implementation LotteryIssueInfo
 
 -(id)initWithMessage:(NSString *)message
@@ -33,8 +48,6 @@
 	
 }
 
-
-
 +(id)lotteryIssueInfoWithMessage:(NSString *)message
 											 batchcode:(NSNumber *)batchcode
 									syscurrenttime:(NSNumber *)syscurrenttime
@@ -48,16 +61,6 @@
 																				 starttime:starttime
 																					 endtime:endtime
 																		time_remaining:time_remaining];
-}
-
-
-
-#pragma mark
-#pragma mark 不能使用默认的init方法初始化对象, 而必须使用当前类特定的 "初始化方法" 初始化所有参数
-- (id) init {
-  RNAssert(NO, @"Can not use the default init method!");
-  
-  return nil;
 }
 
 - (NSString *)description {

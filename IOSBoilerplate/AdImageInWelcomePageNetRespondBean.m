@@ -7,42 +7,38 @@
 //
 
 #import "AdImageInWelcomePageNetRespondBean.h"
+#import "SoftwareUpdateDatabaseFieldsConstant.h"
+
+@interface AdImageInWelcomePageNetRespondBean ()
+// 是否要显示从网络侧下载的广告图片
+@property (nonatomic, readwrite, assign) BOOL isShowAdImageFromServer;
+// 客户端根据返回的id判断是否需要下载新图片
+@property (nonatomic, readwrite, strong) NSString *imageID;
+// 图片地址
+@property (nonatomic, readwrite, strong) NSString *imageUrl;
+@end
+
+
+
 
 @implementation AdImageInWelcomePageNetRespondBean
--(id)initWithIsShowAdImageFromServer:(BOOL)isShowAdImageFromServer
-																	ID:(NSString *)ID
-														imageUrl:(NSString *)imageUrl {
-	
-	
-  if ((self = [super init])) {
-		PRPLog(@"init [0x%x]", [self hash]);
+ 
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+  if([key isEqualToString:k_AdImage_RespondKey_errorCode]) {
+    BOOL isShowAdImageFromServer = YES;
+    if ([value isEqualToString:@"true"]) {
+      isShowAdImageFromServer = YES;
+    } else {
+      isShowAdImageFromServer = NO;
+    }
+    self.isShowAdImageFromServer = isShowAdImageFromServer;
     
-    _isShowAdImageFromServer = isShowAdImageFromServer;
-		_ID = [ID copy];
-		_imageUrl = [imageUrl copy];
+  } else if([key isEqualToString:k_AdImage_RespondKey_id]) {
+    self.imageID = value;
+  } else {
+    [super setValue:value forUndefinedKey:key];
   }
-  
-  return self;
-	
-}
-
-
-
-+(id)adImageInWelcomePageNetRespondBeanWithIsShowAdImageFromServer:(BOOL)isShowAdImageFromServer
-																																ID:(NSString *)ID
-																													imageUrl:(NSString *)imageUrl {
-	
-	return [[AdImageInWelcomePageNetRespondBean alloc] initWithIsShowAdImageFromServer:isShowAdImageFromServer ID:ID imageUrl:imageUrl];
-}
-
-
-
-#pragma mark
-#pragma mark 不能使用默认的init方法初始化对象, 而必须使用当前类特定的 "初始化方法" 初始化所有参数
-- (id) init {
-  RNAssert(NO, @"Can not use the default init method!");
-  
-  return nil;
 }
 
 - (NSString *)description {

@@ -49,7 +49,7 @@
       break;
     }
     
-		
+		/*
     // 关键数据字段检测
     NSString *defaultValueForString = @"";
     
@@ -79,7 +79,9 @@
                                   withDefaultValue:defaultValueForString];
 		
 		UserLoggedInfo *userLoggedInfo = [UserLoggedInfo userLoggedInfoWithMessage:message userno:userno certid:certid mobileid:mobileid name:name userName:userName sessionid:sessionid randomNumber:randomNumber];
+    */
     
+    UserLoggedInfo *userLoggedInfo = [[UserLoggedInfo alloc] initWithDictionary:jsonRootNSDictionary];
     return userLoggedInfo;
   } while (NO);
   

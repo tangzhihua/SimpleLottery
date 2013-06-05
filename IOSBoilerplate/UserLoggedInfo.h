@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel.h"
 
-@interface UserLoggedInfo : NSObject
+
+@interface UserLoggedInfo : JSONModel
 // 提示信息
 @property (nonatomic, readonly, strong) NSString *message;
 // 用户编号

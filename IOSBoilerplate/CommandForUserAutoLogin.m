@@ -148,11 +148,11 @@ static CommandForUserAutoLogin *singletonInstance = nil;
 			
 			
       // 保存用户成功登录后的信息
-			/*
+			 
       NSString *username = [GlobalDataCacheForMemorySingleton sharedInstance].usernameForLastSuccessfulLogon;
       NSString *password = [GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon;
       [ToolsFunctionForThisProgect noteLogonSuccessfulInfoWithUserLoggedInfo:userLoggedInfo usernameForLastSuccessfulLogon:@"18610013076" passwordForLastSuccessfulLogon:@"111111"];
-			 */
+			  
       
     }
     

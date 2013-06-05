@@ -28,15 +28,4 @@
 // 用户自动登录
 @property (nonatomic, readonly, strong) NSString *randomNumber;
 
-#pragma mark -
-#pragma mark 方便构造
-
-+(id)userLoggedInfoWithMessage:(NSString *)message
-												userno:(NSString *)userno
-												certid:(NSString *)certid
-											mobileid:(NSString *)mobileid
-													name:(NSString *)name
-											userName:(NSString *)userName
-										 sessionid:(NSString *)sessionid
-									randomNumber:(NSString *)randomNumber;
 @end

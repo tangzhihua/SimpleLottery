@@ -235,16 +235,9 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 	
 	///// test
   
-  static const int ddLogLevel = LOG_LEVEL_DEBUG;
-  [DDLog addLogger:[DDASLLogger sharedInstance]];
-	[DDLog addLogger:[DDTTYLogger sharedInstance]];
-	
-	DDLogFatal(@"Fatal");
-	DDLogError(@"Error");
-	DDLogWarn(@"Warn");
-	DDLogNotice(@"Notice");
-	DDLogInfo(@"Info");
-	DDLogDebug(@"Debug");
+  // 用户自动登录
+  command = [CommandForUserAutoLogin commandForUserAutoLogin];
+  [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
   
   
 

@@ -69,15 +69,8 @@
 		BroadcastMessageNetReapondBean *broadcastMessageNetReapondBean = nil;
 	  NSDictionary *jsonDictionaryForBroadcastMessage = [jsonRootNSDictionary safeDictionaryObjectForKey:k_BroadcastMessage_RespondKey_broadcastmessage];
     if (jsonDictionaryForBroadcastMessage != nil) {
-			
-			// 消息ID 客户端保存的id与返回的id比较，如果不同则弹出广播消息
-			NSNumber *ID = [jsonDictionaryForBroadcastMessage safeNumberObjectForKey:k_BroadcastMessage_RespondKey_id withDefaultValue:defaultValueForNumber];
-			// 消息标题
-			NSString *title = [jsonDictionaryForBroadcastMessage safeStringObjectForKey:k_BroadcastMessage_RespondKey_title withDefaultValue:defaultValueForString];
-			// 消息内容
-			NSString *message = [jsonDictionaryForBroadcastMessage safeStringObjectForKey:k_BroadcastMessage_RespondKey_message withDefaultValue:defaultValueForString];
-			
-			broadcastMessageNetReapondBean = [BroadcastMessageNetReapondBean broadcastMessageNetReapondBeanWithID:ID title:title message:message];
+    
+			broadcastMessageNetReapondBean = [[BroadcastMessageNetReapondBean alloc] initWithDictionary:jsonDictionaryForBroadcastMessage];
 		}
 		
 		// 下载图片信息
@@ -98,16 +91,8 @@
 			
 			NSString *isAutoLogin = [jsonDictionaryForAutoLogin safeStringObjectForKey:k_AutoLogin_RespondKey_isAutoLogin withDefaultValue:defaultValueForString];
 			
-			 
 			if ([isAutoLogin isEqualToString:@"true"]) {
-				NSString *userno = [jsonDictionaryForAutoLogin safeStringObjectForKey:k_AutoLogin_RespondKey_userno withDefaultValue:defaultValueForString];
-				NSString *certid = [jsonDictionaryForAutoLogin safeStringObjectForKey:k_AutoLogin_RespondKey_certid withDefaultValue:defaultValueForString];
-				NSString *mobileid = [jsonDictionaryForAutoLogin safeStringObjectForKey:k_AutoLogin_RespondKey_mobileid withDefaultValue:defaultValueForString];
-				NSString *name = [jsonDictionaryForAutoLogin safeStringObjectForKey:k_AutoLogin_RespondKey_name withDefaultValue:defaultValueForString];
-				NSString *userName = [jsonDictionaryForAutoLogin safeStringObjectForKey:k_AutoLogin_RespondKey_userName withDefaultValue:defaultValueForString];
-				NSString *sessionid = [jsonDictionaryForAutoLogin safeStringObjectForKey:k_AutoLogin_RespondKey_sessionid withDefaultValue:defaultValueForString];
-				
-				userLoggedInfo = [UserLoggedInfo userLoggedInfoWithMessage:nil userno:userno certid:certid mobileid:mobileid name:name userName:userName sessionid:sessionid randomNumber:nil];
+				userLoggedInfo = [[UserLoggedInfo alloc] initWithDictionary:jsonDictionaryForAutoLogin];
 			}
 		}
 		

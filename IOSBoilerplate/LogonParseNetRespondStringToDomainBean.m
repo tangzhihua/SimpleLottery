@@ -49,38 +49,6 @@
       break;
     }
     
-		/*
-    // 关键数据字段检测
-    NSString *defaultValueForString = @"";
-    
-    NSString *message
-    = [jsonRootNSDictionary safeStringObjectForKey:k_Login_RespondKey_message
-                                  withDefaultValue:defaultValueForString];
-		NSString *userno
-    = [jsonRootNSDictionary safeStringObjectForKey:k_Login_RespondKey_userno
-                                  withDefaultValue:defaultValueForString];
-		NSString *certid
-    = [jsonRootNSDictionary safeStringObjectForKey:k_Login_RespondKey_certid
-                                  withDefaultValue:defaultValueForString];
-		NSString *mobileid
-    = [jsonRootNSDictionary safeStringObjectForKey:k_Login_RespondKey_mobileid
-                                  withDefaultValue:defaultValueForString];
-    NSString *name
-    = [jsonRootNSDictionary safeStringObjectForKey:k_Login_RespondKey_name
-                                  withDefaultValue:defaultValueForString];
-		NSString *userName
-    = [jsonRootNSDictionary safeStringObjectForKey:k_Login_RespondKey_userName
-                                  withDefaultValue:defaultValueForString];
-		NSString *sessionid
-    = [jsonRootNSDictionary safeStringObjectForKey:k_Login_RespondKey_sessionid
-                                  withDefaultValue:defaultValueForString];
-		NSString *randomNumber
-    = [jsonRootNSDictionary safeStringObjectForKey:k_Login_RespondKey_randomNumber
-                                  withDefaultValue:defaultValueForString];
-		
-		UserLoggedInfo *userLoggedInfo = [UserLoggedInfo userLoggedInfoWithMessage:message userno:userno certid:certid mobileid:mobileid name:name userName:userName sessionid:sessionid randomNumber:randomNumber];
-    */
-    
     UserLoggedInfo *userLoggedInfo = [[UserLoggedInfo alloc] initWithDictionary:jsonRootNSDictionary];
     return userLoggedInfo;
   } while (NO);

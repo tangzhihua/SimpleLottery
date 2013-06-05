@@ -7,33 +7,27 @@
 //
 
 #import "BroadcastMessageNetReapondBean.h"
+#import "SoftwareUpdateDatabaseFieldsConstant.h"
+
+@interface BroadcastMessageNetReapondBean ()
+// 消息ID 客户端保存的id与返回的id比较，如果不同则弹出广播消息
+@property (nonatomic, readwrite, strong) NSNumber *messageID;
+// 消息标题
+@property (nonatomic, readwrite, strong) NSString *title;
+// 消息内容
+@property (nonatomic, readwrite, strong) NSString *message;
+@end
+
+
 
 @implementation BroadcastMessageNetReapondBean
--(id)initWithID:(NSNumber *)ID title:(NSString *)title message:(NSString *)message {
-	if ((self = [super init])) {
-		PRPLog(@"init [0x%x]", [self hash]);
-    
-    _ID = [ID copy];
-		_title = [title copy];
-		_message = [message copy];
-	}
-  
-  return self;
-}
 
-
-+(id)broadcastMessageNetReapondBeanWithID:(NSNumber *)ID title:(NSString *)title message:(NSString *)message {
-	return  [[BroadcastMessageNetReapondBean alloc] initWithID:ID title:title message:message];
-}
-
-
-
-#pragma mark
-#pragma mark 不能使用默认的init方法初始化对象, 而必须使用当前类特定的 "初始化方法" 初始化所有参数
-- (id) init {
-  RNAssert(NO, @"Can not use the default init method!");
-  
-  return nil;
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+  if([key isEqualToString:k_BroadcastMessage_RespondKey_id]) {
+    self.messageID = value;
+  } else {
+    [super setValue:value forUndefinedKey:key];
+  }
 }
 
 - (NSString *)description {

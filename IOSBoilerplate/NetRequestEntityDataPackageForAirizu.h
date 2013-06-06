@@ -14,5 +14,5 @@
 }
 
 #pragma mark INetRequestEntityDataPackage 接口方法
-- (NSData *) packageNetRequestEntityData:(NSDictionary *) domainDD;
+- (NSData *) packageNetRequestEntityDataWithDomainDataDictionary:(NSDictionary *) domainDD;
 @end

@@ -45,7 +45,7 @@
 
 #import "DDLog.h"
 
-
+ 
 
 /*
  UIApplicationDelegate 代理函数调用的时间（应用程序生命周期）
@@ -240,7 +240,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
   
   
-
+  
   /////
 	
 	

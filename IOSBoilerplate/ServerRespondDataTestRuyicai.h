@@ -14,5 +14,5 @@
 }
 
 #pragma mark 实现 IServerRespondDataTest 接口
-- (NetErrorBean *) testServerRespondDataError:(NSString *) netUnpackedData;
+- (NetErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String;
 @end

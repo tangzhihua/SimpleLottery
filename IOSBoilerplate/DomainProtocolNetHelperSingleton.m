@@ -209,7 +209,7 @@
         // 然后将业务参数字典, 拼装成HTTP请求实体字符串
         // 业务字典是 Map<String, String> 格式的, 在这里要完成对 Map<String, String>格式的数据再次加工,
         // 比如 "key1=value1, key2=value2" 或者 "JSON格式" 或者 "XML格式" 或者 "自定义格式"
-        httpEntityData = [[[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRequestEntityDataPackage] packageNetRequestEntityData:fullDataDictionary];
+        httpEntityData = [[[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRequestEntityDataPackage] packageNetRequestEntityDataWithDomainDataDictionary:fullDataDictionary];
         
         // 最终确认确实需要使用POST方式发送数据
         httpRequestMethod = @"POST";
@@ -477,7 +477,7 @@
         [netErrorBean setErrorType:NET_ERROR_TYPE_CLIENT_EXCEPTION];
         break;
       }
-      NSString *netUnpackedData = [netRespondRawEntityDataUnpack unpackNetRespondRawEntityData:netRawEntityData];
+      NSString *netUnpackedData = [netRespondRawEntityDataUnpack unpackNetRespondRawEntityDataToUTF8String:netRawEntityData];
       if ([NSString isEmpty:netUnpackedData]) {
         // 异常 (NullPointerException)
         PRPLog(@"-->解析服务器端返回的实体数据失败.");
@@ -500,7 +500,7 @@
         [netErrorBean setErrorType:NET_ERROR_TYPE_CLIENT_EXCEPTION];
         break;
       }
-      NetErrorBean *serverRespondDataError = [serverRespondDataTest testServerRespondDataError:netUnpackedData];
+      NetErrorBean *serverRespondDataError = [serverRespondDataTest testServerRespondDataIsValid:netUnpackedData];
       if (serverRespondDataError.errorType != NET_ERROR_TYPE_SUCCESS) {
         // 如果服务器没有有效的数据到客户端, 那么就不需要创建  "网络响应业务Bean"
         PRPLog(@"-->服务器端告知客户端, 本次网络访问未获取到有效数据(具体情况, 可以查看服务器端返回的错误代码和错误信息)");

@@ -50,7 +50,7 @@ static const NSString *const TAG = @"<NetRequestEntityDataPackageForAirizu>";
 //}
 
 #pragma mark 实现 INetRequestEntityDataPackage 接口方法
-- (NSData *) packageNetRequestEntityData:(NSDictionary *) domainDD {
+- (NSData *) packageNetRequestEntityDataWithDomainDataDictionary:(NSDictionary *) domainDD {
   
   if ([domainDD count] <= 0) {
     // 入参为空
@@ -73,7 +73,7 @@ static const NSString *const TAG = @"<NetRequestEntityDataPackageForAirizu>";
     }
   }
   
-  PRPLog(@"packageNetRequestEntityData-> %@", entityDataString);
+  PRPLog(@"packageNetRequestEntityDataWithDomainDataDictionary-> %@", entityDataString);
   
   return [entityDataString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
 }

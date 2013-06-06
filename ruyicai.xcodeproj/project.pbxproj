@@ -2201,6 +2201,8 @@
 			isa = PBXGroup;
 			children = (
 				68E744F4173F822000136C4B /* LotterySalesStatusDatabaseFieldsConstant.h */,
+				6801F3F71746541D006E1D2B /* LotterySalesStatusDomainBeanToolsFactory.h */,
+				6801F3F81746541D006E1D2B /* LotterySalesStatusDomainBeanToolsFactory.m */,
 				68E744EE173F803D00136C4B /* LotterySalesStatusNetRequestBean.h */,
 				68E744EF173F803D00136C4B /* LotterySalesStatusNetRequestBean.m */,
 				68E744F1173F817700136C4B /* LotterySalesStatusNetRespondBean.h */,
@@ -2211,8 +2213,6 @@
 				68E744F9173F860600136C4B /* LotterySalesStatusParseDomainBeanToDD.m */,
 				68E744FB173F87B400136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.h */,
 				68E744FC173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m */,
-				6801F3F71746541D006E1D2B /* LotterySalesStatusDomainBeanToolsFactory.h */,
-				6801F3F81746541D006E1D2B /* LotterySalesStatusDomainBeanToolsFactory.m */,
 			);
 			name = "彩票销售状态(今日开奖,加奖,是否停售)";
 			sourceTree = "<group>";

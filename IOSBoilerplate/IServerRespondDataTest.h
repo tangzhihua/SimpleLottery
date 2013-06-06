@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 @class NetErrorBean;
 /**
- * 测试从服务器端返回的数据是否是有效的(数据要先解包, 然后再根据错误码做判断)
+ * 检测从服务器端返回的数据是否有效(这里是当服务器正常返回了数据后, 我们要检测返回的数据中是否有之前约定好的错误码存在, 来确认本次数据是否是真正有效的.)
  * @author zhihua.tang
  *
  */
 @protocol IServerRespondDataTest <NSObject>
-- (NetErrorBean *) testServerRespondDataError:(NSString *) netUnpackedData;
+- (NetErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String;
 @end

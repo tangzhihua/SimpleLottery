@@ -40,14 +40,7 @@
       break;
     }
     
-		const char *jsonStringForUTF8 = [netRespondString UTF8String];
-		NSError *error = [[NSError alloc] init];
-    JSONDecoder *jsonDecoder = [[JSONDecoder alloc] init];
-    NSDictionary *jsonRootNSDictionary
-    = [jsonDecoder objectWithUTF8String:(const unsigned char *)jsonStringForUTF8
-                                 length:(unsigned int)strlen(jsonStringForUTF8)];
-    jsonDecoder = nil;
-		error = nil;
+    id jsonRootNSDictionary = [netRespondString objectFromJSONString];
     
     if (![jsonRootNSDictionary isKindOfClass:[NSDictionary class]]) {
       PRPLog(@"%@-> json 解析失败!");

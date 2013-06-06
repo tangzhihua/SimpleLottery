@@ -33,21 +33,13 @@ static const NSString *const TAG = @"<ServerRespondDataTestAirizu>";
 }
 
 #pragma mark 实现 IServerRespondDataTest 接口
-- (NetErrorBean *) testServerRespondDataError:(NSString *) netUnpackedData {
+- (NetErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String {
   NSInteger errorCode = 200;
   NetErrorTypeEnum errorType = NET_ERROR_TYPE_SUCCESS;
   NSString *errorMessage = @"OK";
   
-  /// 
-  const char *jsonStringForUTF8 = [netUnpackedData UTF8String];
-	NSError *error = [[NSError alloc] init];
-  JSONDecoder *jsonDecoder = [[JSONDecoder alloc] init];
   NSDictionary *jsonDataNSDictionary
-  = [jsonDecoder objectWithUTF8String:(const unsigned char *)jsonStringForUTF8
-                               length:(unsigned int)strlen(jsonStringForUTF8)
-																error:&error];
-	jsonDecoder = nil;
-	error = nil;
+  = [serverRespondDataOfUTF8String objectFromJSONString];
   
   ///
   NSString *errorCodeFromServer = [jsonDataNSDictionary safeStringObjectForKey:@"errorcode"];

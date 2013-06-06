@@ -14,5 +14,5 @@
 }
 
 #pragma mark 实现 INetRespondRawEntityDataUnpack 接口
-- (NSString *) unpackNetRespondRawEntityData:(in NSData *) rawData;
+- (NSString *) unpackNetRespondRawEntityDataToUTF8String:(in NSData *) rawData;
 @end

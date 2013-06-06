@@ -18,8 +18,6 @@
 #import "NetRespondEntityDataUnpackRuyicai.h"
 #import "ServerRespondDataTestRuyicai.h"
 
-static const NSString *const TAG = @"<NetEntityDataToolsFactoryMethodSingleton>";
-
 @interface NetEntityDataToolsFactoryMethodSingleton()
 @property (nonatomic, retain) id netRequestEntityDataPackage;
 @property (nonatomic, retain) id netRespondEntityDataUnpack;

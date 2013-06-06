@@ -28,7 +28,7 @@ static const NSString *const TAG = @"<NetRespondEntityDataUnpackAirizu>";
 }
 
 #pragma mark 实现 INetRespondRawEntityDataUnpack 接口
-- (NSString *) unpackNetRespondRawEntityData:(in NSData *) rawData {
+- (NSString *) unpackNetRespondRawEntityDataToUTF8String:(in NSData *) rawData {
   if (rawData == nil) {
     // 入参异常
     return nil;

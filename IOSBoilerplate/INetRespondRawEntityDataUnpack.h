@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 /**
- * 将网络返回的数据, 解压成可识别的字符串(在这里完成数据的解密)
+ * 将网络返回的原生数据, 解压成可识别的UTF8字符串(在这里完成数据的解密)
  * @author zhihua.tang
  *
  */
 @protocol INetRespondRawEntityDataUnpack <NSObject>
-- (NSString *) unpackNetRespondRawEntityData:(in NSData *) rawData;
+- (NSString *) unpackNetRespondRawEntityDataToUTF8String:(in NSData *) rawData;
 @end
 

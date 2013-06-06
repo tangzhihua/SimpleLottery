@@ -326,6 +326,10 @@
 		D7A2C571175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */; };
 		D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A8D57E175C34D300BC5CBF /* libicucore.dylib */; };
 		D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */; };
+		D7B5ADE81760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */; };
+		D7B5ADEB17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADEA17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m */; };
+		D7B5ADEE176056EC002AEB14 /* NetRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADED176056EC002AEB14 /* NetRequestError.m */; };
+		D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */; };
 		D7F0D915175F0C5600E779FD /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F0D914175F0C5600E779FD /* JSONModel.m */; };
 /* End PBXBuildFile section */
 
@@ -919,6 +923,13 @@
 		D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuckyPickNumberDisplayView.xib; sourceTree = "<group>"; };
 		D7A8D57E175C34D300BC5CBF /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regular_expressions_keys.plist; sourceTree = "<group>"; };
+		D7B5ADE61760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainProtocolNetHelperOfMKNetworkKitSingleton.h; sourceTree = "<group>"; };
+		D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainProtocolNetHelperOfMKNetworkKitSingleton.m; sourceTree = "<group>"; };
+		D7B5ADE917605283002AEB14 /* NetRequestOperationOfMKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestOperationOfMKNetworkKit.h; sourceTree = "<group>"; };
+		D7B5ADEA17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestOperationOfMKNetworkKit.m; sourceTree = "<group>"; };
+		D7B5ADEC176056EC002AEB14 /* NetRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestError.h; sourceTree = "<group>"; };
+		D7B5ADED176056EC002AEB14 /* NetRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestError.m; sourceTree = "<group>"; };
+		D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Errors_en_US.plist; sourceTree = "<group>"; };
 		D7F0D913175F0C5600E779FD /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		D7F0D914175F0C5600E779FD /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1186,7 +1197,6 @@
 		581ED7B8167EBE3600862985 /* NetHelper */ = {
 			isa = PBXGroup;
 			children = (
-				581ED808167F1BF200862985 /* IDomainNetRespondCallback.h */,
 				581ED809167F222900862985 /* DomainProtocolNetHelperSingleton.h */,
 				581ED80A167F222900862985 /* DomainProtocolNetHelperSingleton.m */,
 				581ED7B9167EBE4B00862985 /* NetThread */,
@@ -1217,10 +1227,7 @@
 				587FA6AE1680333600C90D4C /* HttpNetworkEngineParameterEnum.h */,
 				587FA6A81680309D00C90D4C /* HttpNetworkEngineFactoryMethodSingleton.h */,
 				587FA6A91680309D00C90D4C /* HttpNetworkEngineFactoryMethodSingleton.m */,
-				58C016671682FA130016D389 /* HttpNetworkEngineForNSURLConnection.h */,
-				58C016681682FA130016D389 /* HttpNetworkEngineForNSURLConnection.m */,
-				587FA6AB1680332400C90D4C /* HttpNetworkEngineForAFNetworking.h */,
-				587FA6AC1680332400C90D4C /* HttpNetworkEngineForAFNetworking.m */,
+				D7B5ADE317603002002AEB14 /* NetEngine */,
 			);
 			name = NetEngineForHttp;
 			sourceTree = "<group>";
@@ -1581,6 +1588,9 @@
 		58815A151603112000155B44 /* 网络框架核心代码 */ = {
 			isa = PBXGroup;
 			children = (
+				581ED808167F1BF200862985 /* IDomainNetRespondCallback.h */,
+				D7B5ADE517603130002AEB14 /* NetHelperOfAFNetworking */,
+				D7B5ADE4176030EB002AEB14 /* NetHelperOfMKNetworkKit */,
 				581ED7B2167EBCEF00862985 /* DomainBeanStrategyMapping */,
 				581ED7B8167EBE3600862985 /* NetHelper */,
 				581ED7B7167EBE1300862985 /* NetErrorHandle */,
@@ -2331,6 +2341,38 @@
 			name = "配置cocos2d";
 			sourceTree = "<group>";
 		};
+		D7B5ADE317603002002AEB14 /* NetEngine */ = {
+			isa = PBXGroup;
+			children = (
+				58C016671682FA130016D389 /* HttpNetworkEngineForNSURLConnection.h */,
+				58C016681682FA130016D389 /* HttpNetworkEngineForNSURLConnection.m */,
+				587FA6AB1680332400C90D4C /* HttpNetworkEngineForAFNetworking.h */,
+				587FA6AC1680332400C90D4C /* HttpNetworkEngineForAFNetworking.m */,
+			);
+			name = NetEngine;
+			sourceTree = "<group>";
+		};
+		D7B5ADE4176030EB002AEB14 /* NetHelperOfMKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */,
+				D7B5ADEC176056EC002AEB14 /* NetRequestError.h */,
+				D7B5ADED176056EC002AEB14 /* NetRequestError.m */,
+				D7B5ADE61760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.h */,
+				D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */,
+				D7B5ADE917605283002AEB14 /* NetRequestOperationOfMKNetworkKit.h */,
+				D7B5ADEA17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m */,
+			);
+			name = NetHelperOfMKNetworkKit;
+			sourceTree = "<group>";
+		};
+		D7B5ADE517603130002AEB14 /* NetHelperOfAFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NetHelperOfAFNetworking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2510,6 +2552,7 @@
 				D7A2C55F175DAF6A00D823F0 /* LuckyPickActivity.xib in Resources */,
 				D7A2C571175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib in Resources */,
 				D7892709175ECE81005B7353 /* PodfileBack in Resources */,
+				D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2739,6 +2782,9 @@
 				D7A2C56C175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.m in Sources */,
 				D7A2C56F175DD5CA00D823F0 /* LuckyPickNumberDisplayView.m in Sources */,
 				D7F0D915175F0C5600E779FD /* JSONModel.m in Sources */,
+				D7B5ADE81760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m in Sources */,
+				D7B5ADEB17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m in Sources */,
+				D7B5ADEE176056EC002AEB14 /* NetRequestError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

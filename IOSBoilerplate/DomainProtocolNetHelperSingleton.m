@@ -7,6 +7,7 @@
 //
 
 #import "DomainProtocolNetHelperSingleton.h"
+
 #import "IDomainBeanAbstractFactory.h"
 #import "IParseDomainBeanToDataDictionary.h"
 #import "DomainBeanAbstractFactoryCacheSingleton.h"

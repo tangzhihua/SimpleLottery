@@ -57,5 +57,15 @@
 	<string>2088701018009871</string>
 	<key>UIStatusBarHidden</key>
 	<false/>
+	<key>UIStatusBarTintParameters</key>
+	<dict>
+		<key>UINavigationBar</key>
+		<dict>
+			<key>Style</key>
+			<string>UIBarStyleDefault</string>
+			<key>Translucent</key>
+			<false/>
+		</dict>
+	</dict>
 </dict>
 </plist>

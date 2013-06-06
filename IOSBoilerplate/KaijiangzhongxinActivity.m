@@ -14,6 +14,7 @@
 #import "LotteryAnnouncementNetRequestBean.h"
 #import "LotteryAnnouncementNetRespondBean.h"
 
+#import "DomainProtocolNetHelperOfMKNetworkKitSingleton.h"
 
 @interface KaijiangzhongxinActivity () <UITableViewDelegate, UITableViewDataSource, IDomainNetRespondCallback, CustomControlDelegate, UIAlertViewDelegate>
 
@@ -29,23 +30,24 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		// Custom initialization
+		_netRequestIndexForLotteryAnnouncement = IDLE_NETWORK_REQUEST_ID;
+	}
+	return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	[super viewDidLoad];
+	// Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
 
 #pragma mark -
@@ -61,7 +63,7 @@
   PRPLog(@"--> onResume ");
   if (self.lotteryAnnouncementNetRespondBean == nil) {
 		if (self.netRequestIndexForLotteryAnnouncement == IDLE_NETWORK_REQUEST_ID) {
-			//[self requestLotterySalesStatus];
+			[self requestLotteryAnnouncement];
 		}
 	}
 	
@@ -97,7 +99,7 @@
   
   do {
     
-		 
+		
   } while (NO);
   
   // 20130223 tangzhihua : 不能在这里直接调用 doneLoadingTableViewData, 否则关不掉当前界面
@@ -152,4 +154,12 @@
   return 10;
 }
 
+
+
+#pragma mark -
+
+-(void)requestLotteryAnnouncement {
+	LotteryAnnouncementNetRequestBean *netRequestBean = [[LotteryAnnouncementNetRequestBean alloc] init];
+	[[DomainProtocolNetHelperOfMKNetworkKitSingleton sharedInstance] requestDomainProtocolWithContext:self requestDomainBean:netRequestBean requestEvent:11 extraHttpRequestParameterMap:nil successedBlock:NULL failedBlock:NULL];
+}
 @end

@@ -28,7 +28,7 @@
   RNAssert(netRequestDomainBean != nil, @"入参为空 !");
   
   do {
-    if (! [netRequestDomainBean isMemberOfClass:[LotteryAnnouncementParseDomainBeanToDD class]]) {
+    if (! [netRequestDomainBean isMemberOfClass:[LotteryAnnouncementNetRequestBean class]]) {
       RNAssert(NO, @"传入的业务Bean的类型不符 !");
       break;
     }

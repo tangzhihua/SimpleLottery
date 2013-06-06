@@ -8,6 +8,6 @@
 
 #import "Activity.h"
 
-@interface KaijiangzhongxinActivity : Activity
+@interface KaijiangzhongxinActivity : ListActivity
 
 @end

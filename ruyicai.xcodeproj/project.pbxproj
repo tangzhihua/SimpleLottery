@@ -293,6 +293,12 @@
 		68E744F3173F817800136C4B /* LotterySalesStatusNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744F2173F817800136C4B /* LotterySalesStatusNetRespondBean.m */; };
 		68E744FA173F860700136C4B /* LotterySalesStatusParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744F9173F860600136C4B /* LotterySalesStatusParseDomainBeanToDD.m */; };
 		68E744FD173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744FC173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m */; };
+		68EDEC981760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDEC971760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m */; };
+		68EDEC9B1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDEC9A1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m */; };
+		68EDEC9E1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDEC9D1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m */; };
+		68EDECA11760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDECA01760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m */; };
+		68EDECA41760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDECA31760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m */; };
+		68EDECA71760C3F4007572D4 /* LotteryAnnouncement.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDECA61760C3F3007572D4 /* LotteryAnnouncement.m */; };
 		68F59381172E6D210001A414 /* SoftwareUpdateDomainBeanToolsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59380172E6D210001A414 /* SoftwareUpdateDomainBeanToolsFactory.m */; };
 		68F59384172E6D400001A414 /* SoftwareUpdateNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59383172E6D400001A414 /* SoftwareUpdateNetRequestBean.m */; };
 		68F59387172E6D4F0001A414 /* SoftwareUpdateNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59386172E6D4E0001A414 /* SoftwareUpdateNetRespondBean.m */; };
@@ -866,6 +872,19 @@
 		68E744F9173F860600136C4B /* LotterySalesStatusParseDomainBeanToDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotterySalesStatusParseDomainBeanToDD.m; sourceTree = "<group>"; };
 		68E744FB173F87B400136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotterySalesStatusParseNetRespondStringToDomainBean.h; sourceTree = "<group>"; };
 		68E744FC173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotterySalesStatusParseNetRespondStringToDomainBean.m; sourceTree = "<group>"; };
+		68EDEC951760B9E5007572D4 /* LotteryAnnouncementDatabaseFieldConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementDatabaseFieldConstant.h; sourceTree = "<group>"; };
+		68EDEC961760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementDomainBeanToolsFactory.h; sourceTree = "<group>"; };
+		68EDEC971760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementDomainBeanToolsFactory.m; sourceTree = "<group>"; };
+		68EDEC991760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementNetRequestBean.h; sourceTree = "<group>"; };
+		68EDEC9A1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementNetRequestBean.m; sourceTree = "<group>"; };
+		68EDEC9C1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementNetRespondBean.h; sourceTree = "<group>"; };
+		68EDEC9D1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementNetRespondBean.m; sourceTree = "<group>"; };
+		68EDEC9F1760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementParseDomainBeanToDD.h; sourceTree = "<group>"; };
+		68EDECA01760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementParseDomainBeanToDD.m; sourceTree = "<group>"; };
+		68EDECA21760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementParseNetRespondStringToDomainBean.h; sourceTree = "<group>"; };
+		68EDECA31760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementParseNetRespondStringToDomainBean.m; sourceTree = "<group>"; };
+		68EDECA51760C3F2007572D4 /* LotteryAnnouncement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncement.h; sourceTree = "<group>"; };
+		68EDECA61760C3F3007572D4 /* LotteryAnnouncement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncement.m; sourceTree = "<group>"; };
 		68F5937E172E6CE00001A414 /* SoftwareUpdateDatabaseFieldsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareUpdateDatabaseFieldsConstant.h; sourceTree = "<group>"; };
 		68F5937F172E6D210001A414 /* SoftwareUpdateDomainBeanToolsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoftwareUpdateDomainBeanToolsFactory.h; sourceTree = "<group>"; };
 		68F59380172E6D210001A414 /* SoftwareUpdateDomainBeanToolsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoftwareUpdateDomainBeanToolsFactory.m; sourceTree = "<group>"; };
@@ -1134,6 +1153,7 @@
 		581ED7B3167EBD3800862985 /* 业务Bean代码 */ = {
 			isa = PBXGroup;
 			children = (
+				68EDEC941760B8ED007572D4 /* 开奖公告 */,
 				68E744EB173F7CA400136C4B /* 彩票销售状态(今日开奖,加奖,是否停售) */,
 				68F5938E172E756A0001A414 /* 独立的业务Bean */,
 				68F5937D172E6C020001A414 /* software_update */,
@@ -2227,6 +2247,26 @@
 			name = "彩票销售状态(今日开奖,加奖,是否停售)";
 			sourceTree = "<group>";
 		};
+		68EDEC941760B8ED007572D4 /* 开奖公告 */ = {
+			isa = PBXGroup;
+			children = (
+				68EDEC951760B9E5007572D4 /* LotteryAnnouncementDatabaseFieldConstant.h */,
+				68EDEC961760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.h */,
+				68EDEC971760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m */,
+				68EDEC991760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.h */,
+				68EDEC9A1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m */,
+				68EDECA51760C3F2007572D4 /* LotteryAnnouncement.h */,
+				68EDECA61760C3F3007572D4 /* LotteryAnnouncement.m */,
+				68EDEC9C1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.h */,
+				68EDEC9D1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m */,
+				68EDEC9F1760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.h */,
+				68EDECA01760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m */,
+				68EDECA21760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.h */,
+				68EDECA31760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m */,
+			);
+			name = "开奖公告";
+			sourceTree = "<group>";
+		};
 		68F5937D172E6C020001A414 /* software_update */ = {
 			isa = PBXGroup;
 			children = (
@@ -2785,6 +2825,12 @@
 				D7B5ADE81760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m in Sources */,
 				D7B5ADEB17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m in Sources */,
 				D7B5ADEE176056EC002AEB14 /* NetRequestError.m in Sources */,
+				68EDEC981760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m in Sources */,
+				68EDEC9B1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m in Sources */,
+				68EDEC9E1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m in Sources */,
+				68EDECA11760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m in Sources */,
+				68EDECA41760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m in Sources */,
+				68EDECA71760C3F4007572D4 /* LotteryAnnouncement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

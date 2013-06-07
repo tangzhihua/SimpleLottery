@@ -16,21 +16,16 @@
 
 
 @implementation LotteryAnnouncementNetRespondBean
-
+-(NSMutableDictionary *)lotteryAnnouncementMap{
+  if (_lotteryAnnouncementMap == nil) {
+    _lotteryAnnouncementMap = [[NSMutableDictionary alloc] initWithCapacity:20];
+  }
+  return _lotteryAnnouncementMap;
+}
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
   LotteryAnnouncement *lotteryAnnouncement = [[LotteryAnnouncement alloc] initWithDictionary:value];
-	[self.lotteryAnnouncementMap setValue:lotteryAnnouncement forUndefinedKey:key];
-}
-
-- (id) init {
-  self = [super init];
-  if (self) {
-    // Initialization code here.
-    self.lotteryAnnouncementMap = [NSMutableDictionary dictionary];
-  }
-  
-  return self;
+	[self.lotteryAnnouncementMap setValue:lotteryAnnouncement forKey:key];
 }
 
 - (NSString *)description {

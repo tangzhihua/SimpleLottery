@@ -333,7 +333,6 @@
 		D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A8D57E175C34D300BC5CBF /* libicucore.dylib */; };
 		D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */; };
 		D7B5ADE81760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */; };
-		D7B5ADEB17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADEA17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m */; };
 		D7B5ADEE176056EC002AEB14 /* NetRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADED176056EC002AEB14 /* NetRequestError.m */; };
 		D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */; };
 		D7F0D915175F0C5600E779FD /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F0D914175F0C5600E779FD /* JSONModel.m */; };
@@ -944,8 +943,6 @@
 		D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regular_expressions_keys.plist; sourceTree = "<group>"; };
 		D7B5ADE61760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainProtocolNetHelperOfMKNetworkKitSingleton.h; sourceTree = "<group>"; };
 		D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainProtocolNetHelperOfMKNetworkKitSingleton.m; sourceTree = "<group>"; };
-		D7B5ADE917605283002AEB14 /* NetRequestOperationOfMKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestOperationOfMKNetworkKit.h; sourceTree = "<group>"; };
-		D7B5ADEA17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestOperationOfMKNetworkKit.m; sourceTree = "<group>"; };
 		D7B5ADEC176056EC002AEB14 /* NetRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestError.h; sourceTree = "<group>"; };
 		D7B5ADED176056EC002AEB14 /* NetRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestError.m; sourceTree = "<group>"; };
 		D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Errors_en_US.plist; sourceTree = "<group>"; };
@@ -2400,8 +2397,6 @@
 				D7B5ADED176056EC002AEB14 /* NetRequestError.m */,
 				D7B5ADE61760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.h */,
 				D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */,
-				D7B5ADE917605283002AEB14 /* NetRequestOperationOfMKNetworkKit.h */,
-				D7B5ADEA17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m */,
 			);
 			name = NetHelperOfMKNetworkKit;
 			sourceTree = "<group>";
@@ -2823,7 +2818,6 @@
 				D7A2C56F175DD5CA00D823F0 /* LuckyPickNumberDisplayView.m in Sources */,
 				D7F0D915175F0C5600E779FD /* JSONModel.m in Sources */,
 				D7B5ADE81760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m in Sources */,
-				D7B5ADEB17605283002AEB14 /* NetRequestOperationOfMKNetworkKit.m in Sources */,
 				D7B5ADEE176056EC002AEB14 /* NetRequestError.m in Sources */,
 				68EDEC981760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m in Sources */,
 				68EDEC9B1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m in Sources */,

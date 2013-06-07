@@ -35,7 +35,7 @@
 
 #import "MKNetworkEngine.h"
 #import "NetRequestError.h"
-#import "NetRequestOperationOfMKNetworkKit.h"
+
 
 @interface DomainProtocolNetHelperOfMKNetworkKitSingleton()
 @property (nonatomic, strong) MKNetworkEngine *networkEngine;
@@ -199,7 +199,8 @@
 		}
 		// //////////////////////////////////////////////////////////////////////////////
 		
-		NetRequestOperationOfMKNetworkKit *netRequestOperation = (NetRequestOperationOfMKNetworkKit *)[self.networkEngine operationWithURLString:url params:fullDataDictionary httpMethod:httpRequestMethod];
+		MKNetworkOperation *netRequestOperation = [self.networkEngine operationWithURLString:url params:fullDataDictionary httpMethod:httpRequestMethod];
+     
 		[netRequestOperation addHeaders:httpRequestParameterMap];
 		[netRequestOperation setCustomPostDataEncodingHandler:^NSString *(NSDictionary *postDataDict) {
 			

@@ -12,6 +12,6 @@
 
 }
 
--(id) initWithDictionary:(NSDictionary*) jsonObject;
+-(id) initWithDictionary:(NSDictionary *) jsonObject;
 
 @end

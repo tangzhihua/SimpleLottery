@@ -21,6 +21,9 @@
 //
 #import "LotterySalesStatusDomainBeanToolsFactory.h"
 #import "LotterySalesStatusNetRequestBean.h"
+//
+#import "LotteryAnnouncementNetRequestBean.h"
+#import "LotteryAnnouncementDomainBeanToolsFactory.h"
 
 static const NSString *const TAG = @"<DomainBeanHelperClassNameMapping>";
 
@@ -54,7 +57,11 @@ static const NSString *const TAG = @"<DomainBeanHelperClassNameMapping>";
     [strategyClassesNameMappingList setObject:NSStringFromClass([LotterySalesStatusDomainBeanToolsFactory class])
                                        forKey:NSStringFromClass([LotterySalesStatusNetRequestBean class])];
 		
-		
+		/**
+		 *  开奖公告
+		 */
+    [strategyClassesNameMappingList setObject:NSStringFromClass([LotteryAnnouncementDomainBeanToolsFactory class])
+                                       forKey:NSStringFromClass([LotteryAnnouncementNetRequestBean class])];
 	}
 	
 	return self;

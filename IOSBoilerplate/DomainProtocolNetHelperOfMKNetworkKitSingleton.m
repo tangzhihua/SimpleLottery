@@ -38,8 +38,12 @@
 
 
 @interface DomainProtocolNetHelperOfMKNetworkKitSingleton()
+
+// 网络引擎
 @property (nonatomic, strong) MKNetworkEngine *networkEngine;
+// 当前在并发请求的 MKNetworkOperation
 @property (nonatomic, strong) NSMutableDictionary *synchronousNetRequestBuf;
+// 网络请求索引 计数器
 @property (nonatomic, assign) NSInteger netRequestIndexCounter;
 @end
 
@@ -90,12 +94,11 @@
 #pragma mark -
 #pragma mark 对外公开的方法
 
-- (NSInteger) requestDomainProtocolWithContext:(id) context
-                             requestDomainBean:(id) netRequestDomainBean
-                                  requestEvent:(NSUInteger) requestEventEnum
-                  extraHttpRequestParameterMap:(NSDictionary *) extraHttpRequestParameterMap
-                                successedBlock:(DomainNetRespondHandleInUIThreadSuccessedBlock) successedBlock
-                                   failedBlock:(DomainNetRespondHandleInUIThreadFailedBlock) failedBlock {
+- (NSInteger) requestDomainProtocolWithRequestDomainBean:(id) netRequestDomainBean
+																						requestEvent:(NSUInteger) requestEventEnum
+														extraHttpRequestParameterMap:(NSDictionary *) extraHttpRequestParameterMap
+																					successedBlock:(DomainNetRespondHandleInUIThreadSuccessedBlock) successedBlock
+																						 failedBlock:(DomainNetRespondHandleInUIThreadFailedBlock) failedBlock {
   
   
   
@@ -109,7 +112,7 @@
 	PRPLog(@" ");
 	
 	do {
-		if (context == nil || netRequestDomainBean == nil || successedBlock == NULL || failedBlock == NULL) {
+		if (netRequestDomainBean == nil || successedBlock == NULL || failedBlock == NULL) {
 			PRPLog(@"requestDomainProtocolWithContext:入参中有空参数.");
 			//break;
 		}
@@ -121,8 +124,6 @@
 		PRPLog(@"%@%i", @"request index--> ", netRequestIndex);
 		PRPLog(@"%@%@", @"abstractFactoryMappingKey--> ", abstractFactoryMappingKey);
 		PRPLog(@"%@%i", @"request event enum --> ", requestEventEnum);
-		PRPLog(@"%@%@", @"context class--> ", NSStringFromClass([context class]));
-		
 		
 		// 这里的设计使用了 "抽象工厂" 设计模式
 		id domainBeanAbstractFactoryObject = [[DomainBeanAbstractFactoryCacheSingleton sharedInstance] getDomainBeanAbstractFactoryObjectByKey:abstractFactoryMappingKey];
@@ -133,13 +134,6 @@
 		}
 		
 		// 获取当前业务网络接口, 对应的URL
-		/*
-		 NSString *url = [domainBeanAbstractFactoryObject getURL];
-		 if ([url length] <= 0) {
-		 PRPLog(@"当前接口的 url 不能为空 ! ");
-		 break;
-		 }
-		 */
 		// 组成说明 : MainUrl(http://124.65.163.102:819) + MainPtah(/app) + SpecialPath(/....)
 		//url = [NSString stringWithFormat:@"%@%@%@", kUrlConstant_MainUrl, kUrlConstant_MainPtah, url];
 		NSString *url = [NSString stringWithFormat:@"%@%@", kUrlConstant_MainUrl, kUrlConstant_MainPtah];
@@ -178,18 +172,13 @@
 			fullDataDictionary = [NSMutableDictionary dictionaryWithDictionary:publicDD];
 			[fullDataDictionary addEntriesFromDictionary:domainDD];
 			
-			
-			
-			
 			// 最终确认确实需要使用POST方式发送数据
 			httpRequestMethod = @"POST";
 		} while (NO);
 		
-		
+		// 拼接Http请求头
 		// TODO : 这里将来要提出一个方法
 		NSMutableDictionary *httpRequestParameterMap = [NSMutableDictionary dictionary];
-		
-		
 		[httpRequestParameterMap setObject:[[SimpleCookieSingleton sharedInstance] cookieString]
 																forKey:@"Cookie"];
 		[httpRequestParameterMap setObject:@"application/x-www-form-urlencoded"
@@ -199,16 +188,23 @@
 		}
 		// //////////////////////////////////////////////////////////////////////////////
 		
+		
+		// 创建一个 Http Operation
 		MKNetworkOperation *netRequestOperation = [self.networkEngine operationWithURLString:url params:fullDataDictionary httpMethod:httpRequestMethod];
-     
+		
 		[netRequestOperation addHeaders:httpRequestParameterMap];
 		[netRequestOperation setCustomPostDataEncodingHandler:^NSString *(NSDictionary *postDataDict) {
 			
-			// 然后将业务参数字典, 拼装成HTTP请求实体字符串
-			// 业务字典是 Map<String, String> 格式的, 在这里要完成对 Map<String, String>格式的数据再次加工,
-			// 比如 "key1=value1, key2=value2" 或者 "JSON格式" 或者 "XML格式" 或者 "自定义格式"
-			NSData *httpEntityData = [[[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRequestEntityDataPackage] packageNetRequestEntityDataWithDomainDataDictionary:fullDataDictionary];
-			return [[NSString alloc] initWithData:httpEntityData encoding:NSUTF8StringEncoding];
+			if (postDataDict != nil) {
+				// 然后将业务参数字典, 拼装成HTTP请求实体字符串
+				// 业务字典是 Map<String, String> 格式的, 在这里要完成对 Map<String, String>格式的数据再次加工,
+				// 比如 "key1=value1, key2=value2" 或者 "JSON格式" 或者 "XML格式" 或者 "自定义格式"
+				NSData *httpEntityData = [[[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRequestEntityDataPackage] packageNetRequestEntityDataWithDomainDataDictionary:fullDataDictionary];
+				return [[NSString alloc] initWithData:httpEntityData encoding:NSUTF8StringEncoding];
+			} else {
+				return nil;
+			}
+			
 		} forType:nil];
     
     
@@ -242,7 +238,7 @@
           
 					break;
 				}
-				//PRPLog(@"%@ --> net respond unpacked data(%@)", TAG, netUnpackedData);
+				 
 				
         
 				
@@ -273,7 +269,7 @@
 							break;
 						}
 						
-						//PRPLog(@"%@ -->netRespondDomainBean->%@", TAG, netRespondDomainBean);
+						PRPLog(@"%@ -->netRespondDomainBean->", netRespondDomainBean);
 					}
 				}
 				// ----------------------------------------------------------------------------
@@ -297,6 +293,8 @@
 																			forKey:[NSNumber numberWithInteger:netRequestIndex]];
 		
 		[self.networkEngine enqueueOperation:netRequestOperation];
+		
+		
 		PRPLog(@"synchronousNetRequestBuf:count=%i", self.synchronousNetRequestBuf.count);
 		
 		PRPLog(@" ");

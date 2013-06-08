@@ -9,7 +9,7 @@
 #import "LotteryListTableCell.h"
 #import "LotteryDictionary.h"
 #import "CurrentIssueCountDown.h"
-#import "CurrentLotteryIssueCountDownObserver.h"
+#import "CurrentLotteryIssueCountDownManager.h"
 #import "LotteryIssueInfo.h"
 #import "ToolsFunctionForThisProgect.h"
 #import "DomainProtocolNetHelperSingleton.h"
@@ -66,7 +66,7 @@ static UIImage *kLotterySaleStatusImageOfKaijiangAndJiajiang = nil;
 	
 	NSString *text = nil;
 	CurrentIssueCountDown *currentIssueCountDown = object;
-	currentIssueCountDown = [[CurrentLotteryIssueCountDownObserver sharedInstance].lotteryListOfCountDownObserver objectForKey:currentIssueCountDown.lotteryDictionary.key];
+	currentIssueCountDown = [[CurrentLotteryIssueCountDownManager sharedInstance].currentIssueCountDownBeanList objectForKey:currentIssueCountDown.lotteryDictionary.key];
 	if([keyPath isEqualToString:k_CurrentIssueCountDown_countDownSecond]) {
 		
 		if (currentIssueCountDown.countDownSecond > 0) {
@@ -80,10 +80,7 @@ static UIImage *kLotterySaleStatusImageOfKaijiangAndJiajiang = nil;
 		}
 		
 	} else if ([keyPath isEqualToString:k_CurrentIssueCountDown_netRequestIndex]) {
-		if (currentIssueCountDown.netRequestIndex != IDLE_NETWORK_REQUEST_ID) {
-			text = @"彩期获取中,请稍等...";
-		}
-		
+		text = @"彩期获取中,请稍等...";
 	} else if ([keyPath isEqualToString:k_CurrentIssueCountDown_countDownSecondOfRerequestNetwork]) {
 		if (currentIssueCountDown.isNetworkDisconnected && currentIssueCountDown.countDownSecondOfRerequestNetwork > 0) {
 			text = [NSString stringWithFormat:@"网络异常, %d秒钟重新请求.", currentIssueCountDown.countDownSecondOfRerequestNetwork];
@@ -96,6 +93,39 @@ static UIImage *kLotterySaleStatusImageOfKaijiangAndJiajiang = nil;
 	
 }
 
+#pragma mark -
+#pragma mark 实现了 ICurrentIssueCountDownEventReceiver 接口
+-(void)currentIssueCountDownEventReceiverWithEventEnum:(NSInteger)eventEnum currentIssueCountDownBean:(CurrentIssueCountDown *)currentIssueCountDown {
+	
+	NSString *text = nil;
+	switch (eventEnum) {
+		case kCurrentIssueCountDownEventEnum_countDownSecond:{// 正常倒计时通知
+			if (currentIssueCountDown.countDownSecond > 0) {
+				NSString *dateString = [ToolsFunctionForThisProgect formatSecondToDayHourMinuteSecond:[NSNumber numberWithInteger:currentIssueCountDown.countDownSecond]];
+				text = [NSString stringWithFormat:@"距离%@期截止:%@", currentIssueCountDown.lotteryIssueInfo.batchcode, dateString];
+			}
+		}break;
+		case kCurrentIssueCountDownEventEnum_netRequestIndex:{// 标示当前正在请求网络
+			if (currentIssueCountDown.isNetworkDisconnected) {
+				text = [NSString stringWithFormat:@"网络异常, %d秒钟重新请求.", currentIssueCountDown.countDownSecondOfRerequestNetwork];
+			}
+		}break;
+		case kCurrentIssueCountDownEventEnum_isNetworkDisconnected:{// 当前网络是否联通
+			text = @"彩期获取中,请稍等...";
+		}break;
+		case kCurrentIssueCountDownEventEnum_countDownSecondOfRerequestNetwork:{// 网络连不通时倒计时通知
+			if (currentIssueCountDown.isNetworkDisconnected && currentIssueCountDown.countDownSecondOfRerequestNetwork > 0) {
+				text = [NSString stringWithFormat:@"网络异常, %d秒钟重新请求.", currentIssueCountDown.countDownSecondOfRerequestNetwork];
+			}
+		}break;
+		default:
+			break;
+	}
+	
+	if (![NSString isEmpty:text]) {
+		self.countdownForCurrentIssueToEnd.text = text;
+	}
+}
 #pragma mark -
 #pragma mark 数据绑定
 -(void) bind:(LotteryDictionary *)lotteryDictionaryToBeDisplayed {

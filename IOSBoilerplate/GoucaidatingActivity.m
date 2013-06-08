@@ -10,7 +10,7 @@
 
 #import "LotteryListTableCell.h"
 #import "LotteryDictionary.h"
-#import "CurrentLotteryIssueCountDownObserver.h"
+#import "CurrentLotteryIssueCountDownManager.h"
 #import "CurrentIssueCountDown.h"
 #import "CurrentIssueCountDownDatabaseFieldsConstant.h"
 
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   do {
     
 		// 重置彩票排期观察者
-    [[CurrentLotteryIssueCountDownObserver sharedInstance] resetObserver];
+    [[CurrentLotteryIssueCountDownManager sharedInstance] resetObserver];
   } while (NO);
   
   // 20130223 tangzhihua : 不能在这里直接调用 doneLoadingTableViewData, 否则关不掉当前界面
@@ -256,7 +256,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 
 -(void)addAllObserversOfCurrentIssueCountDown {
   for (LotteryListTableCell *cell in self.cellArrayOfLotteryList) {
-    CurrentIssueCountDown *currentIssueCountDown = [[CurrentLotteryIssueCountDownObserver sharedInstance].lotteryListOfCountDownObserver objectForKey:cell.lotteryKey];
+    CurrentIssueCountDown *currentIssueCountDown = [[CurrentLotteryIssueCountDownManager sharedInstance].currentIssueCountDownBeanList objectForKey:cell.lotteryKey];
     if (currentIssueCountDown != nil) {
       [currentIssueCountDown addObserver:cell
                               forKeyPath:k_CurrentIssueCountDown_countDownSecond
@@ -281,7 +281,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 
 -(void)removeAllObserversOfCurrentIssueCountDown {
   for (LotteryListTableCell *cell in self.cellArrayOfLotteryList) {
-    CurrentIssueCountDown *currentIssueCountDown = [[CurrentLotteryIssueCountDownObserver sharedInstance].lotteryListOfCountDownObserver objectForKey:cell.lotteryKey];
+    CurrentIssueCountDown *currentIssueCountDown = [[CurrentLotteryIssueCountDownManager sharedInstance].currentIssueCountDownBeanList objectForKey:cell.lotteryKey];
     if (currentIssueCountDown != nil) {
        
       [currentIssueCountDown removeObserver:cell forKeyPath:k_CurrentIssueCountDown_countDownSecond];

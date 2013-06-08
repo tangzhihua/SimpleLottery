@@ -45,7 +45,7 @@
 		<string>每天78次中奖机会</string>
 	</dict>
 	<dict>
-		<key>fixed_information</key>
+		<key>fixedInformation</key>
 		<string>返奖率高达 69%</string>
 		<key>name</key>
 		<string>竞彩足球</string>
@@ -85,6 +85,8 @@
 		<string>lottery_icon_for_pailie5</string>
 		<key>enable</key>
 		<true/>
+		<key>ad</key>
+		<string>2元赢取10万元</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -197,7 +199,7 @@
 		<true/>
 		<key>ad</key>
 		<string>玩2串1易中奖</string>
-		<key>fixed_information</key>
+		<key>fixedInformation</key>
 		<string>返奖率高达 69%</string>
 	</dict>
 	<dict>

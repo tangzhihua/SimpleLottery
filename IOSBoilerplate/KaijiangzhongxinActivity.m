@@ -160,6 +160,6 @@
 
 -(void)requestLotteryAnnouncement {
 	LotteryAnnouncementNetRequestBean *netRequestBean = [[LotteryAnnouncementNetRequestBean alloc] init];
-	[[DomainProtocolNetHelperOfMKNetworkKitSingleton sharedInstance] requestDomainProtocolWithContext:self requestDomainBean:netRequestBean requestEvent:11 extraHttpRequestParameterMap:nil successedBlock:NULL failedBlock:NULL];
+	[[DomainProtocolNetHelperOfMKNetworkKitSingleton sharedInstance] requestDomainProtocolWithRequestDomainBean:netRequestBean requestEvent:11 extraHttpRequestParameterMap:nil successedBlock:NULL failedBlock:NULL];
 }
 @end

@@ -8,52 +8,27 @@
 
 #import "LotteryDictionary.h"
 
+@interface LotteryDictionary ()
+@property (nonatomic, readwrite, strong) NSString *key;
+@property (nonatomic, readwrite, strong) NSString *name;
+@property (nonatomic, readwrite, strong) NSString *code;
+@property (nonatomic, readwrite, strong) UIImage *icon;
+@property (nonatomic, readwrite, strong) NSString *ad;
+@property (nonatomic, readwrite, assign) BOOL enable;
+
+// 彩票 固定信息(比如竞彩足球, 就是会固定显示 "返奖率高达69%")
+@property (nonatomic, readwrite, strong) NSString *fixedInformation;
+@end
+
 @implementation LotteryDictionary
--(id)initWithKey:(NSString *)key
-						name:(NSString *)name
-						code:(NSString *)code
-						icon:(NSString *)icon
-							ad:(NSString *)ad
-					enable:(BOOL)enable
-fixedInformation:(NSString *)fixedInformation{
-	
-	if ((self = [super init])) {
-		PRPLog(@"init [0x%x]", [self hash]);
-    
-    _key = [key copy];
-		_name = [name copy];
-		_code = [code copy];
-		_icon = [UIImage imageNamed:icon];
-		_ad = [ad copy];
-		_enable = enable;
-		_fixedInformation = [fixedInformation copy];
+
+-(void) setValue:(id)value forKey:(NSString *)key{
+	if ([key isEqualToString:@"icon"]) {
+		self.icon = [UIImage imageNamed:value];
+	} else {
+		[super setValue:value forKey:key];
 	}
-  
-  return self;
 }
-
-
-+(id)lotteryDictionaryWithKey:(NSString *)key
-												 name:(NSString *)name
-												 code:(NSString *)code
-												 icon:(NSString *)icon
-													 ad:(NSString *)ad
-											 enable:(BOOL)enable
-						 fixedInformation:(NSString *)fixedInformation{
-	
-	return  [[LotteryDictionary alloc] initWithKey:key name:name code:code icon:icon ad:ad enable:enable fixedInformation:fixedInformation];
-}
-
-
-
-#pragma mark
-#pragma mark 不能使用默认的init方法初始化对象, 而必须使用当前类特定的 "初始化方法" 初始化所有参数
-- (id) init {
-  RNAssert(NO, @"Can not use the default init method!");
-  
-  return nil;
-}
-
 - (NSString *)description {
   return descriptionForDebug(self);
 }

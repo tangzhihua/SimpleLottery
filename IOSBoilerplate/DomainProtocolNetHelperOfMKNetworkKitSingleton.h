@@ -28,12 +28,11 @@ typedef void (^DomainNetRespondHandleInUIThreadFailedBlock)(NSUInteger requestEv
 
 
 
-- (NSInteger) requestDomainProtocolWithContext:(id) context
-                             requestDomainBean:(id) netRequestDomainBean
-                                  requestEvent:(NSUInteger) requestEventEnum
-									extraHttpRequestParameterMap:(NSDictionary *) extraHttpRequestParameterMap
-                                successedBlock:(DomainNetRespondHandleInUIThreadSuccessedBlock) successedBlock
-                                   failedBlock:(DomainNetRespondHandleInUIThreadFailedBlock) failedBlock;
+- (NSInteger) requestDomainProtocolWithRequestDomainBean:(id) netRequestDomainBean
+																						requestEvent:(NSUInteger) requestEventEnum
+														extraHttpRequestParameterMap:(NSDictionary *) extraHttpRequestParameterMap
+																					successedBlock:(DomainNetRespondHandleInUIThreadSuccessedBlock) successedBlock
+																						 failedBlock:(DomainNetRespondHandleInUIThreadFailedBlock) failedBlock;
 
 
 

@@ -6,7 +6,8 @@
 //
 //
 
-#import "CurrentLotteryIssueCountDownObserver.h"
+#import "CurrentLotteryIssueCountDownManager.h"
+
 #import "GlobalDataCacheForMemorySingleton.h"
 #import "CurrentIssueCountDown.h"
 #import "LotteryDictionary.h"
@@ -24,12 +25,12 @@
 
 
 
-@interface CurrentLotteryIssueCountDownObserver ()
+@interface CurrentLotteryIssueCountDownManager ()
 // 倒计时 Timer
 @property (nonatomic, strong) NSTimer *timerForCountDown;
 
 // 保存哪些需要倒计时观察的 彩票
-@property (nonatomic, readwrite, strong) NSMutableDictionary *lotteryListOfCountDownObserver;
+@property (nonatomic, readwrite, strong) NSMutableDictionary *currentIssueCountDownBeanList;
 @end
 
 
@@ -40,7 +41,7 @@
 
 
 
-@implementation CurrentLotteryIssueCountDownObserver
+@implementation CurrentLotteryIssueCountDownManager
 
 //
 typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
@@ -48,40 +49,51 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   kNetRequestTagEnum_Issue
 };
 
-static CurrentLotteryIssueCountDownObserver *singletonInstance = nil;
-
-- (void) initialize {
-	
-	
-  self.lotteryListOfCountDownObserver = [[NSMutableDictionary alloc] initWithCapacity:20];
-	
-	
-	NSArray *lotteryDictionaryList = [GlobalDataCacheForMemorySingleton sharedInstance].lotteryDictionaryList;
-	for (LotteryDictionary *lotteryDictionary in lotteryDictionaryList) {
-		
-		// 彩种 如果有固定信息的话, 证明是那种没有当期期号的彩票
-    if ([NSString isEmpty:lotteryDictionary.fixedInformation]) {
-			CurrentIssueCountDown *currentIssueCountDown = [CurrentIssueCountDown currentIssueCountDownWithLotteryDictionary:lotteryDictionary];
-			[self.lotteryListOfCountDownObserver setValue:currentIssueCountDown forKey:lotteryDictionary.key];
-		}
-	}
-}
+ 
+ 
 
 #pragma mark -
 #pragma mark 单例方法群
 
-+ (CurrentLotteryIssueCountDownObserver *) sharedInstance {
-	@synchronized(self) {
-		if (singletonInstance == nil) {
-			singletonInstance = [[super allocWithZone:NULL] init];
-			
-			// initialize the first view controller
-			// and keep it with the singleton
-			[singletonInstance initialize];
-		}
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  RNAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
+
+// 真正的(私有)init方法
+-(id)initSingleton {
+  self = [super init];
+  if ((self = [super init])) {
+    // 初始化代码
+    
+		// 
+		self.currentIssueCountDownBeanList = [[NSMutableDictionary alloc] initWithCapacity:20];
 		
-		return singletonInstance;
-	}
+		// 缓存 "被观察者" 对象
+		NSArray *lotteryDictionaryList = [GlobalDataCacheForMemorySingleton sharedInstance].lotteryDictionaryList;
+		for (LotteryDictionary *lotteryDictionary in lotteryDictionaryList) {
+			
+			// 彩种 如果有固定信息的话, 证明是那种没有当前期号的彩票, 也就不需要倒计时
+			if ([NSString isEmpty:lotteryDictionary.fixedInformation]) {
+				CurrentIssueCountDown *currentIssueCountDown = [CurrentIssueCountDown currentIssueCountDownWithLotteryDictionary:lotteryDictionary];
+				[self.currentIssueCountDownBeanList setValue:currentIssueCountDown forKey:lotteryDictionary.key];
+			}
+		}
+  }
+  
+  return self;
+}
+
++ (CurrentLotteryIssueCountDownManager *) sharedInstance  {
+	
+  static CurrentLotteryIssueCountDownManager *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
+  return singletonInstance;
 }
 
 -(void)startCountDownObserver {
@@ -145,7 +157,7 @@ static CurrentLotteryIssueCountDownObserver *singletonInstance = nil;
 	
 	[[DomainProtocolNetHelperSingleton sharedInstance] cancelAllNetRequestWithThisNetRespondDelegate:self];
 	
-	NSArray *lotteryList = [self.lotteryListOfCountDownObserver allValues];
+	NSArray *lotteryList = [self.currentIssueCountDownBeanList allValues];
 	for (CurrentIssueCountDown *currentIssueCountDown in lotteryList) {
 		
 		[currentIssueCountDown resetCurrentIssueCountDown];
@@ -156,6 +168,7 @@ static CurrentLotteryIssueCountDownObserver *singletonInstance = nil;
 
 - (void)handleCurrentIssueCountDown:(CurrentIssueCountDown *)currentIssueCountDown {
 	
+	// 是否需要重新发起期号查询
 	BOOL isNeedRequestIssueQuery = NO;
 	
 	do {
@@ -169,6 +182,7 @@ static CurrentLotteryIssueCountDownObserver *singletonInstance = nil;
 		// 网络出现错误时, 重新发起网络请求的倒计时
 		if (currentIssueCountDown.isNetworkDisconnected) {
 			currentIssueCountDown.countDownSecondOfRerequestNetwork -= 1;
+			
 			if (currentIssueCountDown.countDownSecondOfRerequestNetwork > 0) {
 				break;
 			} else {
@@ -194,7 +208,7 @@ static CurrentLotteryIssueCountDownObserver *singletonInstance = nil;
 
 - (void)timerFireMethod:(NSTimer*)theTimer {
 
-	NSArray *lotteryList = [self.lotteryListOfCountDownObserver allValues];
+	NSArray *lotteryList = [self.currentIssueCountDownBeanList allValues];
 	for (CurrentIssueCountDown *currentIssueCountDown in lotteryList) {
 		
 		[self handleCurrentIssueCountDown:currentIssueCountDown];
@@ -204,7 +218,7 @@ static CurrentLotteryIssueCountDownObserver *singletonInstance = nil;
 -(CurrentIssueCountDown *)queryCurrentIssueCountDownByNetRequestIndex:(NSInteger)netRequestIndex {
 	RNAssert(netRequestIndex != IDLE_NETWORK_REQUEST_ID, @"入参 netRequestIndex 无效");
 	
-	NSArray *lotteryList = [self.lotteryListOfCountDownObserver allValues];
+	NSArray *lotteryList = [self.currentIssueCountDownBeanList allValues];
 	for (CurrentIssueCountDown *currentIssueCountDown in lotteryList) {
 		if (currentIssueCountDown.netRequestIndex == netRequestIndex) {
 			return currentIssueCountDown;
@@ -287,6 +301,8 @@ typedef enum {
 		//
 		LotteryIssueInfo *lotteryIssueInfo = (LotteryIssueInfo *)respondDomainBean;
 		currentIssueCountDown.lotteryIssueInfo = lotteryIssueInfo;
+		
+		 
 	}
   
   

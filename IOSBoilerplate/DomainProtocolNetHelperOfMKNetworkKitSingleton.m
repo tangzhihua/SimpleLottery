@@ -214,8 +214,7 @@
     
     [netRequestOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
       id netRespondDomainBean = nil;
-			NSNumber *netRequestIndex = [NSNumber numberWithInteger:1];
-			
+
 			do {
 				
 				NSData *netRawEntityData = [completedOperation responseData];
@@ -281,8 +280,14 @@
 				
 			} while (NO);
 			
+			for (NSNumber *netRequestIndex in [self.synchronousNetRequestBuf allKeys]) {
+        id value = [self.synchronousNetRequestBuf objectForKey:netRequestIndex];
+        if (value == completedOperation) {
+          [self.synchronousNetRequestBuf removeObjectForKey:netRequestIndex];
+          break;
+        }
+      }
 			
-			[self.synchronousNetRequestBuf removeObjectForKey:netRequestIndex];
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
       
     }];

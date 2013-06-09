@@ -1,27 +1,20 @@
 //
-//  ServerRespondDataTestRuyicai.m
+//  ServerRespondDataTestRuyicaiNew.m
 //  ruyicai
 //
-//  Created by 熊猫 on 13-4-20.
+//  Created by tangzhihua on 13-6-9.
 //
 //
 
-#import "ServerRespondDataTestRuyicai.h"
-#import "NetErrorTypeEnum.h"
-#import "NetErrorBean.h"
+#import "ServerRespondDataTestRuyicaiNew.h"
+#import "NetRequestErrorBean.h"
 #import "JSONKit.h"
 #import "NSDictionary+SafeValue.h"
- 
 
-static const NSString *const TAG = @"<ServerRespondDataTestAirizu>";
-
-@implementation ServerRespondDataTestRuyicai
-
-
+@implementation ServerRespondDataTestRuyicaiNew
 #pragma mark 实现 IServerRespondDataTest 接口
-- (NetErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String {
+- (NetRequestErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String {
   NSInteger errorCode = 200;
-  NetErrorTypeEnum errorType = NET_ERROR_TYPE_SUCCESS;
   NSString *errorMessage = @"OK";
   
   ///
@@ -29,7 +22,7 @@ static const NSString *const TAG = @"<ServerRespondDataTestAirizu>";
   
   ///
   NSString *errorCodeFromServer = [jsonDataNSDictionary safeStringObjectForKey:@"error_code"];
-
+  
   if (![NSString isEmpty:errorCodeFromServer]) {
     
 		if ([errorCodeFromServer isEqualToString:@"0000"] || [errorCodeFromServer isEqualToString:@"000000"]) {
@@ -39,15 +32,13 @@ static const NSString *const TAG = @"<ServerRespondDataTestAirizu>";
 			// 服务器返回的数据无效
 			errorCode = [errorCodeFromServer integerValue];
 			errorMessage = errorCodeFromServer;
-			// 服务器端返回了错误码
-			errorType = NET_ERROR_TYPE_SERVER_NET_ERROR;
 		}
   }
   
-  NetErrorBean *netError = [NetErrorBean netErrorBean];
-  [netError setErrorCode:errorCode];
-  [netError setErrorType:errorType];
-  [netError setErrorMessage:errorMessage];
+  NetRequestErrorBean *netError = [[NetRequestErrorBean alloc] init];
+  netError.errorCode = errorCode;
+  netError.message = errorMessage;
   return netError;
+  
 }
 @end

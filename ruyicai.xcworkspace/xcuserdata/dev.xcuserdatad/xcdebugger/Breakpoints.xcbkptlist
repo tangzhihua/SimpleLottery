@@ -42,6 +42,19 @@
          landmarkName = "-uniqueIdentifier"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "IOSBoilerplate/DomainProtocolNetHelperOfMKNetworkKitSingleton.m"
+         timestampString = "392462060.302329"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "321"
+         endingLineNumber = "321"
+         landmarkName = "-requestDomainProtocolWithRequestDomainBean:requestEvent:extraHttpRequestParameterMap:successedBlock:failedBlock:"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
    <ExceptionBreakpoints>
       <ExceptionBreakpoint

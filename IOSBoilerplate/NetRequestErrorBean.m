@@ -6,11 +6,11 @@
 //  Copyright 2010 Steinlogic. All rights reserved.
 //
 
-#import "NetRequestError.h"
+#import "NetRequestErrorBean.h"
 
 static NSDictionary *NetRequestError_errorCodesDictionary = nil;
 
-@implementation NetRequestError
+@implementation NetRequestErrorBean
 
 + (void) initialize {
 	NSString *fileName = [NSString stringWithFormat:@"Errors_%@", [[NSLocale currentLocale] localeIdentifier]];
@@ -46,19 +46,19 @@ static NSDictionary *NetRequestError_errorCodesDictionary = nil;
 //===========================================================
 - (void)encodeWithCoder:(NSCoder *)encoder {
   [encoder encodeObject:self.message forKey:@"message"];
-  [encoder encodeObject:self.errorCode forKey:@"errorCode"];
+  [encoder encodeInteger:self.errorCode forKey:@"errorCode"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
   if ((self = [super init])) {
     self.message = [decoder decodeObjectForKey:@"message"];
-    self.errorCode = [decoder decodeObjectForKey:@"errorCode"];
+    self.errorCode = [decoder decodeIntegerForKey:@"errorCode"];
   }
   return self;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-  NetRequestError *theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
+  NetRequestErrorBean *theCopy = [[[self class] allocWithZone:zone] init];  // use designated initializer
 	
   theCopy.message = [self.message copy];
   theCopy.errorCode = self.errorCode;
@@ -69,15 +69,15 @@ static NSDictionary *NetRequestError_errorCodesDictionary = nil;
 #pragma mark super class implementations
 
 -(int) code {
-	if([self.errorCode intValue] == 0) {
+	if(self.errorCode == 0) {
     return [super code];
   } else {
-    return [self.errorCode intValue];
+    return self.errorCode;
   }
 }
 - (NSString *) domain {
   // we are assuming that any request within 1000 to 5000 is thrown by our server
-	if([self.errorCode intValue] >= 1000 && [self.errorCode intValue] < 5000) {
+	if(self.errorCode >= 1000 && self.errorCode < 5000) {
     return kBusinessErrorDomain;
   } else {
     return kRequestErrorDomain;
@@ -85,12 +85,12 @@ static NSDictionary *NetRequestError_errorCodesDictionary = nil;
 }
 
 - (NSString*) description {
-  return [NSString stringWithFormat:@"Request failed with error %@[%@]", self.message, self.errorCode];
+  return [NSString stringWithFormat:@"Request failed with error %@[%d]", self.message, self.errorCode];
 }
 
 - (NSString*) localizedDescription {
   if([[self domain] isEqualToString:kBusinessErrorDomain]) {
-    return [[NetRequestError_errorCodesDictionary objectForKey:self.errorCode] objectForKey:@"Title"];
+    return [[NetRequestError_errorCodesDictionary objectForKey:[NSString stringWithFormat:@"%d", self.errorCode]] objectForKey:@"Title"];
   } else {
     return [super localizedDescription];
   }
@@ -98,7 +98,7 @@ static NSDictionary *NetRequestError_errorCodesDictionary = nil;
 
 - (NSString*) localizedRecoverySuggestion {
   if([[self domain] isEqualToString:kBusinessErrorDomain]) {
-    return [[NetRequestError_errorCodesDictionary objectForKey:self.errorCode] objectForKey:@"Suggestion"];
+    return [[NetRequestError_errorCodesDictionary objectForKey:[NSString stringWithFormat:@"%d", self.errorCode]] objectForKey:@"Suggestion"];
   } else {
     return [super localizedRecoverySuggestion];
   }
@@ -106,24 +106,10 @@ static NSDictionary *NetRequestError_errorCodesDictionary = nil;
 
 - (NSString*) localizedOption {
   if([[self domain] isEqualToString:kBusinessErrorDomain]) {
-    return [[NetRequestError_errorCodesDictionary objectForKey:self.errorCode] objectForKey:@"Option-1"];
+    return [[NetRequestError_errorCodesDictionary objectForKey:[NSString stringWithFormat:@"%d", self.errorCode]] objectForKey:@"Option-1"];
   } else {
     return nil;
   }
-}
-
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-  NSLog(@"Undefined Key: %@", key);
-}
-
-#pragma mark -
-#pragma mark Our implementations
--(id) initWithDictionary:(NSMutableDictionary*) jsonObject {
-  if((self = [super init])) {
-    self = [self init];
-    [self setValuesForKeysWithDictionary:jsonObject];
-  }
-  return self;
 }
 
 //===========================================================

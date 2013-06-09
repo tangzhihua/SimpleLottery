@@ -16,7 +16,7 @@
 
 #import "DomainProtocolNetHelperOfMKNetworkKitSingleton.h"
 
-@interface KaijiangzhongxinActivity () <UITableViewDelegate, UITableViewDataSource, IDomainNetRespondCallback, CustomControlDelegate, UIAlertViewDelegate>
+@interface KaijiangzhongxinActivity () <UITableViewDelegate, UITableViewDataSource, CustomControlDelegate, UIAlertViewDelegate>
 
 // 彩票列表 cell 缓存列表, 提前初始化好, 提高效率
 @property (nonatomic, strong) NSMutableArray *cellArrayOfLotteryList;
@@ -24,9 +24,30 @@
 // 开奖公告
 @property (nonatomic, strong) LotteryAnnouncementNetRespondBean *lotteryAnnouncementNetRespondBean;
 @property (nonatomic, assign) NSInteger netRequestIndexForLotteryAnnouncement;
+
+@property (nonatomic, strong) DomainNetRespondHandleInUIThreadSuccessedBlock domainNetRespondHandleInUIThreadSuccessedBlock;
+@property (nonatomic, strong) DomainNetRespondHandleInUIThreadFailedBlock domainNetRespondHandleInUIThreadFailedBlock;
 @end
 
 @implementation KaijiangzhongxinActivity
+
+-(DomainNetRespondHandleInUIThreadSuccessedBlock)domainNetRespondHandleInUIThreadSuccessedBlock{
+  if (_domainNetRespondHandleInUIThreadSuccessedBlock == NULL) {
+    _domainNetRespondHandleInUIThreadSuccessedBlock = ^(NSUInteger requestEvent, NSInteger netRequestIndex, id respondDomainBean) {
+       
+    };
+  }
+  return _domainNetRespondHandleInUIThreadSuccessedBlock;
+}
+
+-(DomainNetRespondHandleInUIThreadFailedBlock)domainNetRespondHandleInUIThreadFailedBlock{
+  if (_domainNetRespondHandleInUIThreadFailedBlock == NULL) {
+    _domainNetRespondHandleInUIThreadFailedBlock = ^(NSUInteger requestEvent, NSInteger netRequestIndex, NetRequestErrorBean *error) {
+      
+    };
+  }
+  return _domainNetRespondHandleInUIThreadFailedBlock;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -78,7 +99,7 @@
   
   [SVProgressHUD dismiss];
   
-  [[DomainProtocolNetHelperSingleton sharedInstance] cancelAllNetRequestWithThisNetRespondDelegate:self];
+  [[DomainProtocolNetHelperOfMKNetworkKitSingleton sharedInstance] cancelNetRequestByRequestIndex:self.netRequestIndexForLotteryAnnouncement];
   self.netRequestIndexForLotteryAnnouncement = IDLE_NETWORK_REQUEST_ID;
 }
 
@@ -160,6 +181,6 @@
 
 -(void)requestLotteryAnnouncement {
 	LotteryAnnouncementNetRequestBean *netRequestBean = [[LotteryAnnouncementNetRequestBean alloc] init];
-	[[DomainProtocolNetHelperOfMKNetworkKitSingleton sharedInstance] requestDomainProtocolWithRequestDomainBean:netRequestBean requestEvent:11 extraHttpRequestParameterMap:nil successedBlock:NULL failedBlock:NULL];
+	[[DomainProtocolNetHelperOfMKNetworkKitSingleton sharedInstance] requestDomainProtocolWithRequestDomainBean:netRequestBean requestEvent:11 successedBlock:self.domainNetRespondHandleInUIThreadSuccessedBlock failedBlock:self.domainNetRespondHandleInUIThreadFailedBlock];
 }
 @end

@@ -17,11 +17,13 @@
 #import "NetRequestEntityDataPackageForRuyicai.h"
 #import "NetRespondEntityDataUnpackRuyicai.h"
 #import "ServerRespondDataTestRuyicai.h"
+#import "ServerRespondDataTestRuyicaiNew.h"
 
 @interface NetEntityDataToolsFactoryMethodSingleton()
 @property (nonatomic, retain) id netRequestEntityDataPackage;
 @property (nonatomic, retain) id netRespondEntityDataUnpack;
 @property (nonatomic, retain) id serverRespondDataTest;
+@property (nonatomic, retain) id serverRespondDataTestNew;
 @end
 
 @implementation NetEntityDataToolsFactoryMethodSingleton
@@ -47,6 +49,7 @@
     _netRequestEntityDataPackage = [[NetRequestEntityDataPackageForRuyicai alloc] init];
     _netRespondEntityDataUnpack = [[NetRespondEntityDataUnpackRuyicai alloc] init];
     _serverRespondDataTest = [[ServerRespondDataTestRuyicai alloc] init];
+    _serverRespondDataTestNew = [[ServerRespondDataTestRuyicaiNew alloc] init];
   }
   
   return self;
@@ -69,5 +72,8 @@
 }
 - (id<IServerRespondDataTest>) getServerRespondDataTest {
   return _serverRespondDataTest;
+}
+- (id<IServerRespondDataTestNew>) getServerRespondDataTestNew {
+  return _serverRespondDataTestNew;
 }
 @end

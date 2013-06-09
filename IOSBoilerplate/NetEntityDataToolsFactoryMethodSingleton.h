@@ -19,4 +19,5 @@
 - (id<INetRequestEntityDataPackage>) getNetRequestEntityDataPackage;
 - (id<INetRespondRawEntityDataUnpack>) getNetRespondEntityDataUnpack;
 - (id<IServerRespondDataTest>) getServerRespondDataTest;
+- (id<IServerRespondDataTestNew>) getServerRespondDataTestNew;
 @end

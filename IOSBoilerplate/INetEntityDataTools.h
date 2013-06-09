@@ -16,10 +16,12 @@
 @protocol INetRequestEntityDataPackage;
 @protocol INetRespondRawEntityDataUnpack;
 @protocol IServerRespondDataTest;
+@protocol IServerRespondDataTestNew;
 
 @protocol INetEntityDataTools <NSObject>
 - (id<INetRequestEntityDataPackage>) getNetRequestEntityDataPackage;
 - (id<INetRespondRawEntityDataUnpack>) getNetRespondEntityDataUnpack;
 - (id<IServerRespondDataTest>) getServerRespondDataTest;
+- (id<IServerRespondDataTestNew>) getServerRespondDataTestNew;
 @end
 

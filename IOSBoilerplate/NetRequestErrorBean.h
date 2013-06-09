@@ -11,11 +11,11 @@
 #define kRequestErrorDomain  @"HTTP_ERROR"
 #define kBusinessErrorDomain @"BIZ_ERROR"  // rename this appropriately
 
-@interface NetRequestError : NSError
+@interface NetRequestErrorBean : NSError
 
 @property (nonatomic, strong) NSString *message;
-@property (nonatomic, strong) NSString *errorCode;
+@property (nonatomic, assign) NSInteger errorCode;
 
 - (NSString*) localizedOption;
-- (id) initWithDictionary:(NSMutableDictionary*) jsonObject;
+ 
 @end

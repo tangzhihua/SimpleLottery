@@ -1,0 +1,612 @@
+{\rtf1\ansi\ansicpg936\cocoartf1187
+{\fonttbl\f0\fnil\fcharset134 STHeitiSC-Light;\f1\fswiss\fcharset0 ArialMT;\f2\fmodern\fcharset0 Courier;
+\f3\fswiss\fcharset0 Helvetica;\f4\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue233;\red38\green38\blue38;\red238\green255\blue213;
+\red243\green235\blue0;\red131\green192\blue87;\red219\green44\blue56;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid2\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{square\}}{\leveltext\leveltemplateid3\'01\uc0\u9642 ;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid301\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid401\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15600\viewh6620\viewkind0
+\deftab720
+\pard\pardeftab720\sa320
+
+\f0\b\fs48 \cf0 iOS Framework: Introducing MKNetworkKit\
+\pard\pardeftab720\sl440
+
+\fs30 \cf0 Posted by\uc0\u160 {\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/author/admin/"}}{\fldrslt \cf2 \ul \ulc2 Mugunth Kumar}}\uc0\u160 on Nov 29, 2011 in\u160 {\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/category/featured-articles/"}}{\fldrslt \cf2 \ul \ulc2 Featured Articles}},\uc0\u160 {\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/category/products/"}}{\fldrslt \cf2 \ul \ulc2 Products}}\
+\pard\pardeftab720\sl440\sa300
+\cf0 \
+This article is available in\uc0\u160 {\field{\*\fldinst{HYPERLINK "http://science.webhostinggeeks.com/predstavljanje-mknetworkkit"}}{\fldrslt \cf2 \ul \ulc2 Serbo-Croatian}},\uc0\u160 \u160 {\field{\*\fldinst{HYPERLINK "http://odoruinu.net/blog/mknetworkkit/"}}{\fldrslt \cf2 \ul \ulc2 Japanese}}\uc0\u160 and\u160 {\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-einfuhrung-in-mknetworkkit-german-translation-of-mknetworkkit-documentation"}}{\fldrslt \cf2 \ul \ulc2 German}}.\
+(Translations in Serbo-Croatian\uc0\u160 by\u160 {\field{\*\fldinst{HYPERLINK "http://webhostinggeeks.com/"}}{\fldrslt \cf2 \ul \ulc2 Jovana Milutinovich}}, Japanese by\uc0\u160 {\field{\*\fldinst{HYPERLINK "http://odoruinu.net/"}}{\fldrslt \cf2 \ul \ulc2 @noradaiko}}\uc0\u160 and German by\u160 {\field{\*\fldinst{HYPERLINK "https://twitter.com/jonaspencke"}}{\fldrslt \cf2 \ul \ulc2 Jonas Pencke (@jonaspencke)}}.)\
+Translations in other languages are welcome!\
+\uc0\u160 \
+How awesome would it be if a networking framework automatically takes care of caching responses for you?\
+How awesome would it be if a networking framework automatically remembers your operations when your client is offline?\
+You favorite a tweet or mark a feed as read when you are offline and the Networking Framework performs all these operations when the device comes back online, all with no extra coding effort from you. Introducing MKNetworkKit.\
+\pard\pardeftab720\sl440\sa360
+
+\fs46 \cf0 Contents\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440
+\ls1\ilvl0
+\fs30 \cf2 {\listtext	\'a1\'a4	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#What_is_MKNetworkKit"}}{\fldrslt \ul What is MKNetworkKit?}}\cf0 \
+\ls1\ilvl0\cf2 {\listtext	\'a1\'a4	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Features"}}{\fldrslt \ul Features}}\cf0 \
+\pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\sl440
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Super_light-weight"}}{\fldrslt \ul Super light-weight}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Single_Shared_Queue_for_your_entire_application."}}{\fldrslt \ul Single Shared Queue for your entire application.}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Showing_the_Network_Activity_Indicator_correctly"}}{\fldrslt \ul Showing the Network Activity Indicator correctly}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Auto_queue_sizing"}}{\fldrslt \ul Auto queue sizing}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Auto_caching"}}{\fldrslt \ul Auto caching}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Operation_freezing"}}{\fldrslt \ul Operation freezing}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Performs_exactly_one_operation_for_similar_requests"}}{\fldrslt \ul Performs exactly one operation for similar requests}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Image_Caching"}}{\fldrslt \ul Image Caching}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Performance"}}{\fldrslt \ul Performance}}\cf0 \
+\ls1\ilvl2\cf2 {\listtext	\uc0\u9642 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Full_support_for_Objective-C_ARC"}}{\fldrslt \ul Full support for Objective-C ARC}}\cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440
+\ls1\ilvl0\cf2 {\listtext	\'a1\'a4	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#How_to_use"}}{\fldrslt \ul How to use}}\cf0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl440
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Adding_the_MKNetworkKit"}}{\fldrslt \ul Adding the MKNetworkKit}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Classes_in_MKNetworkKit"}}{\fldrslt \ul Classes in MKNetworkKit}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Example_1:"}}{\fldrslt \ul Example 1:}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Example_2:"}}{\fldrslt \ul Example 2:}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Example_3:"}}{\fldrslt \ul Example 3:}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Example_4:"}}{\fldrslt \ul Example 4:}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Caching_operations"}}{\fldrslt \ul Caching operations}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Freezing_operations"}}{\fldrslt \ul Freezing operations}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Convenience_methods_in_MKNetworkOperation"}}{\fldrslt \ul Convenience methods in MKNetworkOperation}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Convenience_macros"}}{\fldrslt \ul Convenience macros}}\cf0 \
+\ls1\ilvl1\cf2 {\listtext	\uc0\u9702 	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#A_note_on_GCD"}}{\fldrslt \ul A note on GCD}}\cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440
+\ls1\ilvl0\cf2 {\listtext	\'a1\'a4	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Documentation"}}{\fldrslt \ul Documentation}}\cf0 \
+\ls1\ilvl0\cf2 {\listtext	\'a1\'a4	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Source_Code"}}{\fldrslt \ul Source Code}}\cf0 \
+\ls1\ilvl0\cf2 {\listtext	\'a1\'a4	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Feature_requests"}}{\fldrslt \ul Feature requests}}\cf0 \
+\ls1\ilvl0\cf2 {\listtext	\'a1\'a4	}{\field{\*\fldinst{HYPERLINK "http://blog.mugunthkumar.com/products/ios-framework-introducing-mknetworkkit/#Licensing"}}{\fldrslt \ul Licensing}}\cf0 \
+\pard\pardeftab720\sl440
+\cf0 \uc0\u160 \
+\pard\pardeftab720\sl440\sa360
+
+\fs46 \cf0 What is MKNetworkKit?\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 MKNetworkKit\uc0\u160 is a networking framework written in Objective-C that is seamless, block based, ARC ready and easy to use.MKNetworkKit is inspired by the other two popular networking frameworks, ASIHTTPRequest and AFNetworking. Marrying the feature set from both, MKNetworkKit throws in a bunch of new features. In addition to this, MKNetworkKit mandates you to write slightly more code than the other frameworks at the expense of code clarity. With MKNetworkKit, it\'a1\'afs hard to write ugly networking code.\
+MKNetworkKit\'ca\'c7\'d2\'bb\'b8\'f6\'ca\'b9\'d3\'c3Objective-C\'b1\'e0\'d0\'b4\'b5\'c4\'cd\'f8\'c2\'e7\'bf\'f2\'bc\'dc, \'cb\'fc\'ca\'c7 seamless, \'bb\'f9\'d3\'dablock\'b5\'c4,\'d6\'a7\'b3\'d6ARC\'b5\'c4.\
+MKNetworkKit\'b5\'c4\'c1\'e9\'b8\'d0\'c0\'b4\'d6\'c1\'d3\'da\'c1\'ed\'cd\'e2\'c1\'bd\'b8\'f6\'c1\'f7\'d0\'d0\'b5\'c4\'cd\'f8\'c2\'e7\'bf\'f2\'bc\'dcASIHTTPRequest and AFNetworking.\
+MKNetworkKit\'bd\'e1\'ba\'cf\'c1\'bd\'d5\'df\'b5\'c4\'b9\'a6\'c4\'dc, \'b6\'f8\'cc\'e1\'b9\'a9\'c1\'cb\'d2\'bb\'d0\'a9\'d0\'c2\'b9\'a6\'c4\'dc.\
+\pard\pardeftab720\sl520\sa100
+
+\f1\fs32 \cf3 seamless network seamless union
+\f0 \'ca\'c7\'ca\'b2\'c3\'b4\'d2\'e2\'cb\'bc\'d1\'bd
+\f1 seamless
+\f0 \'ca\'c7\'ca\'b2\'c3\'b4\'d2\'e2\'cb\'bc
+\fs30 \cf0 \
+\pard\pardeftab720\sl480
+
+\b0\fs28 \cf3 \cb4 \'bc\'c6\'cb\'e3\'bb\'fa\'d3\'c3\'d3\'ef\'a3\'ac\'bd\'d0\'d7\'f6\'ce\'de\'b7\'ec\'cd\'f8\'c2\'e7\'a3\'ac\'ce\'de\'b7\'ec\'c1\'b4\'bd\'d3\'a3\'ac\'ce\'de\'b7\'ec\'cf\'b5\'cd\'b3\'a1\'a3
+\f1 \
+
+\f0 \'ce\'de\'b7\'ec\'b5\'c4\'d2\'e2\'cb\'bc\'be\'cd\'ca\'c7\'a3\'ac\'c1\'bd\'b8\'f6\'c6\'bd\'cc\'a8\'a1\'a2\'b2\'d9\'d7\'f7\'cf\'b5\'cd\'b3\'b5\'c8\'c4\'dc\'b9\'bb\'bb\'eb\'c8\'bb\'c8\'da\'ba\'cf\'a1\'a3\'b1\'c8\'c8\'e7\'cb\'b5\'cd\'f8\'c2\'e7\'c1\'f4\'d1\'d4\'b0\'e5\'ba\'cd
+\f1 word
+\f0 \'be\'cd\'ca\'c7\'d3\'d0\'b7\'ec\'c1\'b4\'bd\'d3
+\f1 \
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 \cb1 \
+\
+\
+\pard\pardeftab720\sl440\sa360
+
+\fs46 \cf0 Features  \'cc\'d8\'b5\'e3\
+\pard\pardeftab720\sl440\sa380
+
+\fs30 \cf0 Super light-weight \'b3\'ac\'c7\'e1\'c1\'bf\'bc\'b6\
+\pard\pardeftab720\sl440\sa300
+\cf0 The complete kit is just 2 major classes and some category methods. This means, adopting MKNetworkKit should be super easy.\
+\'cd\'ea\'d5\'fb\'b5\'c4\'cc\'d7\'bc\'fe, \'bd\'f6\'d3\'d0\'d6\'f7\'d2\'aa\'c0\'e0\'ba\'cd\'d2\'bb\'d0\'a9\'c0\'e0\'b1\'f0\'b7\'bd\'b7\'a8, \'d5\'e2\'d2\'e2\'ce\'b6\'d7\'c5, \'b2\'c9\'d3\'c3MKNetworkKit\'d3\'a6\'b8\'c3\'b3\'ac\'bc\'b6\'bc\'f2\'b5\'a5.\
+\pard\pardeftab720\sl440\sa380
+\cf0 Single Shared Queue for your entire application.\
+\'ce\'aa\'c4\'fa\'d5\'fb\'b8\'f6\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'cc\'e1\'b9\'a9 Single Shared Queue(\'b5\'a5\'d2\'bb\'b9\'b2\'cf\'ed\'b6\'d3\'c1\'d0)\
+\
+\
+\pard\pardeftab720\sl440\sa300
+\cf0 Apps that depend heavily on Internet connectivity should optimize the number of concurrent network operations. Unfortunately, there is no networking framework that does this correctly. Let me give you an example of what can go wrong if you don\'a1\'aft optimize/control the number of concurrent network operations in your app.\
+\'b6\'d4\'d3\'da\'c4\'c7\'d6\'d6\'ba\'dc\'b4\'f3\'b3\'cc\'b6\'c8\'c9\'cf\'c8\'a1\'be\'f6\'d3\'da\'cd\'f8\'c2\'e7\'c1\'ac\'bd\'d3\'b5\'c4\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2, \'d3\'a6\'b8\'c3\'d3\'c5\'bb\'af\'cd\'ac\'d2\'bb\'ca\'b1\'bc\'e4\'cd\'f8\'c2\'e7\'b2\'a2\'b7\'a2\'c7\'eb\'c7\'f3\'b5\'c4\'ca\'fd\'c1\'bf.\
+\'b2\'bb\'d0\'d2\'b5\'c4\'ca\'c7, \'c3\'bb\'d3\'d0\'cd\'f8\'c2\'e7\'bf\'f2\'bc\'dc\'d7\'f6\'b5\'c4\'d5\'fd\'c8\'b7.\
+\'c8\'c3\'ce\'d2\'b8\'f8\'c4\'e3\'c3\'c7\'be\'d9\'d2\'bb\'b8\'f6\'c0\'fd\'d7\'d3,  \'c0\'b4\'cb\'b5\'c3\'f7  \'c8\'e7\'b9\'fb\'b2\'bb\'d3\'c5\'bb\'af\'ba\'cd\'bf\'d8\'d6\'c6\'c4\'e3\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'d6\'d0\'cd\'ac\'d2\'bb\'ca\'b1\'bc\'e4\'cd\'f8\'c2\'e7\'b2\'a2\'b7\'a2\'b5\'c4\'ca\'fd\'c1\'bf, \'bb\'e1\'b5\'bc\'d6\'c2\'ca\'b2\'c3\'b4\'d1\'bd\'c8\'a5\'c4\'c4\'b8\'f6\'b5\'c4\'b4\'ed\'ce\'f3.\
+Let\'a1\'afs assume that you are uploading a bunch of photos (think\uc0\u160 {\field{\*\fldinst{HYPERLINK "http://www.color.com/"}}{\fldrslt \cf2 \ul \ulc2 Color}}\uc0\u160 or\u160 {\field{\*\fldinst{HYPERLINK "http://batch.com/"}}{\fldrslt \cf2 \ul \ulc2 Batch}}) to your server. Most mobile networks (3G) don\'a1\'aft allow more than two concurrent HTTP connections from a given IP address. \
+\'bc\'d9\'c9\'e8\'c4\'e3\'d2\'aa\'b0\'d1\'d2\'bb\'b6\'d1\'d5\'d5\'c6\'ac (think\uc0\u160 {\field{\*\fldinst{HYPERLINK "http://www.color.com/"}}{\fldrslt \cf2 \ul \ulc2 Color}}\uc0\u160 or\u160 {\field{\*\fldinst{HYPERLINK "http://batch.com/"}}{\fldrslt \cf2 \ul \ulc2 Batch}})\'c9\'cf\'b4\'ab\'b5\'bd\'c4\'e3\'b5\'c4\'b7\'fe\'ce\'f1\'c6\'f7.\
+\'b4\'f3\'b6\'e0\'ca\'fd\'d2\'c6\'b6\'af\'cd\'f8\'c2\'e7(3G), \'b2\'bb\'d4\'ca\'d0\'ed\'c1\'bd\'b8\'f6\'d2\'d4\'c9\'cf\'b5\'c4\'b2\'a2\'b7\'a2HTTP\'c1\'b4\'bd\'d3, \'b5\'bd\'d2\'bb\'b8\'f6\'b8\'f8\'b6\'a8\'b5\'c4IP\'b5\'d8\'d6\'b7.\
+\
+\
+That is, from your device, you cannot open more than two concurrent HTTP connections on a 3G network. Edge is even worse. You can\'a1\'aft, in most cases, open more than one connection. This limit is considerably high (six) on a traditional home broadband (Wifi).\
+\'d2\'b2\'be\'cd\'ca\'c7\'cb\'b5, \'b4\'d3\'c4\'e3\'b5\'c4\'c9\'e8\'b1\'b8, \'b2\'bb\'c4\'dc\'b4\'f2\'bf\'aa\'c1\'bd\'b8\'f6\'d2\'d4\'c9\'cf\'b5\'c4\'b2\'a2\'b7\'a2HTTP\'c1\'b4\'bd\'d3\'d4\'da\'d2\'bb\'b8\'f63G\'cd\'f8\'c2\'e7\'bb\'b7\'be\'b3\'cf\'c2.\
+Edge\'cd\'f8\'c2\'e7\'bb\'b7\'be\'b3\'b8\'fc\'ca\'c7\'d1\'a9\'c9\'cf\'bc\'d3\'cb\'aa, \'d4\'da\'b4\'f3\'b6\'e0\'ca\'fd\'c7\'e9\'bf\'f6\'cf\'c2, \'c4\'e3\'b2\'bb\'c4\'dc\'b4\'f2\'bf\'aa\'b6\'e0\'b8\'f6\'c1\'b4\'bd\'d3.\
+\'d4\'da\'b4\'ab\'cd\'b3\'b5\'c4\'bc\'d2\'cd\'a5\'cd\'f8\'c2\'e7WIFI\'bb\'b7\'be\'b3\'cf\'c2, \'bf\'c9\'d2\'d4\'b4\'f2\'bf\'aa6\'b8\'f6\'c1\'b4\'bd\'d3\'ca\'fd\'c1\'bf;\
+\
+\
+ However, since your iDevice is not always connected to Wifi, you should be prepared for throttled/restricted network connectivity. On any normal case, the iDevice is mostly connected to a 3G network, which means, you are restricted to upload only two photos in parallel. \
+\'c8\'bb\'b6\'f8, \'d3\'c9\'d3\'da\'c4\'fa\'b5\'c4\'c9\'e8\'b1\'b8\'b2\'a2\'b2\'bb\'d7\'dc\'ca\'c7\'c1\'b4\'bd\'d3\'b5\'bdWIFI\'c9\'cf, \'c4\'e3\'d3\'a6\'b8\'c3\'d7\'bc\'b1\'b8 \'bd\'da\'c1\'f7/\'cf\'de\'d6\'c6\'cd\'f8\'c2\'e7\'c1\'b4\'bd\'d3.\
+\'d4\'da\'d5\'fd\'b3\'a3\'b5\'c4\'c7\'e9\'bf\'f6\'cf\'c2, \'c4\'fa\'b5\'c4\'c9\'e8\'b1\'b8\'d3\'a6\'b8\'c3\'d6\'f7\'d2\'aa\'c1\'b4\'bd\'d3\'b5\'bd3G\'cd\'f8\'c2\'e7\'d6\'d0, \'d5\'e2\'d2\'e2\'ce\'b6\'d7\'c5, \'c4\'e3\'d6\'bb\'c4\'dc\'b2\'a2\'b7\'a2\'c9\'cf\'b4\'ab\'c1\'bd\'d5\'c5\'d5\'d5\'c6\'ac.\
+\
+Now, it is not the slow upload speed that hurts. The real problem arises when you open a view that loads thumbnails of photos (say on a different view) while this uploading operations are running in the background. \
+\'cf\'d6\'d4\'da, \'b2\'a2\'b2\'bb\'ca\'c7\'c9\'cf\'b4\'ab\'cb\'d9\'b6\'c8\'c2\'fd\'b4\'f8\'c0\'b4\'b5\'c4\'c9\'cb\'ba\'a6, \'d5\'e6\'d5\'fd\'b5\'c4\'ce\'ca\'cc\'e2\'b3\'f6\'cf\'d6\'d4\'da,  \'b5\'b1\'c4\'e3\'b4\'f2\'bf\'aa\'d2\'bb\'b8\'f6\'ca\'d3\'cd\'bc, \'d3\'c3\'d3\'da\'bc\'d3\'d4\'d8\'d5\'d5\'c6\'ac\'b5\'c4\'cb\'f5\'c2\'d4\'cd\'bc(say on a different view), \'cd\'ac\'ca\'b1\'d4\'da\'ba\'f3\'cc\'a8\'d5\'fd\'d4\'da\'d4\'cb\'d0\'d0\'d2\'bb\'b8\'f6\'c9\'cf\'b4\'ab\'b2\'d9\'d7\'f7.\
+\
+When you don\'a1\'aft properly control the queue size across the app, your thumbnail loading operations will just timeout which is not really the right way to do it. The right way to do this is to prioritize your thumbnail loading operation or wait till the upload is complete and the load thumbnails. \
+\'b5\'b1\'c4\'e3\'d4\'da\'d5\'fb\'b8\'f6\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'d6\'d0, \'b2\'bb\'c4\'dc\'d5\'fd\'c8\'b7\'b5\'d8\'bf\'d8\'d6\'c6\'b6\'d3\'c1\'d0\'b5\'c4\'b4\'f3\'d0\'a1\'ca\'b1, \'c4\'fa\'b5\'c4\'cb\'f5\'c2\'d4\'cd\'bc\'bc\'d3\'d4\'d8\'b2\'d9\'d7\'f7\'d6\'bb\'bb\'e1\'b3\'ac\'ca\'b1.\
+\'b6\'f8\'d5\'fd\'c8\'b7\'b5\'c4\'d7\'f6\'b7\'a8\'ca\'c7, \'d2\'aa\'b2\'bb\'d3\'c5\'cf\'c8\'bf\'bc\'c2\'c7\'c4\'e3\'b5\'c4\'cb\'f5\'c2\'d4\'cd\'bc\'bc\'d3\'d4\'d8\'b2\'d9\'d7\'f7, \'d2\'aa\'b2\'bb\'be\'cd\'b5\'c8\'b5\'bd\'c9\'cf\'b4\'ab\'cd\'ea\'b3\'c9\'ba\'f3,\'d4\'da\'bc\'d3\'d4\'d8\'cb\'f5\'c2\'d4\'cd\'bc.\
+\
+This requires you to have a single queue across the entire app. MKNetworkKit ensures this automatically by using a single shared queue for every instance of it. While MKNetworkKit is not a singleton by itself, the shared queue is.\
+\'d5\'e2\'be\'cd\'d0\'e8\'d2\'aa\'d4\'da\'c4\'e3\'b5\'c4\'d5\'fb\'b8\'f6\'d3\'a6\'d3\'c3\'d6\'d0,\'d3\'d0\'d2\'bb\'b8\'f6\'b5\'a5\'d2\'bb\'b5\'c4\'b6\'d3\'c1\'d0. MKNetworkKit\'c8\'b7\'b1\'a3\'d7\'d4\'b6\'af\'ca\'b9\'d3\'c3\'d2\'bb\'b8\'f6\'b5\'a5\'d2\'bb\'b5\'c4\'b9\'b2\'cf\'ed\'b6\'d3\'c1\'d0\'ce\'aa\'cb\'fc\'b5\'c4\'c3\'bf\'d2\'bb\'b8\'f6\'ca\'b5\'c0\'fd\'b6\'d4\'cf\'f3. \'cb\'e4\'c8\'bbMKNetworkKit\'b2\'a2\'b2\'bb\'ca\'c7\'b5\'a5\'c0\'fd\'b5\'c4, \'b5\'ab\'ca\'c7\'c8\'b4\'b9\'b2\'cf\'ed\'d2\'bb\'b8\'f6\'b6\'d3\'c1\'d0.\
+\pard\pardeftab720\sl440\sa380
+\cf0 Showing the Network Activity Indicator correctly \'d5\'fd\'c8\'b7\'cf\'d4\'ca\'be\'cd\'f8\'c2\'e7\'bb\'ee\'b6\'af\'d6\'b8\'ca\'be\'b5\'c6\
+\pard\pardeftab720\sl440\sa300
+\cf0 While there are many third party classes that uses \'a1\'b0incrementing\'a1\'b1 and \'a1\'b0decrementing\'a1\'b1 the number of network calls and using that to show the network activity indicator, MKNetworkKit backs on the single shared queue principle and shows the activity indicator automatically when there is an operation running in the shared queue by observing (KVO) the operationCount property. As a developer, you normally don\'a1\'aft have to worry about setting the network activity indicator manually, ever again.\
+\'cb\'e4\'c8\'bb\'d3\'d0\'ba\'dc\'b6\'e0\'b5\'da\'c8\'fd\'b7\'bd\'c0\'e0\'cd\'a8\'b9\'fd "\'b5\'dd\'d4\'f6" \'ba\'cd "\'b5\'dd\'bc\'f5" \'cd\'f8\'c2\'e7\'ba\'f4\'bd\'d0\'b5\'c4\'ca\'fd\'c1\'bf, \'c0\'b4\'bf\'d8\'d6\'c6\'cd\'f8\'c2\'e7\'bb\'ee\'b6\'af\'d6\'b8\'ca\'be\'b5\'c6\'b5\'c4\'bc\'a4\'bb\'ee\'d7\'b4\'cc\'ac.\
+MKNetworkKit\'b1\'b3\'ba\'f3\'ca\'c7\'b5\'a5\'d2\'bb\'b9\'b2\'cf\'ed\'b6\'d3\'c1\'d0\'d4\'ad\'d4\'f2,\'cb\'f9\'d2\'d4\'bb\'e1\'cd\'a8\'b9\'fd\'b6\'d4\'ca\'f4\'d0\'d4operationCount\'ca\'b9\'d3\'c3KVO, \'cb\'f9\'d2\'d4\'b5\'b1\'b5\'a5\'d2\'bb\'b6\'d3\'c1\'d0\'d6\'d0\'d3\'d0\'d2\'bb\'b8\'f6\'b2\'d9\'d7\'f7\'d5\'fd\'d4\'da\'bd\'f8\'d0\'d0\'ca\'b1, \'bb\'e1\'d7\'d4\'b6\'af\'cf\'d4\'ca\'be\'cd\'f8\'c2\'e7\'bb\'ee\'b6\'af\'d6\'b8\'ca\'be\'b5\'c6.\
+\'d7\'f7\'ce\'aa\'bf\'aa\'b7\'a2\'c8\'cb\'d4\'b1, \'c4\'e3\'cd\'a8\'b3\'a3\'b2\'bb\'cd\'ac\'ca\'d6\'b6\'af\'c9\'e8\'d6\'c3\'cd\'f8\'c2\'e7\'bb\'ee\'b6\'af\'d6\'b8\'ca\'be\'b5\'c6, \'cb\'f9\'d2\'d4\'b2\'bb\'d3\'c3\'b5\'a3\'d0\'c4.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth13300\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0     if (object == _sharedNetworkQueue &amp;&amp; [keyPath isEqualToString:@"operationCount"]) \{\
+\'a0\
+        [UIApplication sharedApplication].networkActivityIndicatorVisible =\
+        ([_sharedNetworkQueue.operations count] &gt; 0);\
+    \}\
+\
+\
+\cell \lastrow\row
+\pard\pardeftab720\sl440\sa380
+
+\f0\b\fs30 \cf0 Auto queue sizing \'d7\'d4\'b6\'af\'c9\'e8\'d6\'c3\'b6\'d3\'c1\'d0\'b4\'f3\'d0\'a1\
+\pard\pardeftab720\sl440\sa300
+\cf0 Continuing the previous discussion, I told that most mobile networks don\'a1\'aft allow more than two concurrent connections. So your queue size should be set to two, when the current network connectivity is 3G. \
+\'bc\'cc\'d0\'f8\'c7\'b0\'c3\'e6\'b5\'c4\'cc\'d6\'c2\'db,\'ce\'d2\'cb\'b5\'b9\'fd\'b4\'f3\'b2\'bf\'b7\'d6\'b5\'c4\'d2\'c6\'b6\'af\'cd\'f8\'c2\'e7,\'b2\'bb\'d4\'ca\'d0\'ed\'c1\'bd\'b8\'f6\'d2\'d4\'c9\'cf\'b5\'c4\'b2\'a2\'b7\'a2\'c1\'b4\'bd\'d3.\
+\'cb\'f9\'d2\'d4\'b5\'b1\'b5\'b1\'c7\'b0\'cd\'f8\'c2\'e7\'b4\'a6\'d3\'da3G\'ca\'b1, \'c4\'e3\'d3\'a6\'b8\'c3\'c9\'e8\'d6\'c3\'b6\'d3\'c1\'d0\'b4\'f3\'d0\'a1\'ce\'aa\'c1\'bd\'b8\'f6.\
+\
+MKNetworkKit automatically handles this for you. When the network drops to 3G/EDGE/GPRS, it changes the number of concurrent operations that can be performed to 2. This is automatically changed back to 6 when the device connects back to a Wifi network. With this technique in place, you will see a huge performance benefit when you are loading thumbnails (or multiple similar small requests) for a photo library from a remote server over 3G.\
+MKNetworkKit\'bb\'e1\'d7\'d4\'b6\'af\'ce\'aa\'c4\'e3\'b4\'a6\'c0\'ed\'d5\'e2\'d0\'a9.\'b5\'b1\'cd\'f8\'c2\'e7\'d6\'f0\'b4\'ce\'cf\'c2\'bd\'b5\'ca\'b1(3G/EDGE/GPRS), MKNetworkKit\'bb\'e1\'b8\'c4\'b1\'e4\'b2\'a2\'b7\'a2\'b5\'c4\'ca\'fd\'c1\'bf\'b5\'bd2.\
+\'b5\'b1\'c9\'e8\'b1\'b8\'d6\'d8\'d0\'c2\'c1\'b4\'bd\'d3\'b5\'bdWIFI\'cd\'f8\'c2\'e7\'ba\'f3,\'bb\'e1\'d7\'d4\'b6\'af\'b8\'c4\'bb\'d86. \
+\'d4\'da\'d3\'a6\'d3\'c3\'b5\'bd\'d5\'e2\'d6\'d6\'bc\'bc\'ca\'f5\'b5\'c4\'b5\'d8\'b7\'bd, \'b5\'b1\'c4\'e3\'d4\'da3G\'cd\'f8\'c2\'e7\'cf\'c2, \'ce\'aa\'d2\'bb\'b8\'f6\'d5\'d5\'c6\'ac\'bf\'e2\'b4\'d3\'d4\'b6\'b3\'cc\'b7\'fe\'ce\'f1\'c6\'f7\'bc\'d3\'d4\'d8\'cb\'f5\'c2\'d4\'cd\'bc\'b5\'c4\'ca\'b1\'ba\'f2,\'c4\'e3\'bb\'e1\'bf\'b4\'b5\'bd\'d2\'bb\'b8\'f6\'be\'de\'b4\'f3\'b5\'c4\'d0\'d4\'c4\'dc\'d3\'c5\'ca\'c6.\
+\pard\pardeftab720\sl440\sa380
+\cf0 Auto caching \'d7\'d4\'b6\'af\'bb\'ba\'b4\'e6\
+\pard\pardeftab720\sl440\sa300
+\cf0 MKNetworkKit can automatically cache all your \'a1\'b0GET\'a1\'b1 requests. When you make the same request again, MKNetworkKit calls your completion handler with the cached version of the response (if it\'a1\'afs available) almost immediately. It also makes a call to the remote server again. After the server data is fetched, your completion handler is called again with the new response data. This means, you don\'a1\'aft have to handle caching manually on your side. All you need to do is call one method,\
+MKNetworkKit\'bf\'c9\'d2\'d4\'d7\'d4\'b6\'af\'bb\'ba\'b4\'e6\'cb\'f9\'d3\'d0\'c4\'e3 "GET"\'b5\'bd\'b5\'c4\'c7\'eb\'c7\'f3.\
+\'b5\'b1\'c4\'e3\'d4\'d9\'b4\'ce\'cc\'e1\'b3\'f6\'cd\'ac\'d1\'f9\'b5\'c4roquets\'c7\'eb\'c7\'f3\'ca\'b1, MKNetworkKit\'bc\'b8\'ba\'f5\'c1\'a2\'bc\'b4\'b5\'f7\'d3\'c3\'c4\'fa\'d2\'d1\'ca\'b5\'cf\'d6\'b5\'c4\'b4\'a6\'c0\'ed\'b3\'cc\'d0\'f2\'ba\'cd\'bb\'ba\'b4\'e6\'b0\'e6\'b1\'be\'b5\'c4response(\'c8\'e7\'b9\'fb\'cb\'fc\'ca\'c7\'bf\'c9\'d3\'c3\'b5\'c4\'bb\'b0).\'d5\'e2\'d2\'b2\'bb\'e1\'d6\'d8\'d0\'c2\'b7\'c3\'ce\'ca\'d4\'b6\'b3\'cc\'b7\'fe\'ce\'f1\'c6\'f7.\
+\'b4\'d3\'b7\'fe\'ce\'f1\'c6\'f7\'bb\'f1\'c8\'a1\'ca\'fd\'be\'dd\'ba\'f3, \'c4\'e3\'d2\'d1\'ca\'b5\'cf\'d6\'b5\'c4\'b4\'a6\'c0\'ed\'b3\'cc\'d0\'f2\'bb\'e1\'d4\'d9\'d2\'bb\'b4\'ce\'b1\'bb\'b5\'f7\'d3\'c3,\'b2\'a2\'b4\'a6\'c0\'ed\'d0\'c2\'b5\'c4response\'ca\'fd\'be\'dd.\
+\'d5\'e2\'d2\'e2\'ce\'b6\'d7\'c5,\'c4\'e3\'b2\'bb\'d0\'e8\'d2\'aa\'ca\'d6\'b6\'af\'b4\'a6\'c0\'ed\'bb\'ba\'b4\'e6, \'c4\'e3\'d6\'bb\'d0\'e8\'d2\'aa\'b5\'f7\'d3\'c3\'d2\'bb\'b8\'f6\'b7\'bd\'b7\'a8.\
+MKNetworkKit\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5880\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0 [[MKNetworkEngine sharedEngine] useCache];\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 Optionally, you can override methods in your MKNetworkEngine subclass to customize your cache directory and in-memory cache cost.\
+\pard\pardeftab720\sl440\sa300
+\cf0 \cb5 \'bb\'f2\'d5\'df\'c4\'e3\'bf\'c9\'d2\'d4\'b8\'b2\'b8\'c7\'c4\'faMKNetworkEngine\'d7\'d3\'c0\'e0\'b5\'c4\'b7\'bd\'b7\'a8\'c0\'b4\'b6\'a8\'d6\'c6\'c4\'e3\'b5\'c4\'bb\'ba\'b4\'e6\'c4\'bf\'c2\'bc, \'b2\'a2\'d4\'da\'c4\'da\'b4\'e6\'d6\'d0\'bb\'ba\'b4\'e6.\cb1 \
+\pard\pardeftab720\sl440\sa380
+\cf0 Operation freezing \'b2\'d9\'d7\'f7\'b6\'b3\'bd\'e1\
+\pard\pardeftab720\sl440\sa300
+\cf0 With MKNetworkKit, you have the ability to freeze your network operations. When you freeze an operation, in case of network connectivity losses, they will be serialized automatically and performed once the device comes back online. Think of \'a1\'b0drafts\'a1\'b1 in your twitter client.\
+\'d3\'c3MKNetworkKit\'c4\'e3\'d3\'d0\'c4\'dc\'c1\'a6\'b6\'b3\'bd\'e1\'c4\'fa\'b5\'c4\'cd\'f8\'c2\'e7\'d4\'cb\'d3\'aa.\'b5\'b1\'c4\'e3\'b6\'b3\'bd\'e1\'d2\'bb\'b8\'f6\'b2\'d9\'d7\'f7\'ca\'b1,\'b5\'b1\'cd\'f8\'c2\'e7\'c1\'ac\'cd\'a8\'d0\'d4\'bd\'b5\'b5\'cd\'b5\'c4\'c7\'e9\'bf\'f6\'cf\'c2,\'cb\'fc\'c3\'c7\'bd\'ab\'b1\'bb\'d7\'d4\'b6\'af\'d0\'f2\'c1\'d0\'bb\'af\'b2\'a2\'c7\'d2\'ba\'cd\'c9\'e8\'b1\'b8\'bd\'f8\'d0\'d0\'d2\'bb\'b4\'ce\'c1\'aa\'bb\'fa.\'cf\'eb\'cf\'eb\'d4\'da\'c4\'e3\'b5\'c4Twitter\'bf\'cd\'bb\'a7\'b6\'cb\'d6\'d0\'b5\'c4\'b2\'dd\'b8\'e5.\
+When you post a tweet, mark that network call as freezable and MKNetworkKit automatically takes care of freezing and restoring these requests for you! So the tweets get sent later without you writing a single line of additional code. You can use this for other operations like favoring a tweet or sharing a post from your Google reader client, adding a link to Instapaper and similar operations.\
+\'b5\'b1\'c4\'e3\'b7\'a2\'cb\'cd\'d2\'bb\'b8\'f6tweet\'ca\'b1,\'b1\'ea\'d6\'be\'d7\'c5\'cd\'f8\'c2\'e7\'ba\'f4\'bd\'d0\'bf\'c9\'b1\'bb\'b6\'b3\'bd\'e1,\'b2\'a2\'c7\'d2MKNetworkKit\'bf\'c9\'d7\'d4\'b6\'af\'b0\'ef\'c4\'e3\'b6\'b3\'bd\'e1\'ba\'cd\'bb\'d6\'b8\'b4\'d5\'e2\'d0\'a9\'c7\'eb\'c7\'f3.\'d2\'f2\'b4\'cb\'b5\'b1tweet\'b1\'bb\'b7\'a2\'cb\'cd\'d2\'d4\'ba\'f3,\'b2\'bb\'d0\'e8\'d2\'aa\'c4\'e3\'b1\'e0\'d0\'b4\'b6\'ee\'cd\'e2\'b5\'c4\'b4\'fa\'c2\'eb.\
+\'c4\'e3\'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3\'d5\'e2\'d6\'d6\'cc\'d8\'d0\'d4\'d3\'c3\'d3\'da\'c6\'e4\'cb\'fb\'b2\'d9\'d7\'f7,\
+\pard\pardeftab720\sl440\sa380
+\cf0 Performs exactly one operation for similar requests \'ce\'aa\'cf\'e0\'cd\'ac\'b5\'c4\'d2\'bb\'d0\'a9\'c7\'eb\'c7\'f3,\'d6\'b4\'d0\'d0\'be\'ab\'c8\'b7\'b5\'c4\'b2\'d9\'d7\'f7.\
+\pard\pardeftab720\sl440\sa300
+\cf0 When you load thumbnails (for a twitter stream), you might end up creating a new request for every avatar image. But in reality, you only need as many requests as there are unique URLs. With MKNetworkKit, every GET request you queue gets executed exactly once. MKNetworkKit is intelligent enough not to cache \'a1\'b0POST\'a1\'b1 http requests.\
+\'b5\'b1\'c4\'e3\'bc\'d3\'d4\'d8\'cb\'f5\'c2\'d4\'cd\'bc(\'ce\'aa\'d2\'bb\'b8\'f6twitter\'c1\'f7),\'c4\'e3\'d7\'ee\'ba\'f3\'bf\'c9\'c4\'dc\'bb\'e1\'ce\'aa\'c3\'bf\'b8\'f6\'cd\'b7\'cf\'f1\'cd\'bc\'c6\'ac\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6\'d0\'c2\'b5\'c4\'c7\'eb\'c7\'f3.\
+\'b5\'ab\'ca\'b5\'bc\'ca\'c9\'cf,\'c4\'e3\'bd\'f6\'d0\'e8\'d2\'aa\'be\'a1\'bf\'c9\'c4\'dc\'b6\'e0\'b5\'c4requests,\'d2\'f2\'ce\'aa\'cb\'fb\'c3\'c7\'d3\'b5\'d3\'d0\'b6\'c0\'d3\'d0\'b5\'c4URLs.\
+\'d4\'daMKNetworkKit\'d6\'d0,\'c3\'bf\'b8\'f6GET request\'c7\'eb\'c7\'f3\'b6\'d3\'c1\'d0,\'d6\'bb\'bb\'e1\'b1\'bb\'d6\'b4\'d0\'d0\'d2\'bb\'b4\'ce.\
+MKNetworkKit\'b2\'bb\'bb\'ba\'b4\'e6 \'a1\'b0POST\'a1\'b1http\'c7\'eb\'c7\'f3; \
+\pard\pardeftab720\sl440\sa380
+\cf0 Image Caching \'cd\'bc\'cf\'f1\'bb\'ba\'b4\'e6\'bc\'bc\'ca\'f5\
+\pard\pardeftab720\sl440\sa300
+\cf0 MKNetworkKit can be seamlessly used for caching thumbnail images. By overriding a few methods, you can set how many images should be held in the in-memory cache and where in the Caches directory it should be saved. Overriding these methods are completely optional.\
+MKNetworkKit\'bf\'c9\'d2\'d4\'ce\'de\'b7\'ec\'b5\'d8\'ca\'b9\'d3\'c3\'bb\'ba\'b4\'e6\'b5\'c4\'cb\'f5\'c2\'d4\'cd\'bc.\
+\'cd\'a8\'b9\'fd\'b8\'b2\'d0\'b4\'bc\'b8\'b8\'f6\'b7\'bd\'b7\'a8, \'c4\'e3\'bf\'c9\'d2\'d4\'c9\'e8\'d6\'c3\'d4\'da\'c4\'da\'b4\'e6\'d6\'d0\'bb\'ba\'b4\'e6\'cd\'bc\'c6\'ac\'b5\'c4\'ca\'fd\'c1\'bf,\'ba\'cd\'c9\'e8\'d6\'c3\'d0\'e8\'d2\'aa\'b9\'cc\'bb\'af\'b1\'a3\'b4\'e6\'b5\'c4\'cd\'bc\'c6\'ac\'b5\'c4\'ce\'c4\'bc\'fe\'bc\'d0.\'d5\'e2\'d0\'a9\'d0\'e8\'d2\'aa\'b8\'b2\'d0\'b4\'b5\'c4\'b7\'bd\'b7\'a8\'ca\'c7\'cd\'ea\'c8\'ab\'bf\'c9\'d1\'a1\'b5\'c4.\
+\pard\pardeftab720\sl440\sa380
+\cf0 Performance \'d0\'d4\'c4\'dc\
+\pard\pardeftab720\sl440\sa300
+\cf0 One word. SPEED. MKNetworkKit caching is seamless. It works like NSCache, except that, when there is a memory warning, the in-memory cache is written to the Caches directory.\
+\'d2\'bb\'b8\'f6\'d7\'d6,SPEED. MKNetworkKit\'bb\'ba\'b4\'e6\'ca\'c7\'ce\'de\'b7\'ec\'b5\'c4.\'cb\'fc\'b5\'c4\'b9\'a4\'d7\'f7\'d4\'ad\'c0\'ed\'cf\'f1NSCache,\'b5\'b1\'d3\'d0\'d2\'bb\'b8\'f6\'c4\'da\'b4\'e6\'be\'af\'b8\'e6\'ca\'b1,\'d4\'da\'c4\'da\'b4\'e6\'d6\'d0\'bb\'ba\'b4\'e6\'b5\'c4\'cd\'bc\'c6\'ac\'bb\'e1\'b1\'bb\'d0\'b4\'b5\'bd\'bb\'ba\'b4\'e6\'ce\'c4\'bc\'fe\'bc\'d0\'d6\'d0.\
+\pard\pardeftab720\sl440\sa380
+\cf0 Full support for Objective-C ARC \'c8\'ab\'c3\'e6\'d6\'a7\'b3\'d6Objective-C\'b5\'c4ARC\
+\pard\pardeftab720\sl440\sa300
+\cf0 You normally choose a new networking framework for new projects. MKNetworkKit is not meant for replacing your existing framework (though you can, it\'a1\'afs quite a tedious job). On new projects, you will almost and always want to enable ARC and as on date of writing this, MKNetworkKit is probably the only networking framework that is fully ARC ready. ARC based memory management is usually an order of magnitude faster than non-ARC based memory management code.\
+\pard\pardeftab720\sl440\sa360
+
+\fs46 \cf0 How to use \'c8\'e7\'ba\'ce\'ca\'b9\'d3\'c3\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 Ok, Enough self-praises. Let us now see how to use the framework.\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Adding the MKNetworkKit\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440
+\ls2\ilvl0
+\fs30 \cf0 {\listtext	1.	}Drag the MKNetworkKit directory to your project.\
+{\listtext	2.	}Add the CFNetwork.Framework, SystemConfiguration.framework, Security.framework and ImageIO.Framework.\
+{\listtext	3.	}Include MKNetworkKit.h to your PCH file\
+{\listtext	4.	}Delete NSAlert+MKNetworkKitAdditions.h file if you are building for iOS.\
+{\listtext	5.	}Delete UIAlertView+MKNetworkKitAdditions.h file if you are building for Mac.\
+\pard\pardeftab720\sl440\sa300
+\cf0 You are done. Just 5 core files and there you go. A powerful networking kit.\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Classes in MKNetworkKit\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440
+\ls3\ilvl0
+\fs30 \cf0 {\listtext	1.	}MKNetworkOperation\
+{\listtext	2.	}MKNetworkEngine\
+{\listtext	3.	}Miscellaneous helper classes (Apple\'a1\'afs Reachability) and categories \'c6\'e4\'cb\'fb\'b8\'a8\'d6\'fa\'c0\'e0\'ba\'cd\'c0\'e0\'b1\'f0.\
+\pard\tx566\pardeftab720\sl440
+\cf0 \
+\pard\pardeftab720\sl440\sa300
+\cf0 I believe in simplicity. Apple has done the heavy lifting of writing the actual networking code. What a third-party networking framework should provide is an elegant queue based networking with optional caching. I believe that, any third party framework should have under 10 classes (whether it\'a1\'afs networking or UIKit replacement or whatever). \
+\'ce\'d2\'d0\'c5\'b7\'ee"\'bc\'ab\'bc\'f2".\'c6\'bb\'b9\'fb\'b9\'ab\'cb\'be\'d2\'d1\'be\'ad\'cd\'ea\'b3\'c9\'c1\'cb\'cd\'f8\'c2\'e7\'b4\'fa\'c2\'eb\'b5\'c4\'b4\'f3\'c1\'bf\'b1\'e0\'d0\'b4\'c8\'ce\'ce\'f1.\
+\'d2\'bb\'b8\'f6\'b5\'da\'c8\'fd\'b7\'bd\'b5\'c4\'cd\'f8\'c2\'e7\'bf\'f2\'bc\'dc, \'d3\'a6\'b8\'c3\'cc\'e1\'b9\'a9\'d2\'bb\'b8\'f6\'bb\'f9\'b4\'a1\'cd\'f8\'c2\'e7\'b2\'d9\'d7\'f7\'b5\'c4\'bf\'c9\'d1\'a1\'b6\'d3\'c1\'d0.\
+\'ce\'d2\'cf\'e0\'d0\'c5\'c8\'ce\'ba\'ce\'b5\'da\'c8\'fd\'b7\'bd\'bf\'f2\'bc\'dc,\'d3\'a6\'b8\'c3\'b5\'cd\'d3\'da10\'b8\'f6\'c0\'e0\'b5\'c4\'b9\'e6\'c4\'a3.\
+\
+More than that is a bloat. Three 20 library is an example of bloat and so is ShareKit. May be it\'a1\'afs good. But it still huge and bloated. ASIHttpRequest or AFNetworking are lean and lightweight, unlike RESTKit. JSONKit is lightweight unlike TouchJSON (or any of the TouchCode libraries). May be it\'a1\'afs just me, but I just can\'a1\'aft take it when more than a third of source code lines in my app comes from a third party library.\
+\'b3\'ac\'b9\'fd\'d5\'e2\'b8\'f6\'be\'cd\'bb\'e1\'cf\'d4\'b5\'c3\'d3\'b7\'d6\'d7.Three20\'c0\'e0\'bf\'e2\'be\'cd\'ca\'c7\'d2\'bb\'b8\'f6\'b9\'d8\'d3\'da\'d3\'b7\'d6\'d7\'b5\'c4\'c0\'fd\'d7\'d3.\'d5\'e2\'d2\'b2\'d0\'ed\'ca\'c7\'cb\'fc\'b5\'c4\'b5\'c4\'ba\'c3\'b4\'a6,\'b5\'ab\'ca\'c7\'cb\'fc\'c8\'d4\'c8\'bb\'c5\'d3\'b4\'f3\'ba\'cd\'d3\'b7\'d6\'d7.\
+ASIHttpRequest or AFNetworking\'ca\'c7\'be\'ab\'ba\'b7\'c7\'e1\'c7\'c9\'b5\'c4,\'b2\'bb\'cf\'f1RESTKit.\
+JSONKit\'ca\'c7\'c7\'e1\'c1\'bf\'bc\'b6\'b5\'c4,\'b2\'bb\'cf\'f1TouchJSON(\'bb\'f2\'c8\'ce\'ba\'ceTouchCode\'bf\'e2).\
+\'d2\'b2\'d0\'ed\'d5\'e2\'d6\'bb\'ca\'c7\'ce\'d2\'b8\'f6\'c8\'cb\'b5\'c4\'cf\'b0\'b9\'df,\'b5\'ab\'ca\'c7\'ce\'d2\'b2\'bb\'c4\'dc\'c8\'dd\'c8\'cc\'ce\'d2\'b5\'c4app\'d6\'d0\'d3\'d0\'b3\'ac\'b9\'fd1/3\'b5\'c4\'b4\'fa\'c2\'eb\'c0\'b4\'d7\'d4\'b5\'da\'c8\'fd\'b7\'bd\'bf\'e2.\
+The problem with a huge framework is the difficulty in understanding the internal working and the ability to customize it to suit your needs (in case you need to). My frameworks (MKStoreKit for adding In App Purchases to your app) have always been super easy to use and I believe MKNetworkKit would also be the same. For using MKNetworkKit, all you need to know are the methods exposed by the two classes MKNetworkOperation and MKNetworkEngine. MKNetworkOperation is similar to the ASIHttpRequest class. It is a subclass of NSOperation and it wraps your request and response classes. You create a MKNetworkOperation for every network operation you need in your application.\
+\'ce\'d2\'b5\'c4MKStoreKit\'bf\'f2\'bc\'dc,\'d3\'c3\'d3\'da\'ca\'b5\'cf\'d6\'b3\'cc\'d0\'f2\'c4\'da\'b9\'ba,\'d2\'bb\'d6\'b1\'ba\'dc\'ba\'c3\'d3\'c3,\'ce\'d2\'cf\'e0\'d0\'c5\'ce\'d2\'b5\'c4MKNetworkKit\'d2\'b2\'ca\'c7\'d2\'bb\'d1\'f9\'b5\'c4.\
+\'b6\'d4\'d3\'da\'ca\'b9\'d3\'c3MKNetworkKit, \'c4\'e3\'cb\'f9\'d3\'d0\'d0\'e8\'d2\'aa\'d6\'aa\'b5\'c0\'b5\'c4\'b7\'bd\'b7\'a8\'d6\'bb\'d4\'da\'c1\'bd\'b8\'f6\'c0\'e0\'d6\'d0,MKNetworkOperation and MKNetworkEngine. \
+MKNetworkOperation\'c0\'e0\'cb\'c6\'d3\'daASIHttpRequest\'c0\'e0, \'d5\'e2\'ca\'c7\'d2\'bb\'b8\'f6NSOperation\'b5\'c4\'d7\'d3\'c0\'e0,\'cb\'fc\'b7\'e2\'d7\'b0\'c4\'e3\'b5\'c4request\'ba\'cdresponse\'c0\'e0.\
+\'c4\'e3\'d0\'e8\'d2\'aa\'d4\'da\'c4\'e3\'b5\'c4\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'d6\'d0\'ce\'aa\'c3\'bf\'b8\'f6\'cd\'f8\'c2\'e7\'b2\'d9\'d7\'f7\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6MKNetworkOperation;\
+\
+MKNetworkEngine is a pseudo-singleton class that manages the network queue in your application. It\'a1\'afs a pseudo-singleton, in the sense, for simple requests, you should use MKNetworkEngine methods directly. For more powerful customization, you should subclass it. Every MKNetworkEngine subclass has its own Reachability object that notifies it of server reachability notifications. You should consider creating a subclass of MKNetworkEngine for every unique REST server you use. It\'a1\'afs pseudo-singleton in the sense, every single request in any of it\'a1\'afs subclass goes through one and only one single queue.\
+MKNetworkEngine\'ca\'c7\'d2\'bb\'b8\'f6 \'ce\'b1\'b5\'a5\'c0\'fd\'c0\'e0,\'d3\'c3\'d3\'da\'b9\'dc\'c0\'ed\'c4\'e3\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'d6\'d0\'b5\'c4\'cd\'f8\'c2\'e7\'b6\'d3\'c1\'d0.\
+\'be\'cd \'ce\'b1\'b5\'a5\'c0\'fd \'d5\'e2\'b8\'f6\'b8\'c5\'c4\'ee\'c0\'b4\'cb\'b5,\'b6\'d4\'d3\'da\'bc\'f2\'b5\'a5\'b5\'c4\'c7\'eb\'c7\'f3,\'c4\'e3\'d3\'a6\'b8\'c3\'d6\'b1\'bd\'d3\'ca\'b9\'d3\'c3MKNetworkEngine\'b7\'bd\'b7\'a8.\
+\'b6\'d4\'d3\'da\'b8\'fc\'c7\'bf\'b4\'f3\'b5\'c4\'b6\'a8\'d6\'c6\'d0\'e8\'c7\'f3,\'c4\'e3\'d3\'a6\'b8\'c3\'bc\'cc\'b3\'d0\'cb\'fc.\
+\'c3\'bf\'b8\'f6MKNetworkEngine\'d7\'d3\'c0\'e0\'b6\'bc\'d3\'d0\'d7\'d4\'bc\'ba\'a1\'ad\
+\'c4\'e3\'d3\'a6\'b8\'c3\'ce\'aa\'c4\'e3\'ca\'b9\'d3\'c3\'b5\'bd\'b5\'c4\'c3\'bf\'b8\'f6\'ce\'a8\'d2\'bb\'b5\'c4REST\'b7\'fe\'ce\'f1\'c6\'f7\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6MKNetworkEngine\'b5\'c4\'d7\'d3\'c0\'e0.\
+\'d2\'f2\'ce\'aa\'ca\'c7 \'ce\'b1\'b5\'a5\'c0\'fd\'b5\'c4, \'cb\'f9\'d2\'d4\'cb\'f9\'d3\'d0MKNetworkEngine\'b5\'c4\'ca\'b5\'c1\'a6\'b7\'a2\'c6\'f0\'b5\'c4\'c7\'eb\'c7\'f3\'b6\'bc\'bb\'e1\'d4\'da\'d2\'bb\'b8\'f6\'b5\'a5\'d2\'bb\'b5\'c4\'b6\'d3\'c1\'d0\'d6\'d0.\
+You can retain instances of your MKNetworkEngine in your application delegate just like CoreData managedObjectContext class. When you use MKNetworkKit, you create an MKNetworkEngine sub class to logically group your network calls. That is, all Yahoo related methods go under one single class and all Facebook related methods into another class. We will now look at three different examples of using this framework.\
+\'c4\'e3\'bf\'c9\'d2\'d4\'d4\'daapplication delegate\'d6\'d0\'b1\'a3\'c1\'f4\'d2\'bb\'b8\'f6MKNetworkEngine\'b5\'c4\'ca\'b5\'c0\'fd\'b6\'d4\'cf\'f3,\'be\'cd\'cf\'f1CoreData managedObjectContext class.\
+\'b5\'b1\'c4\'e3\'ca\'b9\'d3\'c3MKNetworkKit\'ca\'b1,\'c4\'e3\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6MKNetworkKit\'d7\'d3\'c0\'e0\'c0\'b4\'b6\'d4\'cd\'f8\'c2\'e7\'c7\'eb\'c7\'f3\'bd\'f8\'d0\'d0\'c2\'df\'bc\'ad\'b7\'d6\'d7\'e9.\
+\'d2\'b2\'be\'cd\'ca\'c7\'cb\'b5, \'cb\'f9\'d3\'d0 \'d1\'c5\'bb\'a2\'cf\'e0\'b9\'d8\'b5\'c4\'b7\'bd\'b7\'a8\'d2\'aa\'b7\'c5\'d4\'da\'d2\'bb\'b8\'f6\'b5\'a5\'b6\'c0\'b5\'c4MKNetworkKit\'d7\'d3\'c0\'e0\'d6\'d0,\'b6\'f8\'cb\'f9\'d3\'d0 Facebook\'cf\'e0\'b9\'d8\'b5\'c4\'b7\'bd\'b7\'a8,\'d2\'aa\'b7\'c5\'b5\'bd\'c1\'ed\'d2\'bb\'b8\'f6MKNetworkKit\'d7\'d3\'c0\'e0\'d6\'d0.\
+\'cf\'c2\'c3\'e6,\'ce\'d2\'c3\'c7\'bd\'ab\'bf\'b4\'b5\'bd\'c8\'fd\'b8\'f6\'b2\'bb\'cd\'ac\'b5\'c4\'c0\'fd\'d7\'d3,\'c0\'b4\'cb\'b5\'c3\'f7\'c8\'e7\'ba\'ce\'ca\'b9\'d3\'c3MKNetworkKit\'bf\'f2\'bc\'dc.\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Example 1:\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 Let\'a1\'afs now create a \'a1\'b0YahooEngine\'a1\'b1 that pulls currency exchange rates from Yahoo finance.\
+\'cf\'d6\'d4\'da\'c8\'c3\'ce\'d2\'c3\'c7\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6 YahooEngine, \'d3\'c3\'d3\'da\'b4\'d3\'d1\'c5\'bb\'a2\'b2\'c6\'ce\'f1\'cd\'c6\'cb\'cd\'bb\'f5\'b1\'d2\'bb\'e3\'c2\'ca.\
+Step 1:\uc0\u160 Create a YahooEngine class as a subclass of MKNetworkEngine. MKNetworkEngine init method takes hostname and custom headers (if any). The custom headers is optional and can be nil. If you are writing your own REST server (unlike this case), you might consider adding client app version and other misc data like client identifier.\
+\'b2\'bd\'d6\'e81\'a3\'ba\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6MKNetworkEngine \'b5\'c4\'d7\'d3\'c0\'e0, YahooEngine\'a1\'a3\
+MKNetworkEngine\'b3\'f5\'ca\'bc\'bb\'af\'b7\'bd\'b7\'a8\'d0\'e8\'d2\'aa hostname(\'d6\'f7\'bb\'fa\'c3\'fb)\'ba\'cd\'d7\'d4\'b6\'a8\'d2\'e5\'b5\'c4\'cd\'b7(\'c8\'e7\'b9\'fb\'d3\'d0).\
+\'d7\'d4\'b6\'a8\'d2\'e5\'b5\'c4\'cd\'b7\'ca\'c7\'bf\'c9\'d1\'a1\'b5\'c4,\'cb\'f9\'d2\'d4\'bf\'c9\'d2\'d4\'b4\'ab\'c8\'ebnil.\
+\'c8\'e7\'b9\'fb\'c4\'e3\'d5\'fd\'d4\'da\'d0\'b4\'c4\'e3\'d7\'d4\'bc\'ba\'b5\'c4REST\'b7\'fe\'ce\'f1\'c6\'f7(\'b2\'bb\'cf\'f1\'d5\'e2\'d6\'d6\'c7\'e9\'bf\'f6),\'c4\'e3\'bf\'c9\'c4\'dc\'bb\'e1\'bf\'bc\'c2\'c7\'bc\'d3\'c8\'ebapp\'b0\'e6\'b1\'be\'ba\'cd\'c6\'e4\'cb\'fb\'d6\'ee\'c8\'e7\'bf\'cd\'bb\'a7\'b6\'cb\'b1\'ea\'ca\'b6\'d5\'e2\'d1\'f9\'b5\'c4\'ca\'fd\'be\'dd.\
+\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth11900\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0     NSMutableDictionary *headerFields = [NSMutableDictionary dictionary];\
+    [headerFields setValue:@"iOS" forKey:@"x-client-identifier"];\
+\'a0\
+    self.engine = [[YahooEngine alloc] initWithHostName:@"download.finance.yahoo.com"\
+                       customHeaderFields:headerFields];\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 Note that, while yahoo doesn\'a1\'aft mandate you to send x-client-identifier in the header, the sample code shown above sends this just to illustrate this feature.\
+\'d0\'e8\'d2\'aa\'d7\'a2\'d2\'e2\'b5\'c4\'ca\'c7, \'d1\'c5\'bb\'a2\'b2\'a2\'b2\'bb\'c7\'bf\'d6\'c6\'c4\'e3\'d4\'da\'cd\'b7\'d6\'d0\'b7\'a2\'cb\'cd x-client-identifier,\'c9\'cf\'c3\'e6\'b5\'c4\'ca\'be\'c0\'fd\'b4\'fa\'c2\'eb\'d6\'bb\'ca\'c7\'ce\'aa\'c1\'cb\'cb\'b5\'c3\'f7\'d3\'d0\'b4\'cb\'b9\'a6\'c4\'dc\'b6\'f8\'d2\'d1.\
+Since the complete code is ARC, it\'a1\'afs up to you as a developer to own (strong reference) the Engine instance.\
+\'c9\'cf\'c3\'e6\'b5\'c4\'b4\'fa\'c2\'eb\'ca\'c7\'bb\'f9\'d3\'daARC\'b5\'c4, \'cb\'f9\'d2\'d4\'bf\'aa\'b7\'a2\'c8\'cb\'d4\'b1\'d0\'e8\'d2\'aa\'d3\'b5\'d3\'d0(\'c7\'bf\'d2\'fd\'d3\'c3)\'d2\'fd\'c7\'e6\'ca\'b5\'c0\'fd\'b6\'d4\'cf\'f3.\
+When you create a MKNetworkEngine subclass, Reachability implementation is done automatically for you. That\'a1\'afs when your server goes down or due to some unforeseen circumstances, the hostname is not reachable, your requests will automatically be queued/frozen. For more information about freezing your operations, read the section Freezing Operations later in the page.\
+\'b5\'b1\'c4\'e3\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6MKNetworkEngine\'d7\'d3\'c0\'e0, \'bf\'c9\'b4\'ef\'d0\'d4\'ca\'b5\'cf\'d6\'bd\'ab\'d7\'d4\'b6\'af\'ce\'aa\'c4\'e3\'cd\'ea\'b3\'c9.\'d5\'e2\'ca\'b1\'ba\'f2\'c4\'e3\'b5\'c4\'b7\'fe\'ce\'f1\'c6\'f7\'e5\'b4\'bb\'fa\'bb\'f2\'d5\'df\'d3\'c9\'d2\'bb\'d0\'a9\'b2\'bb\'bf\'c9\'d4\'a4\'bc\'fb\'b5\'c4\'c7\'e9\'bf\'f6\'cf\'c2,\'d6\'f7\'bb\'fa\'b2\'bb\'bf\'c9\'b4\'ef\'ca\'b1,\'c4\'fa\'b5\'c4\'c7\'eb\'c7\'f3\'bd\'ab\'b1\'bb\'d7\'d4\'b6\'af\'c5\'c5\'b6\'d3/\'b6\'b3\'bd\'e1.\'c8\'e7\'b9\'fb\'cf\'eb\'c1\'cb\'bd\'e2\'b8\'fc\'b6\'e0\'b9\'d8\'d3\'da\'b6\'b3\'bd\'e1\'c4\'e3\'b5\'c4\'b2\'d9\'d7\'f7\'b5\'c4\'cf\'e0\'b9\'d8\'d0\'c5\'cf\'a2,\'c7\'eb\'d4\'c4\'b6\'c1\'ba\'f3\'c3\'e6\'b5\'c4 "Freezing Operations"\'d5\'c2\'bd\'da.\
+Step 2:\uc0\u160 Designing the Engine class (Separation of concerns)\'b5\'da2\'b2\'bd\'a3\'ba\'c9\'e8\'bc\'c6\'d2\'fd\'c7\'e6\'c0\'e0\'a3\'a8\'b9\'d8\'d7\'a2\'b5\'e3\'b7\'d6\'c0\'eb,\'be\'cd\'ca\'c7\'b7\'d6\'b2\'e3\'c9\'e8\'bc\'c6,\'c3\'bf\'b2\'e3\'d6\'bb\'b9\'d8\'d7\'a2\'d7\'d4\'bc\'ba\'b5\'c4\'d2\'b5\'ce\'f1\'b5\'e3\'ba\'cd\'d6\'aa\'ca\'b6\'b5\'e3\'a3\'a9\
+Let\'a1\'afs now start write the methods in Yahoo Engine to fetch exchange rates. The engine methods will be called from your view controller. A good design practice is to ensure that your engine class doesn\'a1\'aft expose URL/HTTPHeaders to the calling class. Your view should not \'a1\'b0know\'a1\'b1 about URL endpoints or the parameters needed. This means, parameters to methods in your Yahoo Engine should be the currencies and the number of currency units. The return value of this method could be a double value that is the exchange rate factor and may be the timestamp of the time it was fetched. Since operations are not performed synchronously, you should return these values on blocks. An example of this would be,\
+\'cf\'d6\'d4\'da\'c8\'c3\'ce\'d2\'c3\'c7\'bf\'aa\'ca\'bc\'b1\'e0\'d0\'b4 \'d1\'c5\'bb\'a2\'d2\'fd\'c7\'e6\'d6\'d0\'b5\'c4\'b7\'bd\'b7\'a8, \'d3\'c3\'c0\'b4\'bb\'f1\'c8\'a1\'bb\'e3\'c2\'ca\'d0\'c5\'cf\'a2.\'d5\'e2\'b8\'f6\'d2\'fd\'c7\'e6\'b7\'bd\'b7\'a8\'bb\'e1\'d4\'da view controller\'d6\'d0\'b1\'bb\'b5\'f7\'d3\'c3.\
+\'ba\'c3\'b5\'c4\'c9\'e8\'bc\'c6\'b7\'bd\'b7\'a8\'ca\'c7, \'b2\'bb\'d2\'aa\'b9\'ab\'bf\'aa\'c4\'e3\'b5\'c4URL/HTTPHeaders\'b8\'f8\'c4\'e3\'d2\'fd\'c7\'e6\'c0\'e0\'b5\'c4\'b5\'f7\'d3\'c3\'d5\'df.\'c4\'e3\'b5\'c4View\'b2\'bb\'d3\'a6\'b8\'c3\'d6\'aa\'b5\'c0\'b9\'d8\'d3\'daURL endpoints\'bb\'f2\'d5\'df\'cb\'f9\'d0\'e8\'b5\'c4\'b2\'ce\'ca\'fd.\'d5\'e2\'d2\'e2\'ce\'b6\'d7\'c5\'c4\'e3\'d2\'fd\'c7\'e6\'d6\'d0\'b9\'ab\'bf\'aa\'b5\'c4\'b7\'bd\'b7\'a8\'b5\'c4\'c8\'eb\'b2\'ce\'d3\'a6\'b8\'c3\'ca\'c7 currencies(\'bb\'f5\'b1\'d2)\'ba\'cdcurrency units(\'bb\'f5\'b1\'d2\'b5\'a5\'ce\'bb)\'b5\'c4\'ca\'fd\'c1\'bf.\
+\'d5\'e2\'b8\'f6\'b7\'bd\'b7\'a8\'b5\'c4\'b7\'b5\'bb\'d8\'d6\'b5(\'b2\'bb\'ca\'c7\'b7\'bd\'b7\'a8\'c9\'f9\'c3\'f7\'b5\'c4\'b7\'b5\'bb\'d8\'d6\'b5,\'b6\'f8\'ca\'c7\'b7\'bd\'b7\'a8\'d6\'b4\'d0\'d0\'ba\'f3\'bb\'f1\'c8\'a1\'b5\'c4\'bd\'e1\'b9\'fb\'d6\'b5)\'bf\'c9\'d2\'d4\'ca\'c7\'d2\'bb\'b8\'f6double\'d6\'b5,\'d5\'e2\'ca\'c7\'bb\'e3\'c2\'ca\'d2\'f2\'cb\'d8\'ba\'cd\'bd\'e1\'b9\'fb\'d6\'b5\'bb\'f1\'c8\'a1\'b5\'c4\'ca\'b1\'bc\'e4\'b4\'c1, \'d3\'c9\'d3\'da\'b2\'d9\'d7\'f7\'ca\'c7\'d2\'ec\'b2\'bd\'d6\'b4\'d0\'d0\'b5\'c4,\'c4\'e3\'d3\'a6\'b8\'c3\'cd\'a8\'b9\'fdblock\'c0\'b4\'b7\'b5\'bb\'d8\'d5\'e2\'d0\'a9\'d6\'b5.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9240\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0 -(MKNetworkOperation*) currencyRateFor:(NSString*) sourceCurrency\
+                   	    inCurrency:(NSString*) targetCurrency\
+			  onCompletion:(CurrencyResponseBlock) completion\
+        	               onError:(ErrorBlock) error;\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 MKNetworkEngine, the parent class defines three types of block methods as below.\
+\'d4\'daMKNetworkEngine\'b8\'b8\'c0\'e0\'d6\'d0,\'b6\'a8\'d2\'e5\'c1\'cb\'c8\'fd\'d6\'d6\'c0\'e0\'d0\'cd\'b5\'c4\'bf\'e9\'b7\'bd\'b7\'a8.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth8540\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0 typedef void (^ProgressBlock)(double progress);\
+typedef void (^ResponseBlock)(MKNetworkOperation* operation);\
+typedef void (^ErrorBlock)(NSError* error);\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 In our YahooEngine, we are using a new kind of block,\uc0\u160 
+\b0 CurrencyResponseBlock
+\b \uc0\u160 that returns the exchange rate. The definition looks like this.\
+\'d4\'daYahooEngine\'d6\'d0,\'ce\'d2\'c3\'c7\'ca\'b9\'d3\'c3\'d2\'bb\'b8\'f6\'d0\'c2\'b5\'c4block, 
+\b0 CurrencyResponseBlock.
+\b \
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth7140\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0 typedef void (^CurrencyResponseBlock)(double rate);\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 In any normal application, you should be defining your own block methods similar to this\uc0\u160 
+\b0 CurrencyResponseBlock
+\b for sending data back to the view controllers.\
+\'d4\'da\'c4\'e3\'b5\'c4\'d3\'a6\'d3\'c3\'b3\'cc\'d0\'f2\'d6\'d0,\'c4\'e3\'d3\'a6\'b8\'c3\'b6\'a8\'d2\'e5\'d7\'d4\'bc\'ba\'b5\'c4 block\'b7\'bd\'b7\'a8,\'c0\'b4\'bd\'ab\'ca\'fd\'be\'dd\'b7\'a2\'cb\'cd\'bb\'e1\'ca\'d3\'cd\'bc\'bf\'d8\'d6\'c6\'c6\'f7.\
+Step 3:\uc0\u160 Processing the dataData processing, that is converting the data you fetch from your server, whether it\'a1\'afs JSON or XML or binary plists, should be done in your Engine. Again, relieve your controllers of doing this task. Your engine should send back data only in proper model objects or arrays of model objects (in case of lists). Convert your JSON/XML to models in the engine. Again, to ensure proper separation of concerns, your view controller should not \'a1\'b0know\'a1\'b1 about the \'a1\'b0keys\'a1\'b1 for accessing individual elements in your JSON.\
+\'b5\'da\'c8\'fd\'b2\'bd:\'b4\'a6\'c0\'ed\'b4\'d3\'c4\'e3\'b5\'c4\'b7\'fe\'ce\'f1\'c6\'f7\'b6\'c1\'c8\'a1\'bb\'d8\'c0\'b4\'b5\'c4\'ca\'fd\'be\'dd,\'ce\'de\'c2\'db\'cb\'fc\'ca\'c7 JSON/XML/\'b6\'fe\'bd\'f8\'d6\'c6\'b5\'c4plist,\'b6\'bc\'d3\'a6\'b8\'c3\'d4\'da\'c4\'e3\'b5\'c4\'d2\'fd\'c7\'e6\'d6\'d0\'cd\'ea\'b3\'c9\'b4\'a6\'c0\'ed.\
+\'cd\'ac\'d1\'f9,\'d5\'e2\'c0\'ef\'bb\'ba\'bd\'e2\'c1\'cb\'bf\'d8\'d6\'c6\'c6\'f7\'cb\'f9\'d0\'e8\'d2\'aa\'cd\'ea\'b3\'c9\'b5\'c4\'b9\'a4\'d7\'f7.\'c4\'e3\'b5\'c4\'d2\'fd\'c7\'e6\'d3\'a6\'b8\'c3\'d6\'bb\'bb\'d8\'cb\'cd "\'ca\'ca\'b5\'b1\'b5\'c4\'c4\'a3\'d0\'cd\'b6\'d4\'cf\'f3" \'bb\'f2\'d5\'df "\'c4\'a3\'d0\'cd\'b6\'d4\'cf\'f3\'bc\'af\'ba\'cf"\'b5\'bd\'bf\'d8\'d6\'c6\'c6\'f7.\
+\'d4\'da\'c4\'e3\'b5\'c4\'d2\'fd\'c7\'e6\'d6\'d0\'cd\'ea\'b3\'c9 "JSON/XML" \'b5\'bd "\'c4\'a3\'d0\'cd\'b6\'d4\'cf\'f3" \'b5\'c4\'d7\'aa\'bb\'bb\'b9\'a4\'d7\'f7.\
+\'cd\'ac\'d1\'f9,\'ce\'aa\'c1\'cb\'c8\'b7\'b1\'a3\'d5\'fd\'c8\'b7\'b5\'c4 "\'b9\'d8\'d7\'a2\'b5\'e3\'b7\'d6\'c0\'eb, \'be\'cd\'ca\'c7\'b7\'d6\'b2\'e3\'c9\'e8\'bc\'c6",\'c4\'e3\'b5\'c4\'ca\'d3\'cd\'bc\'bf\'d8\'d6\'c6\'c6\'f7\'b2\'bb\'d3\'a6\'b8\'c3\'d6\'aa\'b5\'c0\'d3\'c3\'d3\'da\'b7\'c3\'ce\'caJSON\'bc\'af\'ba\'cf\'b5\'c4"\'bc\'fc\'d6\'b5".\
+\'d7\'a2:\'d5\'e2\'c0\'ef\'d2\'b2\'cc\'e5\'cf\'d6\'c1\'cb "\'b7\'d6\'b2\'e3\'c9\'e8\'bc\'c6" \'b5\'c4\'cb\'bc\'c2\'b7, \'cd\'f8\'c2\'e7\'d2\'fd\'c7\'e6 \'bd\'d3\'ca\'dc\'d2\'bb\'b8\'f6 NetRequestBean, \'c8\'bb\'ba\'f3\'d2\'ec\'b2\'bd\'b7\'b5\'bb\'d8\'d2\'bb\'b8\'f6 NetRespondBean,\
+\'d5\'e2\'d1\'f9 \'ca\'d3\'cd\'bc\'bf\'d8\'d6\'c6\'c6\'f7\'ba\'cd\'cd\'f8\'c2\'e7\'d2\'fd\'c7\'e6\'b5\'c4 "\'b9\'d8\'d7\'a2\'b5\'e3" \'be\'cd\'cd\'ea\'b3\'c9\'c1\'cb\'b7\'d6\'c0\'eb.\
+\
+That concludes the design of your Engine. Most networking framework doesn\'a1\'aft force you to follow this separation of concerns. We do, because we care for you\uc0\u160 
+\f3\b0\fs24 {{\NeXTGraphic icon_smile.gif \width300 \height300 \noorient
+}¬}
+\f0\b\fs30 \
+\'c9\'cf\'c3\'e6\'d7\'dc\'bd\'e1\'c1\'cb\'c8\'e7\'ba\'ce\'c9\'e8\'bc\'c6\'c4\'e3\'b5\'c4\'d2\'fd\'c7\'e6.\'b4\'f3\'b2\'bf\'b7\'d6\'cd\'f8\'c2\'e7\'bf\'f2\'bc\'dc\'b2\'a2\'b2\'bb\'d2\'aa\'c7\'f3\'c4\'e3\'d7\'f1\'ca\'d8 "\'b9\'d8\'d7\'a2\'b5\'e3\'b7\'d6\'c0\'eb"\'d4\'ad\'d4\'f2,\'b5\'ab\'ca\'c7,\'ce\'d2\'d2\'aa\'c7\'f3\'c4\'e3\'d7\'f1\'ca\'d8.\
+Step 4:\uc0\u160 Method implementation We will now discuss the implementation details of the method that calculates your currency exchange.\
+\'b2\'bd\'d6\'e84:\'cf\'d6\'d4\'da,\'ce\'d2\'c3\'c7\'bd\'ab\'cc\'d6\'c2\'db\'b7\'bd\'b7\'a8\'ca\'b5\'cf\'d6\'b5\'c4\'cf\'b8\'bd\'da.\
+Getting currency information from Yahoo, is as simple as making a GET request.I wrote a macro to format this URL for a given currency pair.\
+\'b4\'d3\'d1\'c5\'bb\'a2\'bb\'f1\'c8\'a1\'bb\'f5\'b1\'d2\'d0\'c5\'cf\'a2,\'d6\'bb\'d0\'e8\'d2\'aa\'b7\'a2\'c6\'f0\'d2\'bb\'b8\'f6\'bc\'f2\'b5\'a5\'b5\'c4GET\'c7\'eb\'c7\'f3.\'ce\'d2\'d0\'b4\'c1\'cb\'d2\'bb\'b8\'f6\'ba\'ea,\'d3\'c3\'d3\'da\'b8\'f1\'ca\'bd\'bb\'af \'c4\'b3\'d2\'bb\'bb\'f5\'b1\'d2\'b6\'d4 \'cb\'f9\'b6\'d4\'d3\'a6\'b5\'c4URL.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth17780\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0 #define YAHOO_URL(__C1__, __C2__) [NSString stringWithFormat:@"d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=%@%@=X", __C1__, __C2__]\
+\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 Methods you write in your engine class should do the following in order.\
+\'b6\'d4\'d3\'da\'d4\'da\'c4\'e3\'b5\'c4\'d2\'fd\'c7\'e6\'c0\'e0\'d6\'d0\'cb\'f9\'d0\'b4\'b5\'c4\'b7\'bd\'b7\'a8,\'d3\'a6\'b8\'c3\'d7\'f6\'b5\'bd\'d2\'d4\'cf\'c2\'bc\'b8\'b5\'e3:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440
+\ls4\ilvl0\cf0 {\listtext	1.	}Prepare your URL from the parameters.\'cd\'a8\'b9\'fd\'c8\'eb\'b2\'ce\'c0\'b4\'d7\'bc\'b1\'b8\'ba\'c3\'c4\'e3\'b5\'c4URL.\
+{\listtext	2.	}Create a MKNetworkOperation object for the request.\'ce\'aa\'c4\'e3\'b5\'c4\'c7\'eb\'c7\'f3\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6MKNetworkOperation\'b6\'d4\'cf\'f3.\
+{\listtext	3.	}Set your method parameters.\'c9\'e8\'d6\'c3\'c4\'e3\'b5\'c4\'b7\'bd\'b7\'a8\'b2\'ce\'ca\'fd.\
+{\listtext	4.	}Add completion and error handlers to the operation (The completion handler is the place to process your responses and convert them to Models.)\'d4\'f6\'bc\'d3 "completion" \'ba\'cd "error handlers" \'bb\'d8\'b5\'f7black\'b5\'bd\'c4\'e3\'b5\'c4\'b2\'d9\'d7\'f7\'cf\'ee\'d6\'d0(completion\'b4\'a6\'c0\'ed\'b7\'bd\'b7\'a8\'ca\'c7\'c4\'e3\'bd\'ab\'cd\'f8\'c2\'e7\'b7\'b5\'bb\'d8\'b5\'c4\'ca\'fd\'be\'dd\'d7\'aa\'bb\'bb\'b3\'c9\'c4\'a3\'d0\'cd\'b6\'d4\'cf\'f3\'b5\'c4\'b5\'d8\'b7\'bd).\
+{\listtext	5.	}Optionally, add progress handlers to the operation. (Or do this on the view controller)\'c1\'ed\'cd\'e2,\'bf\'c9\'d2\'d4\'d4\'f6\'bc\'d3\'d2\'bb\'b8\'f6\'bd\'f8\'b6\'c8\'b4\'a6\'c0\'ed\'b7\'bd\'b7\'a8\'b5\'bd\'b2\'d9\'d7\'f7\'cf\'ee\'d6\'d0(\'bb\'f2\'d5\'df\'d4\'da\'ca\'d3\'cd\'bc\'bf\'d8\'d6\'c6\'c6\'f7\'d6\'d0\'cd\'ea\'b3\'c9\'d5\'e2\'b8\'f6\'b2\'d9\'d7\'f7),\'d5\'e2\'ca\'c7\'bf\'c9\'d1\'a1\'b5\'c4.\
+{\listtext	6.	}If your operation is file download, set a download stream (normally a file) to it. This is again optional.\'c8\'e7\'b9\'fb\'c4\'e3\'b5\'c4\'b2\'d9\'d7\'f7\'ca\'c7\'ce\'c4\'bc\'fe\'cf\'c2\'d4\'d8,\'c9\'e8\'d6\'c3\'d2\'bb\'b8\'f6\'cf\'c2\'d4\'d8\'c1\'f7(\'cd\'a8\'b3\'a3\'ca\'c7\'d2\'bb\'b8\'f6\'ce\'c4\'bc\'fe)\'b5\'bd\'c4\'e3\'b5\'c4\'b2\'d9\'d7\'f7\'cf\'ee\'d6\'d0.\'d5\'e2\'d2\'b2\'ca\'c7\'bf\'c9\'d1\'a1\'b5\'c4.\
+{\listtext	7.	}When the operation completes, process the result and invoke the block method to return this data to the calling method.\'b5\'b1\'b2\'d9\'d7\'f7\'cd\'ea\'b3\'c9\'ba\'f3,\'b4\'a6\'c0\'ed\'bd\'e1\'b9\'fb\'b2\'a2\'c7\'d2\'b5\'f7\'d3\'c3\'bf\'e9\'b7\'bd\'b7\'a8\'c0\'b4\'b7\'b5\'bb\'d8\'ca\'fd\'be\'dd.\
+\pard\pardeftab720\sl440\sa300
+\cf0 This is illustrated in the following code\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth13720\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0         MKNetworkOperation *op = [self operationWithPath:YAHOO_URL(sourceCurrency, targetCurrency)\
+                                                  params:nil\
+                                             httpMethod:@"GET"];\
+\'a0\
+    [op onCompletion:^(MKNetworkOperation *completedOperation)\
+     \{\
+         DLog(@"%@", [completedOperation responseString]);\
+\'a0\
+		 // do your processing here\
+         completionBlock(5.0f);\
+\'a0\
+     \}onError:^(NSError* error) \{\
+\'a0\
+         errorBlock(error);\
+     \}];\
+\'a0\
+    [self enqueueOperation:op];\
+\'a0\
+    return op;\
+\
+\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 The above code formats the URL and creates a MKNetworkOperation. After setting the completion and error handlers it queues the operation by calling the super class\'a1\'afs enqueueOperation method and returns a reference to it. Your view controller should own this operation and cancel it when the view is popped out of the view controller hierarchy. So if you call the engine method in, say viewDidAppear, cancel the operation in viewWillDisappear. Canceling the operation will free up the queue for performing other operations in the subsequent view (Remember, only two operations can be performed in parallel on a mobile network. Canceling your operations when they are no longer needed goes a long way in ensuring performance and speed of your app).\
+\'c9\'cf\'c3\'e6\'b5\'c4\'b4\'fa\'c2\'eb\'b8\'f1\'ca\'bd\'bb\'afURL\'b2\'a2\'c7\'d2\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6MKNetworkOperation\'b6\'d4\'cf\'f3.\'d6\'ae\'ba\'f3\'c9\'e8\'d6\'c3completion \'ba\'cd error handlers ,\'c8\'bb\'ba\'f3\'b5\'f7\'d3\'c3\'b8\'b8\'c0\'e0\'b5\'c4enqueueOperation\'b7\'bd\'b7\'a8,\'b2\'a2\'c7\'d2\'b7\'b5\'bb\'d8\'d2\'bb\'b8\'f6MKNetworkOperation\'b6\'d4\'cf\'f3\'d2\'fd\'d3\'c3\'b8\'f8\'c4\'e3.\'c4\'e3\'b5\'c4\'ca\'d3\'cd\'bc\'bf\'d8\'d6\'c6\'c6\'f7\'d3\'a6\'b8\'c3\'b0\'fc\'ba\'ac(\'c7\'bf\'d2\'fd\'d3\'c3)\'d5\'e2\'b8\'f6MKNetworkOperation\'b6\'d4\'cf\'f3\'d2\'fd\'d3\'c3,\'b2\'a2\'c7\'d2\'b5\'b1\'ca\'d3\'cd\'bc\'b4\'d3\'ca\'d3\'cd\'bc\'bf\'d8\'d6\'c6\'c6\'f7\'b2\'e3\'b4\'ce\'bd\'e1\'b9\'b9\'d6\'d0\'b1\'bb\'b5\'af\'b3\'f6\'ca\'b1,\'c4\'e3\'d3\'a6\'b8\'c3\'c8\'a1\'cf\'fb\'d5\'e2\'b8\'f6MKNetworkOperation\'b6\'d4\'cf\'f3.\'cb\'f9\'d2\'d4\'c4\'e3\'bf\'c9\'d2\'d4\'d4\'daviewDidAppear\'d6\'d0\'b5\'f7\'d3\'c3\'d5\'e2\'b8\'f6\'d2\'fd\'c7\'e6\'b7\'bd\'b7\'a8,\'b6\'f8\'c7\'d2viewWillDisappear\'d6\'d0cancel\'c4\'e3\'b1\'a3\'b4\'e6\'b5\'c4MKNetworkOperation\'b6\'d4\'cf\'f3.\'c8\'a1\'cf\'fb\'b2\'d9\'d7\'f7\'cf\'ee,\'bf\'c9\'d2\'d4\'ca\'cd\'b7\'c5 "\'d6\'b4\'d0\'d0\'b6\'d3\'c1\'d0"\'d6\'d0\'b5\'c4\'b2\'d9\'d7\'f7\'cf\'ee,\'bc\'c7\'d7\'a1,\'d4\'da\'d2\'c6\'b6\'af\'cd\'f8\'c2\'e7\'bb\'b7\'be\'b3\'d6\'d0,\'d6\'bb\'d3\'d0\'c1\'bd\'b8\'f6\'b2\'d9\'d7\'f7\'cf\'ee\'bf\'c9\'d2\'d4\'b2\'a2\'b7\'a2\'d6\'b4\'d0\'d0.\'cb\'f9\'d2\'d4\'d2\'aa\'bc\'b0\'ca\'b1\'c8\'a1\'cf\'fb\'b2\'bb\'d4\'d9\'d0\'e8\'d2\'aa\'b5\'c4\'cd\'f8\'c2\'e7\'c7\'eb\'c7\'f3\'b2\'d9\'d7\'f7\'cf\'ee.\
+You view controller can also (optionally) add progress handlers and update the user interface. This is illustrated below.\
+\'c4\'e3\'b5\'c4\'ca\'d3\'cd\'bc\'bf\'d8\'d6\'c6\'c6\'f7\'d2\'b2\'bf\'c9\'d2\'d4\'d4\'f6\'bc\'d3\'d2\'bb\'b8\'f6\'bd\'f8\'b6\'c8\'b4\'a6\'c0\'ed\'b7\'bd\'b7\'a8\'c0\'b4\'cd\'ea\'b3\'c9UI\'b5\'c4\'b8\'fc\'d0\'c2.\'cf\'c2\'c3\'e6\'cb\'b5\'c3\'f7\'c1\'cb\'d5\'e2\'d2\'bb\'b5\'e3.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth9800\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0     [self.uploadOperation onUploadProgressChanged:^(double progress) \{\
+\'a0\
+        DLog(@"%.2f", progress*100.0);\
+        self.uploadProgessBar.progress = progress;\
+    \}];\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 MKNetworkEngine also has convenience methods to create a operation with just a URL. So the first line of code can also be written as\
+MKNetworkEngine\'d2\'b2\'d3\'b5\'d3\'d0\'bd\'f6\'ca\'b9\'d3\'c3\'d2\'bb\'b8\'f6URL\'c0\'b4\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6\'b2\'d9\'d7\'f7\'cf\'ee\'b5\'c4 "\'b7\'bd\'b1\'e3\'b7\'bd\'b7\'a8".\'d2\'f2\'b4\'cb,\'b5\'da\'d2\'bb\'d0\'d0\'b5\'c4\'b4\'fa\'c2\'eb\'d2\'b2\'bf\'c9\'d2\'d4\'d5\'e2\'c3\'b4\'d0\'b4.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth14000\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0         MKNetworkOperation *op = [self operationWithPath:YAHOO_URL(sourceCurrency, targetCurrency)];\cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 Do note here that request URLs are automatically prefixed with the hostname you provided while initializing your engine class.\
+\'d5\'e2\'c0\'ef\'d2\'aa\'d7\'a2\'d2\'e2,\'c7\'eb\'c7\'f3URLs\'bb\'e1\'d7\'d4\'b6\'af\'cc\'e1\'b9\'a9\'b8\'f8\'c4\'e3\'b4\'f8\'d3\'d0\'d6\'f7\'bb\'fa\'c3\'fb\'b5\'c4\'c7\'b0\'d7\'ba,\'cd\'ac\'ca\'b1\'b3\'f5\'ca\'bc\'bb\'af\'d2\'fd\'c7\'e6\'c0\'e0.\
+Creating a POST, DELETE or PUT method is as easy as changing the httpMethod parameter. MKNetworkEngine has more convenience methods like this. Read the header file for more.\
+\'bf\'c9\'d2\'d4\'cd\'a8\'b9\'fdhttpMethod\'b2\'ce\'ca\'fd\'c0\'b4\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6POST/DELETE/PUT\'b7\'bd\'b7\'a8. MKNetworkEngine\'bb\'b9\'d3\'d0\'ba\'dc\'b6\'e0 "\'b7\'bd\'b1\'e3\'b7\'bd\'b7\'a8" \'b9\'a9\'c4\'fa\'ca\'b9\'d3\'c3.\
+\
+\
+\
+\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Example 2:\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 Uploading an image to a server (TwitPic for instance).Now let us go through an example of how to upload an image to a server. Uploading an image obviously requires the operation to be encoded as a multi-part form data. MKNetworkKit follows a pattern similar to ASIHttpRequest.You call a method addFile:forKey: in MKNetworkOperation to \'a1\'b0attach\'a1\'b1 a file as a multi-part form data to your request. It\'a1\'afs that easy.MKNetworkOperation also has a convenience method to add a image from a NSData pointer. That\'a1\'afs you can call addData:forKey: method to upload a image to your server directly from NSData pointer. (Think of uploading a picture from camera directly).\
+\'c9\'cf\'b4\'ab\'d2\'bb\'b8\'f6\'cd\'bc\'c6\'ac\'b5\'bd\'b7\'fe\'ce\'f1\'c6\'f7(\'c0\'fd\'c8\'e7TwitPic).\'cf\'d6\'d4\'da\'cd\'a8\'b9\'fd\'d2\'bb\'b8\'f6\'c0\'fd\'d7\'d3\'c0\'b4\'bd\'b2\'bd\'e2\'c8\'e7\'ba\'ce\'c9\'cf\'b4\'ab\'d2\'bb\'b8\'f6\'cd\'bc\'c6\'ac\'b5\'bd\'b7\'fe\'ce\'f1\'c6\'f7.\
+\'c9\'cf\'b4\'ab\'d2\'bb\'b8\'f6\'cd\'bc\'c6\'ac,\'cf\'d4\'c8\'bb\'d0\'e8\'d2\'aa\'bd\'ab\'c7\'eb\'c7\'f3\'b2\'d9\'d7\'f7\'cf\'ee\'b1\'e0\'c2\'eb\'b3\'c9\'d2\'bb\'b8\'f6 multi-part form(\'b6\'e0\'b2\'bf\'b7\'d6\'b1\'ed\'b5\'a5) \'ca\'fd\'be\'dd.\
+MKNetworkKit\'d7\'f1\'d1\'ad\'ba\'cdASIHttpRequest\'c0\'e0\'cb\'c6\'b5\'c4\'c4\'a3\'ca\'bd.\'c4\'e3\'bf\'c9\'d2\'d4\'d4\'daMKNetworkOperation\'b6\'d4\'cf\'f3\'d6\'d0\'b5\'f7\'d3\'c3addFile:forKey:\'c0\'b4\'b8\'bd\'bc\'d3\'d2\'bb\'b8\'f6\'ce\'c4\'bc\'fe\'b5\'bd\'c4\'e3\'b5\'c4\'c7\'eb\'c7\'f3\'b2\'d9\'d7\'f7\'cf\'ee\'d6\'d0(
+\f4\b0\fs22 \cf1 \cb0 \CocoaLigature0 [op \cf6 addFile\cf1 :file \cf6 forKey\cf1 :\cf7 @"image"\cf1 ];).\
+
+\f0\b\fs30 \cf0 \cb1 \CocoaLigature1 MKNetworkOperation\'d2\'b2\'d3\'d0 "\'b7\'bd\'b1\'e3\'b7\'bd\'b7\'a8" \'c0\'b4\'cd\'ea\'b3\'c9 \'cd\'a8\'b9\'fd\'d2\'bb\'b8\'f6NSData\'d6\'b8\'d5\'eb\'c0\'b4\'d4\'f6\'bc\'d3\'d2\'bb\'b8\'f6\'cd\'bc\'c6\'ac\'b5\'bdMKNetworkOperation\'b2\'d9\'d7\'f7\'cf\'ee\'d6\'d0.\'c4\'e3\'bf\'c9\'d2\'d4\'cd\'a8\'b9\'fd\'b5\'f7\'d3\'c3addData:forKey:\'b7\'bd\'b7\'a8\'d6\'b1\'bd\'d3\'c9\'cf\'b4\'ab\'d2\'bb\'b8\'f6\'cd\'bc\'c6\'ac(NSData\'c0\'e0\'d0\'cd\'b5\'c4\'d7\'ca\'d4\'b4)\'b5\'bd\'b7\'fe\'ce\'f1\'c6\'f7\'d6\'d0.\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Example 3:\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 Downloading files to a local directory (Caching)Downloading a file from a remote server and saving it to a location on users\'a1\'af iPhone is super easy with MKNetworkKit.Just set the outputStream of MKNetworkOperation and you are set.\
+MKNetworkKit\'bf\'c9\'d2\'d4\'ba\'dc\'c8\'dd\'d2\'d7\'b5\'c4\'ca\'b5\'cf\'d6\'b4\'d3\'d4\'b6\'b3\'cc\'b7\'fe\'ce\'f1\'c6\'f7\'c9\'cf,\'cf\'c2\'d4\'d8\'ce\'c4\'bc\'fe\'b5\'bd\'d2\'bb\'b8\'f6\'b1\'be\'b5\'d8\'c4\'bf\'c2\'bc\'d6\'d0(\'bb\'ba\'b4\'e6).\'d6\'bb\'d2\'aa\'c9\'e8\'d6\'c3MKNetworkOperation\'b5\'c4outputStream.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth10780\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0 [operation setDownloadStream:[NSOutputStream\
+	outputStreamToFileAtPath:@"/Users/mugunth/Desktop/DownloadedFile.pdf"\
+			  append:YES]];\
+\pard\intbl\itap1\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f3 \cf0 {{\NeXTGraphic Pasted Graphic.tiff \width10540 \height2020
+}¬}
+\f2 \cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 You can set multiple output streams to a single operation to save the same file to multiple locations (Say one to your cache directory and one to your working directory)\
+\'bf\'c9\'d2\'d4\'c9\'e8\'d6\'c3\'b6\'e0\'b8\'f6\'ca\'e4\'b3\'f6\'c1\'f7\'b5\'bd\'d2\'bb\'b8\'f6\'b5\'a5\'d2\'bb\'b5\'c4\'b2\'d9\'d7\'f7\'cf\'ee\'d6\'d0,\'c0\'b4\'b7\'d6\'b1\'f0\'b1\'a3\'b4\'e6\'cf\'e0\'cd\'ac\'b5\'c4\'ce\'c4\'bc\'fe\'b5\'bd\'b2\'bb\'cd\'ac\'b5\'c4\'ce\'bb\'d6\'c3\'d6\'d0(\'b1\'c8\'c8\'e7\'d2\'bb\'b8\'f6\'bb\'ba\'b4\'e6\'c4\'bf\'c2\'bc,\'d2\'bb\'b8\'f6\'b9\'a4\'d7\'f7\'c4\'bf\'c2\'bc).\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f3\b0\fs24 \cf0 {{\NeXTGraphic Pasted Graphic 2.tiff \width11740 \height760
+}¬}
+\f0\b\fs30 \
+\pard\pardeftab720\sl440\sa300
+\cf0 \
+\
+\
+\
+\
+\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Example 4:\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 Image Thumbnail caching For downloading images, you might probably need to provide an absolute URL rather than a path. MKNetworkEngine has a convenience method for this. Just call operationWithURLString:params:httpMethod: to create a network operation with an absolute URL.MKNetworkEngine is intelligent. It coalesces multiple GET calls to the same URL into one and notifies all the blocks when that one operation completes. This drastically improves the speed of fetching your image URLs for populating thumbnails.\
+\'ce\'aa\'cf\'c2\'d4\'d8\'b5\'c4\'cd\'bc\'c6\'ac\'cc\'e1\'b9\'a9\'cd\'bc\'c6\'ac\'cb\'f5\'c2\'d4\'cd\'bc\'bb\'ba\'b4\'e6,\'d2\'b2\'d0\'ed\'c4\'e3\'bf\'c9\'c4\'dc\'d0\'e8\'d2\'aa\'cc\'e1\'b9\'a9\'d2\'bb\'b8\'f6\'be\'f8\'b6\'d4\'b5\'c4URL\'b6\'f8\'b7\'c7\'d2\'bb\'b8\'f6path.\
+MKNetworkEngine\'ce\'aa\'b4\'cb\'cc\'e1\'b9\'a9\'d2\'bb\'b8\'f6"\'b7\'bd\'b1\'e3\'b7\'bd\'b7\'a8",\'d6\'bb\'d0\'e8\'d2\'aa\'b5\'f7\'d3\'c3 operationWithURLString:params:httpMethod:\'b7\'bd\'b7\'a8\'c0\'b4\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f6\'bb\'f9\'d3\'da\'be\'f8\'b6\'d4URL\'b5\'c4\'cd\'f8\'c2\'e7\'b2\'d9\'d7\'f7\'cf\'ee.\
+MKNetworkEngine\'ca\'c7\'d6\'c7\'c4\'dc\'b5\'c4.\'cb\'fc\'bb\'e1\'ba\'cf\'b2\'a2\'d6\'d8\'b8\'b4\'b5\'c4GET\'c7\'eb\'c7\'f3\'b3\'c9\'d2\'bb\'b8\'f6\'cf\'e0\'cd\'ac\'b5\'c4URL,\'b2\'a2\'c7\'d2\'b5\'b1\'b2\'d9\'d7\'f7\'cd\'ea\'b3\'c9\'ca\'b1,\'cd\'a8\'d6\'aa\'cb\'f9\'d3\'d0\'b5\'c4blocks.\
+\'d5\'e2\'b4\'f3\'b4\'f3\'b5\'c4\'cc\'e1\'b8\'df\'c1\'cb\'c0\'ad\'c8\'a1\'cd\'bc\'cf\'f1\'cb\'f5\'c2\'d4\'cd\'bc\'b5\'c4\'cb\'d9\'b6\'c8.\
+Subclass MKNetworkEngine and override image cache directory and cache cost. If you don\'a1\'aft want to customize these two, you can directly call MKNetworkEngine methods to download images for you. I would actually recommend you to do that.\
+\'d7\'d3\'c0\'e0\'bb\'afMKNetworkEngine,\'ba\'cd\'b8\'b2\'b8\'c7\'cd\'bc\'cf\'f1\'bb\'ba\'b4\'e6\'c4\'bf\'c2\'bc.\'c8\'e7\'b9\'fb\'c4\'e3\'b2\'bb\'cf\'eb\'d7\'d4\'b6\'a8\'d2\'e5\'c9\'cf\'ca\'f6\'c1\'bd\'b8\'f6.\'c4\'e3\'bf\'c9\'d2\'d4\'d6\'b1\'bd\'d3\'b5\'f7\'d3\'c3MKNetworkEngine\'b7\'bd\'b7\'a8\'c0\'b4\'cf\'c2\'d4\'d8\'cd\'bc\'c6\'ac.\'ca\'b5\'bc\'ca\'c9\'cf,\'ce\'d2\'bd\'a8\'d2\'e9\'c4\'e3\'d5\'e2\'c3\'b4\'d7\'f6.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f3\b0\fs24 \cf0 {{\NeXTGraphic Pasted Graphic 3.tiff \width13860 \height2280
+}¬}
+\f0\b\fs30 \
+\
+\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Caching operations \'bb\'ba\'b4\'e6\'b2\'d9\'d7\'f7\'cf\'ee\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 MKNetworkKit caches all requests by default. All you need to do is to turn on caching for your Engine. When a GET request is performed, if the response was previously cached, your completion handler is called with the cached response almost immediately. To know whether the response is cached, use the isCachedResponse method. This is illustrated below.\
+MKNetworkKit\'c4\'ac\'c8\'cf\'b5\'c4\'bb\'ba\'b4\'e6\'cb\'f9\'d3\'d0\'b5\'c4\'c7\'eb\'c7\'f3.\'c4\'e3\'cb\'f9\'d0\'e8\'d2\'aa\'d7\'f6\'b5\'c4\'be\'cd\'ca\'c7\'b4\'f2\'bf\'aa\'c4\'e3\'b5\'c4\'d2\'fd\'c7\'e6\'b5\'c4\'bb\'ba\'b4\'e6\'bb\'fa\'d6\'c6.\
+\'b5\'b1\'d2\'bb\'b8\'f6GET\'c7\'eb\'c7\'f3\'d2\'d1\'be\'ad\'b1\'bb\'d6\'b4\'d0\'d0\'b9\'fd\'c1\'cb,\'c8\'e7\'b9\'fb\'b7\'b5\'bb\'d8\'b5\'c4 "\'d3\'a6\'b4\'f0"\'d6\'ae\'c7\'b0\'d2\'d1\'be\'ad\'b1\'bb\'bb\'ba\'b4\'e6\'c1\'cb,\'c4\'c7\'c3\'b4\'c4\'e3\'b5\'c4completion handler\'bd\'ab\'b1\'bb\'c1\'a2\'bf\'cc\'b5\'f7\'d3\'c3.\
+\'d2\'aa\'cf\'eb\'d6\'aa\'b5\'c0 response\'ca\'c7\'b7\'f1\'d2\'d1\'be\'ad\'b1\'bb\'bb\'ba\'b4\'e6\'b9\'fd,\'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3isCachedResponse\'b7\'bd\'b7\'a8.\
+\'cf\'c2\'c3\'e6\'cb\'b5\'c3\'f7\'c1\'cb\'d5\'e2\'d2\'bb\'b5\'e3\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth8680\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0     \
+\pard\intbl\itap1\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f3 \cf0 {{\NeXTGraphic Pasted Graphic 4.tiff \width13740 \height9280
+}¬}
+\f2 \cell \lastrow\row
+\pard\pardeftab720\sl440\sa340
+
+\f0\b\fs36 \cf0 Freezing operations \'b6\'b3\'bd\'e1\'b2\'d9\'d7\'f7\'cf\'ee\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 Arguably, the most interesting feature of MKNetworkKit is built in ability to freeze operations. All you need to do is set your operation as freezable. Almost zero effort!\
+\'bf\'c9\'d2\'d4\'cb\'b5, MKNetworkKit\'d7\'ee\'d3\'d0\'c8\'a4\'b5\'c4\'b9\'a6\'c4\'dc\'be\'cd\'ca\'c7\'b6\'b3\'bd\'e1\'b2\'d9\'d7\'f7\'cf\'ee.\'cb\'f9\'d3\'d0\'c4\'e3\'d0\'e8\'d2\'aa\'d7\'f6\'b5\'c4\'be\'cd\'ca\'c7\'bd\'ab\'c4\'e3\'b5\'c4\'b2\'d9\'d7\'f7\'cf\'ee\'c9\'e8\'d6\'c3\'b3\'c9 "\'b6\'b3\'bd\'e1", \'bc\'b8\'ba\'f5\'b2\'bb\'b7\'d1\'c8\'ce\'ba\'ce\'c1\'a6\'c6\'f8.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth3080\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl440
+
+\f2\b0\fs24 \cf0 \
+\pard\intbl\itap1\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f3 \cf0 {{\NeXTGraphic Pasted Graphic 5.tiff \width9820 \height7660
+}¬}
+\f2 \cell \lastrow\row
+\pard\pardeftab720\sl440\sa300
+
+\f0\b\fs30 \cf0 Freezable operations are automatically serialized when the network goes down and executed when connectivity is restored. Think of having the ability to favorite a tweet while you are offline and the operation is performed when you are online later.Frozen operations are also persisted to disk when the app enters background. They will be automatically performed when the app is resumes later.\
+\'b5\'b1\'cd\'f8\'c2\'e7\'b3\'f6\'cf\'d6\'b9\'ca\'d5\'cf\'ca\'b1,\'bb\'e1\'d7\'d4\'b6\'af\'b6\'b3\'bd\'e1\'cd\'f8\'c2\'e7,\'b6\'b3\'bd\'e1\'b5\'c4\'b2\'d9\'d7\'f7\'cf\'ee\'bb\'e1\'d7\'d4\'b6\'af\'b1\'bb\'d0\'f2\'c1\'d0\'bb\'af.\'b6\'f8\'b5\'b1\'cd\'f8\'c2\'e7\'bb\'d6\'b8\'b4\'ca\'b1,\'bb\'e1\'d7\'d4\'b6\'af\'bc\'cc\'d0\'f8\'d6\'b4\'d0\'d0.\
+\'cf\'eb\'cf\'eb\'c4\'e3\'d4\'da\'c0\'eb\'cf\'df\'ca\'b1\'bb\'e1\'cb\'d1\'b2\'d8\'d2\'bb\'b8\'f6tweet,\'b6\'f8\'b5\'b1\'c4\'e3\'d4\'da\'cf\'df\'ba\'f3,\'b2\'d9\'d7\'f7\'cf\'ee\'bb\'e1\'d7\'d4\'b6\'af\'d6\'b4\'d0\'d0.\
+\'b5\'b1\'c4\'e3\'b5\'c4app\'bd\'f8\'c8\'eb\'ba\'f3\'cc\'a8\'ba\'f3,\'b6\'b3\'bd\'e1\'b5\'c4\'b2\'d9\'d7\'f7\'cf\'ee\'d2\'b2\'bb\'e1\'b1\'a3\'b4\'e6\'d4\'da\'b4\'c5\'c5\'cc\'c9\'cf.\'cb\'fc\'c3\'c7\'bb\'e1\'d4\'daapp\'bb\'d6\'b8\'b4\'ba\'f3,\'d7\'d4\'b6\'af\'d6\'b4\'d0\'d0.\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Convenience methods in MKNetworkOperation \'d4\'daMKNetworkOperation\'d6\'d0\'b5\'c4\'b7\'bd\'b1\'e3\'b7\'bd\'b7\'a8\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 MKNetworkOperation exposes convenience methods like the following to get the format your response data.\
+MKNetworkOperation\'b9\'ab\'bf\'aa\'c8\'e7\'cf\'c2\'b7\'bd\'b1\'e3\'b7\'bd\'b7\'a8,\'c0\'b4\'b8\'f1\'ca\'bd\'bb\'af\'c4\'e3\'b5\'c4 \'cf\'ec\'d3\'a6\'ca\'fd\'be\'dd.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl440
+\ls5\ilvl0\cf0 {\listtext	1.	}responseData\
+{\listtext	2.	}responseString\
+{\listtext	3.	}responseJSON (Only on iOS 5)\
+{\listtext	4.	}responseImage\
+{\listtext	5.	}responseXML\
+{\listtext	6.	}error\
+\pard\pardeftab720\sl440\sa300
+\cf0 They come handy when accessing the response after your network operation completes. When the format is wrong, these methods return nil. For example, trying to access responseImage when the actual response is a HTML response will return nil. The only method that is guaranteed to return the correct, expected response is responseData. Use the other methods if you are sure of the response type.\
+\'cb\'fc\'c3\'c7\'bf\'c9\'d2\'d4\'d4\'da\'c4\'e3\'cd\'f8\'c2\'e7\'b2\'d9\'d7\'f7\'cd\'ea\'b3\'c9\'ca\'b1,\'ba\'dc\'b7\'bd\'b1\'e3\'b5\'c4\'b7\'c3\'ce\'ca\'cf\'ec\'d3\'a6\'ca\'fd\'be\'dd.\
+\'b5\'b1\'b8\'f1\'ca\'bd\'b4\'ed\'ce\'f3\'ca\'b1,\'d5\'e2\'d0\'a9\'b7\'bd\'b7\'a8\'bb\'e1\'b7\'b5\'bb\'d8nil.\
+\'d6\'bb\'d3\'d0responseData\'b7\'bd\'b7\'a8,\'bf\'c9\'d2\'d4\'ce\'a8\'d2\'bb\'c8\'b7\'b1\'a3\'d2\'bb\'b6\'a8\'bb\'e1\'b7\'b5\'bb\'d8\'d3\'d0\'d0\'a7\'ca\'fd\'be\'dd.\
+\'c8\'e7\'b9\'fb\'c4\'e3\'bf\'c9\'d2\'d4\'c8\'b7\'c8\'cf\'cf\'ec\'d3\'a6\'ca\'fd\'be\'dd\'b5\'c4\'c0\'e0\'d0\'cd\'ca\'b1,\'be\'cd\'bf\'c9\'d2\'d4\'ca\'b9\'d3\'c3\'b3\'fdresponseData\'d6\'ae\'cd\'e2\'b5\'c4\'b7\'bd\'b7\'a8\'c1\'cb.\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 Convenience macros\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 The macros, DLog and ALog were stolen unabashedly from Stackoverflow and I couldn\'a1\'aft again find the source. If you wrote that, let me know.\
+\pard\pardeftab720\sl440\sa340
+
+\fs36 \cf0 A note on GCD \'d2\'bb\'b8\'f6\'d4\'daGCD\'b5\'c4\'d7\'a2\'d2\'e2\'ca\'c2\'cf\'ee\
+\pard\pardeftab720\sl440\sa300
+
+\fs30 \cf0 I purposefully didn\'a1\'aft use GCD because, network operations need to be stopped and prioritized at will. GCD, while more efficient than NSOperationQueue, cannot do this. I would recommend not to use GCD based queues for your network operations.\
+\'ce\'d2\'cc\'d8\'d2\'e2\'c3\'bb\'d3\'d0\'ca\'b9\'d3\'c3GCD, \'d2\'f2\'ce\'aa\'cd\'f8\'c2\'e7\'b2\'d9\'d7\'f7\'d0\'e8\'d2\'aa\'c4\'dc\'b9\'bb\'cd\'a3\'d6\'b9\'ba\'cd\'cb\'e6\'d2\'e2\'b8\'fc\'b8\'c4\'d3\'c5\'cf\'c8\'bc\'b6. ??????\'ce\'d2\'bd\'a8\'d2\'e9\'b2\'bb\'d2\'aa\'ca\'b9\'d3\'c3GCD\'c0\'b4\'b9\'dc\'c0\'ed\'c4\'e3\'b5\'c4\'cd\'f8\'c2\'e7\'b2\'d9\'d7\'f7\'b6\'d3\'c1\'d0.\
+\pard\pardeftab720\sl440\sa360
+
+\fs46 \cf0  }

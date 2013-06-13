@@ -40,7 +40,7 @@
 
 #import "GlobalDataCacheForDataDictionarySingleton.h"
 
-// 
+// git 忽略文件指令 : git rm --cached 文件名
 
 #import "DDLog.h"
 

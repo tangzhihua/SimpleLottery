@@ -14,7 +14,7 @@
 #import "LotteryAnnouncementNetRequestBean.h"
 #import "LotteryAnnouncementNetRespondBean.h"
 
-#import "DomainProtocolNetHelperOfMKNetworkKitSingleton.h"
+#import "DomainBeanNetworkEngineSingleton.h"
 
 @interface KaijiangzhongxinActivity () <UITableViewDelegate, UITableViewDataSource, CustomControlDelegate, UIAlertViewDelegate>
 
@@ -25,21 +25,22 @@
 @property (nonatomic, strong) LotteryAnnouncementNetRespondBean *lotteryAnnouncementNetRespondBean;
 @property (nonatomic, assign) NSInteger netRequestIndexForLotteryAnnouncement;
 
-@property (nonatomic, strong) DomainNetRespondHandleInUIThreadSuccessedBlock domainNetRespondHandleInUIThreadSuccessedBlock;
-@property (nonatomic, strong) DomainNetRespondHandleInUIThreadFailedBlock domainNetRespondHandleInUIThreadFailedBlock;
+@property (atomic, strong) DomainNetRespondHandleInUIThreadSuccessedBlock domainNetRespondHandleInUIThreadSuccessedBlock;
+@property (atomic, strong) DomainNetRespondHandleInUIThreadFailedBlock domainNetRespondHandleInUIThreadFailedBlock;
 @end
 
 @implementation KaijiangzhongxinActivity
 
+//
 -(DomainNetRespondHandleInUIThreadSuccessedBlock)domainNetRespondHandleInUIThreadSuccessedBlock{
   if (_domainNetRespondHandleInUIThreadSuccessedBlock == NULL) {
     _domainNetRespondHandleInUIThreadSuccessedBlock = ^(NSUInteger requestEvent, NSInteger netRequestIndex, id respondDomainBean) {
-       
+			
     };
   }
   return _domainNetRespondHandleInUIThreadSuccessedBlock;
 }
-
+//
 -(DomainNetRespondHandleInUIThreadFailedBlock)domainNetRespondHandleInUIThreadFailedBlock{
   if (_domainNetRespondHandleInUIThreadFailedBlock == NULL) {
     _domainNetRespondHandleInUIThreadFailedBlock = ^(NSUInteger requestEvent, NSInteger netRequestIndex, NetRequestErrorBean *error) {
@@ -54,7 +55,7 @@
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
 		// Custom initialization
-		_netRequestIndexForLotteryAnnouncement = IDLE_NETWORK_REQUEST_ID;
+		_netRequestIndexForLotteryAnnouncement = NETWORK_REQUEST_ID_OF_IDLE;
 	}
 	return self;
 }
@@ -83,7 +84,7 @@
 -(void)onResume {
   PRPLog(@"--> onResume ");
   if (self.lotteryAnnouncementNetRespondBean == nil) {
-		if (self.netRequestIndexForLotteryAnnouncement == IDLE_NETWORK_REQUEST_ID) {
+		if (self.netRequestIndexForLotteryAnnouncement == NETWORK_REQUEST_ID_OF_IDLE) {
 			[self requestLotteryAnnouncement];
 		}
 	}
@@ -99,8 +100,8 @@
   
   [SVProgressHUD dismiss];
   
-  [[DomainProtocolNetHelperOfMKNetworkKitSingleton sharedInstance] cancelNetRequestByRequestIndex:self.netRequestIndexForLotteryAnnouncement];
-  self.netRequestIndexForLotteryAnnouncement = IDLE_NETWORK_REQUEST_ID;
+  [[DomainBeanNetworkEngineSingleton sharedInstance] cancelNetRequestByRequestIndex:self.netRequestIndexForLotteryAnnouncement];
+  self.netRequestIndexForLotteryAnnouncement = NETWORK_REQUEST_ID_OF_IDLE;
 }
 
 - (void) onActivityResult:(int) requestCode
@@ -181,6 +182,14 @@
 
 -(void)requestLotteryAnnouncement {
 	LotteryAnnouncementNetRequestBean *netRequestBean = [[LotteryAnnouncementNetRequestBean alloc] init];
-	[[DomainProtocolNetHelperOfMKNetworkKitSingleton sharedInstance] requestDomainProtocolWithRequestDomainBean:netRequestBean requestEvent:11 successedBlock:self.domainNetRespondHandleInUIThreadSuccessedBlock failedBlock:self.domainNetRespondHandleInUIThreadFailedBlock];
+	[[DomainBeanNetworkEngineSingleton sharedInstance]
+	 requestDomainProtocolWithRequestDomainBean:netRequestBean
+	 requestEvent:11
+	 successedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, id respondDomainBean) {
+		 
+	 }
+	 failedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, NetRequestErrorBean *error) {
+		 
+	 }];
 }
 @end

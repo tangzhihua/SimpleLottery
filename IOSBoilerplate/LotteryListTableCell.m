@@ -12,7 +12,7 @@
 #import "CurrentLotteryIssueCountDownManager.h"
 #import "LotteryIssueInfo.h"
 #import "ToolsFunctionForThisProgect.h"
-#import "DomainProtocolNetHelperSingleton.h"
+ 
 #import "NSString+isEmpty.h"
 #import "CurrentIssueCountDownDatabaseFieldsConstant.h"
 #import "LotteryDictionary.h"

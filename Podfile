@@ -1,7 +1,6 @@
 platform :ios, '5.0'
 
 pod 'cocos2d', '2.1-rc2'
-pod 'AFNetworking', '1.2.1'
 pod 'MKNetworkKit', '0.87'
 pod 'JSONKit', '1.5pre'
 pod 'SVProgressHUD', '0.9'

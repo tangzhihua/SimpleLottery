@@ -65,7 +65,7 @@
   
   [SVProgressHUD dismiss];
   
-  [[DomainProtocolNetHelperSingleton sharedInstance] cancelAllNetRequestWithThisNetRespondDelegate:self];
+   
  
 }
 

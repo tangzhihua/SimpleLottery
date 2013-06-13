@@ -6,12 +6,10 @@
 //
 //
 
-#import "CommandForCurrentLotteryIssueCountDownObserver.h"
+#import "CommandForStartCurrentLotteryIssueCountDownManager.h"
+
 #import "CurrentLotteryIssueCountDownManager.h"
-
-
 #import "LotteryDictionaryDatabaseFieldsConstant.h"
-
 #import "LotteryDictionary.h"
 
 
@@ -23,7 +21,7 @@
 
 
 
-@interface CommandForCurrentLotteryIssueCountDownObserver ()
+@interface CommandForStartCurrentLotteryIssueCountDownManager ()
 // 这个命令只能执行一次
 @property (nonatomic, assign) BOOL isExecuted;
 
@@ -38,7 +36,7 @@
 
 
 
-@implementation CommandForCurrentLotteryIssueCountDownObserver
+@implementation CommandForStartCurrentLotteryIssueCountDownManager
 
 
  
@@ -106,9 +104,9 @@
   return self;
 }
 
-+(id)commandForCurrentLotteryIssueCountDownObserver {
++(id)commandForStartCurrentLotteryIssueCountDownManager {
 	
-  static CommandForCurrentLotteryIssueCountDownObserver *singletonInstance = nil;
+  static CommandForStartCurrentLotteryIssueCountDownManager *singletonInstance = nil;
   static dispatch_once_t pred;
   dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;

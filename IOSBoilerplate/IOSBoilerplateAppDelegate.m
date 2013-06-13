@@ -30,12 +30,11 @@
 #import "CommandForInitLBSLibrary.h"
 #import "CommandForInitMobClick.h"
 #import "CommandForInitURLCache.h"
-#import "CommandForSettingAFNetwork.h"
 #import "CommandForGetUserLocationInfo.h"
 #import "CommandForLoadingLocalCacheData.h"
 #import "CommandForUserAutoLogin.h"
 #import "CommandForNewAppVersionCheck.h"
-#import "CommandForCurrentLotteryIssueCountDownObserver.h"
+#import "CommandForStartCurrentLotteryIssueCountDownManager.h"
 #import "CommandOfImportantNetRequestAutoRefresh.h"
 #import "CommandForSettingCocos2d.h"
 
@@ -180,10 +179,6 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   command = [CommandForInitURLCache commandForInitURLCache];
   [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
   
-  // 设置 AFNetworking 引擎
-  command = [CommandForSettingAFNetwork commandForSettingAFNetwork];
-  [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
-  
   // 获取用户当前所在位置信息
   command = [CommandForGetUserLocationInfo commandForGetUserLocationInfo];
   [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
@@ -197,7 +192,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
   
 	// 启动 彩票当前期号倒计时观察者
-	command = [CommandForCurrentLotteryIssueCountDownObserver commandForCurrentLotteryIssueCountDownObserver];
+	command = [CommandForStartCurrentLotteryIssueCountDownManager commandForStartCurrentLotteryIssueCountDownManager];
   [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
   
 	// 启动 重要的网络接口 自动刷新模块

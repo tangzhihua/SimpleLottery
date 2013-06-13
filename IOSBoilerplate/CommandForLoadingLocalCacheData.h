@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Command.h"
-@interface CommandForLoadingLocalCacheData : NSObject <Command, IDomainNetRespondCallback> {
+@interface CommandForLoadingLocalCacheData : NSObject <Command> {
   
 }
 

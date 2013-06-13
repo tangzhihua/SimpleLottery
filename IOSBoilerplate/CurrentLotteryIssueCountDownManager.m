@@ -13,7 +13,7 @@
 #import "LotteryDictionary.h"
 #import "IssueQueryNetRequestBean.h"
 #import "LotteryIssueInfo.h"
-#import "DomainProtocolNetHelperSingleton.h"
+ 
 
 
 
@@ -155,11 +155,9 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 -(void)resetObserver {
 	[self stopCountDownObserver];
 	
-	[[DomainProtocolNetHelperSingleton sharedInstance] cancelAllNetRequestWithThisNetRespondDelegate:self];
-	
 	NSArray *lotteryList = [self.currentIssueCountDownBeanList allValues];
 	for (CurrentIssueCountDown *currentIssueCountDown in lotteryList) {
-		
+		[[DomainBeanNetworkEngineSingleton sharedInstance] cancelNetRequestByRequestIndex:currentIssueCountDown.netRequestIndex];
 		[currentIssueCountDown resetCurrentIssueCountDown];
 	}
 	
@@ -174,7 +172,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 	do {
 		
 		//
-		if (currentIssueCountDown.netRequestIndex != IDLE_NETWORK_REQUEST_ID) {
+		if (currentIssueCountDown.netRequestIndex != NETWORK_REQUEST_ID_OF_IDLE) {
 			// 已经在请求网络
 			break;
 		}
@@ -216,7 +214,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 }
 
 -(CurrentIssueCountDown *)queryCurrentIssueCountDownByNetRequestIndex:(NSInteger)netRequestIndex {
-	RNAssert(netRequestIndex != IDLE_NETWORK_REQUEST_ID, @"入参 netRequestIndex 无效");
+	RNAssert(netRequestIndex != NETWORK_REQUEST_ID_OF_IDLE, @"入参 netRequestIndex 无效");
 	
 	NSArray *lotteryList = [self.currentIssueCountDownBeanList allValues];
 	for (CurrentIssueCountDown *currentIssueCountDown in lotteryList) {
@@ -235,77 +233,22 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   // 2.4 推荐城市
   IssueQueryNetRequestBean *netRequestBean = [IssueQueryNetRequestBean issueQueryNetRequestBeanWithLotteryCode:lotteryCode];
   NSInteger netRequestIndex
-  = [[DomainProtocolNetHelperSingleton sharedInstance] requestDomainProtocolWithContext:self
-                                                                   andRequestDomainBean:netRequestBean
-                                                                        andRequestEvent:kNetRequestTagEnum_Issue
-                                                                     andRespondDelegate:self];
-  
-  return netRequestIndex;
-}
-
-typedef enum {
-  //
-  kHandlerMsgTypeEnum_IssueQueryFailed = 0,
-  //
-  kHandlerMsgTypeEnum_IssueQuerySuccessed
-} HandlerMsgTypeEnum;
-
-typedef enum {
-  //
-  kHandlerExtraDataTypeEnum_NetRequestTag = 0,
-  //
-  kHandlerExtraDataTypeEnum_NetErrorMessage,
-  //
-  kHandlerExtraDataTypeEnum_LotteryIssueInfo
-} HandlerExtraDataTypeEnum;
-
-- (void) handleMessage:(Message *) msg {
-  
-  switch (msg.what) {
-    case kHandlerMsgTypeEnum_IssueQueryFailed:{
-      
-      
-    }break;
-      
-    case kHandlerMsgTypeEnum_IssueQuerySuccessed:{
-      
-    }break;
-      
-    default:
-      break;
-  }
-}
- 
-
-/**
- * 此方法处于非UI线程中
- *
- * @param requestEvent
- * @param errorBean
- * @param respondDomainBean
- */
-- (void) domainNetRespondHandleInNonUIThread:(in NSUInteger) requestEvent
-														 netRequestIndex:(in NSInteger) netRequestIndex
-                                   errorBean:(in NetErrorBean *) errorBean
-                           respondDomainBean:(in id) respondDomainBean {
-  
-	CurrentIssueCountDown *currentIssueCountDown = [self queryCurrentIssueCountDownByNetRequestIndex:netRequestIndex];
-	currentIssueCountDown.netRequestIndex = IDLE_NETWORK_REQUEST_ID;
-	
-  if (errorBean.errorType != NET_ERROR_TYPE_SUCCESS) {
-
-		currentIssueCountDown.isNetworkDisconnected = YES;
-     
-  } else {
+  = [[DomainBeanNetworkEngineSingleton sharedInstance] requestDomainProtocolWithRequestDomainBean:netRequestBean requestEvent:kNetRequestTagEnum_Issue successedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, id respondDomainBean) {
+		CurrentIssueCountDown *currentIssueCountDown = [self queryCurrentIssueCountDownByNetRequestIndex:netRequestIndex];
+		currentIssueCountDown.netRequestIndex = NETWORK_REQUEST_ID_OF_IDLE;
 		
 		//
 		LotteryIssueInfo *lotteryIssueInfo = (LotteryIssueInfo *)respondDomainBean;
 		currentIssueCountDown.lotteryIssueInfo = lotteryIssueInfo;
+	} failedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, NetRequestErrorBean *error) {
 		
-		 
-	}
+		// 网络请求发生错误
+		CurrentIssueCountDown *currentIssueCountDown = [self queryCurrentIssueCountDownByNetRequestIndex:netRequestIndex];
+		currentIssueCountDown.netRequestIndex = NETWORK_REQUEST_ID_OF_IDLE;
+		currentIssueCountDown.isNetworkDisconnected = YES;
+	}];
   
-  
-  
+  return netRequestIndex;
 }
+  
 @end

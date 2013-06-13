@@ -125,7 +125,6 @@
 		58C48F7C16FC121A00CD9D0D /* CommandForInitLBSLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F7B16FC121A00CD9D0D /* CommandForInitLBSLibrary.m */; };
 		58C48F7F16FC123000CD9D0D /* CommandForInitMobClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F7E16FC123000CD9D0D /* CommandForInitMobClick.m */; };
 		58C48F8216FC124600CD9D0D /* CommandForInitURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F8116FC124600CD9D0D /* CommandForInitURLCache.m */; };
-		58C48F8616FC12F000CD9D0D /* CommandForSettingAFNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F8516FC12F000CD9D0D /* CommandForSettingAFNetwork.m */; };
 		58C48F8916FC131500CD9D0D /* CommandForGetUserLocationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F8816FC131500CD9D0D /* CommandForGetUserLocationInfo.m */; };
 		58C48F8C16FC132D00CD9D0D /* CommandForLoadingLocalCacheData.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F8B16FC132D00CD9D0D /* CommandForLoadingLocalCacheData.m */; };
 		58C48F8F16FC137200CD9D0D /* CommandForNewAppVersionCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C48F8E16FC137200CD9D0D /* CommandForNewAppVersionCheck.m */; };
@@ -200,7 +199,7 @@
 		684177971748D5280090DBC6 /* nav_right_btn_bg_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 684177771748D5280090DBC6 /* nav_right_btn_bg_default.png */; };
 		684177981748D5280090DBC6 /* nav_right_btn_bg_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 684177781748D5280090DBC6 /* nav_right_btn_bg_highlighted.png */; };
 		68440596173E357600FD90DB /* CurrentIssueCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 68440595173E357600FD90DB /* CurrentIssueCountDown.m */; };
-		6844059D173E5AC700FD90DB /* CommandForCurrentLotteryIssueCountDownObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6844059C173E5AC700FD90DB /* CommandForCurrentLotteryIssueCountDownObserver.m */; };
+		6844059D173E5AC700FD90DB /* CommandForStartCurrentLotteryIssueCountDownManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6844059C173E5AC700FD90DB /* CommandForStartCurrentLotteryIssueCountDownManager.m */; };
 		684405A0173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6844059F173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.m */; };
 		6846EA2117216C1D006CA7B0 /* GoucaidatingActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6846EA1F17216C1D006CA7B0 /* GoucaidatingActivity.m */; };
 		6846EA2217216C1D006CA7B0 /* GoucaidatingActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6846EA2017216C1D006CA7B0 /* GoucaidatingActivity.xib */; };
@@ -217,6 +216,7 @@
 		6846EA5B17219673006CA7B0 /* main_background_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6846EA5717219673006CA7B0 /* main_background_image@2x.png */; };
 		6846EA5E17219673006CA7B0 /* title_bar_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6846EA5A17219673006CA7B0 /* title_bar_background@2x.png */; };
 		68A2E1C7172FC73D00F9CF6E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09885EF11418F44200CCE17A /* MobileCoreServices.framework */; };
+		68A347691768B52C00634237 /* Errors_zh_CN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68A347681768B52C00634237 /* Errors_zh_CN.plist */; };
 		68A6FE1C17228E7B00A79D25 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE1B17228E7B00A79D25 /* NSData+AES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68A6FE20172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE1F172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.m */; };
 		68A6FE23172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE22172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.m */; };
@@ -332,7 +332,7 @@
 		D7A2C571175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */; };
 		D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A8D57E175C34D300BC5CBF /* libicucore.dylib */; };
 		D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */; };
-		D7B5ADE81760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */; };
+		D7B5ADE81760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADE71760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m */; };
 		D7B5ADEE176056EC002AEB14 /* NetRequestErrorBean.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */; };
 		D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */; };
 		D7C78DE5176469B6004F18F1 /* ServerRespondDataTestRuyicaiNew.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C78DE4176469B6004F18F1 /* ServerRespondDataTestRuyicaiNew.m */; };
@@ -665,8 +665,6 @@
 		58C48F7E16FC123000CD9D0D /* CommandForInitMobClick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandForInitMobClick.m; sourceTree = "<group>"; };
 		58C48F8016FC124600CD9D0D /* CommandForInitURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandForInitURLCache.h; sourceTree = "<group>"; };
 		58C48F8116FC124600CD9D0D /* CommandForInitURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandForInitURLCache.m; sourceTree = "<group>"; };
-		58C48F8416FC12F000CD9D0D /* CommandForSettingAFNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandForSettingAFNetwork.h; sourceTree = "<group>"; };
-		58C48F8516FC12F000CD9D0D /* CommandForSettingAFNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandForSettingAFNetwork.m; sourceTree = "<group>"; };
 		58C48F8716FC131500CD9D0D /* CommandForGetUserLocationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandForGetUserLocationInfo.h; sourceTree = "<group>"; };
 		58C48F8816FC131500CD9D0D /* CommandForGetUserLocationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandForGetUserLocationInfo.m; sourceTree = "<group>"; };
 		58C48F8A16FC132D00CD9D0D /* CommandForLoadingLocalCacheData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandForLoadingLocalCacheData.h; sourceTree = "<group>"; };
@@ -784,8 +782,8 @@
 		684177781748D5280090DBC6 /* nav_right_btn_bg_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_right_btn_bg_highlighted.png; sourceTree = "<group>"; };
 		68440594173E357600FD90DB /* CurrentIssueCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentIssueCountDown.h; sourceTree = "<group>"; };
 		68440595173E357600FD90DB /* CurrentIssueCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentIssueCountDown.m; sourceTree = "<group>"; };
-		6844059B173E5AC700FD90DB /* CommandForCurrentLotteryIssueCountDownObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandForCurrentLotteryIssueCountDownObserver.h; sourceTree = "<group>"; };
-		6844059C173E5AC700FD90DB /* CommandForCurrentLotteryIssueCountDownObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandForCurrentLotteryIssueCountDownObserver.m; sourceTree = "<group>"; };
+		6844059B173E5AC700FD90DB /* CommandForStartCurrentLotteryIssueCountDownManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandForStartCurrentLotteryIssueCountDownManager.h; sourceTree = "<group>"; };
+		6844059C173E5AC700FD90DB /* CommandForStartCurrentLotteryIssueCountDownManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandForStartCurrentLotteryIssueCountDownManager.m; sourceTree = "<group>"; };
 		6844059E173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentLotteryIssueCountDownManager.h; sourceTree = "<group>"; };
 		6844059F173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentLotteryIssueCountDownManager.m; sourceTree = "<group>"; };
 		6846EA1E17216C1D006CA7B0 /* GoucaidatingActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoucaidatingActivity.h; sourceTree = "<group>"; };
@@ -809,6 +807,10 @@
 		6846EA5717219673006CA7B0 /* main_background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_background_image@2x.png"; sourceTree = "<group>"; };
 		6846EA5A17219673006CA7B0 /* title_bar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title_bar_background@2x.png"; sourceTree = "<group>"; };
 		684E6A371763665900D7CE60 /* ICurrentIssueCountDownEventReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICurrentIssueCountDownEventReceiver.h; sourceTree = "<group>"; };
+		68A347651768B40500634237 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainWindow.xib"; sourceTree = "<group>"; };
+		68A347661768B40500634237 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		68A347671768B40500634237 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		68A347681768B52C00634237 /* Errors_zh_CN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Errors_zh_CN.plist; sourceTree = "<group>"; };
 		68A6FE1A17228E7B00A79D25 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
 		68A6FE1B17228E7B00A79D25 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		68A6FE1E172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestEntityDataPackageForRuyicai.h; sourceTree = "<group>"; };
@@ -943,8 +945,8 @@
 		D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuckyPickNumberDisplayView.xib; sourceTree = "<group>"; };
 		D7A8D57E175C34D300BC5CBF /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regular_expressions_keys.plist; sourceTree = "<group>"; };
-		D7B5ADE61760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainProtocolNetHelperOfMKNetworkKitSingleton.h; sourceTree = "<group>"; };
-		D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainProtocolNetHelperOfMKNetworkKitSingleton.m; sourceTree = "<group>"; };
+		D7B5ADE61760317B002AEB14 /* DomainBeanNetworkEngineSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainBeanNetworkEngineSingleton.h; sourceTree = "<group>"; };
+		D7B5ADE71760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainBeanNetworkEngineSingleton.m; sourceTree = "<group>"; };
 		D7B5ADEC176056EC002AEB14 /* NetRequestErrorBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestErrorBean.h; sourceTree = "<group>"; };
 		D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestErrorBean.m; sourceTree = "<group>"; };
 		D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Errors_en_US.plist; sourceTree = "<group>"; };
@@ -1430,7 +1432,6 @@
 				58E53B3216F9D726004A3729 /* 用户自动登录 */,
 				58E53B3016F9D6E2004A3729 /* 加载本地缓存的数据 */,
 				58E53B2F16F9D6D6004A3729 /* 获取用户当前所在位置信息 */,
-				587D141F16F98BBD0010B374 /* 设置AFNetworking引擎 */,
 				587D141E16F98BA70010B374 /* 设置URLCache */,
 				587D141D16F98B8D0010B374 /* 启动用户行为分析类库 */,
 				587D141C16F98B6D0010B374 /* 初始化LBS库 */,
@@ -1476,15 +1477,6 @@
 				58C48F8116FC124600CD9D0D /* CommandForInitURLCache.m */,
 			);
 			name = "设置URLCache";
-			sourceTree = "<group>";
-		};
-		587D141F16F98BBD0010B374 /* 设置AFNetworking引擎 */ = {
-			isa = PBXGroup;
-			children = (
-				58C48F8416FC12F000CD9D0D /* CommandForSettingAFNetwork.h */,
-				58C48F8516FC12F000CD9D0D /* CommandForSettingAFNetwork.m */,
-			);
-			name = "设置AFNetworking引擎";
 			sourceTree = "<group>";
 		};
 		587D45DB16A4FA8C00F26AB2 /* OrderedDictionary */ = {
@@ -1611,12 +1603,9 @@
 		58815A151603112000155B44 /* 网络框架核心代码 */ = {
 			isa = PBXGroup;
 			children = (
-				581ED808167F1BF200862985 /* IDomainNetRespondCallback.h */,
-				D7B5ADE517603130002AEB14 /* NetHelperOfAFNetworking */,
-				D7B5ADE4176030EB002AEB14 /* NetHelperOfMKNetworkKit */,
+				687AC2231768B21700071D23 /* 自己写的不成熟引擎(已废弃) */,
+				D7B5ADE4176030EB002AEB14 /* DomainBeanNetworkEngineSingleton */,
 				581ED7B2167EBCEF00862985 /* DomainBeanStrategyMapping */,
-				581ED7B8167EBE3600862985 /* NetHelper */,
-				581ED7B7167EBE1300862985 /* NetErrorHandle */,
 				581ED7B5167EBD9B00862985 /* NetEntityDataTools */,
 				581ED7B4167EBD7C00862985 /* DomainBeanTools */,
 			);
@@ -2054,8 +2043,8 @@
 		68440597173E56EA00FD90DB /* 启动彩票排期倒计时检测 */ = {
 			isa = PBXGroup;
 			children = (
-				6844059B173E5AC700FD90DB /* CommandForCurrentLotteryIssueCountDownObserver.h */,
-				6844059C173E5AC700FD90DB /* CommandForCurrentLotteryIssueCountDownObserver.m */,
+				6844059B173E5AC700FD90DB /* CommandForStartCurrentLotteryIssueCountDownManager.h */,
+				6844059C173E5AC700FD90DB /* CommandForStartCurrentLotteryIssueCountDownManager.m */,
 				6844059E173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.h */,
 				6844059F173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.m */,
 				684E6A371763665900D7CE60 /* ICurrentIssueCountDownEventReceiver.h */,
@@ -2121,6 +2110,16 @@
 				6846EA3A17217E2F006CA7B0 /* VersionNetRespondBean.m */,
 			);
 			name = account_version;
+			sourceTree = "<group>";
+		};
+		687AC2231768B21700071D23 /* 自己写的不成熟引擎(已废弃) */ = {
+			isa = PBXGroup;
+			children = (
+				581ED808167F1BF200862985 /* IDomainNetRespondCallback.h */,
+				581ED7B7167EBE1300862985 /* NetErrorHandle */,
+				581ED7B8167EBE3600862985 /* NetHelper */,
+			);
+			name = "自己写的不成熟引擎(已废弃)";
 			sourceTree = "<group>";
 		};
 		68A6FE1D1722927400A79D25 /* 如意彩 */ = {
@@ -2398,23 +2397,17 @@
 			name = NetEngine;
 			sourceTree = "<group>";
 		};
-		D7B5ADE4176030EB002AEB14 /* NetHelperOfMKNetworkKit */ = {
+		D7B5ADE4176030EB002AEB14 /* DomainBeanNetworkEngineSingleton */ = {
 			isa = PBXGroup;
 			children = (
+				68A347681768B52C00634237 /* Errors_zh_CN.plist */,
 				D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */,
 				D7B5ADEC176056EC002AEB14 /* NetRequestErrorBean.h */,
 				D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */,
-				D7B5ADE61760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.h */,
-				D7B5ADE71760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m */,
+				D7B5ADE61760317B002AEB14 /* DomainBeanNetworkEngineSingleton.h */,
+				D7B5ADE71760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m */,
 			);
-			name = NetHelperOfMKNetworkKit;
-			sourceTree = "<group>";
-		};
-		D7B5ADE517603130002AEB14 /* NetHelperOfAFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = NetHelperOfAFNetworking;
+			name = DomainBeanNetworkEngineSingleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2472,6 +2465,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 09885E851418F2E500CCE17A;
 			productRefGroup = 09885E911418F2E500CCE17A /* Products */;
@@ -2597,6 +2591,7 @@
 				D7A2C571175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib in Resources */,
 				D7892709175ECE81005B7353 /* PodfileBack in Resources */,
 				D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */,
+				68A347691768B52C00634237 /* Errors_zh_CN.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2770,7 +2765,6 @@
 				58C48F7C16FC121A00CD9D0D /* CommandForInitLBSLibrary.m in Sources */,
 				58C48F7F16FC123000CD9D0D /* CommandForInitMobClick.m in Sources */,
 				58C48F8216FC124600CD9D0D /* CommandForInitURLCache.m in Sources */,
-				58C48F8616FC12F000CD9D0D /* CommandForSettingAFNetwork.m in Sources */,
 				58C48F8916FC131500CD9D0D /* CommandForGetUserLocationInfo.m in Sources */,
 				58C48F8C16FC132D00CD9D0D /* CommandForLoadingLocalCacheData.m in Sources */,
 				58C48F8F16FC137200CD9D0D /* CommandForNewAppVersionCheck.m in Sources */,
@@ -2807,7 +2801,7 @@
 				68B0CC601733EF72001661A6 /* LotteryListTableCell.m in Sources */,
 				68B0CC6F1734196D001661A6 /* LotteryDictionary.m in Sources */,
 				68440596173E357600FD90DB /* CurrentIssueCountDown.m in Sources */,
-				6844059D173E5AC700FD90DB /* CommandForCurrentLotteryIssueCountDownObserver.m in Sources */,
+				6844059D173E5AC700FD90DB /* CommandForStartCurrentLotteryIssueCountDownManager.m in Sources */,
 				684405A0173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.m in Sources */,
 				68E744F0173F803D00136C4B /* LotterySalesStatusNetRequestBean.m in Sources */,
 				68E744F3173F817800136C4B /* LotterySalesStatusNetRespondBean.m in Sources */,
@@ -2826,7 +2820,7 @@
 				D7A2C56C175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.m in Sources */,
 				D7A2C56F175DD5CA00D823F0 /* LuckyPickNumberDisplayView.m in Sources */,
 				D7F0D915175F0C5600E779FD /* JSONModel.m in Sources */,
-				D7B5ADE81760317B002AEB14 /* DomainProtocolNetHelperOfMKNetworkKitSingleton.m in Sources */,
+				D7B5ADE81760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m in Sources */,
 				D7B5ADEE176056EC002AEB14 /* NetRequestErrorBean.m in Sources */,
 				68EDEC981760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m in Sources */,
 				68EDEC9B1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m in Sources */,
@@ -2878,6 +2872,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				09885E9E1418F2E600CCE17A /* en */,
+				68A347661768B40500634237 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2886,6 +2881,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				09885EA71418F2E600CCE17A /* en */,
+				68A347651768B40500634237 /* zh-Hans */,
 			);
 			name = MainWindow.xib;
 			sourceTree = "<group>";
@@ -2894,6 +2890,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				09885EC01418F2E600CCE17A /* en */,
+				68A347671768B40500634237 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

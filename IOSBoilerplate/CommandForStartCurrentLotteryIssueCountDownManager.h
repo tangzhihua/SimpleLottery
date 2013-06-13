@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
  
 #import "Command.h"
-@interface CommandForCurrentLotteryIssueCountDownObserver : NSObject <Command> {
+@interface CommandForStartCurrentLotteryIssueCountDownManager : NSObject <Command> {
   
 }
 
-+(id)commandForCurrentLotteryIssueCountDownObserver;
++(id)commandForStartCurrentLotteryIssueCountDownManager;
 @end

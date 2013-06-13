@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CurrentLotteryIssueCountDownManager : NSObject <IDomainNetRespondCallback> {
+@interface CurrentLotteryIssueCountDownManager : NSObject {
 	
 }
 

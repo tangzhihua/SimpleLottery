@@ -9,7 +9,7 @@
 #import "CurrentIssueCountDown.h"
 #import "LotteryDictionary.h"
 #import "LotteryIssueInfo.h"
-#import "DomainProtocolNetHelperSingleton.h"
+ 
 
 
 
@@ -31,7 +31,7 @@ static const int kCountDownSecondOfRerequestNetworkMax = 30;
 		_countDownSecond = [lotteryIssueInfo.time_remaining integerValue];
 		
 		// 复位网络请求索引
-		_netRequestIndex = IDLE_NETWORK_REQUEST_ID;
+		_netRequestIndex = NETWORK_REQUEST_ID_OF_IDLE;
 		
 		//
 		_observerList = [[NSMutableSet alloc] init];
@@ -43,7 +43,7 @@ static const int kCountDownSecondOfRerequestNetworkMax = 30;
 +(id)currentIssueCountDownWithLotteryDictionary:(LotteryDictionary *)lotteryDictionary {
 	CurrentIssueCountDown *newInstance = [[CurrentIssueCountDown alloc] init];
 	newInstance.lotteryDictionary = lotteryDictionary;
-	newInstance.netRequestIndex = IDLE_NETWORK_REQUEST_ID;
+	newInstance.netRequestIndex = NETWORK_REQUEST_ID_OF_IDLE;
 	newInstance.isNetworkDisconnected = NO;
 	newInstance.countDownSecondOfRerequestNetwork = kCountDownSecondOfRerequestNetworkMax;
 	newInstance.countDownSecond = 0;
@@ -57,7 +57,7 @@ static const int kCountDownSecondOfRerequestNetworkMax = 30;
 	[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_isNetworkDisconnected];
 	self.countDownSecondOfRerequestNetwork = kCountDownSecondOfRerequestNetworkMax;
 	[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_countDownSecondOfRerequestNetwork];
-	self.netRequestIndex = IDLE_NETWORK_REQUEST_ID;
+	self.netRequestIndex = NETWORK_REQUEST_ID_OF_IDLE;
 	[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_netRequestIndex];
 }
 
@@ -65,7 +65,7 @@ static const int kCountDownSecondOfRerequestNetworkMax = 30;
 #pragma mark 重置 当前彩票观察者
 -(void)resetCurrentIssueCountDown {
 	self.lotteryIssueInfo = nil;
-	self.netRequestIndex = IDLE_NETWORK_REQUEST_ID;
+	self.netRequestIndex = NETWORK_REQUEST_ID_OF_IDLE;
 	self.isNetworkDisconnected = NO;
 	self.countDownSecondOfRerequestNetwork = kCountDownSecondOfRerequestNetworkMax;
 	self.countDownSecond = 0;

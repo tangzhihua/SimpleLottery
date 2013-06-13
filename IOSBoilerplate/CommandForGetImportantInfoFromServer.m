@@ -20,9 +20,6 @@
 #import "AdImageInWelcomePageNetRespondBean.h"
 
 #import "LocalCacheDataPathConstant.h"
-static CommandForGetImportantInfoFromServer *singletonInstance = nil;
-
-
 
 
 
@@ -48,7 +45,7 @@ static CommandForGetImportantInfoFromServer *singletonInstance = nil;
 
 
 @implementation CommandForGetImportantInfoFromServer {
-	AFImageRequestOperation *_adImageRequestOperation;
+	 
 }
 
 //
@@ -63,24 +60,54 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
  
  */
 -(void)execute {
-  if (!_isExecuted) {
-		_isExecuted = YES;
+  if (!self.isExecuted) {
+		self.isExecuted = YES;
 		
     [self importantInfoFromServerRequest];
   }
 }
 
-+(id)commandForGetImportantInfoFromServer {
-  if (nil == singletonInstance) {
-    singletonInstance = [[CommandForGetImportantInfoFromServer alloc] init];
-    singletonInstance.isExecuted = NO;
-    singletonInstance.netRequestIndexForGetImportantInfoFromServer = IDLE_NETWORK_REQUEST_ID;
+#pragma mark -
+#pragma mark 单例方法群
+
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  RNAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
+
+// 真正的(私有)init方法
+-(id)initSingleton {
+  self = [super init];
+  if ((self = [super init])) {
+    // 初始化代码
+    _isExecuted = NO;
+		_netRequestIndexForGetImportantInfoFromServer = NETWORK_REQUEST_ID_OF_IDLE;
   }
+  
+  return self;
+}
+
++(id)commandForGetImportantInfoFromServer {
+	
+  static CommandForGetImportantInfoFromServer *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;
 }
 
 #pragma mark -
 #pragma mark 用户自动登录
+
+//
+- (void) clearNetRequestIndexByRequestEvent:(NSUInteger) requestEvent {
+  if (kNetRequestTagEnum_GetImportantInfoFromServer == requestEvent) {
+    _netRequestIndexForGetImportantInfoFromServer = NETWORK_REQUEST_ID_OF_IDLE;
+  }
+}
 
 -(void)importantInfoFromServerRequest{
   
@@ -90,113 +117,85 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 		// 读取用户登录相关信息(用户名 + 密码 + 自动登录开关 + RandomNumber)
 		[GlobalDataCacheForNeedSaveToFileSystem readUserLoginInfoToGlobalDataCacheForMemorySingleton];
 		
-		SoftwareUpdateNetRequestBean *softwareUpdateNetRequestBean = [SoftwareUpdateNetRequestBean softwareUpdateNetRequestBeanWithRandomNumber:[GlobalDataCacheForMemorySingleton sharedInstance].randomNumberForLastSuccessfulLogon isEmulator:nil];
+		SoftwareUpdateNetRequestBean *netRequestBean = [SoftwareUpdateNetRequestBean softwareUpdateNetRequestBeanWithRandomNumber:[GlobalDataCacheForMemorySingleton sharedInstance].randomNumberForLastSuccessfulLogon isEmulator:nil];
 		
-    _netRequestIndexForGetImportantInfoFromServer
-    = [[DomainProtocolNetHelperSingleton sharedInstance] requestDomainProtocolWithContext:self
-                                                                     andRequestDomainBean:softwareUpdateNetRequestBean
-                                                                          andRequestEvent:kNetRequestTagEnum_GetImportantInfoFromServer
-                                                                       andRespondDelegate:self];
+    self.netRequestIndexForGetImportantInfoFromServer
+    = [[DomainBeanNetworkEngineSingleton sharedInstance] requestDomainProtocolWithRequestDomainBean:netRequestBean requestEvent:kNetRequestTagEnum_GetImportantInfoFromServer successedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, id respondDomainBean) {
+			
+			[self clearNetRequestIndexByRequestEvent:requestEvent];
+			
+			SoftwareUpdateNetRespondBean *softwareUpdateNetRespondBean = (SoftwareUpdateNetRespondBean *) respondDomainBean;
+			PRPLog(@"%@", softwareUpdateNetRespondBean);
+			[GlobalDataCacheForMemorySingleton sharedInstance].softwareUpdateNetRespondBean = softwareUpdateNetRespondBean;
+			
+			
+			// 用户自动登录检测
+			if (softwareUpdateNetRespondBean.userLoggedInfo != nil) {
+				NSString *username = [GlobalDataCacheForMemorySingleton sharedInstance].usernameForLastSuccessfulLogon;
+				NSString *password = [GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon;
+				[ToolsFunctionForThisProgect noteLogonSuccessfulInfoWithUserLoggedInfo:softwareUpdateNetRespondBean.userLoggedInfo usernameForLastSuccessfulLogon:username passwordForLastSuccessfulLogon:password];
+				
+				// 发送 用户成功登录的广播消息
+				Intent *intent = [Intent intent];
+				[intent setAction:[[NSNumber numberWithUnsignedInteger:kUserNotificationEnum_UserLogonSuccess] stringValue]];
+				[self sendBroadcast:intent];
+			}
+			
+			// 查看是否需要下载 欢迎界面的广告图片
+			AdImageInWelcomePageNetRespondBean *adImageInWelcomePageNetRespondBean = softwareUpdateNetRespondBean.adImageInWelcomePageNetRespondBean;
+			if (adImageInWelcomePageNetRespondBean != nil) {
+				[GlobalDataCacheForMemorySingleton sharedInstance].isShowAdImageFromServer = adImageInWelcomePageNetRespondBean.isShowAdImageFromServer;
+				
+				// 判断是否需要从服务器下载新的开机广告图片
+				if (adImageInWelcomePageNetRespondBean.isShowAdImageFromServer) {
+					if (![NSString isEmpty:adImageInWelcomePageNetRespondBean.imageUrl]
+							&& ![NSString isEmpty:adImageInWelcomePageNetRespondBean.imageID]
+							&& ![adImageInWelcomePageNetRespondBean.imageID isEqualToString:[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest]) {
+						
+						// 要从服务器下载广告图片
+						NSURL *url = [NSURL URLWithString:adImageInWelcomePageNetRespondBean.imageUrl];
+						
+						//Store this image on the same server as the weather canned files
+						NSURLRequest *request = [NSURLRequest requestWithURL:url];
+						
+						/*
+						_adImageRequestOperation
+						
+						= [AFImageRequestOperation imageRequestOperationWithRequest:request
+																									 imageProcessingBlock:nil
+																																success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+																																	NSString *adImagePath = [[LocalCacheDataPathConstant importantDataCachePath] stringByAppendingPathComponent:kAdImageNameForWelcomePage];
+																																	
+																																	NSData *imageDataForPNG = UIImagePNGRepresentation(image);
+																																	[imageDataForPNG writeToFile:adImagePath atomically:YES];
+																																	
+																																	[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest = adImageInWelcomePageNetRespondBean.imageID;
+																																}
+																																failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+																																	PRPLog(@"下载开机广告图片失败, error=%@", error);
+																																}];
+						[_adImageRequestOperation start];
+						*/
+					}
+				}
+			}
+			
+			
+			// 发送 从服务器获取重要信息成功 的广播消息
+			Intent *intent = [Intent intent];
+			[intent setAction:[[NSNumber numberWithUnsignedInteger:kUserNotificationEnum_GetImportantInfoFromServerSuccess] stringValue]];
+			[self sendBroadcast:intent];
+			
+		} failedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, NetRequestErrorBean *error) {
+			[self clearNetRequestIndexByRequestEvent:requestEvent];
+		}];
 		
 		
   } while (NO);
 }
 
-#pragma mark -
-#pragma mark 实现 IDomainNetRespondCallback 接口
 
-//
-- (void) clearNetRequestIndexByRequestEvent:(NSUInteger) requestEvent {
-  if (kNetRequestTagEnum_GetImportantInfoFromServer == requestEvent) {
-    _netRequestIndexForGetImportantInfoFromServer = IDLE_NETWORK_REQUEST_ID;
-  }
-}
 
-/**
- * 此方法处于非UI线程中
- *
- * @param requestEvent
- * @param errorBean
- * @param respondDomainBean
- */
-- (void) domainNetRespondHandleInNonUIThread:(in NSUInteger) requestEvent
-														 netRequestIndex:(in NSInteger) netRequestIndex
-                                   errorBean:(in NetErrorBean *) errorBean
-                           respondDomainBean:(in id) respondDomainBean {
-  
-  PRPLog(@"domainNetRespondHandleInNonUIThread --- start ! ");
-  
-  [self clearNetRequestIndexByRequestEvent:requestEvent];
-  
-  if (errorBean.errorType != NET_ERROR_TYPE_SUCCESS) {
-    return;
-  }
-  
-  if (requestEvent == kNetRequestTagEnum_GetImportantInfoFromServer) {
-    
-    
-    SoftwareUpdateNetRespondBean *softwareUpdateNetRespondBean = (SoftwareUpdateNetRespondBean *) respondDomainBean;
-    PRPLog(@"%@", softwareUpdateNetRespondBean);
-    [GlobalDataCacheForMemorySingleton sharedInstance].softwareUpdateNetRespondBean = softwareUpdateNetRespondBean;
-		
-		
-		// 用户自动登录
-		if (softwareUpdateNetRespondBean.userLoggedInfo != nil) {
-			NSString *username = [GlobalDataCacheForMemorySingleton sharedInstance].usernameForLastSuccessfulLogon;
-			NSString *password = [GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon;
-			[ToolsFunctionForThisProgect noteLogonSuccessfulInfoWithUserLoggedInfo:softwareUpdateNetRespondBean.userLoggedInfo usernameForLastSuccessfulLogon:username passwordForLastSuccessfulLogon:password];
-			
-			// 发送 用户成功登录的广播消息
-			Intent *intent = [Intent intent];
-			[intent setAction:[[NSNumber numberWithUnsignedInteger:kUserNotificationEnum_UserLogonSuccess] stringValue]];
-			[self sendBroadcast:intent];
-		}
-		
-		// 查看是否需要下载 欢迎界面的广告图片
-		AdImageInWelcomePageNetRespondBean *adImageInWelcomePageNetRespondBean = softwareUpdateNetRespondBean.adImageInWelcomePageNetRespondBean;
-		if (adImageInWelcomePageNetRespondBean != nil) {
-			[GlobalDataCacheForMemorySingleton sharedInstance].isShowAdImageFromServer = adImageInWelcomePageNetRespondBean.isShowAdImageFromServer;
-			
-		  if (adImageInWelcomePageNetRespondBean.isShowAdImageFromServer) {
-				if (![NSString isEmpty:adImageInWelcomePageNetRespondBean.imageUrl]
-						&& ![NSString isEmpty:adImageInWelcomePageNetRespondBean.imageID]
-						&& ![adImageInWelcomePageNetRespondBean.imageID isEqualToString:[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest]) {
-					
-					// 要从服务器下载广告图片
-					NSURL *url = [NSURL URLWithString:adImageInWelcomePageNetRespondBean.imageUrl];
-					
-					//Store this image on the same server as the weather canned files
-					NSURLRequest *request = [NSURLRequest requestWithURL:url];
-					
-					_adImageRequestOperation
-					
-					= [AFImageRequestOperation imageRequestOperationWithRequest:request
-																								 imageProcessingBlock:nil
-																															success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-																																NSString *adImagePath = [[LocalCacheDataPathConstant importantDataCachePath] stringByAppendingPathComponent:kAdImageNameForWelcomePage];
-																																
-																																NSData *imageDataForPNG = UIImagePNGRepresentation(image);
-																																[imageDataForPNG writeToFile:adImagePath atomically:YES];
-																																
-																																[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest = adImageInWelcomePageNetRespondBean.imageID;
-																															}
-																															failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-																																PRPLog(@"下载开机广告图片失败, error=%@", error);
-																															}];
-					[_adImageRequestOperation start];
-					
-				}
-			}
-		}
-		
-		
-    // 发送 从服务器获取重要信息成功
-    Intent *intent = [Intent intent];
-    [intent setAction:[[NSNumber numberWithUnsignedInteger:kUserNotificationEnum_GetImportantInfoFromServerSuccess] stringValue]];
-    [self sendBroadcast:intent];
-    
-  }
-  
-}
+
 
 @end

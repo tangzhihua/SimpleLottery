@@ -11,7 +11,7 @@
 #import "VersionNetRespondBean.h"
 
 
-static CommandForNewAppVersionCheck *singletonInstance = nil;
+ 
 
 
 @interface CommandForNewAppVersionCheck ()
@@ -38,18 +38,42 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
  
  */
 -(void)execute {
-  if (!_isExecuted) {
-		_isExecuted = YES;
+  if (!self.isExecuted) {
+		self.isExecuted = YES;
 		
     //[NSThread detachNewThreadSelector:@selector(childThreadForNewAppVersionCheck) toTarget:self withObject:nil];
   }  
 }
 
-+(id)commandForNewAppVersionCheck {
-  if (nil == singletonInstance) {
-    singletonInstance = [[CommandForNewAppVersionCheck alloc] init];
-    singletonInstance.isExecuted = NO;
+#pragma mark -
+#pragma mark 单例方法群
+
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  RNAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
+
+// 真正的(私有)init方法
+-(id)initSingleton {
+  self = [super init];
+  if ((self = [super init])) {
+    // 初始化代码
+    _isExecuted = NO;
+
   }
+  
+  return self;
+}
+
++(id)commandForNewAppVersionCheck {
+	
+  static CommandForNewAppVersionCheck *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;
 }
 

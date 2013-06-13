@@ -47,7 +47,8 @@
       break;
     }
     
-		return [[SoftwareUpdateNetRespondBean alloc] initWithDictionary:jsonRootNSDictionary];
+		SoftwareUpdateNetRespondBean *netRespondBean =  [[SoftwareUpdateNetRespondBean alloc] initWithDictionary:jsonRootNSDictionary];
+		return netRespondBean;
 	} while (NO);
   
   return nil;

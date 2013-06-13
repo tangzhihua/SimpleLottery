@@ -1,5 +1,5 @@
 //
-//  DomainProtocolNetHelperOfMKNetworkKitSingleton.h
+//  DomainBeanNetworkEngineSingleton.h
 //  ruyicai
 //
 //  Created by tangzhihua on 13-6-6.
@@ -27,7 +27,8 @@
  
  */
 
-
+// 空闲状态下的网络索引
+#define NETWORK_REQUEST_ID_OF_IDLE (-2012)
 
 @class NetRequestErrorBean;
 
@@ -40,21 +41,21 @@ typedef void (^DomainNetRespondHandleInUIThreadFailedBlock)(NSUInteger requestEv
 
 
 
-@interface DomainProtocolNetHelperOfMKNetworkKitSingleton : NSObject {
+@interface DomainBeanNetworkEngineSingleton : NSObject {
   
 }
 
 
-+ (DomainProtocolNetHelperOfMKNetworkKitSingleton *) sharedInstance;
++ (DomainBeanNetworkEngineSingleton *) sharedInstance;
 
 
-
+/*
 - (NSInteger) requestDomainProtocolWithRequestDomainBean:(id) netRequestDomainBean
 																						requestEvent:(NSUInteger) requestEventEnum
 														extraHttpRequestParameterMap:(NSDictionary *) extraHttpRequestParameterMap
 																					successedBlock:(DomainNetRespondHandleInUIThreadSuccessedBlock) successedBlock
 																						 failedBlock:(DomainNetRespondHandleInUIThreadFailedBlock) failedBlock;
-
+*/
 - (NSInteger) requestDomainProtocolWithRequestDomainBean:(id) netRequestDomainBean
 																						requestEvent:(NSUInteger) requestEventEnum
 																					successedBlock:(DomainNetRespondHandleInUIThreadSuccessedBlock) successedBlock

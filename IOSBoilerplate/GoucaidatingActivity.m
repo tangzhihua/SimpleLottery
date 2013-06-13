@@ -23,7 +23,7 @@
 
 #import "CustomControlDelegate.h"
 
-@interface GoucaidatingActivity () <UITableViewDelegate, UITableViewDataSource, IDomainNetRespondCallback, CustomControlDelegate, UIAlertViewDelegate>
+@interface GoucaidatingActivity () <UITableViewDelegate, UITableViewDataSource, CustomControlDelegate, UIAlertViewDelegate>
 
 // 彩票列表 - cell 对应的 nib
 @property (nonatomic, strong) UINib *lotteryListTableCellNib;
@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
 		// Custom initialization
-		self.netRequestIndexForLotterySalesStatus = IDLE_NETWORK_REQUEST_ID;
+		self.netRequestIndexForLotterySalesStatus = NETWORK_REQUEST_ID_OF_IDLE;
 		
 		// 初始化 彩票列表所有的cell
 		[self initCellArrayOfLotteryList];
@@ -113,7 +113,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 -(void)onResume {
   PRPLog(@"--> onResume ");
   if (self.lotterySalesStatusNetRespondBean == nil) {
-		if (self.netRequestIndexForLotterySalesStatus == IDLE_NETWORK_REQUEST_ID) {
+		if (self.netRequestIndexForLotterySalesStatus == NETWORK_REQUEST_ID_OF_IDLE) {
 			[self requestLotterySalesStatus];
 		}
 	}
@@ -129,8 +129,9 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   
   [SVProgressHUD dismiss];
   
-  [[DomainProtocolNetHelperSingleton sharedInstance] cancelAllNetRequestWithThisNetRespondDelegate:self];
-  self.netRequestIndexForLotterySalesStatus = IDLE_NETWORK_REQUEST_ID;
+	[[DomainBeanNetworkEngineSingleton sharedInstance] cancelNetRequestByRequestIndex:self.netRequestIndexForLotterySalesStatus];
+	
+  self.netRequestIndexForLotterySalesStatus = NETWORK_REQUEST_ID_OF_IDLE;
 }
 
 - (void) onActivityResult:(int) requestCode
@@ -283,7 +284,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   for (LotteryListTableCell *cell in self.cellArrayOfLotteryList) {
     CurrentIssueCountDown *currentIssueCountDown = [[CurrentLotteryIssueCountDownManager sharedInstance].currentIssueCountDownBeanList objectForKey:cell.lotteryKey];
     if (currentIssueCountDown != nil) {
-       
+			
       [currentIssueCountDown removeObserver:cell forKeyPath:k_CurrentIssueCountDown_countDownSecond];
       [currentIssueCountDown removeObserver:cell forKeyPath:k_CurrentIssueCountDown_isNetworkDisconnected];
       [currentIssueCountDown removeObserver:cell forKeyPath:k_CurrentIssueCountDown_netRequestIndex];
@@ -333,10 +334,34 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   //
   LotterySalesStatusNetRequestBean *netRequestBean = [[LotterySalesStatusNetRequestBean alloc] init];
   NSInteger netRequestIndex
-  = [[DomainProtocolNetHelperSingleton sharedInstance] requestDomainProtocolWithContext:self
-                                                                   andRequestDomainBean:netRequestBean
-                                                                        andRequestEvent:kNetRequestTagEnum_LotterySalesStatus
-                                                                     andRespondDelegate:self];
+  = [[DomainBeanNetworkEngineSingleton sharedInstance] requestDomainProtocolWithRequestDomainBean:netRequestBean requestEvent:kNetRequestTagEnum_LotterySalesStatus successedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, id respondDomainBean) {
+		[self clearNetRequestIndexByRequestEvent:requestEvent];
+		
+		if (requestEvent == kNetRequestTagEnum_LotterySalesStatus) {// 彩票销售状态
+			LotterySalesStatusNetRespondBean *lotterySalesStatusNetRespondBean = respondDomainBean;
+			
+			PRPLog(@"%@", lotterySalesStatusNetRespondBean);
+			
+			// 刷新 推荐城市 TableView
+			Message *msg = [Message obtain];
+			msg.what = kHandlerMsgTypeEnum_GetLotterySalesStatusSuccessful;
+			[msg.data setObject:lotterySalesStatusNetRespondBean
+									 forKey:[NSNumber numberWithUnsignedInteger:kHandlerExtraDataTypeEnum_LotterySalesStatusNetRespondBean]];
+			[self handleMessage:msg];
+		}
+		
+	} failedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, NetRequestErrorBean *error) {
+		[self clearNetRequestIndexByRequestEvent:requestEvent];
+		
+		Message *msg = [Message obtain];
+    msg.what = kHandlerMsgTypeEnum_ShowNetErrorMessage;
+    [msg.data setObject:error.message
+                 forKey:[NSNumber numberWithUnsignedInteger:kHandlerExtraDataTypeEnum_NetErrorMessage]];
+    [msg.data setObject:[NSNumber numberWithUnsignedInteger:requestEvent]
+                 forKey:[NSNumber numberWithUnsignedInteger:kHandlerExtraDataTypeEnum_NetRequestTag]];
+		[self handleMessage:msg];
+    
+	}];
   
   return netRequestIndex;
 }
@@ -393,47 +418,8 @@ typedef enum {
 
 - (void) clearNetRequestIndexByRequestEvent:(NSUInteger) requestEvent {
   if (kNetRequestTagEnum_LotterySalesStatus == requestEvent) {
-    _netRequestIndexForLotterySalesStatus = IDLE_NETWORK_REQUEST_ID;
+    _netRequestIndexForLotterySalesStatus = NETWORK_REQUEST_ID_OF_IDLE;
   }
 }
 
-/**
- * 此方法处于非UI线程中
- *
- * @param requestEvent
- * @param errorBean
- * @param respondDomainBean
- */
-- (void) domainNetRespondHandleInNonUIThread:(in NSUInteger) requestEvent
-														 netRequestIndex:(in NSInteger) netRequestIndex
-                                   errorBean:(in NetErrorBean *) errorBean
-                           respondDomainBean:(in id) respondDomainBean {
-  
-  [self clearNetRequestIndexByRequestEvent:requestEvent];
-  
-  if (errorBean.errorType != NET_ERROR_TYPE_SUCCESS) {
-    Message *msg = [Message obtain];
-    msg.what = kHandlerMsgTypeEnum_ShowNetErrorMessage;
-    [msg.data setObject:errorBean.errorMessage
-                 forKey:[NSNumber numberWithUnsignedInteger:kHandlerExtraDataTypeEnum_NetErrorMessage]];
-    [msg.data setObject:[NSNumber numberWithUnsignedInteger:requestEvent]
-                 forKey:[NSNumber numberWithUnsignedInteger:kHandlerExtraDataTypeEnum_NetRequestTag]];
-    [self performSelectorOnMainThread:@selector(handleMessage:) withObject:msg waitUntilDone:NO];
-    
-    return;
-  }
-  
-  if (requestEvent == kNetRequestTagEnum_LotterySalesStatus) {// 彩票销售状态
-    LotterySalesStatusNetRespondBean *lotterySalesStatusNetRespondBean = respondDomainBean;
-    
-		PRPLog(@"%@", lotterySalesStatusNetRespondBean);
-		
-    // 刷新 推荐城市 TableView
-    Message *msg = [Message obtain];
-    msg.what = kHandlerMsgTypeEnum_GetLotterySalesStatusSuccessful;
-    [msg.data setObject:lotterySalesStatusNetRespondBean
-                 forKey:[NSNumber numberWithUnsignedInteger:kHandlerExtraDataTypeEnum_LotterySalesStatusNetRespondBean]];
-    [self performSelectorOnMainThread:@selector(handleMessage:) withObject:msg waitUntilDone:NO];
-  }
-}
 @end

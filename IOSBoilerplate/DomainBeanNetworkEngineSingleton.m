@@ -1,12 +1,12 @@
 //
-//  DomainProtocolNetHelperOfMKNetworkKitSingleton.m
+//  DomainBeanNetworkEngineSingleton.m
 //  ruyicai
 //
 //  Created by tangzhihua on 13-6-6.
 //
 //
 
-#import "DomainProtocolNetHelperOfMKNetworkKitSingleton.h"
+#import "DomainBeanNetworkEngineSingleton.h"
 
 #import "IDomainBeanAbstractFactory.h"
 #import "IParseDomainBeanToDataDictionary.h"
@@ -15,15 +15,9 @@
 #import "INetRequestEntityDataPackage.h"
 #import "HttpNetworkEngineParameterEnum.h"
 #import "SimpleCookieSingleton.h"
-#import "NetRequestEvent.h"
-#import "DomainBeanNetThread.h"
-#import "NetErrorBean.h"
-#import "NetErrorTypeEnum.h"
-#import "NetRespondEvent.h"
 #import "INetRespondRawEntityDataUnpack.h"
 #import "NetEntityDataToolsFactoryMethodSingleton.h"
 #import "IServerRespondDataTestNew.h"
-#import "IDomainNetRespondCallback.h"
 #import "IParseNetRespondStringToDomainBean.h"
 
 
@@ -45,7 +39,7 @@
 
 
 
-@interface DomainProtocolNetHelperOfMKNetworkKitSingleton()
+@interface DomainBeanNetworkEngineSingleton()
 
 // 网络引擎
 @property (nonatomic, strong) MKNetworkEngine *networkEngine;
@@ -63,7 +57,7 @@
 
 
 
-@implementation DomainProtocolNetHelperOfMKNetworkKitSingleton
+@implementation DomainBeanNetworkEngineSingleton
 
 
 
@@ -95,8 +89,8 @@
   return self;
 }
 
-+ (DomainProtocolNetHelperOfMKNetworkKitSingleton *) sharedInstance {
-  static DomainProtocolNetHelperOfMKNetworkKitSingleton *singletonInstance = nil;
++ (DomainBeanNetworkEngineSingleton *) sharedInstance {
+  static DomainBeanNetworkEngineSingleton *singletonInstance = nil;
   static dispatch_once_t pred;
   dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;
@@ -122,7 +116,7 @@
   
   
   
-  NSInteger returnValue = IDLE_NETWORK_REQUEST_ID;
+  NSInteger returnValue = NETWORK_REQUEST_ID_OF_IDLE;
 	const NSInteger netRequestIndex = ++_netRequestIndexCounter;
 	
 	PRPLog(@" ");
@@ -308,7 +302,7 @@
       if (serverRespondDataError.errorCode != 200) {
         failedBlock(requestEventEnum, netRequestIndex, serverRespondDataError);
       } else {
-        successedBlock(requestEventEnum, netRequestIndex, domainBeanAbstractFactoryObject);
+        successedBlock(requestEventEnum, netRequestIndex, netRespondDomainBean);
       }
       
       // 删除本地缓存的 MKNetworkOperation
@@ -361,7 +355,7 @@
  */
 - (void) cancelNetRequestByRequestIndex:(NSInteger) netRequestIndex {
   do {
-    if (netRequestIndex == IDLE_NETWORK_REQUEST_ID) {
+    if (netRequestIndex == NETWORK_REQUEST_ID_OF_IDLE) {
       break;
     }
     

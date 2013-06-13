@@ -51,10 +51,8 @@
 #import "SimpleLocationHelperForBaiduLBS.h"
 
 // DomainBean
-#import "IDomainNetRespondCallback.h"
-#import "DomainProtocolNetHelperSingleton.h"
-#import "NetErrorBean.h"
-#import "NetErrorTypeEnum.h"
+#import "DomainBeanNetworkEngineSingleton.h"
+#import "NetRequestErrorBean.h"
 
 // UI Mediator
 #import "Message.h"
@@ -64,7 +62,7 @@
 #import "IntentFilter.h"
 
 // 第三方库
-#import "AFNetworking.h"
+ 
 #import "SVProgressHUD.h"
 #import "UIDevice-Hardware.h"
 

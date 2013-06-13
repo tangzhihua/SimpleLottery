@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Command.h"
-@interface CommandForGetImportantInfoFromServer : Activity <Command, IDomainNetRespondCallback>
+@interface CommandForGetImportantInfoFromServer : Activity <Command>
 +(id)commandForGetImportantInfoFromServer;
 @end

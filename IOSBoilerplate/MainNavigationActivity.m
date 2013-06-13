@@ -102,12 +102,12 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-  //if ([DeviceInformation isIPhone5]) {
+  if ([DeviceInformation isIPhone5]) {
     // 这里决不能设成 autorelease 的, 网上的代码就是 autorelease的, 4.3系统会崩溃, 因为被自动释放了
-    //self = [super initWithNibName:@"MainNavigationActivity_iphone5" bundle:nibBundleOrNil];
-  //} else {
+    self = [super initWithNibName:@"MainNavigationActivity_iphone5" bundle:nibBundleOrNil];
+  } else {
     self = [super initWithNibName:@"MainNavigationActivity" bundle:nibBundleOrNil];
-  //}
+  }
   
   if (self) {
     // Custom initialization

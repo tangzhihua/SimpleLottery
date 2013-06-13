@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Command.h"
-@interface CommandForUserAutoLogin : NSObject <Command, IDomainNetRespondCallback> {
+@interface CommandForUserAutoLogin : NSObject <Command> {
   
 }
 

@@ -59,25 +59,55 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
  
  */
 -(void)execute {
-  if (!_isExecuted) {
-		_isExecuted = YES;
+  if (!self.isExecuted) {
+		self.isExecuted = YES;
 		
     [self userAutoLoginRequest];
   }
 }
 
-static CommandForUserAutoLogin *singletonInstance = nil;
-+(id)commandForUserAutoLogin {
-  if (nil == singletonInstance) {
-    singletonInstance = [[CommandForUserAutoLogin alloc] init];
-    singletonInstance.isExecuted = NO;
-    singletonInstance.netRequestIndexForUserLogin = IDLE_NETWORK_REQUEST_ID;
+#pragma mark -
+#pragma mark 单例方法群
+
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  RNAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
+
+// 真正的(私有)init方法
+-(id)initSingleton {
+  self = [super init];
+  if ((self = [super init])) {
+    // 初始化代码
+    _isExecuted = NO;
+		_netRequestIndexForUserLogin = NETWORK_REQUEST_ID_OF_IDLE;
   }
+  
+  return self;
+}
+
++(id)commandForUserAutoLogin {
+	
+  static CommandForUserAutoLogin *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initSingleton];});
   return singletonInstance;
 }
 
+
 #pragma mark -
 #pragma mark 用户自动登录
+
+//
+- (void) clearNetRequestIndexByRequestEvent:(NSUInteger) requestEvent {
+  if (kNetRequestTagEnum_UserLogin == requestEvent) {
+    _netRequestIndexForUserLogin = NETWORK_REQUEST_ID_OF_IDLE;
+  }
+}
 
 -(void)userAutoLoginRequest{
   [GlobalDataCacheForNeedSaveToFileSystem readUserLoginInfoToGlobalDataCacheForMemorySingleton];
@@ -94,69 +124,43 @@ static CommandForUserAutoLogin *singletonInstance = nil;
     }
 		
 		
-    LogonNetRequestBean *logonNetRequestBean
+    LogonNetRequestBean *netRequestBean
     = [LogonNetRequestBean logonNetRequestBeanWithPhonenum:@"18610013076" password:@"111111" isAutoLogin:YES];
     
-    _netRequestIndexForUserLogin
-    = [[DomainProtocolNetHelperSingleton sharedInstance] requestDomainProtocolWithContext:self
-                                                                     andRequestDomainBean:logonNetRequestBean
-                                                                          andRequestEvent:kNetRequestTagEnum_UserLogin
-                                                                       andRespondDelegate:self];
+    self.netRequestIndexForUserLogin
+    = [[DomainBeanNetworkEngineSingleton sharedInstance] requestDomainProtocolWithRequestDomainBean:netRequestBean requestEvent:kNetRequestTagEnum_UserLogin successedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, id respondDomainBean) {
+			[self clearNetRequestIndexByRequestEvent:requestEvent];
+			
+			if (requestEvent == kNetRequestTagEnum_UserLogin) {
+				PRPLog(@"自动登录成功!");
+				
+				UserLoggedInfo *userLoggedInfo = (UserLoggedInfo *) respondDomainBean;
+				PRPLog(@"%@", userLoggedInfo);
+				
+				// 如果 全局变量缓存区中已经有 "用户登录网络响应业务Bean", 证明用户再次登录了, 启动App时的自动登录不能覆盖用户自己登录的账户信息
+				if ([GlobalDataCacheForMemorySingleton sharedInstance].userLoggedInfo == nil) {
+					
+					
+					// 保存用户成功登录后的信息
+					
+					NSString *username = [GlobalDataCacheForMemorySingleton sharedInstance].usernameForLastSuccessfulLogon;
+					NSString *password = [GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon;
+					[ToolsFunctionForThisProgect noteLogonSuccessfulInfoWithUserLoggedInfo:userLoggedInfo usernameForLastSuccessfulLogon:username passwordForLastSuccessfulLogon:password];
+					
+					
+				}
+				
+			}
+			
+		} failedBlock:^(NSUInteger requestEvent, NSInteger netRequestIndex, NetRequestErrorBean *error) {
+			[self clearNetRequestIndexByRequestEvent:requestEvent];
+		}];
 		
 		
   } while (NO);
 }
 
-#pragma mark -
-#pragma mark 实现 IDomainNetRespondCallback 接口
 
-//
-- (void) clearNetRequestIndexByRequestEvent:(NSUInteger) requestEvent {
-  if (kNetRequestTagEnum_UserLogin == requestEvent) {
-    _netRequestIndexForUserLogin = IDLE_NETWORK_REQUEST_ID;
-  }
-}
 
-/**
- * 此方法处于非UI线程中
- *
- * @param requestEvent
- * @param errorBean
- * @param respondDomainBean
- */
-- (void) domainNetRespondHandleInNonUIThread:(in NSUInteger) requestEvent
-														 netRequestIndex:(in NSInteger) netRequestIndex
-                                   errorBean:(in NetErrorBean *) errorBean
-                           respondDomainBean:(in id) respondDomainBean {
-  
-  PRPLog(@"domainNetRespondHandleInNonUIThread --- start ! ");
-  
-  [self clearNetRequestIndexByRequestEvent:requestEvent];
-  
-  if (errorBean.errorType != NET_ERROR_TYPE_SUCCESS) {
-    return;
-  }
-  
-  if (requestEvent == kNetRequestTagEnum_UserLogin) {
-    PRPLog(@"自动登录成功!");
-    
-    UserLoggedInfo *userLoggedInfo = (UserLoggedInfo *) respondDomainBean;
-    PRPLog(@"%@", userLoggedInfo);
-    
-    // 如果 全局变量缓存区中已经有 "用户登录网络响应业务Bean", 证明用户再次登录了, 启动App时的自动登录不能覆盖用户自己登录的账户信息
-    if ([GlobalDataCacheForMemorySingleton sharedInstance].userLoggedInfo == nil) {
-			
-			
-      // 保存用户成功登录后的信息
-			 
-      NSString *username = [GlobalDataCacheForMemorySingleton sharedInstance].usernameForLastSuccessfulLogon;
-      NSString *password = [GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon;
-      [ToolsFunctionForThisProgect noteLogonSuccessfulInfoWithUserLoggedInfo:userLoggedInfo usernameForLastSuccessfulLogon:@"18610013076" passwordForLastSuccessfulLogon:@"111111"];
-			  
-      
-    }
-    
-  }
-  
-}
+
 @end

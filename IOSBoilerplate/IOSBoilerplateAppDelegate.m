@@ -40,6 +40,8 @@
 
 #import "GlobalDataCacheForDataDictionarySingleton.h"
 
+#import "CurrentLotteryIssueCountDownManager.h"
+
 // git 忽略文件指令 : git rm --cached 文件名
 
 #import "DDLog.h"
@@ -252,6 +254,10 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 // 当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可
 - (void)applicationDidEnterBackground:(UIApplication *)application {
   PRPLog(@">>>>>>>>>>>>>>     applicationDidEnterBackground:      <<<<<<<<<<<<<<<<<");
+  
+  // 停止 彩票当期期号到期倒计时观察者
+  [[CurrentLotteryIssueCountDownManager sharedInstance] stopCountDownObserver];
+  
   // 在这里保存那些需要固化到文件系统的数据
   [GlobalDataCacheForNeedSaveToFileSystem saveAllCacheDataToFileSystem];
 }
@@ -259,6 +265,11 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 // 当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反。
 - (void)applicationWillEnterForeground:(UIApplication *)application {
   PRPLog(@">>>>>>>>>>>>>>     applicationWillEnterForeground:      <<<<<<<<<<<<<<<<<");
+  
+  // 重置 彩票当期期号到期倒计时观察者
+  // 一旦进入后台后, Timer会自动停止, 所以从后台返回前台后, 要重置 "倒计时观察管理器"
+  [[CurrentLotteryIssueCountDownManager sharedInstance] resetObserver];
+  
 }
 #pragma mark 5) 当应用程序将要进入非活动状态时执行，在此期间，应用程序不接收消息或事件，比如来电话了
 - (void)applicationDidBecomeActive:(UIApplication *)application {

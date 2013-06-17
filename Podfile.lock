@@ -7,6 +7,7 @@ PODS:
     - Reachability (~> 3.1.0)
   - Reachability (3.1.0)
   - RegexKitLite (4.0)
+  - RNTimer (0.0.1)
   - SVProgressHUD (0.9)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - JSONKit (= 1.5pre)
   - MKNetworkKit (= 0.87)
   - RegexKitLite
+  - RNTimer (= 0.0.1)
   - SVProgressHUD (= 0.9)
 
 SPEC CHECKSUMS:
@@ -26,6 +28,7 @@ SPEC CHECKSUMS:
   MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
   Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
   RegexKitLite: 293ff6f3cf8f34277989a37802162c6961a2b35a
+  RNTimer: 4d7ca0b4de6a1a9f525ebc529dfd4e5a1952a247
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
 
 COCOAPODS: 0.20.2

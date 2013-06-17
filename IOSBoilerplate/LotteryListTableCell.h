@@ -8,10 +8,10 @@
 
 #import "PRPNibBasedTableViewCell.h"
 #import "MacroConstantForThisProject.h"
-#import "ICurrentIssueCountDownEventReceiver.h"
+ 
 
 @class LotteryDictionary;
-@interface LotteryListTableCell : PRPNibBasedTableViewCell <ICurrentIssueCountDownEventReceiver>{
+@interface LotteryListTableCell : PRPNibBasedTableViewCell {
 	
 }
 

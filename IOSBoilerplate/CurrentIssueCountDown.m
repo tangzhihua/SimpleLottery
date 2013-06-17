@@ -33,8 +33,7 @@ static const int kCountDownSecondOfRerequestNetworkMax = 30;
 		// 复位网络请求索引
 		_netRequestIndex = NETWORK_REQUEST_ID_OF_IDLE;
 		
-		//
-		_observerList = [[NSMutableSet alloc] init];
+ 
 	}
 }
 
@@ -54,11 +53,11 @@ static const int kCountDownSecondOfRerequestNetworkMax = 30;
 #pragma mark 重置 网络不通时, 重新联网倒计时相关数据
 -(void)resetCountDownOfNetworkDisconnected {
 	self.isNetworkDisconnected = NO;
-	[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_isNetworkDisconnected];
+ 
 	self.countDownSecondOfRerequestNetwork = kCountDownSecondOfRerequestNetworkMax;
-	[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_countDownSecondOfRerequestNetwork];
+	 
 	self.netRequestIndex = NETWORK_REQUEST_ID_OF_IDLE;
-	[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_netRequestIndex];
+	 
 }
 
 #pragma mark -
@@ -73,46 +72,5 @@ static const int kCountDownSecondOfRerequestNetworkMax = 30;
 
 
 
-
-// 这里是手动添加观察者的代码
--(void)setCountDownSecond:(NSInteger)newValue{
-	if (_countDownSecond != newValue) {
-		[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_countDownSecond];
-	}
-	
-	_countDownSecond = newValue;
-}
--(void)setNetRequestIndex:(NSInteger)newValue{
-	if (_netRequestIndex != newValue) {
-		[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_netRequestIndex];
-	}
-	
-	_netRequestIndex = newValue;
-}
--(void)setIsNetworkDisconnected:(BOOL)newValue{
-	if (_isNetworkDisconnected != newValue) {
-		[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_isNetworkDisconnected];
-	}
-	
-	_isNetworkDisconnected = newValue;
-}
--(void)setCountDownSecondOfRerequestNetwork:(NSInteger)newValue{
-	if (_countDownSecondOfRerequestNetwork != newValue) {
-		[self notifyObserversWithEventEnum:kCurrentIssueCountDownEventEnum_countDownSecondOfRerequestNetwork];
-	}
-	
-	_countDownSecondOfRerequestNetwork = newValue;
-}
-
--(void)addObserver:(id<ICurrentIssueCountDownEventReceiver>)observer {
-	[self.observerList addObject:observer];
-}
--(void)removeObserver:(id<ICurrentIssueCountDownEventReceiver>)observer {
-	[self.observerList removeObject:observer];
-}
--(void)notifyObserversWithEventEnum:(CurrentIssueCountDownEventEnum)eventEnum {
-	for (id<ICurrentIssueCountDownEventReceiver> observer in self.observerList) {
-    [observer currentIssueCountDownEventReceiverWithEventEnum:eventEnum currentIssueCountDownBean:self];
-	}
-}
+ 
 @end

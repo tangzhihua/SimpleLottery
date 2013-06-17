@@ -807,7 +807,6 @@
 		6846EA3A17217E2F006CA7B0 /* VersionNetRespondBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionNetRespondBean.m; sourceTree = "<group>"; };
 		6846EA5717219673006CA7B0 /* main_background_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_background_image@2x.png"; sourceTree = "<group>"; };
 		6846EA5A17219673006CA7B0 /* title_bar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title_bar_background@2x.png"; sourceTree = "<group>"; };
-		684E6A371763665900D7CE60 /* ICurrentIssueCountDownEventReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICurrentIssueCountDownEventReceiver.h; sourceTree = "<group>"; };
 		68A347651768B40500634237 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainWindow.xib"; sourceTree = "<group>"; };
 		68A347661768B40500634237 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		68A347671768B40500634237 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -2052,7 +2051,6 @@
 				6844059C173E5AC700FD90DB /* CommandForStartCurrentLotteryIssueCountDownManager.m */,
 				6844059E173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.h */,
 				6844059F173E637E00FD90DB /* CurrentLotteryIssueCountDownManager.m */,
-				684E6A371763665900D7CE60 /* ICurrentIssueCountDownEventReceiver.h */,
 			);
 			name = "启动彩票排期倒计时检测";
 			sourceTree = "<group>";

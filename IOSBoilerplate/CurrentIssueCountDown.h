@@ -8,16 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ICurrentIssueCountDownEventReceiver.h"
- 
-typedef NS_ENUM(NSInteger, CurrentIssueCountDownEventEnum) {
-  kCurrentIssueCountDownEventEnum_countDownSecond = 0,              // 正常倒计时通知
-	kCurrentIssueCountDownEventEnum_netRequestIndex,                  // 标示当前正在请求网络
-	kCurrentIssueCountDownEventEnum_isNetworkDisconnected,            // 当前网络是否联通
-	kCurrentIssueCountDownEventEnum_countDownSecondOfRerequestNetwork // 网络连不通时倒计时通知
-};
-
-
 @class LotteryIssueInfo;
 @class LotteryDictionary;
 @interface CurrentIssueCountDown : NSObject {
@@ -56,8 +46,5 @@ typedef NS_ENUM(NSInteger, CurrentIssueCountDownEventEnum) {
 
 
 
-// 这里是手动添加观察者的代码
-@property (nonatomic, readonly, strong) NSMutableSet *observerList;
--(void)addObserver:(id<ICurrentIssueCountDownEventReceiver>)observer;
--(void)removeObserver:(id<ICurrentIssueCountDownEventReceiver>)observer;
+
 @end

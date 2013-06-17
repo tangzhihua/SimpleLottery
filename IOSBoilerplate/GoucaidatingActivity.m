@@ -262,19 +262,19 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
       [currentIssueCountDown addObserver:cell
                               forKeyPath:k_CurrentIssueCountDown_countDownSecond
                                  options:NSKeyValueObservingOptionNew
-                                 context:NULL];
+                                 context:(__bridge void *)cell];
 			[currentIssueCountDown addObserver:cell
                               forKeyPath:k_CurrentIssueCountDown_isNetworkDisconnected
                                  options:NSKeyValueObservingOptionNew
-                                 context:NULL];
+                                 context:(__bridge void *)cell];
 			[currentIssueCountDown addObserver:cell
                               forKeyPath:k_CurrentIssueCountDown_netRequestIndex
                                  options:NSKeyValueObservingOptionNew
-                                 context:NULL];
+                                 context:(__bridge void *)cell];
 			[currentIssueCountDown addObserver:cell
                               forKeyPath:k_CurrentIssueCountDown_countDownSecondOfRerequestNetwork
                                  options:NSKeyValueObservingOptionNew
-                                 context:NULL];
+                                 context:(__bridge void *)cell];
       
     }
   }

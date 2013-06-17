@@ -12,7 +12,7 @@
 #import "CurrentLotteryIssueCountDownManager.h"
 #import "LotteryIssueInfo.h"
 #import "ToolsFunctionForThisProgect.h"
- 
+
 #import "NSString+isEmpty.h"
 #import "CurrentIssueCountDownDatabaseFieldsConstant.h"
 #import "LotteryDictionary.h"
@@ -63,33 +63,41 @@ static UIImage *kLotterySaleStatusImageOfKaijiangAndJiajiang = nil;
 										 ofObject:(id)object
 											 change:(NSDictionary *)change
 											context:(void *)context {
+  
+  if ((__bridge id)context == self) {// Our notification, not our superclass’s
+    
+    NSString *text = nil;
+    CurrentIssueCountDown *currentIssueCountDown = object;
+    currentIssueCountDown = [[CurrentLotteryIssueCountDownManager sharedInstance].currentIssueCountDownBeanList objectForKey:currentIssueCountDown.lotteryDictionary.key];
+    if([keyPath isEqualToString:k_CurrentIssueCountDown_countDownSecond]) {
+      
+      if (currentIssueCountDown.countDownSecond > 0) {
+        NSString *dateString = [ToolsFunctionForThisProgect formatSecondToDayHourMinuteSecond:[NSNumber numberWithInteger:currentIssueCountDown.countDownSecond]];
+        text = [NSString stringWithFormat:@"距离%@期截止:%@", currentIssueCountDown.lotteryIssueInfo.batchcode, dateString];
+      }
+      
+    } else if ([keyPath isEqualToString:k_CurrentIssueCountDown_isNetworkDisconnected]) {
+      if (currentIssueCountDown.isNetworkDisconnected) {
+        text = [NSString stringWithFormat:@"网络异常, %d秒钟重新请求.", currentIssueCountDown.countDownSecondOfRerequestNetwork];
+      }
+      
+    } else if ([keyPath isEqualToString:k_CurrentIssueCountDown_netRequestIndex]) {
+      text = @"彩期获取中,请稍等...";
+    } else if ([keyPath isEqualToString:k_CurrentIssueCountDown_countDownSecondOfRerequestNetwork]) {
+      if (currentIssueCountDown.isNetworkDisconnected && currentIssueCountDown.countDownSecondOfRerequestNetwork > 0) {
+        text = [NSString stringWithFormat:@"网络异常, %d秒钟重新请求.", currentIssueCountDown.countDownSecondOfRerequestNetwork];
+      }
+    }
+    
+    if (![NSString isEmpty:text]) {
+      self.countdownForCurrentIssueToEnd.text = text;
+    }
+  } else {
+    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+  }
+  
 	
-	NSString *text = nil;
-	CurrentIssueCountDown *currentIssueCountDown = object;
-	currentIssueCountDown = [[CurrentLotteryIssueCountDownManager sharedInstance].currentIssueCountDownBeanList objectForKey:currentIssueCountDown.lotteryDictionary.key];
-	if([keyPath isEqualToString:k_CurrentIssueCountDown_countDownSecond]) {
-		
-		if (currentIssueCountDown.countDownSecond > 0) {
-			NSString *dateString = [ToolsFunctionForThisProgect formatSecondToDayHourMinuteSecond:[NSNumber numberWithInteger:currentIssueCountDown.countDownSecond]];
-			text = [NSString stringWithFormat:@"距离%@期截止:%@", currentIssueCountDown.lotteryIssueInfo.batchcode, dateString];
-		}
-		
-	} else if ([keyPath isEqualToString:k_CurrentIssueCountDown_isNetworkDisconnected]) {
-		if (currentIssueCountDown.isNetworkDisconnected) {
-			text = [NSString stringWithFormat:@"网络异常, %d秒钟重新请求.", currentIssueCountDown.countDownSecondOfRerequestNetwork];
-		}
-		
-	} else if ([keyPath isEqualToString:k_CurrentIssueCountDown_netRequestIndex]) {
-		text = @"彩期获取中,请稍等...";
-	} else if ([keyPath isEqualToString:k_CurrentIssueCountDown_countDownSecondOfRerequestNetwork]) {
-		if (currentIssueCountDown.isNetworkDisconnected && currentIssueCountDown.countDownSecondOfRerequestNetwork > 0) {
-			text = [NSString stringWithFormat:@"网络异常, %d秒钟重新请求.", currentIssueCountDown.countDownSecondOfRerequestNetwork];
-		}
-	}
 	
-	if (![NSString isEmpty:text]) {
-		self.countdownForCurrentIssueToEnd.text = text;
-	}
 	
 }
 

@@ -28,8 +28,9 @@
 #import "MKNetworkEngine.h"
 
 #import <objc/runtime.h>
+#import "LocalCacheDataPathConstant.h"
 
-static MKNetworkEngine *DefaultEngine;
+
 static char imageFetchOperationKey;
 
 const float kFromCacheAnimationDuration = 0.1f;
@@ -41,6 +42,13 @@ const float kFreshLoadAnimationDuration = 0.35f;
 
 @implementation UIImageView (MKNetworkKitAdditions)
 
+static MKNetworkEngine *_networkEngine;
+-(MKNetworkEngine *)networkEngine{
+	if (_networkEngine == nil) {
+		_networkEngine = [[DownloadTableViewIconsNetworkEngine alloc] init];
+	}
+	return _networkEngine;
+}
 -(MKNetworkOperation*) imageFetchOperation {
   
   return (MKNetworkOperation*) objc_getAssociatedObject(self, &imageFetchOperationKey);
@@ -51,11 +59,6 @@ const float kFreshLoadAnimationDuration = 0.35f;
   objc_setAssociatedObject(self, &imageFetchOperationKey, imageFetchOperation, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-+(void) setDefaultEngine:(MKNetworkEngine*) engine {
-  
-  DefaultEngine = engine;
-}
-
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url {
   
   return [self setImageFromURL:url placeHolderImage:nil];
@@ -63,19 +66,19 @@ const float kFreshLoadAnimationDuration = 0.35f;
 
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image {
   
-  return [self setImageFromURL:url placeHolderImage:image usingEngine:DefaultEngine animation:YES];
+  return [self setImageFromURL:url placeHolderImage:image usingEngine:self.networkEngine animation:YES];
 }
 
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image animation:(BOOL) yesOrNo {
   
-  return [self setImageFromURL:url placeHolderImage:image usingEngine:DefaultEngine animation:yesOrNo];
+  return [self setImageFromURL:url placeHolderImage:image usingEngine:self.networkEngine animation:yesOrNo];
 }
 
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image usingEngine:(MKNetworkEngine*) imageCacheEngine animation:(BOOL) animation {
   
   if(image) self.image = image;
   [self.imageFetchOperation cancel];
-  if(!imageCacheEngine) imageCacheEngine = DefaultEngine;
+  if(!imageCacheEngine) imageCacheEngine = self.networkEngine;
   
   if(imageCacheEngine) {
     self.imageFetchOperation = [imageCacheEngine imageAtURL:url
@@ -104,4 +107,15 @@ const float kFreshLoadAnimationDuration = 0.35f;
   
   return self.imageFetchOperation;
 }
+
+
+@end
+
+@implementation DownloadTableViewIconsNetworkEngine
+
+-(NSString*) cacheDirectoryName {
+	NSString *cacheDirectoryName = [LocalCacheDataPathConstant imageCachePath];
+	return cacheDirectoryName;
+}
+
 @end

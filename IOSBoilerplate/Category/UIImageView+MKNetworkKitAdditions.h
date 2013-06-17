@@ -24,6 +24,7 @@
 //  THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "MKNetworkEngine.h"
 
 extern const float kFromCacheAnimationDuration;
 extern const float kFreshLoadAnimationDuration;
@@ -32,9 +33,14 @@ extern const float kFreshLoadAnimationDuration;
 @class MKNetworkOperation;
 
 @interface UIImageView (MKNetworkKitAdditions)
-+(void) setDefaultEngine:(MKNetworkEngine*) engine;
+//+(void) setDefaultEngine:(MKNetworkEngine*) engine;
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url;
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image;
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image animation:(BOOL) yesOrNo;
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image usingEngine:(MKNetworkEngine*) imageCacheEngine animation:(BOOL) yesOrNo;
+@end
+
+
+@interface DownloadTableViewIconsNetworkEngine : MKNetworkEngine
+
 @end

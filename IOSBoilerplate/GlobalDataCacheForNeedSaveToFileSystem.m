@@ -94,7 +94,6 @@ static NSString *const kLocalCacheDataName_IsShowAdImageFromServer        = @"Is
   BOOL isFirstStartApp = [userDefaults boolForKey:kLocalCacheDataName_FirstStartApp];
   [GlobalDataCacheForMemorySingleton sharedInstance].isFirstStartApp = isFirstStartApp;
 	
-	
   // 是否需要在启动后显示初学者指南界面
   id isNeedShowBeginnerGuideTest = [userDefaults objectForKey:kLocalCacheDataName_BeginnerGuide];
   if (nil == isNeedShowBeginnerGuideTest) {

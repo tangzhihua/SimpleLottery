@@ -16,7 +16,7 @@
 static NSString *_roomDetailCachePath = nil;
 +(NSString *)roomDetailCachePath {
   if (nil == _roomDetailCachePath) {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
    
     NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:@"RoomDetailCache"];
@@ -30,7 +30,7 @@ static NSString *_roomDetailCachePath = nil;
 static NSString *_imageCachePath = nil;
 +(NSString *)imageCachePath {
   if (nil == _imageCachePath) {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
     NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:@"ImageCache"];

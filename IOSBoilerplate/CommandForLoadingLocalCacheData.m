@@ -53,8 +53,8 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
  */
 -(void)execute {
   
-  if (!_isExecuted) {
-    _isExecuted = YES;
+  if (!self.isExecuted) {
+    self.isExecuted = YES;
 		
     // 创建本地缓存目录
     [LocalCacheDataPathConstant createLocalCacheDirectories];

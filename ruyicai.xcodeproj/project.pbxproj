@@ -1598,6 +1598,7 @@
 		58815A151603112000155B44 /* 网络框架核心代码 */ = {
 			isa = PBXGroup;
 			children = (
+				68C39BEF176F2B28009D74F9 /* MKNetworkEngineSingleton */,
 				687AC2231768B21700071D23 /* 自己写的不成熟引擎(已废弃) */,
 				D7B5ADE4176030EB002AEB14 /* DomainBeanNetworkEngineSingleton */,
 				581ED7B2167EBCEF00862985 /* DomainBeanStrategyMapping */,
@@ -2224,6 +2225,13 @@
 				68B0CC6E1734196D001661A6 /* LotteryDictionary.m */,
 			);
 			name = "彩票字典Bean";
+			sourceTree = "<group>";
+		};
+		68C39BEF176F2B28009D74F9 /* MKNetworkEngineSingleton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MKNetworkEngineSingleton;
 			sourceTree = "<group>";
 		};
 		68E744EB173F7CA400136C4B /* 彩票销售状态(今日开奖,加奖,是否停售) */ = {

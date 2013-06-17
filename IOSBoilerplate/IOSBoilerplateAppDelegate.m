@@ -252,6 +252,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 }
 #pragma mark 3) 进入后台(比如按下 home 按键)
 // 当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可
+static UIBackgroundTaskIdentifier bgTask;
 - (void)applicationDidEnterBackground:(UIApplication *)application {
   PRPLog(@">>>>>>>>>>>>>>     applicationDidEnterBackground:      <<<<<<<<<<<<<<<<<");
   
@@ -260,6 +261,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   
   // 在这里保存那些需要固化到文件系统的数据
   [GlobalDataCacheForNeedSaveToFileSystem saveAllCacheDataToFileSystem];
+
 }
 #pragma mark 4) 从后台返回前台
 // 当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反。

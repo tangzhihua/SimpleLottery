@@ -14,7 +14,7 @@
 #import "IssueQueryNetRequestBean.h"
 #import "LotteryIssueInfo.h"
  
-
+#import "RNTimer.h"
 
 
 
@@ -27,7 +27,7 @@
 
 @interface CurrentLotteryIssueCountDownManager ()
 // 倒计时 Timer
-@property (nonatomic, strong) NSTimer *timerForCountDown;
+@property (nonatomic, strong) RNTimer *timerForCountDown;
 
 // 保存哪些需要倒计时观察的 彩票
 @property (nonatomic, readwrite, strong) NSMutableDictionary *currentIssueCountDownBeanList;
@@ -140,10 +140,35 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 		 
 		 
 		 */
+    /*
 		NSRunLoop *runloop = [NSRunLoop currentRunLoop];
 		self.timerForCountDown = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
 		[runloop addTimer:self.timerForCountDown forMode:NSRunLoopCommonModes];
 		[runloop addTimer:self.timerForCountDown forMode:UITrackingRunLoopMode];
+     */
+    
+    // 这里使用了 RNTimer
+    /*
+     RNTimer
+     Simple GCD-based timer based on NSTimer. 
+     It starts immediately and stops when released. 
+     This avoids many of the typical problems with NSTimer:
+     基于GCD实现的一个计时器, 它会立刻运行, 并在释放后立刻停止. 这就避免了很多NSTimer的典型问题.
+     
+     RNTimer runs in all modes (unlike NSTimer)
+     RNTimer运行在全部的模式中(不像NSTimer)
+     RNTimer runs when there is no runloop (unlike NSTimer)
+     RNTimer运行在没有 runloop的环境中(不像NSTimer)
+     Repeating RNTimers can easily avoid retain loops (unlike NSTimer)
+     RNTimer可以很容易避免 循环引用 问题(不像NSTimer)
+     Currently there is only a simple repeating timer (since this is the most common use that's hard to do correctly with NSTimer). It always runs on the main queue.
+     当前只有一个简单的重复定时器(NSTimer很难做到这点), 它总是运行在主队列中.
+     */
+    __weak id weakSelf = self;
+    self.timerForCountDown = [RNTimer repeatingTimerWithTimeInterval:1
+                                                               block:^{
+                                                                 [weakSelf timerFireMethod];
+                                                               }];
 	}
 }
 
@@ -204,7 +229,8 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 	}
 }
 
-- (void)timerFireMethod:(NSTimer*)theTimer {
+// - (void)timerFireMethod:(NSTimer*)theTimer 这是原始NSTimer的回调方法
+- (void)timerFireMethod {// 这是使用RNTimer的回调方法
 
 	NSArray *lotteryList = [self.currentIssueCountDownBeanList allValues];
 	for (CurrentIssueCountDown *currentIssueCountDown in lotteryList) {

@@ -120,7 +120,10 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
     NSString *username = [GlobalDataCacheForMemorySingleton sharedInstance].usernameForLastSuccessfulLogon;
     NSString *password = [GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon;
     if ([NSString isEmpty:username] || [NSString isEmpty:password]) {
-      //break;
+      username = @"18610013076";
+			password = @"111111";
+			[GlobalDataCacheForMemorySingleton sharedInstance].usernameForLastSuccessfulLogon = username;
+			[GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon = password;
     }
 		
 		

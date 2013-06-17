@@ -285,6 +285,7 @@
 		68B0CC6B173406CF001661A6 /* lottery_list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68B0CC69173406CF001661A6 /* lottery_list.plist */; };
 		68B0CC6F1734196D001661A6 /* LotteryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B0CC6E1734196D001661A6 /* LotteryDictionary.m */; };
 		68B0CC701734196D001661A6 /* LotteryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B0CC6E1734196D001661A6 /* LotteryDictionary.m */; };
+		68C39BF2176F3C46009D74F9 /* MKNetworkEngineSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingleton.m */; };
 		68D384C2175B227800B9C413 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D384C1175B227800B9C413 /* Security.framework */; };
 		68E744F0173F803D00136C4B /* LotterySalesStatusNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744EF173F803D00136C4B /* LotterySalesStatusNetRequestBean.m */; };
 		68E744F3173F817800136C4B /* LotterySalesStatusNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744F2173F817800136C4B /* LotterySalesStatusNetRespondBean.m */; };
@@ -858,6 +859,8 @@
 		68B0CC6D1734196D001661A6 /* LotteryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryDictionary.h; sourceTree = "<group>"; };
 		68B0CC6E1734196D001661A6 /* LotteryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryDictionary.m; sourceTree = "<group>"; };
 		68B0CC7117341B96001661A6 /* LotteryDictionaryDatabaseFieldsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryDictionaryDatabaseFieldsConstant.h; sourceTree = "<group>"; };
+		68C39BF0176F3C46009D74F9 /* MKNetworkEngineSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngineSingleton.h; sourceTree = "<group>"; };
+		68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngineSingleton.m; sourceTree = "<group>"; };
 		68D384C1175B227800B9C413 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		68E744EA173F666600136C4B /* CurrentIssueCountDownDatabaseFieldsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentIssueCountDownDatabaseFieldsConstant.h; sourceTree = "<group>"; };
 		68E744EE173F803D00136C4B /* LotterySalesStatusNetRequestBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotterySalesStatusNetRequestBean.h; sourceTree = "<group>"; };
@@ -2230,6 +2233,8 @@
 		68C39BEF176F2B28009D74F9 /* MKNetworkEngineSingleton */ = {
 			isa = PBXGroup;
 			children = (
+				68C39BF0176F3C46009D74F9 /* MKNetworkEngineSingleton.h */,
+				68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingleton.m */,
 			);
 			name = MKNetworkEngineSingleton;
 			sourceTree = "<group>";
@@ -2841,6 +2846,7 @@
 				D768BCFC176F146800B871E3 /* Data+Helper.m in Sources */,
 				D768BCFD176F146800B871E3 /* String+Helper.m in Sources */,
 				D768BD01176F14A200B871E3 /* FastCell.m in Sources */,
+				68C39BF2176F3C46009D74F9 /* MKNetworkEngineSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2938,6 +2944,7 @@
 				PROVISIONING_PROFILE = "FAE27E8D-D642-4F50-98F5-8B66F1759399";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2961,6 +2968,7 @@
 				OTHER_LDFLAGS = "-all_load";
 				PROVISIONING_PROFILE = "FAE27E8D-D642-4F50-98F5-8B66F1759399";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2996,7 +3004,7 @@
 				PRODUCT_NAME = "简单彩票";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3032,7 +3040,7 @@
 				PRODUCT_NAME = "简单彩票";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

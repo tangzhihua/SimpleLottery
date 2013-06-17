@@ -21,7 +21,7 @@
 
 #import "LocalCacheDataPathConstant.h"
 
-
+#import "MKNetworkEngineSingleton.h"
 
 
 
@@ -33,6 +33,9 @@
 @property (nonatomic, assign) BOOL isExecuted;
 // 从服务器获取重要的信息
 @property (nonatomic, assign) NSInteger netRequestIndexForGetImportantInfoFromServer;
+
+//
+@property (nonatomic, weak) MKNetworkOperation *adImageDownloadOperation;
 @end
 
 
@@ -44,9 +47,7 @@
 
 
 
-@implementation CommandForGetImportantInfoFromServer {
-	 
-}
+@implementation CommandForGetImportantInfoFromServer
 
 //
 typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
@@ -152,30 +153,20 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 							&& ![NSString isEmpty:adImageInWelcomePageNetRespondBean.imageID]
 							&& ![adImageInWelcomePageNetRespondBean.imageID isEqualToString:[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest]) {
 						
-						// 要从服务器下载广告图片
-						NSURL *url = [NSURL URLWithString:adImageInWelcomePageNetRespondBean.imageUrl];
+						self.adImageDownloadOperation = [[MKNetworkEngineSingleton sharedInstance] operationWithURLString:adImageInWelcomePageNetRespondBean.imageUrl];
+						[self.adImageDownloadOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+							NSString *adImagePath = [[LocalCacheDataPathConstant importantDataCachePath] stringByAppendingPathComponent:kAdImageNameForWelcomePage];
+							UIImage *image = [completedOperation responseImage];
+							NSData *imageDataForPNG = UIImagePNGRepresentation(image);
+							[imageDataForPNG writeToFile:adImagePath atomically:YES];
+							
+							[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest = adImageInWelcomePageNetRespondBean.imageID;
+						} errorHandler:^(MKNetworkOperation *errorOp, NSError* error) {
+							DLog(@"下载开机广告图片失败, error=%@", error);
+							
+						}];
 						
-						//Store this image on the same server as the weather canned files
-						NSURLRequest *request = [NSURLRequest requestWithURL:url];
-						
-						/*
-						_adImageRequestOperation
-						
-						= [AFImageRequestOperation imageRequestOperationWithRequest:request
-																									 imageProcessingBlock:nil
-																																success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-																																	NSString *adImagePath = [[LocalCacheDataPathConstant importantDataCachePath] stringByAppendingPathComponent:kAdImageNameForWelcomePage];
-																																	
-																																	NSData *imageDataForPNG = UIImagePNGRepresentation(image);
-																																	[imageDataForPNG writeToFile:adImagePath atomically:YES];
-																																	
-																																	[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest = adImageInWelcomePageNetRespondBean.imageID;
-																																}
-																																failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-																																	PRPLog(@"下载开机广告图片失败, error=%@", error);
-																																}];
-						[_adImageRequestOperation start];
-						*/
+						//[[MKNetworkEngineSingleton sharedInstance] enqueueOperation:self.adImageDownloadOperation];
 					}
 				}
 			}

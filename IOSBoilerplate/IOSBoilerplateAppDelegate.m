@@ -45,8 +45,8 @@
 // git 忽略文件指令 : git rm --cached 文件名
 
 #import "DDLog.h"
-
- 
+#import "MKNetworkKit.h"
+#import "NSString+MKNetworkKitAdditions.h" 
 
 /*
  UIApplicationDelegate 代理函数调用的时间（应用程序生命周期）
@@ -237,10 +237,10 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
   
   
-  
+   
   /////
-	
-	
+	NSError *err = [NSError errorWithDomain:@"domain" code:111 userInfo:nil];
+	[UIAlertView showWithError:err];
   
   return YES;
 }
@@ -252,7 +252,6 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 }
 #pragma mark 3) 进入后台(比如按下 home 按键)
 // 当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可
-static UIBackgroundTaskIdentifier bgTask;
 - (void)applicationDidEnterBackground:(UIApplication *)application {
   PRPLog(@">>>>>>>>>>>>>>     applicationDidEnterBackground:      <<<<<<<<<<<<<<<<<");
   

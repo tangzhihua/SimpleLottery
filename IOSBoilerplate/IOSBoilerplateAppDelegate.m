@@ -237,7 +237,9 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   command = [CommandForUserAutoLogin commandForUserAutoLogin];
   [[CommandInvokerSingleton sharedInstance] runCommandWithCommandObject:command];
   
-  
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+  NSString *documentsDirectory = [paths objectAtIndex:0];
+  DLog(@"%@", documentsDirectory);
    
   /////
  

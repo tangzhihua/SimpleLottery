@@ -10,7 +10,9 @@
 
 @implementation LocalCacheDataPathConstant
 
-
++(void) initialize {
+  
+}
 
 // 房间详情 (可以被清除) : 本地缓存目录路径
 static NSString *_roomDetailCachePath = nil;
@@ -18,7 +20,7 @@ static NSString *_roomDetailCachePath = nil;
   if (nil == _roomDetailCachePath) {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-   
+    
     NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:@"RoomDetailCache"];
     _roomDetailCachePath = [fullPath copy];
   }
@@ -27,17 +29,31 @@ static NSString *_roomDetailCachePath = nil;
 }
 
 // 项目中图片缓存目录 (可以被清除)
-static NSString *_imageCachePath = nil;
-+(NSString *)imageCachePath {
-  if (nil == _imageCachePath) {
+static NSString *_thumbnailCachePath = nil;
++(NSString *)thumbnailCachePath {
+  if (nil == _thumbnailCachePath) {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
-    NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:@"ImageCache"];
-    _imageCachePath = [fullPath copy];
+    NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:@"ThumbnailCachePath"];
+    _thumbnailCachePath = [fullPath copy];
   }
   
-  return _imageCachePath;
+  return _thumbnailCachePath;
+}
+
+// 广告图片缓存目录 (可以被清除)
+static NSString *_adCachePath = nil;
++(NSString *)adCachePath {
+  if (nil == _adCachePath) {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:@"AdCachePath"];
+    _adCachePath = [fullPath copy];
+  }
+  
+  return _adCachePath;
 }
 
 // 那些需要始终被保存, 不能由用户进行清除的文件
@@ -56,23 +72,24 @@ static NSString *_importantDataCachePath = nil;
 
 // 能否被用户清空的目录数组(可以从这里获取用户可以直接清空的文件夹路径数组)
 +(NSArray *)directoriesCanBeClearByTheUser {
-  NSArray *directories = [NSArray arrayWithObjects:[self roomDetailCachePath], [self imageCachePath], nil];
+  NSArray *directories = [NSArray arrayWithObjects:[self roomDetailCachePath], [self thumbnailCachePath], nil];
   return directories;
 }
 
 // 创建本地数据缓存目录(一次性全部创建, 不会重复创建)
 +(void)createLocalCacheDirectories {
+  // 创建本地数据缓存目录(一次性全部创建, 不会重复创建)
+  NSArray *directories = [NSArray arrayWithObjects:[self roomDetailCachePath], [self thumbnailCachePath], [self adCachePath], [self importantDataCachePath], nil];
+  
   NSFileManager *fileManager = [NSFileManager defaultManager];
-  if (![fileManager fileExistsAtPath:[LocalCacheDataPathConstant roomDetailCachePath]]) {
-    [fileManager createDirectoryAtPath:[LocalCacheDataPathConstant roomDetailCachePath] withIntermediateDirectories:YES attributes:nil error:nil];
+  for (NSString *path in directories) {
+    if (![fileManager fileExistsAtPath:path]) {
+      [fileManager createDirectoryAtPath:path
+             withIntermediateDirectories:YES
+                              attributes:nil
+                                   error:nil];
+    }
   }
-  
-  if (![fileManager fileExistsAtPath:[LocalCacheDataPathConstant imageCachePath]]) {
-    [fileManager createDirectoryAtPath:[LocalCacheDataPathConstant imageCachePath] withIntermediateDirectories:YES attributes:nil error:nil];
-  }
-  
-  if (![fileManager fileExistsAtPath:[LocalCacheDataPathConstant importantDataCachePath]]) {
-    [fileManager createDirectoryAtPath:[LocalCacheDataPathConstant importantDataCachePath] withIntermediateDirectories:YES attributes:nil error:nil];
-  }
+
 }
 @end

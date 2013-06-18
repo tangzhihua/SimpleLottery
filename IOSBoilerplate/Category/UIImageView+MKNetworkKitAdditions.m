@@ -45,7 +45,7 @@ const float kFreshLoadAnimationDuration = 0.35f;
 static MKNetworkEngine *_networkEngine;
 -(MKNetworkEngine *)networkEngine{
 	if (_networkEngine == nil) {
-		_networkEngine = [[DownloadTableViewIconsNetworkEngine alloc] init];
+		_networkEngine = [[DownloadThumbnailNetworkEngine alloc] init];
 	}
 	return _networkEngine;
 }
@@ -111,10 +111,10 @@ static MKNetworkEngine *_networkEngine;
 
 @end
 
-@implementation DownloadTableViewIconsNetworkEngine
+@implementation DownloadThumbnailNetworkEngine
 
 -(NSString*) cacheDirectoryName {
-	NSString *cacheDirectoryName = [LocalCacheDataPathConstant imageCachePath];
+	NSString *cacheDirectoryName = [LocalCacheDataPathConstant thumbnailCachePath];
 	return cacheDirectoryName;
 }
 

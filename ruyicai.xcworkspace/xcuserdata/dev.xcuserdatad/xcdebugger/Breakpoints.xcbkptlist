@@ -29,6 +29,19 @@
          landmarkName = "-requestDomainProtocolWithRequestDomainBean:requestEvent:extraHttpRequestParameterMap:successedBlock:failedBlock:"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "IOSBoilerplate/IOSBoilerplateAppDelegate.m"
+         timestampString = "393238259.307104"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "155"
+         endingLineNumber = "155"
+         landmarkName = "-application:didFinishLaunchingWithOptions:"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
    <ExceptionBreakpoints>
       <ExceptionBreakpoint

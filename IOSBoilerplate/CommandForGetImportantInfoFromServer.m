@@ -155,7 +155,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 						
 						self.adImageDownloadOperation = [[MKNetworkEngineSingleton sharedInstance] operationWithURLString:adImageInWelcomePageNetRespondBean.imageUrl];
 						[self.adImageDownloadOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
-							NSString *adImagePath = [[LocalCacheDataPathConstant importantDataCachePath] stringByAppendingPathComponent:kAdImageNameForWelcomePage];
+							NSString *adImagePath = [[LocalCacheDataPathConstant adCachePath] stringByAppendingPathComponent:kAdImageNameForWelcomePage];
 							UIImage *image = [completedOperation responseImage];
 							NSData *imageDataForPNG = UIImagePNGRepresentation(image);
 							[imageDataForPNG writeToFile:adImagePath atomically:YES];

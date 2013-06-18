@@ -20,32 +20,6 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Pods/MKNetworkKit/MKNetworkKit/Categories/NSString+MKNetworkKitAdditions.m"
-         timestampString = "392291872.98869"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "33"
-         endingLineNumber = "33"
-         landmarkName = "-md5"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Pods/MKNetworkKit/MKNetworkKit/MKNetworkOperation.m"
-         timestampString = "392292181.476504"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "262"
-         endingLineNumber = "262"
-         landmarkName = "-uniqueIdentifier"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "IOSBoilerplate/DomainProtocolNetHelperOfMKNetworkKitSingleton.m"
          timestampString = "392462060.302329"
          startingColumnNumber = "9223372036854775807"

@@ -3000,7 +3000,10 @@
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/Utilities\"",
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/openssllibs\"",
 				);
-				OTHER_LDFLAGS = "-lbaidumapapi";
+				OTHER_LDFLAGS = (
+					"-lbaidumapapi",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "简单彩票";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -3036,7 +3039,10 @@
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/Utilities\"",
 					"\"$(SRCROOT)/IOSBoilerplate/AlixPay/openssllibs\"",
 				);
-				OTHER_LDFLAGS = "-lbaidumapapi";
+				OTHER_LDFLAGS = (
+					"-lbaidumapapi",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "简单彩票";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

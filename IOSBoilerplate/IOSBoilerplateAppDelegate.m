@@ -43,10 +43,11 @@
 #import "CurrentLotteryIssueCountDownManager.h"
 
 // git 忽略文件指令 : git rm --cached 文件名
+// 比如在 Other Linker Flags 中增加 -ObjC ,否则 在引用 MKNetworkKit Categories目录下的类别时, 就会报引用无效的错误
 
 #import "DDLog.h"
 #import "MKNetworkKit.h"
-#import "NSString+MKNetworkKitAdditions.h" 
+ 
 
 /*
  UIApplicationDelegate 代理函数调用的时间（应用程序生命周期）
@@ -239,8 +240,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   
    
   /////
-	NSError *err = [NSError errorWithDomain:@"domain" code:111 userInfo:nil];
-	[UIAlertView showWithError:err];
+ 
   
   return YES;
 }

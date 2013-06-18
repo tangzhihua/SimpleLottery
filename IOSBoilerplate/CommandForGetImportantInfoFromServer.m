@@ -166,7 +166,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 							
 						}];
 						
-						//[[MKNetworkEngineSingleton sharedInstance] enqueueOperation:self.adImageDownloadOperation];
+						[[MKNetworkEngineSingleton sharedInstance] enqueueOperation:self.adImageDownloadOperation];
 					}
 				}
 			}

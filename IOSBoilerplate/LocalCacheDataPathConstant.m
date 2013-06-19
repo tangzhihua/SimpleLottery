@@ -10,6 +10,7 @@
 
 @implementation LocalCacheDataPathConstant
 
+// 静态初始化方法
 +(void) initialize {
   
 }

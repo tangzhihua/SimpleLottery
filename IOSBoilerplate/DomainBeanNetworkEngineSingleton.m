@@ -82,6 +82,8 @@
     // 初始化代码
     
     _networkEngine = [[MKNetworkEngine alloc] initWithHostName:kUrlConstant_MainUrl apiPath:kUrlConstant_MainPtah customHeaderFields:nil];
+    [_networkEngine useCache];
+    
 		_synchronousNetRequestBuf = [NSMutableDictionary dictionary];
 		_netRequestIndexCounter = 0;
   }

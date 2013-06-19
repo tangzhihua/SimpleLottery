@@ -46,6 +46,7 @@ static MKNetworkEngine *_networkEngine;
 -(MKNetworkEngine *)networkEngine{
 	if (_networkEngine == nil) {
 		_networkEngine = [[DownloadThumbnailNetworkEngine alloc] init];
+    [_networkEngine useCache];
 	}
 	return _networkEngine;
 }

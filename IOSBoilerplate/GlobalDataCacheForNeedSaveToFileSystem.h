@@ -6,6 +6,8 @@
 //
 //  需要固化到文件中
 //
+//  
+//
 //
 
 #import <Foundation/Foundation.h>
@@ -30,6 +32,5 @@
 + (void)writeUserLoginInfoToFileSystem;
 + (void)writeAppConfigInfoToFileSystem;
 
-/// 固化全部内存级缓存数据到本地文件系统中
-+ (void)saveAllCacheDataToFileSystem;
+ 
 @end

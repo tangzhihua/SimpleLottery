@@ -8,8 +8,15 @@
 
 #import "MKNetworkEngineSingleton.h"
 
+@interface MKNetworkEngineSingleton ()
+@property (nonatomic, assign) BOOL isConfigFinish;
+@end
 @implementation MKNetworkEngineSingleton
 
+
+-(void)config {
+  [self useCache];
+}
 
 #pragma mark -
 #pragma mark Singleton Implementation
@@ -27,6 +34,11 @@
   static MKNetworkEngineSingleton *singletonInstance = nil;
   static dispatch_once_t pred;
   dispatch_once(&pred, ^{singletonInstance = [[self alloc] initWithHostName:kUrlConstant_MainUrl apiPath:kUrlConstant_MainPtah customHeaderFields:nil];});
+
+  if (!singletonInstance.isConfigFinish) {
+    [singletonInstance config];
+    singletonInstance.isConfigFinish = YES;
+  }
   return singletonInstance;
 }
 @end

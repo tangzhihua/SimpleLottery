@@ -261,7 +261,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   [[CurrentLotteryIssueCountDownManager sharedInstance] stopCountDownObserver];
   
   // 在这里保存那些需要固化到文件系统的数据
-  [GlobalDataCacheForNeedSaveToFileSystem saveAllCacheDataToFileSystem];
+  //[GlobalDataCacheForNeedSaveToFileSystem saveAllCacheDataToFileSystem];
 
 }
 #pragma mark 4) 从后台返回前台
@@ -278,7 +278,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   PRPLog(@">>>>>>>>>>>>>>     applicationDidBecomeActive:      <<<<<<<<<<<<<<<<<");
 }
-#pragma mark 6) 当程序将要退出是被调用，通常是用来保存数据和一些退出前的清理工作。
+#pragma mark 6) 当程序将要退出时被调用，通常是用来保存数据和一些退出前的清理工作。
 // 这个需要要设置UIApplicationExitsOnSuspend的键值。
 - (void)applicationWillTerminate:(UIApplication *)application {
   PRPLog(@">>>>>>>>>>>>>>     applicationWillTerminate:      <<<<<<<<<<<<<<<<<");

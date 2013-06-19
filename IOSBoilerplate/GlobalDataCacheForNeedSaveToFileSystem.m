@@ -9,9 +9,9 @@
 #import "GlobalDataCacheForNeedSaveToFileSystem.h"
 #import "GlobalDataCacheForMemorySingleton.h"
 
- 
 
- 
+
+
 #import "NSObject+Serialization.h"
 
 #import "LocalCacheDataPathConstant.h"
@@ -47,7 +47,7 @@ static NSString *const kLocalCacheDataName_UsernameForLastSuccessfulLogon = @"Us
 static NSString *const kLocalCacheDataName_PasswordForLastSuccessfulLogon = @"PasswordForLastSuccessfulLogon";
 // 用户是否是首次启动App
 static NSString *const kLocalCacheDataName_FirstStartApp                  = @"FirstStartApp";
-// 是否需要显示 初学者指南 
+// 是否需要显示 初学者指南
 static NSString *const kLocalCacheDataName_BeginnerGuide                  = @"BeginnerGuide";
 // 欢迎界面的广告图片 版本ID
 static NSString *const kLocalCacheDataName_AdImageIDForLatest             = @"AdImageIDForLatest";
@@ -56,9 +56,41 @@ static NSString *const kLocalCacheDataName_IsShowAdImageFromServer        = @"Is
 
 @implementation GlobalDataCacheForNeedSaveToFileSystem
 
-#pragma mark -
-#pragma mark
- 
++(void) initialize {
+  
+  // 内存告警
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(saveMemoryCacheToDisk:)
+                                               name:UIApplicationDidReceiveMemoryWarningNotification
+                                             object:nil];
+  // 应用进入后台
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(saveMemoryCacheToDisk:)
+                                               name:UIApplicationDidEnterBackgroundNotification
+                                             object:nil];
+  // 应用退出
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(saveMemoryCacheToDisk:)
+                                               name:UIApplicationWillTerminateNotification
+                                             object:nil];
+}
+
++(void) dealloc {
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                  name:UIApplicationDidReceiveMemoryWarningNotification
+                                                object:nil];
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                  name:UIApplicationDidEnterBackgroundNotification
+                                                object:nil];
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                  name:UIApplicationWillTerminateNotification
+                                                object:nil];
+  
+}
+
 + (void)readUserLoginInfoToGlobalDataCacheForMemorySingleton {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   
@@ -113,7 +145,7 @@ static NSString *const kLocalCacheDataName_IsShowAdImageFromServer        = @"Is
   }
   BOOL isShowAdImageFromServer = [userDefaults boolForKey:kLocalCacheDataName_IsShowAdImageFromServer];
   [GlobalDataCacheForMemorySingleton sharedInstance].isShowAdImageFromServer = isShowAdImageFromServer;
-
+  
 }
 
 
@@ -122,8 +154,8 @@ static NSString *const kLocalCacheDataName_IsShowAdImageFromServer        = @"Is
 
 
 #pragma mark -
-#pragma mark 
- 
+#pragma mark
+
 + (void)writeUserLoginInfoToFileSystem {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   
@@ -174,10 +206,10 @@ static NSString *const kLocalCacheDataName_IsShowAdImageFromServer        = @"Is
 }
 
 #pragma mark -
-#pragma mark
-+ (void)saveAllCacheDataToFileSystem {
-   
-  //[GlobalDataCacheForNeedSaveToFileSystem writeDictionaryNetRespondBeanToFileSystem];
+#pragma mark 将内存级别缓存的数据固化到硬盘中
++ (void)saveMemoryCacheToDisk:(NSNotification *)notification {
+  PRPLog(@"saveMemoryCacheToDisk:%@", notification);
+  
   [GlobalDataCacheForNeedSaveToFileSystem writeUserLoginInfoToFileSystem];
   [GlobalDataCacheForNeedSaveToFileSystem writeAppConfigInfoToFileSystem];
 }

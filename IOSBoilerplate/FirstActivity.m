@@ -53,7 +53,7 @@ static const NSString *const TAG = @"<FirstActivity>";
   
 	if ([GlobalDataCacheForMemorySingleton sharedInstance].isShowAdImageFromServer) {
 		
-		NSString *imagePath = [LocalCacheDataPathConstant importantDataCachePath];
+		NSString *imagePath = [LocalCacheDataPathConstant adCachePath];
 		imagePath = [imagePath stringByAppendingFormat:@"/%@", kAdImageNameForWelcomePage];
 		UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
 		if (image != nil) {

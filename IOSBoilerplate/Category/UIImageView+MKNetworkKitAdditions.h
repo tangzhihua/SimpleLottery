@@ -26,7 +26,7 @@
 #import <UIKit/UIKit.h>
 #import "MKNetworkEngine.h"
 
-// 必须事先设置 imageView.frame, 否则不会触发获取图片功能
+// note : 必须事先设置 imageView.frame, 否则不会触发获取图片功能
 
 extern const float kFromCacheAnimationDuration;
 extern const float kFreshLoadAnimationDuration;

@@ -334,6 +334,12 @@
 		D7A2C571175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */; };
 		D7A8D57F175C34D300BC5CBF /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A8D57E175C34D300BC5CBF /* libicucore.dylib */; };
 		D7A8D581175C360A00BC5CBF /* regular_expressions_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */; };
+		D7A9075D1771B8DC0006DD81 /* SignUpActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A9075B1771B8DC0006DD81 /* SignUpActivity.m */; };
+		D7A9075E1771B8DC0006DD81 /* SignUpActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A9075C1771B8DC0006DD81 /* SignUpActivity.xib */; };
+		D7A907621771B9050006DD81 /* SignInActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A907601771B9050006DD81 /* SignInActivity.m */; };
+		D7A907631771B9050006DD81 /* SignInActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A907611771B9050006DD81 /* SignInActivity.xib */; };
+		D7A907671771B93A0006DD81 /* ForgotPasswordActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A907651771B93A0006DD81 /* ForgotPasswordActivity.m */; };
+		D7A907681771B93A0006DD81 /* ForgotPasswordActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A907661771B93A0006DD81 /* ForgotPasswordActivity.xib */; };
 		D7B5ADE81760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADE71760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m */; };
 		D7B5ADEE176056EC002AEB14 /* NetRequestErrorBean.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */; };
 		D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */; };
@@ -950,6 +956,15 @@
 		D7A2C570175DD5DA00D823F0 /* LuckyPickNumberDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuckyPickNumberDisplayView.xib; sourceTree = "<group>"; };
 		D7A8D57E175C34D300BC5CBF /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = regular_expressions_keys.plist; sourceTree = "<group>"; };
+		D7A9075A1771B8DC0006DD81 /* SignUpActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpActivity.h; sourceTree = "<group>"; };
+		D7A9075B1771B8DC0006DD81 /* SignUpActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpActivity.m; sourceTree = "<group>"; };
+		D7A9075C1771B8DC0006DD81 /* SignUpActivity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpActivity.xib; sourceTree = "<group>"; };
+		D7A9075F1771B9050006DD81 /* SignInActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInActivity.h; sourceTree = "<group>"; };
+		D7A907601771B9050006DD81 /* SignInActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInActivity.m; sourceTree = "<group>"; };
+		D7A907611771B9050006DD81 /* SignInActivity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInActivity.xib; sourceTree = "<group>"; };
+		D7A907641771B93A0006DD81 /* ForgotPasswordActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordActivity.h; sourceTree = "<group>"; };
+		D7A907651771B93A0006DD81 /* ForgotPasswordActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordActivity.m; sourceTree = "<group>"; };
+		D7A907661771B93A0006DD81 /* ForgotPasswordActivity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordActivity.xib; sourceTree = "<group>"; };
 		D7B5ADE61760317B002AEB14 /* DomainBeanNetworkEngineSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainBeanNetworkEngineSingleton.h; sourceTree = "<group>"; };
 		D7B5ADE71760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainBeanNetworkEngineSingleton.m; sourceTree = "<group>"; };
 		D7B5ADEC176056EC002AEB14 /* NetRequestErrorBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestErrorBean.h; sourceTree = "<group>"; };
@@ -1324,6 +1339,9 @@
 		58546CB815FDF4580028AEC3 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				D7A907591771B8300006DD81 /* 忘记密码界面 */,
+				D7A907581771B7FE0006DD81 /* 用户注册界面 */,
+				D7A907571771B7E10006DD81 /* 用户登录界面 */,
 				D7A2C55A175DAE9100D823F0 /* 幸运选号 */,
 				68F6EC9A174B9766003B1CC1 /* 双色球 */,
 				587F6FA6168589C20004A23B /* first_activity */,
@@ -2402,6 +2420,36 @@
 			name = "配置cocos2d";
 			sourceTree = "<group>";
 		};
+		D7A907571771B7E10006DD81 /* 用户登录界面 */ = {
+			isa = PBXGroup;
+			children = (
+				D7A9075F1771B9050006DD81 /* SignInActivity.h */,
+				D7A907601771B9050006DD81 /* SignInActivity.m */,
+				D7A907611771B9050006DD81 /* SignInActivity.xib */,
+			);
+			name = "用户登录界面";
+			sourceTree = "<group>";
+		};
+		D7A907581771B7FE0006DD81 /* 用户注册界面 */ = {
+			isa = PBXGroup;
+			children = (
+				D7A9075A1771B8DC0006DD81 /* SignUpActivity.h */,
+				D7A9075B1771B8DC0006DD81 /* SignUpActivity.m */,
+				D7A9075C1771B8DC0006DD81 /* SignUpActivity.xib */,
+			);
+			name = "用户注册界面";
+			sourceTree = "<group>";
+		};
+		D7A907591771B8300006DD81 /* 忘记密码界面 */ = {
+			isa = PBXGroup;
+			children = (
+				D7A907641771B93A0006DD81 /* ForgotPasswordActivity.h */,
+				D7A907651771B93A0006DD81 /* ForgotPasswordActivity.m */,
+				D7A907661771B93A0006DD81 /* ForgotPasswordActivity.xib */,
+			);
+			name = "忘记密码界面";
+			sourceTree = "<group>";
+		};
 		D7B5ADE317603002002AEB14 /* NetEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -2608,6 +2656,9 @@
 				D7892709175ECE81005B7353 /* PodfileBack in Resources */,
 				D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */,
 				68A347691768B52C00634237 /* Errors_zh_CN.plist in Resources */,
+				D7A9075E1771B8DC0006DD81 /* SignUpActivity.xib in Resources */,
+				D7A907631771B9050006DD81 /* SignInActivity.xib in Resources */,
+				D7A907681771B93A0006DD81 /* ForgotPasswordActivity.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2847,6 +2898,9 @@
 				D768BCFD176F146800B871E3 /* String+Helper.m in Sources */,
 				D768BD01176F14A200B871E3 /* FastCell.m in Sources */,
 				68C39BF2176F3C46009D74F9 /* MKNetworkEngineSingleton.m in Sources */,
+				D7A9075D1771B8DC0006DD81 /* SignUpActivity.m in Sources */,
+				D7A907621771B9050006DD81 /* SignInActivity.m in Sources */,
+				D7A907671771B93A0006DD81 /* ForgotPasswordActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

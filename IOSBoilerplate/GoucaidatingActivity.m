@@ -158,7 +158,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   // 20130223 tangzhihua : 不能在这里直接调用 doneLoadingTableViewData, 否则关不掉当前界面
   // Here you would make an HTTP request or something like that
   // Call [self doneLoadingTableViewData] when you are done
-  [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+  [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:2.0];
 }
 
 #pragma mark -

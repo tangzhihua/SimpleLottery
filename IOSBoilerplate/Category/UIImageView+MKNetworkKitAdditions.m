@@ -30,7 +30,9 @@
 #import <objc/runtime.h>
 #import "LocalCacheDataPathConstant.h"
 
-
+static MKNetworkEngine *imageDownloadEngine(){
+  return [DownloadThumbnailNetworkEngine sharedInstance];
+}
 static char imageFetchOperationKey;
 
 const float kFromCacheAnimationDuration = 0.1f;
@@ -42,14 +44,6 @@ const float kFreshLoadAnimationDuration = 0.35f;
 
 @implementation UIImageView (MKNetworkKitAdditions)
 
-static MKNetworkEngine *_networkEngine;
--(MKNetworkEngine *)networkEngine{
-	if (_networkEngine == nil) {
-		_networkEngine = [[DownloadThumbnailNetworkEngine alloc] init];
-    [_networkEngine useCache];
-	}
-	return _networkEngine;
-}
 -(MKNetworkOperation*) imageFetchOperation {
   
   return (MKNetworkOperation*) objc_getAssociatedObject(self, &imageFetchOperationKey);
@@ -60,6 +54,8 @@ static MKNetworkEngine *_networkEngine;
   objc_setAssociatedObject(self, &imageFetchOperationKey, imageFetchOperation, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+
+
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url {
   
   return [self setImageFromURL:url placeHolderImage:nil];
@@ -67,19 +63,19 @@ static MKNetworkEngine *_networkEngine;
 
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image {
   
-  return [self setImageFromURL:url placeHolderImage:image usingEngine:self.networkEngine animation:YES];
+  return [self setImageFromURL:url placeHolderImage:image usingEngine:imageDownloadEngine() animation:YES];
 }
 
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image animation:(BOOL) yesOrNo {
   
-  return [self setImageFromURL:url placeHolderImage:image usingEngine:self.networkEngine animation:yesOrNo];
+  return [self setImageFromURL:url placeHolderImage:image usingEngine:imageDownloadEngine() animation:yesOrNo];
 }
 
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image usingEngine:(MKNetworkEngine*) imageCacheEngine animation:(BOOL) animation {
   
   if(image) self.image = image;
   [self.imageFetchOperation cancel];
-  if(!imageCacheEngine) imageCacheEngine = self.networkEngine;
+  if(!imageCacheEngine) imageCacheEngine = imageDownloadEngine();
   
   if(imageCacheEngine) {
     self.imageFetchOperation = [imageCacheEngine imageAtURL:url
@@ -92,7 +88,8 @@ static MKNetworkEngine *_networkEngine;
                                                                  options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionAllowUserInteraction
                                                               animations:^{
                                                                 self.image = fetchedImage;
-                                                              } completion:nil];
+                                                              }
+                                                              completion:nil];
                                             } else {
                                               self.image = fetchedImage;
                                             }
@@ -112,9 +109,51 @@ static MKNetworkEngine *_networkEngine;
 
 @end
 
-@implementation DownloadThumbnailNetworkEngine
 
--(NSString*) cacheDirectoryName {
+
+
+
+
+
+
+
+
+
+@interface DownloadThumbnailNetworkEngine ()
+@property (nonatomic, assign) BOOL isConfigFinish;
+@end
+
+@implementation DownloadThumbnailNetworkEngine
+-(void)config {
+  [self useCache];
+}
+
+#pragma mark -
+#pragma mark Singleton Implementation
+
+// 使用 Grand Central Dispatch (GCD) 来实现单例, 这样编写方便, 速度快, 而且线程安全.
+-(id)init {
+  // 禁止调用 -init 或 +new
+  RNAssert(NO, @"Cannot create instance of Singleton");
+  
+  // 在这里, 你可以返回nil 或 [self initSingleton], 由你来决定是返回 nil还是返回 [self initSingleton]
+  return nil;
+}
+
++ (DownloadThumbnailNetworkEngine *) sharedInstance {
+  static DownloadThumbnailNetworkEngine *singletonInstance = nil;
+  static dispatch_once_t pred;
+  dispatch_once(&pred, ^{singletonInstance = [[self alloc] initWithHostName:nil];});
+  
+  if (!singletonInstance.isConfigFinish) {
+    [singletonInstance config];
+    singletonInstance.isConfigFinish = YES;
+  }
+  return singletonInstance;
+}
+
+// 设置缩略图缓存目录
+-(NSString *) cacheDirectoryName {
 	NSString *cacheDirectoryName = [LocalCacheDataPathConstant thumbnailCachePath];
 	return cacheDirectoryName;
 }

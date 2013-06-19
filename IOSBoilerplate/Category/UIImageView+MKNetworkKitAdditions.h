@@ -26,6 +26,8 @@
 #import <UIKit/UIKit.h>
 #import "MKNetworkEngine.h"
 
+// 必须事先设置 imageView.frame, 否则不会触发获取图片功能
+
 extern const float kFromCacheAnimationDuration;
 extern const float kFreshLoadAnimationDuration;
 
@@ -33,7 +35,7 @@ extern const float kFreshLoadAnimationDuration;
 @class MKNetworkOperation;
 
 @interface UIImageView (MKNetworkKitAdditions)
-
+ 
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url;
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image;
 -(MKNetworkOperation*) setImageFromURL:(NSURL*) url placeHolderImage:(UIImage*) image animation:(BOOL) yesOrNo;
@@ -42,5 +44,5 @@ extern const float kFreshLoadAnimationDuration;
 
 // 下载 "缩略图" 的专用引擎
 @interface DownloadThumbnailNetworkEngine : MKNetworkEngine
-
++ (DownloadThumbnailNetworkEngine *) sharedInstance;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "YonghuzhongxinActivity.h"
-
+#import "SignUpActivity.h"
 @interface YonghuzhongxinActivity ()
 
 @end
@@ -33,6 +33,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)buttonLis:(id)sender {
+  Intent *intent = [Intent intentWithSpecificComponentClass:[SignUpActivity class]];
+  [self startActivity:intent];
 }
 
 @end

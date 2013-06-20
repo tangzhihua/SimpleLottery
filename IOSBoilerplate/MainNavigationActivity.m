@@ -91,15 +91,6 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
 #pragma mark -
 #pragma mark 内部方法群
 
-- (void)dealloc {
-  
-  // 一定要注销广播消息接收器
-  [self unregisterReceiver];
-  
-  //
-  _activeActivity = nil;
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
   if ([DeviceInformation isIPhone5]) {
@@ -158,6 +149,15 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
   // 接收 : 获取用户地址成功
   // 接收 : 跳转到 "推荐首页"
   [self registerBroadcastReceiver];
+}
+-(void)onDestroy {
+  PRPLog(@" --> onDestroy ");
+  
+  // 一定要注销广播消息接收器
+  [self unregisterReceiver];
+  
+  //
+  _activeActivity = nil;
 }
 -(void)onPause {
   PRPLog(@"--> onPause ");

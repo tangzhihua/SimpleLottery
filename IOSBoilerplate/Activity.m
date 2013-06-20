@@ -330,9 +330,12 @@ static const NSString *const TAG = @"<Activity>";
 #pragma mark -
 #pragma mark Activity 生命周期
 -(void)onCreate:(Intent *)intent{
-  
+  // 需要子类必须覆写
 }
-//-(void)onDestroy;                 ---> dealloc
+// 在使用ARC后, dealloc 变的不适用了
+-(void)onDestroy {
+  // 需要子类必须覆写
+}
 -(void)onPause {
   // 需要子类必须覆写
 }

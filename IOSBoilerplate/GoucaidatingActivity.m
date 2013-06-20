@@ -60,10 +60,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 
 #pragma mark -
 #pragma mark 生命周期
--(void)dealloc{
-  
-  [self removeAllObserversOfCurrentIssueCountDown];
-}
+ 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -109,7 +106,11 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
   
 	
 }
-
+-(void)onDestroy {
+  PRPLog(@" --> onDestroy ");
+  
+  [self removeAllObserversOfCurrentIssueCountDown];
+}
 -(void)onResume {
   PRPLog(@"--> onResume ");
   if (self.lotterySalesStatusNetRespondBean == nil) {

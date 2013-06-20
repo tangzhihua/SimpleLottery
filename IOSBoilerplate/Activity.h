@@ -249,7 +249,8 @@ typedef enum {
  
  */
 -(void)onCreate:(Intent *)intent;
-//-(void)onDestroy; ---> dealloc
+// 在使用ARC后, dealloc 变的不适用了
+-(void)onDestroy;
 
 // Activity 进入前台时, 在 viewDidLoad 之前进入这里
 -(void)onResume;

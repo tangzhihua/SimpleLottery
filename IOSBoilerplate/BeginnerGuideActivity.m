@@ -126,6 +126,9 @@
   PRPLog(@" --> onCreate ");
   
 }
+-(void)onDestroy {
+  PRPLog(@" --> onDestroy ");
+}
 -(void)onPause {
   PRPLog(@" --> onPause ");
   

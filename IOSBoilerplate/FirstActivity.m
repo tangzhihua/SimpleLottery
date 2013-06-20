@@ -23,15 +23,7 @@ static const NSString *const TAG = @"<FirstActivity>";
 @end
 
 @implementation FirstActivity
-
-- (void)dealloc {
-	 
-  
-  PRPLog(@"dealloc: %@ [0x%x]", TAG, [self hash]);
-  
-  // 一定要注销广播消息接收器
-  [self unregisterReceiver];
-}
+ 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -97,6 +89,12 @@ static const NSString *const TAG = @"<FirstActivity>";
 	// 接收 : "从服务器获取重要信息成功"
   [self registerBroadcastReceiver];
 	
+}
+-(void)onDestroy {
+  PRPLog(@" --> onDestroy ");
+  
+  // 一定要注销广播消息接收器
+  [self unregisterReceiver];
 }
 -(void)onPause {
   PRPLog(@"%@ --> onPause ", TAG);

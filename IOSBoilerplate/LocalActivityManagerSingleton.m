@@ -19,16 +19,16 @@
 @interface LocalActivityManagerSingleton ()
 
 //
-@property(nonatomic, retain) NSMutableArray *activityStack;
+@property(nonatomic, strong) NSMutableArray *activityStack;
 
 /*
  这是当前处于屏幕顶层显示的视图控制器
  */
-@property (nonatomic, assign) Activity *activeActivity;
+@property (nonatomic, weak) Activity *activeActivity;
 
 //
 @property (nonatomic, assign) int resultCode;
-@property (nonatomic, retain) Intent *resultData;
+@property (nonatomic, strong) Intent *resultData;
 
 @end
 
@@ -289,6 +289,8 @@
     [_activeActivity.view removeFromSuperview];
     //
     [_activityStack removeObject:_activeActivity];
+    //
+    [_activeActivity onDestroy];
     //
     _activeActivity = prevActivity;
     

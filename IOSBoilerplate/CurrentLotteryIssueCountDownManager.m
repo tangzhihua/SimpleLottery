@@ -147,21 +147,21 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 		[runloop addTimer:self.timerForCountDown forMode:UITrackingRunLoopMode];
      */
     
-    // 这里使用了 RNTimer
+    // 这里使用了 RNTimer 这个开源代码
     /*
      RNTimer
      Simple GCD-based timer based on NSTimer. 
      It starts immediately and stops when released. 
      This avoids many of the typical problems with NSTimer:
-     基于GCD实现的一个计时器, 它会立刻运行, 并在释放后立刻停止. 这就避免了很多NSTimer的典型问题.
+     基于GCD实现的一个计时器, 它会立刻运行, 并在释放后立刻停止. 这就避免了很多NSTimer的典型问题:
      
-     RNTimer runs in all modes (unlike NSTimer)
+     1) RNTimer runs in all modes (unlike NSTimer)
      RNTimer运行在全部的模式中(不像NSTimer)
-     RNTimer runs when there is no runloop (unlike NSTimer)
+     2) RNTimer runs when there is no runloop (unlike NSTimer)
      RNTimer运行在没有 runloop的环境中(不像NSTimer)
-     Repeating RNTimers can easily avoid retain loops (unlike NSTimer)
+     3) Repeating RNTimers can easily avoid retain loops (unlike NSTimer)
      RNTimer可以很容易避免 循环引用 问题(不像NSTimer)
-     Currently there is only a simple repeating timer (since this is the most common use that's hard to do correctly with NSTimer). It always runs on the main queue.
+     4) Currently there is only a simple repeating timer (since this is the most common use that's hard to do correctly with NSTimer). It always runs on the main queue.
      当前只有一个简单的重复定时器(NSTimer很难做到这点), 它总是运行在主队列中.
      */
     __weak id weakSelf = self;
@@ -169,6 +169,12 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
                                                                block:^{
                                                                  [weakSelf timerFireMethod];
                                                                }];
+    /*
+     RNTimer实现了简单的GCD定时器, 能防止循环保留(只要块没有捕获self),而且在销毁时会自动把定时器设置为无效.
+     它用 dispatch_source_create创建一个定时器分派源并绑定到主分派队列上,这意味着定时器总在主线程上触发.
+     当然,如果愿意的话可以使用其他队列,然而它设置定时器和事件处理程序,调用 dispatch_resume打开定时器.
+     分派源通常需要配置,所以它们创建时处于暂停状态,只有重新开始之后才会开始发送事件.
+     */
 	}
 }
 

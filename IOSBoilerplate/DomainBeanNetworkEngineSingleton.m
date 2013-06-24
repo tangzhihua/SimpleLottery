@@ -406,8 +406,10 @@
       break;
     }
     
+    // 调用 cancel 不会在触发 addCompletionHandler 和 errorHandler, 所以这里直接从请求队列中删除缓存对象.
     [netRequestOperation cancel];
     [self.synchronousNetRequestBuf removeObjectForKey:indexOfNSNumber];
+    PRPLog(@"当前网络接口请求队列长度=%i", self.synchronousNetRequestBuf.count);
   } while (NO);
   
 }

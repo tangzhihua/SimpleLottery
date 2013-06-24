@@ -40,8 +40,29 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 -(void)execute {
   if (!self.isExecuted) {
 		self.isExecuted = YES;
-		
-    //[NSThread detachNewThreadSelector:@selector(childThreadForNewAppVersionCheck) toTarget:self withObject:nil];
+
+    __weak id weakSelf = self;
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+      do {
+        _versionBean = [ToolsFunctionForThisProgect synchronousRequestAppNewVersionAndReturnVersionBean];
+        if (![_versionBean isKindOfClass:[VersionNetRespondBean class]]) {
+          break;
+        }
+        
+        if ([_versionBean.latestVersion isEqualToString:[ToolsFunctionForThisProgect localAppVersion]]) {
+          break;
+        }
+        
+        [weakSelf newAppUpdateHint];
+        
+        // 在iOS5.0的系统之上时, UI操作都必须回到 MainThread
+        //[self performSelectorOnMainThread:@selector(newAppUpdateHint) withObject:nil waitUntilDone:NO];
+        
+      } while (NO);
+    });
   }  
 }
 
@@ -79,25 +100,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 
 #pragma mark -
 #pragma mark 子线程 ------> App新版本检查
-- (void) childThreadForNewAppVersionCheck {
-  
-	@autoreleasepool {
-    do {
-			_versionBean = [ToolsFunctionForThisProgect synchronousRequestAppNewVersionAndReturnVersionBean];
-			if (![_versionBean isKindOfClass:[VersionNetRespondBean class]]) {
-				break;
-			}
-			
-			if ([_versionBean.latestVersion isEqualToString:[ToolsFunctionForThisProgect localAppVersion]]) {
-				break;
-			}
-			
-			// 在iOS5.0的系统之上时, UI操作都必须回到 MainThread
-			[self performSelectorOnMainThread:@selector(newAppUpdateHint) withObject:nil waitUntilDone:NO];
-			
-		} while (NO);
-	}
-}
+ 
 
 -(void)newAppUpdateHint{
   UIAlertView *alert

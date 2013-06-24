@@ -60,7 +60,16 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
     [LocalCacheDataPathConstant createLocalCacheDirectories];
     
     // 启动 "加载本地缓存的数据" 子线程, 这里加载的缓存数据是次要的, 如 "城市列表" "字典"
-    [NSThread detachNewThreadSelector:@selector(childThreadForLoadingLocalCacheData) toTarget:self withObject:nil];
+    __weak id weakSelf = self;
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+      // 这里异步加载次要的数据, 不阻塞主线程
+    });
+    
+    
+    
     
     /********            这里加载最重要的信息, 不加载完, 是不能进入App的.           ************/
 		
@@ -105,12 +114,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 
 #pragma mark -
 #pragma mark 子线程 ------> "加载那些次要的本地缓存数据"
-- (void) childThreadForLoadingLocalCacheData {
-  
-	@autoreleasepool {
-    
-	}
-}
+
 
 #pragma mark -
 #pragma mark 实现 IDomainNetRespondCallback 接口

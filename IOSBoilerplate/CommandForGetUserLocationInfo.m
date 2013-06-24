@@ -18,7 +18,7 @@
 // 这个命令只能执行一次
 @property (nonatomic, assign) BOOL isExecuted;
 // 定位用户位置信息
-@property (nonatomic, retain) SimpleLocationHelperForBaiduLBS *userLocationForBaiduLBS;
+@property (nonatomic, strong) SimpleLocationHelperForBaiduLBS *userLocationForBaiduLBS;
 @end
 
 
@@ -36,11 +36,19 @@
  
  */
 -(void)execute {
-  if (!_isExecuted) {
-		_isExecuted = YES;
+  if (!self.isExecuted) {
+		self.isExecuted = YES;
 		
     // 启动 "获取用户当前所在位置信息" 子线程, 因为这个过程很耗时, 所以要 开辟子线程来进行加载
-    [NSThread detachNewThreadSelector:@selector(childThreadForLoadingUserLocationInfo) toTarget:self withObject:nil];
+    __weak id weakSelf = self;
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+      _userLocationForBaiduLBS = [[SimpleLocationHelperForBaiduLBS alloc] init];
+      _userLocationForBaiduLBS.locationDelegate = weakSelf;
+      _userLocationForBaiduLBS.addrInfoDelegate = weakSelf;
+    });
+     
   }  
 
 }
@@ -79,14 +87,7 @@
 
 #pragma mark -
 #pragma mark 子线程 ------> "获取用户当前所在位置信息"
-- (void) childThreadForLoadingUserLocationInfo {
-  
-	@autoreleasepool {
-    _userLocationForBaiduLBS = [[SimpleLocationHelperForBaiduLBS alloc] init];
-		_userLocationForBaiduLBS.locationDelegate = self;
-		_userLocationForBaiduLBS.addrInfoDelegate = self;
-	} 
-}
+ 
 
 // 用户当前坐标回调(经纬度)
 - (void) locationCallback:(BMKUserLocation *)userLocation {

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
+#import "BaseModel.h"
 
-@interface LotteryIssueInfo : JSONModel
+@interface LotteryIssueInfo : BaseModel
 
 // 提示信息
 @property (nonatomic, readonly, strong) NSString *message;

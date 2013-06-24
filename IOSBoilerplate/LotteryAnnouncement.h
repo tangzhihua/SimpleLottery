@@ -6,9 +6,9 @@
 //
 //
 
-#import "JSONModel.h"
+#import "BaseModel.h"
 
-@interface LotteryAnnouncement : JSONModel
+@interface LotteryAnnouncement : BaseModel
 // 期号
 @property (nonatomic, readonly, strong) NSString *batchCode;
 // 开奖号码

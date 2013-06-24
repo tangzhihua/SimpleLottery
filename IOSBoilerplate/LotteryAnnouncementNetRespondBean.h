@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
+#import "BaseModel.h"
 
-@interface LotteryAnnouncementNetRespondBean : JSONModel
+@interface LotteryAnnouncementNetRespondBean : BaseModel
 @property (nonatomic, readonly, strong) NSString *noticeTime;
 @property (nonatomic, readonly, strong) NSMutableDictionary *lotteryAnnouncementMap;
  

@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
- 
-@interface LotterySalesStatusNetRespondBean : NSObject {
 
+@interface LotterySalesStatusNetRespondBean : NSObject {
+  
 }
 
 
@@ -21,5 +21,5 @@
 @property (nonatomic, readonly, strong) NSDictionary *lotterySaleInformationMap;
 
 +(id)lotterySalesStatusNetRespondBeanWithInProgressActivityCount:(NSInteger)inProgressActivityCount
-																	 lotterySaleInformationMap:(NSDictionary *)lotterySaleInformationMap;
+                                       lotterySaleInformationMap:(NSDictionary *)lotterySaleInformationMap;
 @end

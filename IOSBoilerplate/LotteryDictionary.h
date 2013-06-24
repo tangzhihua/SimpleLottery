@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "JSONModel.h"
+#import "BaseModel.h"
 
-@interface LotteryDictionary : JSONModel {
+@interface LotteryDictionary : BaseModel {
 	
 }
 

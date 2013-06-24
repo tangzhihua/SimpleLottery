@@ -344,7 +344,7 @@
 		D7B5ADEE176056EC002AEB14 /* NetRequestErrorBean.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */; };
 		D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */; };
 		D7C78DE5176469B6004F18F1 /* ServerRespondDataTestRuyicaiNew.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C78DE4176469B6004F18F1 /* ServerRespondDataTestRuyicaiNew.m */; };
-		D7F0D915175F0C5600E779FD /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F0D914175F0C5600E779FD /* JSONModel.m */; };
+		D7F0D915175F0C5600E779FD /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F0D914175F0C5600E779FD /* BaseModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -973,8 +973,8 @@
 		D7C78DE217646969004F18F1 /* IServerRespondDataTestNew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IServerRespondDataTestNew.h; sourceTree = "<group>"; };
 		D7C78DE3176469B6004F18F1 /* ServerRespondDataTestRuyicaiNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRespondDataTestRuyicaiNew.h; sourceTree = "<group>"; };
 		D7C78DE4176469B6004F18F1 /* ServerRespondDataTestRuyicaiNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRespondDataTestRuyicaiNew.m; sourceTree = "<group>"; };
-		D7F0D913175F0C5600E779FD /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
-		D7F0D914175F0C5600E779FD /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		D7F0D913175F0C5600E779FD /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		D7F0D914175F0C5600E779FD /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1291,8 +1291,8 @@
 			children = (
 				581ED7C2167EDDBC00862985 /* DomainBeanHelperClassNameMapping.h */,
 				581ED7C3167EDDBC00862985 /* DomainBeanHelperClassNameMapping.m */,
-				D7F0D913175F0C5600E779FD /* JSONModel.h */,
-				D7F0D914175F0C5600E779FD /* JSONModel.m */,
+				D7F0D913175F0C5600E779FD /* BaseModel.h */,
+				D7F0D914175F0C5600E779FD /* BaseModel.m */,
 				581ED7B3167EBD3800862985 /* 业务Bean代码 */,
 			);
 			name = M;
@@ -2883,7 +2883,7 @@
 				D7A2C569175DC37400D823F0 /* LuckyPickMainLayer.m in Sources */,
 				D7A2C56C175DC3E300D823F0 /* LuckyPickNumberDisplayLayer.m in Sources */,
 				D7A2C56F175DD5CA00D823F0 /* LuckyPickNumberDisplayView.m in Sources */,
-				D7F0D915175F0C5600E779FD /* JSONModel.m in Sources */,
+				D7F0D915175F0C5600E779FD /* BaseModel.m in Sources */,
 				D7B5ADE81760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m in Sources */,
 				D7B5ADEE176056EC002AEB14 /* NetRequestErrorBean.m in Sources */,
 				68EDEC981760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m in Sources */,

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
+#import "BaseModel.h"
 
-@interface AdImageInWelcomePageNetRespondBean : JSONModel
+@interface AdImageInWelcomePageNetRespondBean : BaseModel
 
 // 是否要显示从网络侧下载的广告图片
 @property (nonatomic, readonly, assign) BOOL isShowAdImageFromServer;

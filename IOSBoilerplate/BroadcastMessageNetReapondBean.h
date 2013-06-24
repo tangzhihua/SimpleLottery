@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
+#import "BaseModel.h"
 
-@interface BroadcastMessageNetReapondBean : JSONModel
+@interface BroadcastMessageNetReapondBean : BaseModel
 
 // 消息ID 客户端保存的id与返回的id比较，如果不同则弹出广播消息
 @property (nonatomic, readonly, strong) NSNumber *messageID;

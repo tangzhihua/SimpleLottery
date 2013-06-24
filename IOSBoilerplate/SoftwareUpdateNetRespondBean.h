@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
+#import "BaseModel.h"
 
 @class BroadcastMessageNetReapondBean;
 @class AdImageInWelcomePageNetRespondBean;
 @class UserLoggedInfo;
 
-@interface SoftwareUpdateNetRespondBean : JSONModel
+@interface SoftwareUpdateNetRespondBean : BaseModel
 
 // Top新闻
 @property (nonatomic, readonly, strong) NSString *news;

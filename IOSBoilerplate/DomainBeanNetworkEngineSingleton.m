@@ -229,8 +229,12 @@
 			
 		} forType:nil];
     
-    // 
+    /**********************************************************************************/
     [netRequestOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+      
+      // 网络数据正常返回
+      
+      
       id netRespondDomainBean = nil;
       NetRequestErrorBean *serverRespondDataError = [[NetRequestErrorBean alloc] init];
       serverRespondDataError.errorCode = 200;
@@ -238,6 +242,12 @@
       
 			do {
 				
+        // ------------------------------------- >>>
+        if ([completedOperation isCancelled]) {
+          // 本次网络请求被取消了
+          break;
+        }
+        // ------------------------------------- >>>
         
 				NSData *netRawEntityData = [completedOperation responseData];
 			  if (![netRawEntityData isKindOfClass:[NSData class]] || netRawEntityData.length <= 0) {
@@ -262,7 +272,13 @@
 					break;
 				}
         
-				
+        
+				// ------------------------------------- >>>
+        if ([completedOperation isCancelled]) {
+          // 本次网络请求被取消了
+          break;
+        }
+        // ------------------------------------- >>>
         
 				
 				// 检查服务器返回的数据是否有效, 如果无效, 要获取服务器返回的错误码和错误描述信息
@@ -279,6 +295,15 @@
           break;
         }
 				
+        
+        // ------------------------------------- >>>
+        if ([completedOperation isCancelled]) {
+          // 本次网络请求被取消了
+          break;
+        }
+        // ------------------------------------- >>>
+        
+        
 				// 将 "已经解包的可识别数据字符串" 解析成 "具体的业务响应数据Bean"
 				// note : 将服务器返回的数据字符串(已经解密, 解码完成了), 解析成对应的 "网络响应业务Bean"
 				id domainBeanAbstractFactoryObject = [[DomainBeanAbstractFactoryCacheSingleton sharedInstance] getDomainBeanAbstractFactoryObjectByKey:abstractFactoryMappingKey];
@@ -301,23 +326,37 @@
 				
 			} while (NO);
 			
-      if (serverRespondDataError.errorCode != 200) {
-        failedBlock(requestEventEnum, netRequestIndex, serverRespondDataError);
-      } else {
-        successedBlock(requestEventEnum, netRequestIndex, netRespondDomainBean);
+      // ------------------------------------- >>>
+      if (![completedOperation isCancelled]) {
+        if (serverRespondDataError.errorCode != 200) {
+          failedBlock(requestEventEnum, netRequestIndex, serverRespondDataError);
+        } else {
+          successedBlock(requestEventEnum, netRequestIndex, netRespondDomainBean);
+        }
       }
+      // ------------------------------------- >>>
+      
       
       // 删除本地缓存的 MKNetworkOperation
       [self.synchronousNetRequestBuf removeObjectForKey:[NSNumber numberWithInteger:netRequestIndex]];
-			 
-			
-      
+      PRPLog(@"当前网络接口请求队列长度=%i", self.synchronousNetRequestBuf.count);
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
       
-      NetRequestErrorBean *serverRespondDataError = [[NetRequestErrorBean alloc] init];
-      serverRespondDataError.errorCode = error.code;
-      serverRespondDataError.message = @"Error";
-      failedBlock(requestEventEnum, netRequestIndex, serverRespondDataError);
+      
+      // 发生网络请求错误
+      // ------------------------------------- >>>
+      if (![completedOperation isCancelled]) {
+        NetRequestErrorBean *serverRespondDataError = [[NetRequestErrorBean alloc] init];
+        serverRespondDataError.errorCode = error.code;
+        serverRespondDataError.message = @"Error";
+        failedBlock(requestEventEnum, netRequestIndex, serverRespondDataError);
+      }
+      // ------------------------------------- >>>
+      
+      
+      // 删除本地缓存的 MKNetworkOperation
+      [self.synchronousNetRequestBuf removeObjectForKey:[NSNumber numberWithInteger:netRequestIndex]];
+      PRPLog(@"当前网络接口请求队列长度=%i", self.synchronousNetRequestBuf.count);
     }];
     
     
@@ -332,7 +371,7 @@
 		[self.networkEngine enqueueOperation:netRequestOperation];
 		
 		
-		PRPLog(@"synchronousNetRequestBuf:count=%i", self.synchronousNetRequestBuf.count);
+		PRPLog(@"当前网络接口请求队列长度=%i", self.synchronousNetRequestBuf.count);
 		
 		PRPLog(@" ");
 		PRPLog(@" ");

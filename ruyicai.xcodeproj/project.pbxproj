@@ -1127,9 +1127,9 @@
 		581ED7B3167EBD3800862985 /* 业务Bean代码 */ = {
 			isa = PBXGroup;
 			children = (
+				68F5938E172E756A0001A414 /* 独立的业务Bean */,
 				68EDEC941760B8ED007572D4 /* 开奖公告 */,
 				68E744EB173F7CA400136C4B /* 彩票销售状态(今日开奖,加奖,是否停售) */,
-				68F5938E172E756A0001A414 /* 独立的业务Bean */,
 				68F5937D172E6C020001A414 /* software_update */,
 				68152B681723BEF80045DF8E /* issue_query */,
 				68152B4C172397980045DF8E /* account_login */,

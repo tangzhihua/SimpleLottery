@@ -11,7 +11,7 @@
 #import "JSONKit.h"
 #import "NSDictionary+SafeValue.h"
 
-#import "DomainProtocolNetHelperSingleton.h"
+
 #import "NSDate+Convenience.h"
 
 

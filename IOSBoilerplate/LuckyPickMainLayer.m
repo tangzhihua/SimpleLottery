@@ -51,7 +51,7 @@
 		[CCMenuItemFont setFontSize:28];
 		
 		// to avoid a retain-cycle with the menuitem and blocks
-		__weak id weakSelf = self;
+		//__weak id weakSelf = self;
 		
 		// Achievement Menu Item using blocks
 		CCMenuItem *menuItemOfGo = [CCMenuItemFont itemWithString:@"大奖GO" block:^(id sender) {
@@ -68,7 +68,7 @@
       
       id delay = [CCDelayTime actionWithDuration:0.25f];
       
-      id seq1 = [CCSequence actions: move_ease_inout1, delay, move_ease_inout_back1, [delay copy], nil];
+      //id seq1 = [CCSequence actions: move_ease_inout1, delay, move_ease_inout_back1, [delay copy], nil];
       
       
    

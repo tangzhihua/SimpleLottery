@@ -1,18 +1,16 @@
 //
-//  ServerRespondDataTestRuyicai.h
+//  ServerRespondDataTestRuyicaiNew.h
 //  ruyicai
 //
-//  Created by 熊猫 on 13-4-20.
+//  Created by tangzhihua on 13-6-9.
 //
 //
 
 #import <Foundation/Foundation.h>
 #import "IServerRespondDataTest.h"
 
-@interface ServerRespondDataTestRuyicai : NSObject <IServerRespondDataTest> {
-  
-}
-
+@class NetRequestErrorBean;
+@interface ServerRespondDataTestRuyicai : NSObject <IServerRespondDataTest>
 #pragma mark 实现 IServerRespondDataTest 接口
-- (NetErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String;
+- (NetRequestErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String;
 @end

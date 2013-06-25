@@ -7,8 +7,8 @@
 //
 
 #import "ServerRespondDataTestAirizu.h"
-#import "NetErrorTypeEnum.h"
-#import "NetErrorBean.h"
+
+ 
 #import "JSONKit.h"
 #import "NSDictionary+SafeValue.h"
  
@@ -33,9 +33,9 @@ static const NSString *const TAG = @"<ServerRespondDataTestAirizu>";
 }
 
 #pragma mark 实现 IServerRespondDataTest 接口
-- (NetErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String {
+- (NetRequestErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String {
   NSInteger errorCode = 200;
-  NetErrorTypeEnum errorType = NET_ERROR_TYPE_SUCCESS;
+  
   NSString *errorMessage = @"OK";
   
   NSDictionary *jsonDataNSDictionary
@@ -53,13 +53,12 @@ static const NSString *const TAG = @"<ServerRespondDataTestAirizu>";
     }
     
     // 服务器端返回了错误码
-    errorType = NET_ERROR_TYPE_SERVER_NET_ERROR;
+     
   }
   
-  NetErrorBean *netError = [NetErrorBean netErrorBean];
-  [netError setErrorCode:errorCode];
-  [netError setErrorType:errorType];
-  [netError setErrorMessage:errorMessage];
+  NetRequestErrorBean *netError = [[NetRequestErrorBean alloc] init];
+  netError.errorCode = errorCode;
+  netError.message = errorMessage;
   return netError;
 }
 @end

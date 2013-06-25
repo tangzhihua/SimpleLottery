@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
     [LocalCacheDataPathConstant createLocalCacheDirectories];
     
     // 启动 "加载本地缓存的数据" 子线程, 这里加载的缓存数据是次要的, 如 "城市列表" "字典"
-    __weak id weakSelf = self;
+    //__weak id weakSelf = self;
     
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));

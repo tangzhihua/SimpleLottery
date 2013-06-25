@@ -13,11 +13,11 @@
 #import "DomainBeanAbstractFactoryCacheSingleton.h"
 #import "NetEntityDataToolsFactoryMethodSingleton.h"
 #import "INetRequestEntityDataPackage.h"
-#import "HttpNetworkEngineParameterEnum.h"
+
 #import "SimpleCookieSingleton.h"
 #import "INetRespondRawEntityDataUnpack.h"
 #import "NetEntityDataToolsFactoryMethodSingleton.h"
-#import "IServerRespondDataTestNew.h"
+#import "IServerRespondDataTest.h"
 #import "IParseNetRespondStringToDomainBean.h"
 
 
@@ -283,8 +283,8 @@
 				
 				// 检查服务器返回的数据是否有效, 如果无效, 要获取服务器返回的错误码和错误描述信息
 				// (比如说某次网络请求成功了, 但是服务器那边没有有效的数据给客户端, 所以服务器会返回错误码和描述信息告知客户端访问结果)
-				id<IServerRespondDataTestNew> serverRespondDataTest = [[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getServerRespondDataTestNew];
-				if (![serverRespondDataTest conformsToProtocol:@protocol(IServerRespondDataTestNew)]) {
+				id<IServerRespondDataTest> serverRespondDataTest = [[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getServerRespondDataTest];
+				if (![serverRespondDataTest conformsToProtocol:@protocol(IServerRespondDataTest)]) {
 					RNAssert(NO, @"-->检查服务器返回是否有效(IServerRespondDataTest)的算法类, 是必须实现的");
           
 					break;
@@ -306,6 +306,7 @@
         
 				// 将 "已经解包的可识别数据字符串" 解析成 "具体的业务响应数据Bean"
 				// note : 将服务器返回的数据字符串(已经解密, 解码完成了), 解析成对应的 "网络响应业务Bean"
+        // 20130625 : 对于变化
 				id domainBeanAbstractFactoryObject = [[DomainBeanAbstractFactoryCacheSingleton sharedInstance] getDomainBeanAbstractFactoryObjectByKey:abstractFactoryMappingKey];
 				if ([domainBeanAbstractFactoryObject conformsToProtocol:@protocol(IDomainBeanAbstractFactory)]) {
 					id domainBeanParseAlgorithm = [domainBeanAbstractFactoryObject getParseNetRespondStringToDomainBeanStrategy];

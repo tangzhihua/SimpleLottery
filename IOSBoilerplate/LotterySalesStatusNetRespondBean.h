@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
-
-@interface LotterySalesStatusNetRespondBean : NSObject {
+@interface LotterySalesStatusNetRespondBean : BaseModel {
   
 }
 
@@ -18,8 +18,7 @@
 @property (nonatomic, readonly, assign) NSInteger inProgressActivityCount;
 
 // 彩票销售状态 列表
-@property (nonatomic, readonly, strong) NSDictionary *lotterySaleInformationMap;
+@property (nonatomic, readonly, strong) NSMutableDictionary *lotterySaleInformationMap;
 
-+(id)lotterySalesStatusNetRespondBeanWithInProgressActivityCount:(NSInteger)inProgressActivityCount
-                                       lotterySaleInformationMap:(NSDictionary *)lotterySaleInformationMap;
+
 @end

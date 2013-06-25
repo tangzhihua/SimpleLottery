@@ -43,63 +43,8 @@
       PRPLog(@"%@-> json 解析失败!");
       break;
     }
-    
-		
-    // 关键数据字段检测
-    NSNumber *defaultValueForNumber = [NSNumber numberWithBool:NO];
-		NSString *defaultValueForString = @"";
-		
-    NSNumber *inProgressActivityCount
-    = [jsonRootNSDictionary safeNumberObjectForKey:k_LotterySalesStatus_RespondKey_inProgressActivityCount
-                                  withDefaultValue:defaultValueForNumber];
-
-		NSMutableDictionary *lotterySaleInformationMap = [NSMutableDictionary dictionaryWithCapacity:20];
-		
-		NSArray *keysOfRootNSDictionary = [jsonRootNSDictionary allKeys];
-		for (NSString *key in keysOfRootNSDictionary) {
-			NSDictionary *jsonDictionaryForLotterySalesStatus = [jsonRootNSDictionary safeDictionaryObjectForKey:key];
-			if (jsonDictionaryForLotterySalesStatus != nil) {
-				NSString *isSaleString
-				= [jsonDictionaryForLotterySalesStatus safeStringObjectForKey:k_LotterySalesStatus_RespondKey_isSale
-																										 withDefaultValue:defaultValueForString];
-				BOOL isSaleBool = NO;
-				if ([NSString isEmpty:isSaleString] || [isSaleString isEqualToString:@"true"]) {
-					isSaleBool = YES;
-				}
-				LotteryOpenPrizeStatusEnum lotteryOpenPrizeStatusEnum = kLotteryOpenPrizeStatusEnum_NONE;
-				if (isSaleBool) {
-					NSString *isTodayOpenPrizeString
-					= [jsonDictionaryForLotterySalesStatus safeStringObjectForKey:k_LotterySalesStatus_RespondKey_isTodayOpenPrize
-																											 withDefaultValue:defaultValueForString];
-					BOOL isTodayOpenPrizeBool = NO;
-					if ([isTodayOpenPrizeString isEqualToString:@"true"]) {
-						isTodayOpenPrizeBool = YES;
-					}
-					NSString *isAddAwardString
-					= [jsonDictionaryForLotterySalesStatus safeStringObjectForKey:k_LotterySalesStatus_RespondKey_isAddAward
-																											 withDefaultValue:defaultValueForString];
-					BOOL isAddAwardBool = NO;
-					if ([isAddAwardString isEqualToString:@"true"]) {
-						isAddAwardBool = YES;
-					}
-					
-					if (isTodayOpenPrizeBool && isAddAwardBool) {
-						lotteryOpenPrizeStatusEnum = kLotteryOpenPrizeStatusEnum_TodayOpenPrizeAndAddAward;
-					} else if (isTodayOpenPrizeBool) {
-						lotteryOpenPrizeStatusEnum = kLotteryOpenPrizeStatusEnum_TodayOpenPrize;
-					} else if (isAddAwardBool) {
-						lotteryOpenPrizeStatusEnum = kLotteryOpenPrizeStatusEnum_TodayAddAward;
-					}
-				}
-				
-				LotterySalesStatus *lotterySalesStatus = [LotterySalesStatus lotterySalesStatusWithIsSale:isSaleBool lotteryOpenPrizeStatusEnum:lotteryOpenPrizeStatusEnum];
-				
-				[lotterySaleInformationMap setObject:lotterySalesStatus forKey:key];
-			}
-		}
-    
-		
-		return [LotterySalesStatusNetRespondBean lotterySalesStatusNetRespondBeanWithInProgressActivityCount:inProgressActivityCount lotterySaleInformationMap:lotterySaleInformationMap];
+     
+		return [[LotterySalesStatusNetRespondBean alloc] initWithDictionary:jsonRootNSDictionary];
   } while (NO);
   
   return nil;

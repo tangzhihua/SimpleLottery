@@ -5,12 +5,24 @@
 
 #import "UIAlertView+Blocks.h"
 
-// 因为只能在UI线程中调用 UIAlertView, 所以这里应该不需要考虑 同步点
+static dispatch_queue_t queue() {
+  static dispatch_queue_t _queue = NULL;
+  if (_queue == NULL) {
+    _queue = dispatch_queue_create("UIAlertView+Blocks", DISPATCH_QUEUE_CONCURRENT);
+  }
+  return _queue;
+}
+
+
 static NSMutableDictionary *blockCache(){
   static NSMutableDictionary *_blockCache = nil;
-  if (_blockCache == nil) {
-    _blockCache = [NSMutableDictionary dictionaryWithCapacity:50];
-  }
+  // synchronization 同步互斥
+  dispatch_sync(queue(), ^{
+		if (_blockCache == nil) {
+      _blockCache = [NSMutableDictionary dictionaryWithCapacity:50];
+    }
+	});
+  
   return _blockCache;
 }
 

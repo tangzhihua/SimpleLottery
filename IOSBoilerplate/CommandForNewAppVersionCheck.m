@@ -11,7 +11,7 @@
 #import "VersionNetRespondBean.h"
 
 
- 
+
 
 
 @interface CommandForNewAppVersionCheck ()
@@ -27,11 +27,6 @@
 	VersionNetRespondBean *_versionBean;
 }
 
-typedef NS_ENUM(NSInteger, AlertTypeEnum) {
-  // 新版本升级提示
-  kAlertTypeEnum_DownloadNewVersion = 0
-};
-
 /**
  
  * 执行命令对应的操作
@@ -40,7 +35,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 -(void)execute {
   if (!self.isExecuted) {
 		self.isExecuted = YES;
-
+    
     __weak id weakSelf = self;
     
     double delayInSeconds = 2.0;
@@ -63,7 +58,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
         
       } while (NO);
     });
-  }  
+  }
 }
 
 #pragma mark -
@@ -84,7 +79,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   if ((self = [super init])) {
     // 初始化代码
     _isExecuted = NO;
-
+    
   }
   
   return self;
@@ -100,34 +95,15 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
 
 #pragma mark -
 #pragma mark 子线程 ------> App新版本检查
- 
-
 -(void)newAppUpdateHint{
-  UIAlertView *alert
-  = [[UIAlertView alloc] initWithTitle:nil
-                               message:@"有新的版本更新，是否前往更新？"
-                              delegate:self
-                     cancelButtonTitle:@"关闭"
-                     otherButtonTitles:@"更新", nil];
-  alert.tag = kAlertTypeEnum_DownloadNewVersion;
-  [alert show];
+  
+  [UIAlertView showAlertViewWithTitle:nil message:@"有新的版本更新，是否前往更新？" cancelButtonTitle:@"关闭" otherButtonTitles:[NSArray arrayWithObject:@"升级"] onDismiss:^(int buttonIndex) {
+    MyApplication *application = (MyApplication *)[UIApplication sharedApplication];
+    [application openURL:[NSURL URLWithString:_versionBean.downloadAddress] forceOpenInSafari:YES];
+  } onCancel:^{
+    
+  }];
+
 }
 
-#pragma mark -
-#pragma mark 实现 UIAlertViewDelegate 接口
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-  
-  switch (alertView.tag) {
-    case kAlertTypeEnum_DownloadNewVersion:{
-      if (buttonIndex != [alertView cancelButtonIndex]) {
-        MyApplication *application = (MyApplication *)[UIApplication sharedApplication];
-        [application openURL:[NSURL URLWithString:_versionBean.downloadAddress] forceOpenInSafari:YES];
-      }
-    }break;
-			
-    default:
-      break;
-  }
-  
-}
 @end

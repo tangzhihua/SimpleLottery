@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Command.h"
-@interface CommandForNewAppVersionCheck : NSObject <Command, UIAlertViewDelegate> {
+@interface CommandForNewAppVersionCheck : NSObject <Command> {
   
 }
 

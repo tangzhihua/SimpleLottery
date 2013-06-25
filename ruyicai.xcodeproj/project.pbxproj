@@ -327,6 +327,7 @@
 		D7B5ADEE176056EC002AEB14 /* NetRequestErrorBean.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */; };
 		D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */; };
 		D7C6199D17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C6199C17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m */; };
+		D7C619A0177970DD0018EEF5 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C6199F177970DD0018EEF5 /* UIAlertView+Blocks.m */; };
 		D7C78DE5176469B6004F18F1 /* ServerRespondDataTestForRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C78DE4176469B6004F18F1 /* ServerRespondDataTestForRuyicai.m */; };
 		D7F0D915175F0C5600E779FD /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F0D914175F0C5600E779FD /* BaseModel.m */; };
 /* End PBXBuildFile section */
@@ -920,6 +921,8 @@
 		D7C6199A17793A120018EEF5 /* INetRespondDataToNSDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INetRespondDataToNSDictionary.h; sourceTree = "<group>"; };
 		D7C6199B17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRespondDataToNSDictionaryForRuyicai.h; sourceTree = "<group>"; };
 		D7C6199C17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRespondDataToNSDictionaryForRuyicai.m; sourceTree = "<group>"; };
+		D7C6199E177970DD0018EEF5 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		D7C6199F177970DD0018EEF5 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		D7C78DE217646969004F18F1 /* IServerRespondDataTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IServerRespondDataTest.h; sourceTree = "<group>"; };
 		D7C78DE3176469B6004F18F1 /* ServerRespondDataTestForRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRespondDataTestForRuyicai.h; sourceTree = "<group>"; };
 		D7C78DE4176469B6004F18F1 /* ServerRespondDataTestForRuyicai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRespondDataTestForRuyicai.m; sourceTree = "<group>"; };
@@ -1482,6 +1485,8 @@
 		587FC82916AAD6DB004EE49B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D7C6199E177970DD0018EEF5 /* UIAlertView+Blocks.h */,
+				D7C6199F177970DD0018EEF5 /* UIAlertView+Blocks.m */,
 				D768BCF8176F146800B871E3 /* Data+Helper.h */,
 				D768BCF9176F146800B871E3 /* Data+Helper.m */,
 				D768BCFA176F146800B871E3 /* String+Helper.h */,
@@ -2755,6 +2760,7 @@
 				D7A907621771B9050006DD81 /* SignInActivity.m in Sources */,
 				D7A907671771B93A0006DD81 /* ForgotPasswordActivity.m in Sources */,
 				D7C6199D17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m in Sources */,
+				D7C619A0177970DD0018EEF5 /* UIAlertView+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

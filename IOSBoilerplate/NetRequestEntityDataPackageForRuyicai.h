@@ -9,10 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "INetRequestEntityDataPackage.h"
 
-@interface NetRequestEntityDataPackageForRuyicai : NSObject <INetRequestEntityDataPackage> {
-  
-}
-
-#pragma mark INetRequestEntityDataPackage 接口方法
-- (NSData *) packageNetRequestEntityDataWithDomainDataDictionary:(NSDictionary *) domainDD;
+@interface NetRequestEntityDataPackageForRuyicai : NSObject <INetRequestEntityDataPackage> 
 @end

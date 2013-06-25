@@ -9,7 +9,8 @@
 #import "LotterySalesStatusDomainBeanToolsFactory.h"
 
 #import "LotterySalesStatusParseDomainBeanToDD.h"
-#import "LotterySalesStatusParseNetRespondStringToDomainBean.h"
+
+#import "LotterySalesStatusNetRespondBean.h"
 
 @implementation LotterySalesStatusDomainBeanToolsFactory
 - (id) init {
@@ -35,7 +36,7 @@
  * @return
  */
 - (id<IParseNetRespondStringToDomainBean>) getParseNetRespondStringToDomainBeanStrategy {
-  return [[LotterySalesStatusParseNetRespondStringToDomainBean alloc] init];
+  return nil;
 }
 
 /**
@@ -44,5 +45,13 @@
  */
 - (NSString *) getURL {
   return nil;
+}
+
+/**
+ * 当前网络响应业务Bean的Class
+ * @return
+ */
+- (Class) getClassOfNetRespondBean {
+  return [LotterySalesStatusNetRespondBean class];
 }
 @end

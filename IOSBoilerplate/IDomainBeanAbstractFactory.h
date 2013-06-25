@@ -35,4 +35,10 @@
  * @return
  */
 - (NSString *) getURL;
+
+/**
+ * 当前网络响应业务Bean的Class
+ * @return
+ */
+- (Class) getClassOfNetRespondBean;
 @end

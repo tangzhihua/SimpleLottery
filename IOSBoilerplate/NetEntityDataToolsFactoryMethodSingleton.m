@@ -15,13 +15,15 @@
 
 // 如意彩项目
 #import "NetRequestEntityDataPackageForRuyicai.h"
-#import "NetRespondEntityDataUnpackRuyicai.h"
-#import "ServerRespondDataTestRuyicai.h"
+#import "NetRespondEntityDataUnpackForRuyicai.h"
+#import "ServerRespondDataTestForRuyicai.h"
+#import "NetRespondDataToNSDictionaryForRuyicai.h"
 
 @interface NetEntityDataToolsFactoryMethodSingleton()
-@property (nonatomic, strong) id netRequestEntityDataPackage;
-@property (nonatomic, strong) id netRespondEntityDataUnpack;
-@property (nonatomic, strong) id serverRespondDataTest;
+@property (nonatomic, strong) id<INetRequestEntityDataPackage> netRequestEntityDataPackageStrategyAlgorithm;
+@property (nonatomic, strong) id<INetRespondRawEntityDataUnpack> netRespondEntityDataUnpackStrategyAlgorithm;
+@property (nonatomic, strong) id<IServerRespondDataTest> serverRespondDataTestStrategyAlgorithm;
+@property (nonatomic, strong) id<INetRespondDataToNSDictionary> netRespondDataToNSDictionaryStrategyAlgorithm;
 @end
 
 @implementation NetEntityDataToolsFactoryMethodSingleton
@@ -44,9 +46,10 @@
   if ((self = [super init])) {
     // 初始化代码
     
-    _netRequestEntityDataPackage = [[NetRequestEntityDataPackageForRuyicai alloc] init];
-    _netRespondEntityDataUnpack = [[NetRespondEntityDataUnpackRuyicai alloc] init];
-    _serverRespondDataTest = [[ServerRespondDataTestRuyicai alloc] init];
+    _netRequestEntityDataPackageStrategyAlgorithm = [[NetRequestEntityDataPackageForRuyicai alloc] init];
+    _netRespondEntityDataUnpackStrategyAlgorithm = [[NetRespondEntityDataUnpackForRuyicai alloc] init];
+    _serverRespondDataTestStrategyAlgorithm = [[ServerRespondDataTestForRuyicai alloc] init];
+    _netRespondDataToNSDictionaryStrategyAlgorithm = [[NetRespondDataToNSDictionaryForRuyicai alloc] init];
   }
   
   return self;
@@ -61,13 +64,16 @@
 
 #pragma mark
 #pragma mark 实现 INetEntityDataTools 接口的方法
-- (id<INetRequestEntityDataPackage>) getNetRequestEntityDataPackage {
-  return _netRequestEntityDataPackage;
+- (id<INetRequestEntityDataPackage>) getNetRequestEntityDataPackageStrategyAlgorithm {
+  return self.netRequestEntityDataPackageStrategyAlgorithm;
 }
-- (id<INetRespondRawEntityDataUnpack>) getNetRespondEntityDataUnpack {
-  return _netRespondEntityDataUnpack;
+- (id<INetRespondRawEntityDataUnpack>) getNetRespondEntityDataUnpackStrategyAlgorithm {
+  return self.netRespondEntityDataUnpackStrategyAlgorithm;
 }
-- (id<IServerRespondDataTest>) getServerRespondDataTest {
-  return _serverRespondDataTest;
+- (id<IServerRespondDataTest>) getServerRespondDataTestStrategyAlgorithm {
+  return self.serverRespondDataTestStrategyAlgorithm;
+}
+- (id<INetRespondDataToNSDictionary>) getNetRespondDataToNSDictionaryStrategyAlgorithm {
+  return self.netRespondDataToNSDictionaryStrategyAlgorithm;
 }
 @end

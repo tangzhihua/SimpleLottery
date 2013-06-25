@@ -10,8 +10,9 @@
 
  
 #import "SoftwareUpdateParseDomainBeanToDD.h"
-#import "SoftwareUpdateParseNetRespondStringToDomainBean.h"
+ 
 
+#import "SoftwareUpdateNetRespondBean.h"
 @implementation SoftwareUpdateDomainBeanToolsFactory
 - (id) init {
 	
@@ -36,7 +37,7 @@
  * @return
  */
 - (id<IParseNetRespondStringToDomainBean>) getParseNetRespondStringToDomainBeanStrategy {
-  return [[SoftwareUpdateParseNetRespondStringToDomainBean alloc] init];
+  return nil;
 }
 
 /**
@@ -45,5 +46,13 @@
  */
 - (NSString *) getURL {
   return nil;
+}
+
+/**
+ * 当前网络响应业务Bean的Class
+ * @return
+ */
+- (Class) getClassOfNetRespondBean {
+  return [SoftwareUpdateNetRespondBean class];
 }
 @end

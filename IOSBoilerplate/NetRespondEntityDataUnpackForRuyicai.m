@@ -6,7 +6,7 @@
 //
 //
 
-#import "NetRespondEntityDataUnpackRuyicai.h"
+#import "NetRespondEntityDataUnpackForRuyicai.h"
 
 #import "NSData+AES.h"
 #import "NSData+BASE64.h"
@@ -17,7 +17,7 @@
 #import "JSONKit.h"
 static const NSString *const TAG = @"<NetRespondEntityDataUnpackRuyicai>";
 
-@implementation NetRespondEntityDataUnpackRuyicai
+@implementation NetRespondEntityDataUnpackForRuyicai
 - (id) init {
 	
 	if ((self = [super init])) {

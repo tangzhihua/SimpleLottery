@@ -9,8 +9,9 @@
 #import "IssueQueryDomainBeanToolsFactory.h"
 
 #import "IssueQueryParseDomainBeanToDD.h"
-#import "IssueQueryParseNetRespondStringToDomainBean.h"
 
+
+#import "LotteryIssueInfo.h"
 @implementation IssueQueryDomainBeanToolsFactory
 - (id) init {
 	
@@ -35,7 +36,7 @@
  * @return
  */
 - (id<IParseNetRespondStringToDomainBean>) getParseNetRespondStringToDomainBeanStrategy {
-  return [[IssueQueryParseNetRespondStringToDomainBean alloc] init];
+  return nil;
 }
 
 /**
@@ -46,4 +47,11 @@
   return nil;
 }
 
+/**
+ * 当前网络响应业务Bean的Class
+ * @return
+ */
+- (Class) getClassOfNetRespondBean {
+  return [LotteryIssueInfo class];
+}
 @end

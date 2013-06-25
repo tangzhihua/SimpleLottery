@@ -8,7 +8,9 @@
 
 #import "LogonDomainBeanToolsFactory.h"
 #import "LogonParseDomainBeanToDD.h"
-#import "LogonParseNetRespondStringToDomainBean.h"
+ 
+
+#import "UserLoggedInfo.h"
 
 @implementation LogonDomainBeanToolsFactory
 - (id) init {
@@ -34,7 +36,7 @@
  * @return
  */
 - (id<IParseNetRespondStringToDomainBean>) getParseNetRespondStringToDomainBeanStrategy {
-  return [[LogonParseNetRespondStringToDomainBean alloc] init];
+  return nil;
 }
 
 /**
@@ -45,4 +47,11 @@
   return nil;
 }
 
+/**
+ * 当前网络响应业务Bean的Class
+ * @return
+ */
+- (Class) getClassOfNetRespondBean {
+  return [UserLoggedInfo class];
+}
 @end

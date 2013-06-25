@@ -14,7 +14,7 @@
  *
  */
 @protocol INetRequestEntityDataPackage <NSObject>
-- (NSData *) packageNetRequestEntityDataWithDomainDataDictionary:(NSDictionary *)domainDD;
+- (NSData *) packageNetRequestEntityDataWithDomainDataDictionary:(in NSDictionary *)domainDD;
 @end
 
 

@@ -15,8 +15,4 @@
 
 + (NetEntityDataToolsFactoryMethodSingleton *) sharedInstance;
 
-#pragma mark 接口 INetEntityDataTools 方法
-- (id<INetRequestEntityDataPackage>) getNetRequestEntityDataPackage;
-- (id<INetRespondRawEntityDataUnpack>) getNetRespondEntityDataUnpack;
-- (id<IServerRespondDataTest>) getServerRespondDataTest;
 @end

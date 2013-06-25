@@ -6,14 +6,14 @@
 //
 //
 
-#import "ServerRespondDataTestRuyicai.h"
+#import "ServerRespondDataTestForRuyicai.h"
 #import "NetRequestErrorBean.h"
 #import "JSONKit.h"
 #import "NSDictionary+SafeValue.h"
 
-@implementation ServerRespondDataTestRuyicai
+@implementation ServerRespondDataTestForRuyicai
 #pragma mark 实现 IServerRespondDataTest 接口
-- (NetRequestErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String {
+- (NetRequestErrorBean *) testServerRespondDataIsValid:(in NSString *)serverRespondDataOfUTF8String {
   NSInteger errorCode = 200;
   NSString *errorMessage = @"OK";
   

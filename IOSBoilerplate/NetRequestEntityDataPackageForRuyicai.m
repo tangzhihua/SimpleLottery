@@ -26,7 +26,7 @@ static const NSString *const TAG = @"<NetRequestEntityDataPackageForRuyicai>";
 }
 
 #pragma mark 实现 INetRequestEntityDataPackage 接口方法
-- (NSData *) packageNetRequestEntityDataWithDomainDataDictionary:(NSDictionary *) domainDD {
+- (NSData *) packageNetRequestEntityDataWithDomainDataDictionary:(in NSDictionary *) domainDD {
   
   if ([domainDD count] <= 0) {
     // 入参为空

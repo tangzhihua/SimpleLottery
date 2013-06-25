@@ -143,21 +143,17 @@
 		68152B58172399E10045DF8E /* LogonDomainBeanToolsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B4F172399E10045DF8E /* LogonDomainBeanToolsFactory.m */; };
 		68152B59172399E10045DF8E /* LogonNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B51172399E10045DF8E /* LogonNetRequestBean.m */; };
 		68152B5B172399E10045DF8E /* LogonParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B55172399E10045DF8E /* LogonParseDomainBeanToDD.m */; };
-		68152B5C172399E10045DF8E /* LogonParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B57172399E10045DF8E /* LogonParseNetRespondStringToDomainBean.m */; };
 		68152B5F1723A9D70045DF8E /* LogonDomainBeanToolsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B4F172399E10045DF8E /* LogonDomainBeanToolsFactory.m */; };
 		68152B601723A9D70045DF8E /* LogonNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B51172399E10045DF8E /* LogonNetRequestBean.m */; };
 		68152B621723A9D70045DF8E /* LogonParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B55172399E10045DF8E /* LogonParseDomainBeanToDD.m */; };
-		68152B631723A9D70045DF8E /* LogonParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B57172399E10045DF8E /* LogonParseNetRespondStringToDomainBean.m */; };
 		68152B661723ACB10045DF8E /* rijndael.c in Sources */ = {isa = PBXBuildFile; fileRef = 68152B641723ACB10045DF8E /* rijndael.c */; };
 		68152B671723ACD90045DF8E /* rijndael.c in Sources */ = {isa = PBXBuildFile; fileRef = 68152B641723ACB10045DF8E /* rijndael.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68152B6C1723C0BD0045DF8E /* IssueQueryNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B6B1723C0BD0045DF8E /* IssueQueryNetRequestBean.m */; };
 		68152B721723C7D40045DF8E /* IssueQueryDomainBeanToolsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B711723C7D40045DF8E /* IssueQueryDomainBeanToolsFactory.m */; };
 		68152B751723C8440045DF8E /* IssueQueryParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B741723C8440045DF8E /* IssueQueryParseDomainBeanToDD.m */; };
-		68152B781723CACD0045DF8E /* IssueQueryParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B771723CACD0045DF8E /* IssueQueryParseNetRespondStringToDomainBean.m */; };
 		68152B7B1723CF070045DF8E /* IssueQueryNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B6B1723C0BD0045DF8E /* IssueQueryNetRequestBean.m */; };
 		68152B7F1723CF070045DF8E /* IssueQueryDomainBeanToolsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B711723C7D40045DF8E /* IssueQueryDomainBeanToolsFactory.m */; };
 		68152B811723CF070045DF8E /* IssueQueryParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B741723C8440045DF8E /* IssueQueryParseDomainBeanToDD.m */; };
-		68152B831723CF070045DF8E /* IssueQueryParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68152B771723CACD0045DF8E /* IssueQueryParseNetRespondStringToDomainBean.m */; };
 		68291446172C0BF4007998E2 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 68291443172C0BF4007998E2 /* NSString+MD5Addition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68291447172C0BF4007998E2 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 68291445172C0BF4007998E2 /* UIDevice+IdentifierAddition.m */; };
 		68291449172C2219007998E2 /* beginner_guide_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68291448172C2219007998E2 /* beginner_guide_1.png */; };
@@ -207,7 +203,7 @@
 		68A347691768B52C00634237 /* Errors_zh_CN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68A347681768B52C00634237 /* Errors_zh_CN.plist */; };
 		68A6FE1C17228E7B00A79D25 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE1B17228E7B00A79D25 /* NSData+AES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68A6FE20172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE1F172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.m */; };
-		68A6FE23172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE22172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.m */; };
+		68A6FE23172292F400A79D25 /* NetRespondEntityDataUnpackForRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE22172292F400A79D25 /* NetRespondEntityDataUnpackForRuyicai.m */; };
 		68A6FE38172299D600A79D25 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE29172299D600A79D25 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68A6FE4017229A3200A79D25 /* NSData+BASE64.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE3F17229A3200A79D25 /* NSData+BASE64.m */; };
 		68A6FE4317229BE700A79D25 /* NSData+ZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6FE4217229BE700A79D25 /* NSData+ZIP.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -280,18 +276,15 @@
 		68E744F0173F803D00136C4B /* LotterySalesStatusNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744EF173F803D00136C4B /* LotterySalesStatusNetRequestBean.m */; };
 		68E744F3173F817800136C4B /* LotterySalesStatusNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744F2173F817800136C4B /* LotterySalesStatusNetRespondBean.m */; };
 		68E744FA173F860700136C4B /* LotterySalesStatusParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744F9173F860600136C4B /* LotterySalesStatusParseDomainBeanToDD.m */; };
-		68E744FD173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744FC173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m */; };
 		68EDEC981760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDEC971760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m */; };
 		68EDEC9B1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDEC9A1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m */; };
 		68EDEC9E1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDEC9D1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m */; };
 		68EDECA11760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDECA01760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m */; };
-		68EDECA41760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDECA31760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m */; };
 		68EDECA71760C3F4007572D4 /* LotteryAnnouncement.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EDECA61760C3F3007572D4 /* LotteryAnnouncement.m */; };
 		68F59381172E6D210001A414 /* SoftwareUpdateDomainBeanToolsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59380172E6D210001A414 /* SoftwareUpdateDomainBeanToolsFactory.m */; };
 		68F59384172E6D400001A414 /* SoftwareUpdateNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59383172E6D400001A414 /* SoftwareUpdateNetRequestBean.m */; };
 		68F59387172E6D4F0001A414 /* SoftwareUpdateNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59386172E6D4E0001A414 /* SoftwareUpdateNetRespondBean.m */; };
 		68F5938A172E6D750001A414 /* SoftwareUpdateParseDomainBeanToDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59389172E6D750001A414 /* SoftwareUpdateParseDomainBeanToDD.m */; };
-		68F5938D172E6DA10001A414 /* SoftwareUpdateParseNetRespondStringToDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F5938C172E6DA10001A414 /* SoftwareUpdateParseNetRespondStringToDomainBean.m */; };
 		68F59391172E75910001A414 /* AdImageInWelcomePageNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59390172E75910001A414 /* AdImageInWelcomePageNetRespondBean.m */; };
 		68F59397172E75C60001A414 /* UserLoggedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F59396172E75C60001A414 /* UserLoggedInfo.m */; };
 		68F593A0172E77050001A414 /* LotteryIssueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F5939F172E77050001A414 /* LotteryIssueInfo.m */; };
@@ -333,7 +326,8 @@
 		D7B5ADE81760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADE71760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m */; };
 		D7B5ADEE176056EC002AEB14 /* NetRequestErrorBean.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */; };
 		D7B5ADF0176056F9002AEB14 /* Errors_en_US.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */; };
-		D7C78DE5176469B6004F18F1 /* ServerRespondDataTestRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C78DE4176469B6004F18F1 /* ServerRespondDataTestRuyicai.m */; };
+		D7C6199D17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C6199C17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m */; };
+		D7C78DE5176469B6004F18F1 /* ServerRespondDataTestForRuyicai.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C78DE4176469B6004F18F1 /* ServerRespondDataTestForRuyicai.m */; };
 		D7F0D915175F0C5600E779FD /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F0D914175F0C5600E779FD /* BaseModel.m */; };
 /* End PBXBuildFile section */
 
@@ -680,8 +674,6 @@
 		68152B51172399E10045DF8E /* LogonNetRequestBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogonNetRequestBean.m; sourceTree = "<group>"; };
 		68152B54172399E10045DF8E /* LogonParseDomainBeanToDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogonParseDomainBeanToDD.h; sourceTree = "<group>"; };
 		68152B55172399E10045DF8E /* LogonParseDomainBeanToDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogonParseDomainBeanToDD.m; sourceTree = "<group>"; };
-		68152B56172399E10045DF8E /* LogonParseNetRespondStringToDomainBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogonParseNetRespondStringToDomainBean.h; sourceTree = "<group>"; };
-		68152B57172399E10045DF8E /* LogonParseNetRespondStringToDomainBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogonParseNetRespondStringToDomainBean.m; sourceTree = "<group>"; };
 		68152B5D1723A3A30045DF8E /* MacroConstantForNetRequestCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroConstantForNetRequestCommand.h; sourceTree = "<group>"; };
 		68152B5E1723A3D40045DF8E /* MacroConstantForNetRequestType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroConstantForNetRequestType.h; sourceTree = "<group>"; };
 		68152B641723ACB10045DF8E /* rijndael.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rijndael.c; sourceTree = "<group>"; };
@@ -693,8 +685,6 @@
 		68152B711723C7D40045DF8E /* IssueQueryDomainBeanToolsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueQueryDomainBeanToolsFactory.m; sourceTree = "<group>"; };
 		68152B731723C8430045DF8E /* IssueQueryParseDomainBeanToDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueQueryParseDomainBeanToDD.h; sourceTree = "<group>"; };
 		68152B741723C8440045DF8E /* IssueQueryParseDomainBeanToDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueQueryParseDomainBeanToDD.m; sourceTree = "<group>"; };
-		68152B761723CACC0045DF8E /* IssueQueryParseNetRespondStringToDomainBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueQueryParseNetRespondStringToDomainBean.h; sourceTree = "<group>"; };
-		68152B771723CACD0045DF8E /* IssueQueryParseNetRespondStringToDomainBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueQueryParseNetRespondStringToDomainBean.m; sourceTree = "<group>"; };
 		68291442172C0BF4007998E2 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Addition.h"; sourceTree = "<group>"; };
 		68291443172C0BF4007998E2 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Addition.m"; sourceTree = "<group>"; };
 		68291444172C0BF4007998E2 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
@@ -781,8 +771,8 @@
 		68A6FE1B17228E7B00A79D25 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		68A6FE1E172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestEntityDataPackageForRuyicai.h; sourceTree = "<group>"; };
 		68A6FE1F172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestEntityDataPackageForRuyicai.m; sourceTree = "<group>"; };
-		68A6FE21172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRespondEntityDataUnpackRuyicai.h; sourceTree = "<group>"; };
-		68A6FE22172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRespondEntityDataUnpackRuyicai.m; sourceTree = "<group>"; };
+		68A6FE21172292F400A79D25 /* NetRespondEntityDataUnpackForRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRespondEntityDataUnpackForRuyicai.h; sourceTree = "<group>"; };
+		68A6FE22172292F400A79D25 /* NetRespondEntityDataUnpackForRuyicai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRespondEntityDataUnpackForRuyicai.m; sourceTree = "<group>"; };
 		68A6FE28172299D600A79D25 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		68A6FE29172299D600A79D25 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		68A6FE2A172299D600A79D25 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -839,8 +829,6 @@
 		68E744F4173F822000136C4B /* LotterySalesStatusDatabaseFieldsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotterySalesStatusDatabaseFieldsConstant.h; sourceTree = "<group>"; };
 		68E744F8173F860600136C4B /* LotterySalesStatusParseDomainBeanToDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotterySalesStatusParseDomainBeanToDD.h; sourceTree = "<group>"; };
 		68E744F9173F860600136C4B /* LotterySalesStatusParseDomainBeanToDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotterySalesStatusParseDomainBeanToDD.m; sourceTree = "<group>"; };
-		68E744FB173F87B400136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotterySalesStatusParseNetRespondStringToDomainBean.h; sourceTree = "<group>"; };
-		68E744FC173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotterySalesStatusParseNetRespondStringToDomainBean.m; sourceTree = "<group>"; };
 		68EDEC951760B9E5007572D4 /* LotteryAnnouncementDatabaseFieldConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementDatabaseFieldConstant.h; sourceTree = "<group>"; };
 		68EDEC961760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementDomainBeanToolsFactory.h; sourceTree = "<group>"; };
 		68EDEC971760BB97007572D4 /* LotteryAnnouncementDomainBeanToolsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementDomainBeanToolsFactory.m; sourceTree = "<group>"; };
@@ -850,8 +838,6 @@
 		68EDEC9D1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementNetRespondBean.m; sourceTree = "<group>"; };
 		68EDEC9F1760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementParseDomainBeanToDD.h; sourceTree = "<group>"; };
 		68EDECA01760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementParseDomainBeanToDD.m; sourceTree = "<group>"; };
-		68EDECA21760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncementParseNetRespondStringToDomainBean.h; sourceTree = "<group>"; };
-		68EDECA31760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncementParseNetRespondStringToDomainBean.m; sourceTree = "<group>"; };
 		68EDECA51760C3F2007572D4 /* LotteryAnnouncement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryAnnouncement.h; sourceTree = "<group>"; };
 		68EDECA61760C3F3007572D4 /* LotteryAnnouncement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryAnnouncement.m; sourceTree = "<group>"; };
 		68F5937E172E6CE00001A414 /* SoftwareUpdateDatabaseFieldsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoftwareUpdateDatabaseFieldsConstant.h; sourceTree = "<group>"; };
@@ -863,8 +849,6 @@
 		68F59386172E6D4E0001A414 /* SoftwareUpdateNetRespondBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoftwareUpdateNetRespondBean.m; sourceTree = "<group>"; };
 		68F59388172E6D750001A414 /* SoftwareUpdateParseDomainBeanToDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoftwareUpdateParseDomainBeanToDD.h; sourceTree = "<group>"; };
 		68F59389172E6D750001A414 /* SoftwareUpdateParseDomainBeanToDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoftwareUpdateParseDomainBeanToDD.m; sourceTree = "<group>"; };
-		68F5938B172E6DA10001A414 /* SoftwareUpdateParseNetRespondStringToDomainBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoftwareUpdateParseNetRespondStringToDomainBean.h; sourceTree = "<group>"; };
-		68F5938C172E6DA10001A414 /* SoftwareUpdateParseNetRespondStringToDomainBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoftwareUpdateParseNetRespondStringToDomainBean.m; sourceTree = "<group>"; };
 		68F5938F172E75910001A414 /* AdImageInWelcomePageNetRespondBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdImageInWelcomePageNetRespondBean.h; sourceTree = "<group>"; };
 		68F59390172E75910001A414 /* AdImageInWelcomePageNetRespondBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdImageInWelcomePageNetRespondBean.m; sourceTree = "<group>"; };
 		68F59395172E75C60001A414 /* UserLoggedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoggedInfo.h; sourceTree = "<group>"; };
@@ -933,9 +917,12 @@
 		D7B5ADEC176056EC002AEB14 /* NetRequestErrorBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestErrorBean.h; sourceTree = "<group>"; };
 		D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestErrorBean.m; sourceTree = "<group>"; };
 		D7B5ADEF176056F9002AEB14 /* Errors_en_US.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Errors_en_US.plist; sourceTree = "<group>"; };
+		D7C6199A17793A120018EEF5 /* INetRespondDataToNSDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INetRespondDataToNSDictionary.h; sourceTree = "<group>"; };
+		D7C6199B17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRespondDataToNSDictionaryForRuyicai.h; sourceTree = "<group>"; };
+		D7C6199C17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRespondDataToNSDictionaryForRuyicai.m; sourceTree = "<group>"; };
 		D7C78DE217646969004F18F1 /* IServerRespondDataTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IServerRespondDataTest.h; sourceTree = "<group>"; };
-		D7C78DE3176469B6004F18F1 /* ServerRespondDataTestRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRespondDataTestRuyicai.h; sourceTree = "<group>"; };
-		D7C78DE4176469B6004F18F1 /* ServerRespondDataTestRuyicai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRespondDataTestRuyicai.m; sourceTree = "<group>"; };
+		D7C78DE3176469B6004F18F1 /* ServerRespondDataTestForRuyicai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRespondDataTestForRuyicai.h; sourceTree = "<group>"; };
+		D7C78DE4176469B6004F18F1 /* ServerRespondDataTestForRuyicai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRespondDataTestForRuyicai.m; sourceTree = "<group>"; };
 		D7F0D913175F0C5600E779FD /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		D7F0D914175F0C5600E779FD /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1464,6 +1451,7 @@
 				587FA69916800CBE00C90D4C /* INetRequestEntityDataPackage.h */,
 				587FA69A16800CCD00C90D4C /* INetRespondRawEntityDataUnpack.h */,
 				D7C78DE217646969004F18F1 /* IServerRespondDataTest.h */,
+				D7C6199A17793A120018EEF5 /* INetRespondDataToNSDictionary.h */,
 			);
 			name = interface;
 			sourceTree = "<group>";
@@ -1866,8 +1854,6 @@
 				68152B51172399E10045DF8E /* LogonNetRequestBean.m */,
 				68152B54172399E10045DF8E /* LogonParseDomainBeanToDD.h */,
 				68152B55172399E10045DF8E /* LogonParseDomainBeanToDD.m */,
-				68152B56172399E10045DF8E /* LogonParseNetRespondStringToDomainBean.h */,
-				68152B57172399E10045DF8E /* LogonParseNetRespondStringToDomainBean.m */,
 			);
 			name = account_login;
 			sourceTree = "<group>";
@@ -1882,8 +1868,6 @@
 				68152B6B1723C0BD0045DF8E /* IssueQueryNetRequestBean.m */,
 				68152B731723C8430045DF8E /* IssueQueryParseDomainBeanToDD.h */,
 				68152B741723C8440045DF8E /* IssueQueryParseDomainBeanToDD.m */,
-				68152B761723CACC0045DF8E /* IssueQueryParseNetRespondStringToDomainBean.h */,
-				68152B771723CACD0045DF8E /* IssueQueryParseNetRespondStringToDomainBean.m */,
 			);
 			name = issue_query;
 			sourceTree = "<group>";
@@ -2043,10 +2027,12 @@
 			children = (
 				68A6FE1E172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.h */,
 				68A6FE1F172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.m */,
-				68A6FE21172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.h */,
-				68A6FE22172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.m */,
-				D7C78DE3176469B6004F18F1 /* ServerRespondDataTestRuyicai.h */,
-				D7C78DE4176469B6004F18F1 /* ServerRespondDataTestRuyicai.m */,
+				68A6FE21172292F400A79D25 /* NetRespondEntityDataUnpackForRuyicai.h */,
+				68A6FE22172292F400A79D25 /* NetRespondEntityDataUnpackForRuyicai.m */,
+				D7C78DE3176469B6004F18F1 /* ServerRespondDataTestForRuyicai.h */,
+				D7C78DE4176469B6004F18F1 /* ServerRespondDataTestForRuyicai.m */,
+				D7C6199B17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.h */,
+				D7C6199C17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m */,
 			);
 			name = "如意彩";
 			sourceTree = "<group>";
@@ -2170,8 +2156,6 @@
 				68F6ECA1174B9D73003B1CC1 /* LotterySalesStatus.m */,
 				68E744F8173F860600136C4B /* LotterySalesStatusParseDomainBeanToDD.h */,
 				68E744F9173F860600136C4B /* LotterySalesStatusParseDomainBeanToDD.m */,
-				68E744FB173F87B400136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.h */,
-				68E744FC173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m */,
 			);
 			name = "彩票销售状态(今日开奖,加奖,是否停售)";
 			sourceTree = "<group>";
@@ -2190,8 +2174,6 @@
 				68EDEC9D1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m */,
 				68EDEC9F1760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.h */,
 				68EDECA01760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m */,
-				68EDECA21760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.h */,
-				68EDECA31760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m */,
 			);
 			name = "开奖公告";
 			sourceTree = "<group>";
@@ -2208,8 +2190,6 @@
 				68F59386172E6D4E0001A414 /* SoftwareUpdateNetRespondBean.m */,
 				68F59388172E6D750001A414 /* SoftwareUpdateParseDomainBeanToDD.h */,
 				68F59389172E6D750001A414 /* SoftwareUpdateParseDomainBeanToDD.m */,
-				68F5938B172E6DA10001A414 /* SoftwareUpdateParseNetRespondStringToDomainBean.h */,
-				68F5938C172E6DA10001A414 /* SoftwareUpdateParseNetRespondStringToDomainBean.m */,
 			);
 			name = software_update;
 			sourceTree = "<group>";
@@ -2640,12 +2620,10 @@
 				68152B7B1723CF070045DF8E /* IssueQueryNetRequestBean.m in Sources */,
 				68152B7F1723CF070045DF8E /* IssueQueryDomainBeanToolsFactory.m in Sources */,
 				68152B811723CF070045DF8E /* IssueQueryParseDomainBeanToDD.m in Sources */,
-				68152B831723CF070045DF8E /* IssueQueryParseNetRespondStringToDomainBean.m in Sources */,
 				68152B671723ACD90045DF8E /* rijndael.c in Sources */,
 				68152B5F1723A9D70045DF8E /* LogonDomainBeanToolsFactory.m in Sources */,
 				68152B601723A9D70045DF8E /* LogonNetRequestBean.m in Sources */,
 				68152B621723A9D70045DF8E /* LogonParseDomainBeanToDD.m in Sources */,
-				68152B631723A9D70045DF8E /* LogonParseNetRespondStringToDomainBean.m in Sources */,
 				6846EA3C17217EFC006CA7B0 /* VersionNetRespondBean.m in Sources */,
 				58C6CD0B16FDC7F2006D4889 /* LocalCacheDataPathConstant.m in Sources */,
 				09885EA11418F2E600CCE17A /* main.m in Sources */,
@@ -2721,7 +2699,7 @@
 				6846EA3517216CEB006CA7B0 /* GengduoActivity.m in Sources */,
 				68A6FE1C17228E7B00A79D25 /* NSData+AES.m in Sources */,
 				68A6FE20172292D300A79D25 /* NetRequestEntityDataPackageForRuyicai.m in Sources */,
-				68A6FE23172292F400A79D25 /* NetRespondEntityDataUnpackRuyicai.m in Sources */,
+				68A6FE23172292F400A79D25 /* NetRespondEntityDataUnpackForRuyicai.m in Sources */,
 				68A6FE38172299D600A79D25 /* GTMBase64.m in Sources */,
 				68A6FE4017229A3200A79D25 /* NSData+BASE64.m in Sources */,
 				68A6FE4317229BE700A79D25 /* NSData+ZIP.m in Sources */,
@@ -2731,7 +2709,6 @@
 				68F59384172E6D400001A414 /* SoftwareUpdateNetRequestBean.m in Sources */,
 				68F59387172E6D4F0001A414 /* SoftwareUpdateNetRespondBean.m in Sources */,
 				68F5938A172E6D750001A414 /* SoftwareUpdateParseDomainBeanToDD.m in Sources */,
-				68F5938D172E6DA10001A414 /* SoftwareUpdateParseNetRespondStringToDomainBean.m in Sources */,
 				68F59391172E75910001A414 /* AdImageInWelcomePageNetRespondBean.m in Sources */,
 				68F59397172E75C60001A414 /* UserLoggedInfo.m in Sources */,
 				68F593A0172E77050001A414 /* LotteryIssueInfo.m in Sources */,
@@ -2748,7 +2725,6 @@
 				68E744F0173F803D00136C4B /* LotterySalesStatusNetRequestBean.m in Sources */,
 				68E744F3173F817800136C4B /* LotterySalesStatusNetRespondBean.m in Sources */,
 				68E744FA173F860700136C4B /* LotterySalesStatusParseDomainBeanToDD.m in Sources */,
-				68E744FD173F87B500136C4B /* LotterySalesStatusParseNetRespondStringToDomainBean.m in Sources */,
 				6801F3F91746541D006E1D2B /* LotterySalesStatusDomainBeanToolsFactory.m in Sources */,
 				6801F405174684EE006E1D2B /* CommandOfImportantNetRequestAutoRefresh.m in Sources */,
 				6841772C1748B0300090DBC6 /* TitleBarOfBetView.m in Sources */,
@@ -2768,9 +2744,8 @@
 				68EDEC9B1760BBA6007572D4 /* LotteryAnnouncementNetRequestBean.m in Sources */,
 				68EDEC9E1760BBB5007572D4 /* LotteryAnnouncementNetRespondBean.m in Sources */,
 				68EDECA11760BBC2007572D4 /* LotteryAnnouncementParseDomainBeanToDD.m in Sources */,
-				68EDECA41760BBD0007572D4 /* LotteryAnnouncementParseNetRespondStringToDomainBean.m in Sources */,
 				68EDECA71760C3F4007572D4 /* LotteryAnnouncement.m in Sources */,
-				D7C78DE5176469B6004F18F1 /* ServerRespondDataTestRuyicai.m in Sources */,
+				D7C78DE5176469B6004F18F1 /* ServerRespondDataTestForRuyicai.m in Sources */,
 				D723EADF176F05D200E32D56 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				D768BCFC176F146800B871E3 /* Data+Helper.m in Sources */,
 				D768BCFD176F146800B871E3 /* String+Helper.m in Sources */,
@@ -2779,6 +2754,7 @@
 				D7A9075D1771B8DC0006DD81 /* SignUpActivity.m in Sources */,
 				D7A907621771B9050006DD81 /* SignInActivity.m in Sources */,
 				D7A907671771B93A0006DD81 /* ForgotPasswordActivity.m in Sources */,
+				D7C6199D17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2793,12 +2769,10 @@
 				68152B58172399E10045DF8E /* LogonDomainBeanToolsFactory.m in Sources */,
 				68152B59172399E10045DF8E /* LogonNetRequestBean.m in Sources */,
 				68152B5B172399E10045DF8E /* LogonParseDomainBeanToDD.m in Sources */,
-				68152B5C172399E10045DF8E /* LogonParseNetRespondStringToDomainBean.m in Sources */,
 				68152B661723ACB10045DF8E /* rijndael.c in Sources */,
 				68152B6C1723C0BD0045DF8E /* IssueQueryNetRequestBean.m in Sources */,
 				68152B721723C7D40045DF8E /* IssueQueryDomainBeanToolsFactory.m in Sources */,
 				68152B751723C8440045DF8E /* IssueQueryParseDomainBeanToDD.m in Sources */,
-				68152B781723CACD0045DF8E /* IssueQueryParseNetRespondStringToDomainBean.m in Sources */,
 				68B0CC0B1733DB52001661A6 /* PRPSmartTableViewCell.m in Sources */,
 				68B0CC0D1733DB52001661A6 /* PRPNibBasedTableViewCell.m in Sources */,
 				68B0CC151733DBA3001661A6 /* UIDevice-Hardware.m in Sources */,

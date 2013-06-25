@@ -15,5 +15,5 @@
  *
  */
 @protocol IServerRespondDataTest <NSObject>
-- (NetRequestErrorBean *) testServerRespondDataIsValid:(NSString *)serverRespondDataOfUTF8String;
+- (NetRequestErrorBean *) testServerRespondDataIsValid:(in NSString *)serverRespondDataOfUTF8String;
 @end

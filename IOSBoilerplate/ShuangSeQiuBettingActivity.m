@@ -88,23 +88,8 @@
 //
 - (void) initTitleBar {
   TitleBarOfBetView *titleBar = [TitleBarOfBetView titleBarOfBetView];
-  titleBar.delegate = self;
-	titleBar.leftButton.hidden = NO;
-	[titleBar.leftButton setTitle:@"购彩大厅" forState:UIControlStateNormal];
-	titleBar.titleViewPlaceholder.hidden = NO;
-	titleBar.rightButtonOne.hidden = NO;
-	
-  [self.titleBarPlaceholder addSubview:titleBar];
-  
-  self.titleBar = titleBar;
-}
-
-#pragma mark -
-#pragma mark 实现 CustomControlDelegate 接口
--(void)customControl:(id)control onAction:(NSUInteger)action {
-	
-	if (control == self.titleBar) {
-		switch (action) {
+  titleBar.callbackBlock = ^(id control, NSUInteger action) {
+    switch (action) {
 				
 			case kTitleBarOfBetViewActionEnum_LeftButtonClicked:{
 				[self finish];
@@ -117,7 +102,16 @@
 			default:
 				break;
 		}
-	}
+  };
+
+	titleBar.leftButton.hidden = NO;
+	[titleBar.leftButton setTitle:@"购彩大厅" forState:UIControlStateNormal];
+	titleBar.titleViewPlaceholder.hidden = NO;
+	titleBar.rightButtonOne.hidden = NO;
+	
+  [self.titleBarPlaceholder addSubview:titleBar];
   
+  self.titleBar = titleBar;
 }
+ 
 @end

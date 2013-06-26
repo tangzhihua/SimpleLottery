@@ -61,6 +61,8 @@
 #import "ListActivity.h"
 #import "IntentFilter.h"
 
+#import "CustomControlDelegate.h"
+
 // 第三方库
  
 #import "SVProgressHUD.h"

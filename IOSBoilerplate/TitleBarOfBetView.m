@@ -8,9 +8,9 @@
 
 #import "TitleBarOfBetView.h"
 #import "LabelForTitleBar.h"
-#import "CustomControlDelegate.h"
 
-@interface TitleBarOfBetView () <CustomControlDelegate> 
+
+@interface TitleBarOfBetView ()
 @property (nonatomic, weak) LabelForTitleBar *labelForTitleBar;
 @end
 
@@ -34,13 +34,9 @@
 - (IBAction)buttonForTitleBarOnClickListener:(UIButton *)sender {
 	
 	do {
-    if (![_delegate conformsToProtocol:@protocol(CustomControlDelegate)]) {
-			break;
-		}
-		
-		if (![_delegate respondsToSelector:@selector(customControl:onAction:)]) {
-			break;
-		}
+    if (self.callbackBlock == NULL) {
+      break;
+    }
 		
 		TitleBarOfBetViewActionEnum actionEnum;
 		if (sender == self.leftButton) {
@@ -55,7 +51,8 @@
 			break;
 		}
 		
-		[_delegate customControl:self onAction:actionEnum];
+    self.callbackBlock(self, actionEnum);
+		
 	} while (NO);
 
 	

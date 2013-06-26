@@ -8,7 +8,7 @@
 
 #import "TitleBar.h"
 
-#import "CustomControlDelegate.h"
+
 
 //
 @interface TitleBar ()
@@ -28,10 +28,8 @@
 }
 
 - (IBAction)buttonForTitleBarOnClickListener:(UIButton *)sender {
-  if ([_delegate conformsToProtocol:@protocol(CustomControlDelegate)]) {
-    if ([_delegate respondsToSelector:@selector(customControl:onAction:)]) {
-      [_delegate customControl:self onAction:sender.tag];
-    }
+  if (self.callbackBlock != NULL) {
+    self.callbackBlock(self, sender.tag);
   }
 }
 

@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol CustomControlDelegate;
+
 
 typedef NS_ENUM(NSUInteger, TitleBarActionEnum)  {
   //
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, TitleBarActionEnum)  {
 @property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 
 
-@property (nonatomic, weak) id<CustomControlDelegate> delegate;
+@property (nonatomic, copy) CustomControlCallbackBlock callbackBlock;
 
 +(id)titleBar;
 

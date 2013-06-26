@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, TitleBarOfBetViewActionEnum)  {
 	kTitleBarOfBetViewActionEnum_RightButtonClickedTwo
 };
 
-@protocol CustomControlDelegate;
+
 @interface TitleBarOfBetView : UIView {
 	
 }
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, TitleBarOfBetViewActionEnum)  {
 @property (weak, nonatomic) IBOutlet UIButton *rightButtonTwo;
 @property (weak, nonatomic) IBOutlet UIView *titleViewPlaceholder;
 
-@property (nonatomic, weak) id<CustomControlDelegate> delegate;
+@property (nonatomic, copy) CustomControlCallbackBlock callbackBlock;
 
 -(void)setTitleWithMainTitle:(NSString *)mainTitle
 										subTitle:(NSString *)subTitle

@@ -7,9 +7,9 @@
 //
 
 #import "Activity.h"
-#import "CustomControlDelegate.h"
+ 
 
-@interface ShuangSeQiuBettingActivity : Activity <CustomControlDelegate>{
+@interface ShuangSeQiuBettingActivity : Activity {
 	
 }
 

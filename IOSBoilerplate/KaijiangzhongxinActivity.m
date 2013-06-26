@@ -8,7 +8,6 @@
 
 #import "KaijiangzhongxinActivity.h"
 
-#import "CustomControlDelegate.h"
 
 #import "LotteryAnnouncement.h"
 #import "LotteryAnnouncementNetRequestBean.h"
@@ -25,7 +24,7 @@
 
 
 
-@interface KaijiangzhongxinActivity () <UITableViewDelegate, UITableViewDataSource, CustomControlDelegate, UIAlertViewDelegate>
+@interface KaijiangzhongxinActivity () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
 // 彩票列表 cell 缓存列表, 提前初始化好, 提高效率
 @property (nonatomic, strong) NSMutableArray *cellArrayOfLotteryList;

@@ -10,7 +10,7 @@
 
 #import "cocos2d.h"
 
-#import "CustomControlDelegate.h"
+
 
 
 
@@ -22,7 +22,7 @@
 
 
 
-@interface LuckyPickActivity () <CustomControlDelegate, CCDirectorDelegate>
+@interface LuckyPickActivity () <CCDirectorDelegate>
 @property (nonatomic, weak) TitleBar *titleBar;
 @end
 
@@ -106,7 +106,22 @@
 //
 - (void) initTitleBar {
   TitleBar *titleBar = [TitleBar titleBar];
-  titleBar.delegate = self;
+  titleBar.callbackBlock = ^(id control, NSUInteger action) {
+    switch (action) {
+        
+      case kTitleBarActionEnum_RightButtonClicked:{// "返回"
+        [[CCDirector sharedDirector] popToRootScene];
+        [[CCDirector sharedDirector] setDelegate:nil];
+        [self finish];
+      }break;
+        
+      default: {
+        RNAssert(NO, @"switch 执行了 default 分支.");
+      }break;
+    }
+
+  };
+
 	[titleBar setTitleByString:@"幸运选号"];
   [titleBar setRightButtonTitle:@"返回"];
   [self.titleBarPlaceholder addSubview:titleBar];
@@ -114,25 +129,6 @@
   // 要缓存 TitleBar 对象
   self.titleBar = titleBar;
 }
-
-#pragma mark -
-#pragma mark 实现 CustomControlDelegate 接口
--(void)customControl:(id)control onAction:(NSUInteger)action {
-  switch (action) {
-      
-    case kTitleBarActionEnum_RightButtonClicked:{// "返回"
-      [[CCDirector sharedDirector] popToRootScene];
-      [[CCDirector sharedDirector] setDelegate:nil];
-      [self finish];
-    }break;
-      
-    default: {
-      RNAssert(NO, @"switch 执行了 default 分支.");
-    }break;
-  }
-}
-
-
 
 #pragma mark -
 #pragma mark 实现 CCDirectorDelegate 接口

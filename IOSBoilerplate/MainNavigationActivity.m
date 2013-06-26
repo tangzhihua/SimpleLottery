@@ -25,7 +25,7 @@
 #import "GengduoActivity.h"
 
 
-#import "CustomControlDelegate.h"
+
 
 
  
@@ -41,7 +41,7 @@
 
 
 
-@interface MainNavigationActivity () <UITabBarDelegate, CustomControlDelegate>
+@interface MainNavigationActivity () <UITabBarDelegate>
 
 
 @end
@@ -193,7 +193,17 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
 //
 - (void) initTitleBar {
   TitleBar *titleBar = [TitleBar titleBar];
-  titleBar.delegate = self;
+  titleBar.callbackBlock = ^(id control, NSUInteger action) {
+    switch (action) {
+        
+      case kTitleBarActionEnum_RightButtonClicked:{// "拨打订购热线"
+        [[SimpleCallSingleton sharedInstance] callCustomerServicePhoneAndShowInThisView:self.view.window];
+      }break;
+        
+      default:
+        break;
+    }
+  };
 	
   [_titleBarPlaceholder addSubview:titleBar];
   
@@ -252,20 +262,6 @@ typedef NS_ENUM(NSInteger, TabBarTagEnum) {
 	_kaijiangzhongxinActivity = [[KaijiangzhongxinActivity alloc] init];
 	_yonghuzhongxinActivity = [[YonghuzhongxinActivity alloc] init];
 	_gengduoActivity = [[GengduoActivity alloc] init];
-}
-
-#pragma mark -
-#pragma mark 实现 CustomControlDelegate 接口
--(void)customControl:(id)control onAction:(NSUInteger)action {
-  switch (action) {
-      
-    case kTitleBarActionEnum_RightButtonClicked:{// "拨打订购热线"
-      [[SimpleCallSingleton sharedInstance] callCustomerServicePhoneAndShowInThisView:self.view.window];
-    }break;
-      
-    default:
-      break;
-  }
 }
 
 #pragma mark -

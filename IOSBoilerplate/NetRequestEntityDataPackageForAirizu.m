@@ -58,6 +58,7 @@ static const NSString *const TAG = @"<NetRequestEntityDataPackageForAirizu>";
   }
   
   // 这里只是演示 NSEnumerator 如何使用, 上面 AFQueryStringFromParameters 方法才是更好的
+  /*
   NSEnumerator *keyEnumerator = [domainDD keyEnumerator];
   NSString *key = [keyEnumerator nextObject];
   NSMutableString *entityDataString = [NSMutableString string];
@@ -72,7 +73,15 @@ static const NSString *const TAG = @"<NetRequestEntityDataPackageForAirizu>";
       [entityDataString appendString:@"&"];
     }
   }
+   */
   
+  // 这里演示了 enumerateKeysAndObjectsUsingBlock 的用法, 我们不用再跟keyEnumerator 和 objectForKey打交道了
+  NSMutableArray *mutableParameterComponents = [NSMutableArray array];
+  [domainDD enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    NSString *component = [NSString stringWithFormat:@"%@=%@", key, obj];
+    [mutableParameterComponents addObject:component];
+  }];
+  NSString *entityDataString = [mutableParameterComponents componentsJoinedByString:@"&"];
   PRPLog(@"packageNetRequestEntityDataWithDomainDataDictionary-> %@", entityDataString);
   
   return [entityDataString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];

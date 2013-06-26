@@ -197,8 +197,12 @@
 		// 拼接Http请求头
 		// TODO : 这里将来要提出一个方法
 		NSMutableDictionary *httpRequestParameterMap = [NSMutableDictionary dictionary];
-		[httpRequestParameterMap setObject:[[SimpleCookieSingleton sharedInstance] cookieString]
-																forKey:@"Cookie"];
+    NSString *cookieString = [[SimpleCookieSingleton sharedInstance] cookieString];
+    if (![NSString isEmpty:cookieString]) {
+      [httpRequestParameterMap setObject:cookieString
+                                  forKey:@"Cookie"];
+    }
+		
 		[httpRequestParameterMap setObject:@"application/x-www-form-urlencoded"
 																forKey:@"Content-Type"];
     

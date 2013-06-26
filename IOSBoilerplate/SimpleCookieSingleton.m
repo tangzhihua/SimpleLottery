@@ -61,19 +61,18 @@ static const NSString *const TAG = @"<SimpleCookieSingleton>";
 }
 
 - (NSString *) cookieString {
-  NSMutableString *cookieStringBuilder = [NSMutableString string];
 
-  NSEnumerator *keyEnumerator = [_cookieCache keyEnumerator];
-  
-  for (NSString *key in keyEnumerator) {
-    NSString *value = [_cookieCache objectForKey:key];
-    if ([value length] > 0) {
-      [cookieStringBuilder appendFormat:@"%@=%@;", key, value];
-    }
+  if ([_cookieCache count] <= 0) {
+    return nil;
   }
- 
-  PRPLog(@"CookieString-> %@", cookieStringBuilder);
-  return cookieStringBuilder;
+  
+  NSMutableArray *mutableParameterComponents = [NSMutableArray array];
+  [_cookieCache enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    NSString *component = [NSString stringWithFormat:@"%@=%@", key, obj];
+    [mutableParameterComponents addObject:component];
+  }];
+  
+  return [mutableParameterComponents componentsJoinedByString:@";"];
 }
 
 @end

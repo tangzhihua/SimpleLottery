@@ -15,6 +15,23 @@
 // 像这种编程范式的变化确实挺困难,但越早适应越好.
 typedef void(^CustomControlCallbackBlock)(id control, NSUInteger action);
 
+// 对于自定义控件的开发, V 和 C 之间的通信可以通过 CustomControlCallbackBlock 来完成.
+// 这个块拥有两个参数
+// control : 控件本身的对象
+// action  : 触发了自定义控件的哪个 "UI事件"
+// 至于该 "UI事件" 对应的一些信息数据(比如单选列表被点击后, 被点击的cell索引号),
+// 可以在自定义控件中编写一个方法来提供(如 lastSelectedCellIndex),
+// 在 C 层的回调块中 使用 [control lastSelectedCellIndex] 方式获取.
+
+// 如上设计只是想统一 自定义控件V 和 C 层通信的规则而已,
+// 也可以在 自定义控件中 自定义其特有的CallbackBlock,
+// 没有一定的好, 也没有一定的坏, 收发随心好了.
+
+
+
+
+
+
 
 
 // 过去的方式, 已经废弃, 现在要使用上面的 "块", 使用函数编程范式

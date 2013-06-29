@@ -1242,14 +1242,11 @@
 		58546CB815FDF4580028AEC3 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				D7A907591771B8300006DD81 /* 忘记密码界面 */,
-				D7A907581771B7FE0006DD81 /* 用户注册界面 */,
-				D7A907571771B7E10006DD81 /* 用户登录界面 */,
-				D7A2C55A175DAE9100D823F0 /* 幸运选号 */,
-				68F6EC9A174B9766003B1CC1 /* 双色球 */,
 				587F6FA6168589C20004A23B /* first_activity */,
-				587F6FA7168589D80004A23B /* beginner_guide */,
+				587F6FA7168589D80004A23B /* 新手指南 */,
 				587ED27715FED27700924926 /* main_navigation */,
+				D77D698A177E6E7400961FEB /* 外围界面 */,
+				D77D6989177E6E4D00961FEB /* 彩票界面 */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -1408,11 +1405,11 @@
 				587ED27915FED2C200924926 /* MainNavigationActivity.m */,
 				587ED27A15FED2C200924926 /* MainNavigationActivity.xib */,
 				587E60A216F8260A00EE27AC /* MainNavigationActivity_iphone5.xib */,
-				6846EA1D17216B59006CA7B0 /* goucaidating */,
-				6846EA1C17216B56006CA7B0 /* hemaidating */,
-				6846EA1B17216B54006CA7B0 /* kaijiangzhongxin */,
-				6846EA1A17216B53006CA7B0 /* yonghuzhongxin */,
-				6846EA1917216B50006CA7B0 /* gengduo */,
+				6846EA1D17216B59006CA7B0 /* 购彩大厅 */,
+				6846EA1C17216B56006CA7B0 /* 合买大厅 */,
+				6846EA1B17216B54006CA7B0 /* 开奖公告 */,
+				6846EA1A17216B53006CA7B0 /* 用户中心 */,
+				6846EA1917216B50006CA7B0 /* 更多 */,
 			);
 			name = main_navigation;
 			sourceTree = "<group>";
@@ -1437,14 +1434,14 @@
 			name = first_activity;
 			sourceTree = "<group>";
 		};
-		587F6FA7168589D80004A23B /* beginner_guide */ = {
+		587F6FA7168589D80004A23B /* 新手指南 */ = {
 			isa = PBXGroup;
 			children = (
 				58E7EBD016EB035700349ED3 /* BeginnerGuideActivity.h */,
 				58E7EBD116EB035700349ED3 /* BeginnerGuideActivity.m */,
 				58E7EBD216EB035700349ED3 /* BeginnerGuideActivity.xib */,
 			);
-			name = beginner_guide;
+			name = "新手指南";
 			sourceTree = "<group>";
 		};
 		587FA69616800BF600C90D4C /* interface */ = {
@@ -1967,54 +1964,54 @@
 			name = "启动彩票排期倒计时检测";
 			sourceTree = "<group>";
 		};
-		6846EA1917216B50006CA7B0 /* gengduo */ = {
+		6846EA1917216B50006CA7B0 /* 更多 */ = {
 			isa = PBXGroup;
 			children = (
 				6846EA3217216CEB006CA7B0 /* GengduoActivity.h */,
 				6846EA3317216CEB006CA7B0 /* GengduoActivity.m */,
 				6846EA3417216CEB006CA7B0 /* GengduoActivity.xib */,
 			);
-			name = gengduo;
+			name = "更多";
 			sourceTree = "<group>";
 		};
-		6846EA1A17216B53006CA7B0 /* yonghuzhongxin */ = {
+		6846EA1A17216B53006CA7B0 /* 用户中心 */ = {
 			isa = PBXGroup;
 			children = (
 				6846EA2D17216CD7006CA7B0 /* YonghuzhongxinActivity.h */,
 				6846EA2E17216CD7006CA7B0 /* YonghuzhongxinActivity.m */,
 				6846EA2F17216CD7006CA7B0 /* YonghuzhongxinActivity.xib */,
 			);
-			name = yonghuzhongxin;
+			name = "用户中心";
 			sourceTree = "<group>";
 		};
-		6846EA1B17216B54006CA7B0 /* kaijiangzhongxin */ = {
+		6846EA1B17216B54006CA7B0 /* 开奖公告 */ = {
 			isa = PBXGroup;
 			children = (
 				6846EA2817216CBA006CA7B0 /* KaijiangzhongxinActivity.h */,
 				6846EA2917216CBA006CA7B0 /* KaijiangzhongxinActivity.m */,
 				6846EA2A17216CBA006CA7B0 /* KaijiangzhongxinActivity.xib */,
 			);
-			name = kaijiangzhongxin;
+			name = "开奖公告";
 			sourceTree = "<group>";
 		};
-		6846EA1C17216B56006CA7B0 /* hemaidating */ = {
+		6846EA1C17216B56006CA7B0 /* 合买大厅 */ = {
 			isa = PBXGroup;
 			children = (
 				6846EA2317216C98006CA7B0 /* HemaidatingActivity.h */,
 				6846EA2417216C98006CA7B0 /* HemaidatingActivity.m */,
 				6846EA2517216C98006CA7B0 /* HemaidatingActivity.xib */,
 			);
-			name = hemaidating;
+			name = "合买大厅";
 			sourceTree = "<group>";
 		};
-		6846EA1D17216B59006CA7B0 /* goucaidating */ = {
+		6846EA1D17216B59006CA7B0 /* 购彩大厅 */ = {
 			isa = PBXGroup;
 			children = (
 				6846EA1E17216C1D006CA7B0 /* GoucaidatingActivity.h */,
 				6846EA1F17216C1D006CA7B0 /* GoucaidatingActivity.m */,
 				6846EA2017216C1D006CA7B0 /* GoucaidatingActivity.xib */,
 			);
-			name = goucaidating;
+			name = "购彩大厅";
 			sourceTree = "<group>";
 		};
 		6846EA3717217E11006CA7B0 /* account_version */ = {
@@ -2274,6 +2271,137 @@
 				D768BD00176F14A200B871E3 /* FastCell.m */,
 			);
 			name = FastCell;
+			sourceTree = "<group>";
+		};
+		D77D6989177E6E4D00961FEB /* 彩票界面 */ = {
+			isa = PBXGroup;
+			children = (
+				D77D6998177E6F8200961FEB /* 竞彩篮球 */,
+				D77D6997177E6F7C00961FEB /* 足彩 */,
+				D77D6996177E6F7100961FEB /* 22选5 */,
+				D77D6995177E6F6000961FEB /* 七星彩 */,
+				D77D6994177E6F5400961FEB /* 排列5 */,
+				D77D6993177E6F3E00961FEB /* 排列3 */,
+				D77D6992177E6EEC00961FEB /* 七乐彩 */,
+				D77D6991177E6EE400961FEB /* 广东快乐十分 */,
+				D77D6990177E6EDE00961FEB /* 时时彩 */,
+				D77D698F177E6ECF00961FEB /* 江西11选5 */,
+				D77D698E177E6EBD00961FEB /* 山东十一运夺金 */,
+				D77D698D177E6EAF00961FEB /* 竞彩足球 */,
+				D77D698C177E6EA700961FEB /* 福彩3D */,
+				D77D698B177E6E9E00961FEB /* 大乐透 */,
+				68F6EC9A174B9766003B1CC1 /* 双色球 */,
+			);
+			name = "彩票界面";
+			sourceTree = "<group>";
+		};
+		D77D698A177E6E7400961FEB /* 外围界面 */ = {
+			isa = PBXGroup;
+			children = (
+				D7A907591771B8300006DD81 /* 忘记密码界面 */,
+				D7A907581771B7FE0006DD81 /* 用户注册界面 */,
+				D7A907571771B7E10006DD81 /* 用户登录界面 */,
+				D7A2C55A175DAE9100D823F0 /* 幸运选号 */,
+			);
+			name = "外围界面";
+			sourceTree = "<group>";
+		};
+		D77D698B177E6E9E00961FEB /* 大乐透 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "大乐透";
+			sourceTree = "<group>";
+		};
+		D77D698C177E6EA700961FEB /* 福彩3D */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "福彩3D";
+			sourceTree = "<group>";
+		};
+		D77D698D177E6EAF00961FEB /* 竞彩足球 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "竞彩足球";
+			sourceTree = "<group>";
+		};
+		D77D698E177E6EBD00961FEB /* 山东十一运夺金 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "山东十一运夺金";
+			sourceTree = "<group>";
+		};
+		D77D698F177E6ECF00961FEB /* 江西11选5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "江西11选5";
+			sourceTree = "<group>";
+		};
+		D77D6990177E6EDE00961FEB /* 时时彩 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "时时彩";
+			sourceTree = "<group>";
+		};
+		D77D6991177E6EE400961FEB /* 广东快乐十分 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "广东快乐十分";
+			sourceTree = "<group>";
+		};
+		D77D6992177E6EEC00961FEB /* 七乐彩 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "七乐彩";
+			sourceTree = "<group>";
+		};
+		D77D6993177E6F3E00961FEB /* 排列3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "排列3";
+			sourceTree = "<group>";
+		};
+		D77D6994177E6F5400961FEB /* 排列5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "排列5";
+			sourceTree = "<group>";
+		};
+		D77D6995177E6F6000961FEB /* 七星彩 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "七星彩";
+			sourceTree = "<group>";
+		};
+		D77D6996177E6F7100961FEB /* 22选5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "22选5";
+			sourceTree = "<group>";
+		};
+		D77D6997177E6F7C00961FEB /* 足彩 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "足彩";
+			sourceTree = "<group>";
+		};
+		D77D6998177E6F8200961FEB /* 竞彩篮球 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "竞彩篮球";
 			sourceTree = "<group>";
 		};
 		D7A2C55A175DAE9100D823F0 /* 幸运选号 */ = {

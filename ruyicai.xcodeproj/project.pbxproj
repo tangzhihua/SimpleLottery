@@ -295,6 +295,7 @@
 		68F6ECA2174B9D73003B1CC1 /* LotterySalesStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA1174B9D73003B1CC1 /* LotterySalesStatus.m */; };
 		68F6ECA5174BB532003B1CC1 /* LabelForTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA4174BB532003B1CC1 /* LabelForTitleBar.m */; };
 		68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */; };
+		D71D93BA17811C4200F05064 /* lottery_key_mapping_table.plist in Resources */ = {isa = PBXBuildFile; fileRef = D71D93B917811C4200F05064 /* lottery_key_mapping_table.plist */; };
 		D723EADF176F05D200E32D56 /* UIImageView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D723EADE176F05D200E32D56 /* UIImageView+MKNetworkKitAdditions.m */; };
 		D768BCFC176F146800B871E3 /* Data+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D768BCF9176F146800B871E3 /* Data+Helper.m */; };
 		D768BCFD176F146800B871E3 /* String+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D768BCFB176F146800B871E3 /* String+Helper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -870,6 +871,7 @@
 		68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelForTitleBar.xib; sourceTree = "<group>"; };
 		C37BC8E3144C340600423D44 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D71D93B917811C4200F05064 /* lottery_key_mapping_table.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lottery_key_mapping_table.plist; sourceTree = "<group>"; };
 		D723EADD176F05D200E32D56 /* UIImageView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
 		D723EADE176F05D200E32D56 /* UIImageView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
 		D7572D14175C9C2600632A74 /* RNAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNAssert.h; path = ../RNAssert.h; sourceTree = "<group>"; };
@@ -1051,6 +1053,7 @@
 				68B0CC69173406CF001661A6 /* lottery_list.plist */,
 				6801F40017468013006E1D2B /* expand_lottery_code.plist */,
 				D7A8D580175C360A00BC5CBF /* regular_expressions_keys.plist */,
+				D71D93B917811C4200F05064 /* lottery_key_mapping_table.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2660,6 +2663,7 @@
 				D7A9075E1771B8DC0006DD81 /* SignUpActivity.xib in Resources */,
 				D7A907631771B9050006DD81 /* SignInActivity.xib in Resources */,
 				D7A907681771B93A0006DD81 /* ForgotPasswordActivity.xib in Resources */,
+				D71D93BA17811C4200F05064 /* lottery_key_mapping_table.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

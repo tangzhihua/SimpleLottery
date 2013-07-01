@@ -400,7 +400,7 @@
   animation.subtype = kCATransitionFromLeft;
   animation.removedOnCompletion = YES;
   [[self.rootViewController.view layer] addAnimation:animation forKey:@"PopChildView"];
-  
+
   
 }
 

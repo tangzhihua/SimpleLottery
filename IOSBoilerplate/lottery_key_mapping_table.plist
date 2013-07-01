@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>七乐彩</key>
+	<string>qlc</string>
+	<key>七星彩</key>
+	<string>qxc</string>
+	<key>22选5</key>
+	<string>22-5</string>
+	<key>大乐透</key>
+	<string>dlt</string>
+	<key>福彩3D</key>
+	<string>ddd</string>
+	<key>广东11选5</key>
+	<string>gd-11-5</string>
+	<key>江西11选5</key>
+	<string>11-5</string>
+	<key>排列三</key>
+	<string>pl3</string>
+	<key>排列五</key>
+	<string>pl5</string>
+	<key>山东十一运夺金</key>
+	<string>11-ydj</string>
+	<key>时时彩</key>
+	<string>ssc</string>
+	<key>双色球</key>
+	<string>ssq</string>
+	<key>足彩</key>
+	<string>sfc</string>
+	<key>广东快乐十分</key>
+	<string>gd-happy-10</string>
+</dict>
+</plist>

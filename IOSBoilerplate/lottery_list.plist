@@ -12,7 +12,7 @@
 		<key>icon</key>
 		<string>lottery_icon_for_shuangseqiu</string>
 		<key>enable</key>
-		<true/>
+		<false/>
 		<key>ad</key>
 		<string>2元赢取1000万</string>
 	</dict>

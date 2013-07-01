@@ -54,6 +54,11 @@ static NSString *const kLocalCacheDataName_AdImageIDForLatest             = @"Ad
 // 是否显示从服务器下载的广告图片
 static NSString *const kLocalCacheDataName_IsShowAdImageFromServer        = @"IsShowAdImageFromServer";
 
+
+static NSString *const kLocalCacheDataName_LotteryListForShow             = @"LotteryListForShow";
+static NSString *const kLocalCacheDataName_LotteryListForHide             = @"LotteryListForHide";
+
+
 @implementation GlobalDataCacheForNeedSaveToFileSystem
 
 +(void) initialize {
@@ -113,6 +118,13 @@ static NSString *const kLocalCacheDataName_IsShowAdImageFromServer        = @"Is
   // 用户最后一次成功登录时的密码
   NSString *passwordForLastSuccessfulLogon = [userDefaults stringForKey:(NSString *)kLocalCacheDataName_PasswordForLastSuccessfulLogon];
   [GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon = passwordForLastSuccessfulLogon;
+  
+  //
+  NSArray *lotteryListForShow = [userDefaults stringArrayForKey:(NSString *)kLocalCacheDataName_LotteryListForShow];
+  if (lotteryListForShow != nil) {
+    [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForShow = [NSMutableArray arrayWithArray:lotteryListForShow];
+  }
+  
 }
 
 + (void)readAppConfigInfoToGlobalDataCacheForMemorySingleton {

@@ -62,7 +62,10 @@
 @property (nonatomic, readonly) NSUInteger localCacheSize;
 
 
-// 本地配置的彩票字典 (目前用本地配置的方式来控制哪些彩票处于激活状态)
+// 本地配置的彩票字典 (这是彩票的主字典(最重要的是彩票的 key(例如:shuangseqiu)/code(例如:F47104)/name(例如:双色球)))
+// 目前因为项目后台接口不统一, 彩票的code并不统一, 所以我们要在代码中进行必要的映射;
+// 我认为最好的设计是 : 后台和客户端之间, 应该只通过 key 来通讯(这个key,例如:双色球就是 shuangseqiu), 而不要把彩票code(例如:F47104)传给客户端, 后台自己去适配.
+// 这样才真正对业务进行了封装, 并且分离了观察点.
 @property (nonatomic, strong) NSArray *lotteryDictionaryList;
 
 

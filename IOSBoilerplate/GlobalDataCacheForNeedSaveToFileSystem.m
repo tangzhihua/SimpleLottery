@@ -16,7 +16,8 @@
 
 #import "LocalCacheDataPathConstant.h"
 
-
+#import "LotteryDictionaryDatabaseFieldsConstant.h"
+#import "LotteryDictionary.h"
 
 
 
@@ -96,6 +97,9 @@ static NSString *const kLocalCacheDataName_LotteryListForHide             = @"Lo
   
 }
 
+#pragma mark -
+#pragma mark 将内存中缓存的数据保存到文件系统中
+
 + (void)readUserLoginInfoToGlobalDataCacheForMemorySingleton {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   
@@ -118,12 +122,6 @@ static NSString *const kLocalCacheDataName_LotteryListForHide             = @"Lo
   // 用户最后一次成功登录时的密码
   NSString *passwordForLastSuccessfulLogon = [userDefaults stringForKey:(NSString *)kLocalCacheDataName_PasswordForLastSuccessfulLogon];
   [GlobalDataCacheForMemorySingleton sharedInstance].passwordForLastSuccessfulLogon = passwordForLastSuccessfulLogon;
-  
-  //
-  NSArray *lotteryListForShow = [userDefaults stringArrayForKey:(NSString *)kLocalCacheDataName_LotteryListForShow];
-  if (lotteryListForShow != nil) {
-    [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForShow = [NSMutableArray arrayWithArray:lotteryListForShow];
-  }
   
 }
 
@@ -158,15 +156,74 @@ static NSString *const kLocalCacheDataName_LotteryListForHide             = @"Lo
   BOOL isShowAdImageFromServer = [userDefaults boolForKey:kLocalCacheDataName_IsShowAdImageFromServer];
   [GlobalDataCacheForMemorySingleton sharedInstance].isShowAdImageFromServer = isShowAdImageFromServer;
   
+  
+  
+  
+}
+
+
+// 读取 "彩票字典" 相关数据到内存中
++ (void)readLotteryDictionaryInfoToGlobalDataCacheForMemorySingleton {
+  
+  // 本地设置的可以使用的彩票字典
+  NSMutableArray *lotteryDictionaryOfEnable = [NSMutableArray array];
+  
+  // 读取本地彩票字典, 这是彩票的主字典(最重要的是彩票的 key/code/name)
+  NSString *filePathForLotteryDictionary = [[NSBundle mainBundle] pathForResource:@"lottery_list" ofType:@"plist"];
+  NSArray *plistForLotteryDictionary = [[NSArray alloc] initWithContentsOfFile:filePathForLotteryDictionary];
+  NSMutableArray *lotteryDictionaryList = [NSMutableArray arrayWithCapacity:30];
+  for (NSDictionary *dictionary in plistForLotteryDictionary) {
+    LotteryDictionary *lotteryDictionary = [[LotteryDictionary alloc] initWithDictionary:dictionary];
+    [lotteryDictionaryList addObject:lotteryDictionary];
+    
+    if (lotteryDictionary.enable) {
+      [lotteryDictionaryOfEnable addObject:lotteryDictionary.name];
+    }
+  }
+  // 缓存到内存中
+  [GlobalDataCacheForMemorySingleton sharedInstance].lotteryDictionaryList = lotteryDictionaryList;
+  
+  
+  
+  
+  // 读取本地缓存的, 用户设置的要显示的彩票
+  BOOL isHasDirtyData = NO;
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSArray *lotteryListForHide = [userDefaults objectForKey:(NSString *)kLocalCacheDataName_LotteryListForHide];
+  [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForHide = [NSMutableArray arrayWithArray:lotteryListForHide];
+
+  //
+  NSArray *lotteryListForShow = [userDefaults objectForKey:(NSString *)kLocalCacheDataName_LotteryListForShow];
+  if (lotteryListForShow != nil && lotteryListForShow.count > 0) {
+    if (lotteryDictionaryOfEnable.count == (lotteryListForHide.count + lotteryListForShow.count)) {
+      [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForShow = [NSMutableArray arrayWithArray:lotteryListForShow];
+    } else {
+      // 出现了脏数据, 此时要重置数据
+      isHasDirtyData = YES;
+    }
+    
+  } else {
+    if ([GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForHide.count <= 0) {
+       [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForShow = [NSMutableArray arrayWithArray:lotteryDictionaryOfEnable];
+    } else {
+      // 出现了脏数据, 此时要重置数据
+      isHasDirtyData = YES;
+    }
+  }
+  
+  // 处理脏数据
+  if (isHasDirtyData) {
+    [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForHide = nil;
+    [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForShow = [NSMutableArray arrayWithArray:lotteryDictionaryOfEnable];
+    [userDefaults removeObjectForKey:(NSString *)kLocalCacheDataName_LotteryListForShow];
+    [userDefaults removeObjectForKey:(NSString *)kLocalCacheDataName_LotteryListForHide];
+  }
 }
 
 
 
-
-
-
 #pragma mark -
-#pragma mark
+#pragma mark 从文件系统中读取缓存的数据到内存中
 
 + (void)writeUserLoginInfoToFileSystem {
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -217,6 +274,25 @@ static NSString *const kLocalCacheDataName_LotteryListForHide             = @"Lo
   [userDefaults setBool:isShowAdImageFromServer forKey:kLocalCacheDataName_IsShowAdImageFromServer];
 }
 
++ (void)writeLotteryDictionaryInfoToFileSystem {
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  
+	//
+  NSArray *lotteryListForShow = [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForShow;
+  if (lotteryListForShow.count > 0) {
+    [userDefaults setObject:lotteryListForShow forKey:(NSString *)kLocalCacheDataName_LotteryListForShow];
+  } else {
+    [userDefaults removeObjectForKey:(NSString *)kLocalCacheDataName_LotteryListForShow];
+  }
+  
+  NSArray *lotteryListForHide = [GlobalDataCacheForMemorySingleton sharedInstance].lotteryListForHide;
+  if (lotteryListForHide.count > 0) {
+    [userDefaults setObject:lotteryListForShow forKey:(NSString *)kLocalCacheDataName_LotteryListForHide];
+  } else {
+    [userDefaults removeObjectForKey:(NSString *)kLocalCacheDataName_LotteryListForHide];
+  }
+}
+
 #pragma mark -
 #pragma mark 将内存级别缓存的数据固化到硬盘中
 + (void)saveMemoryCacheToDisk:(NSNotification *)notification {
@@ -224,6 +300,7 @@ static NSString *const kLocalCacheDataName_LotteryListForHide             = @"Lo
   
   [GlobalDataCacheForNeedSaveToFileSystem writeUserLoginInfoToFileSystem];
   [GlobalDataCacheForNeedSaveToFileSystem writeAppConfigInfoToFileSystem];
+  [GlobalDataCacheForNeedSaveToFileSystem writeLotteryDictionaryInfoToFileSystem];
 }
 
 @end

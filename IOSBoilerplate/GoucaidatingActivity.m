@@ -305,9 +305,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 	// 彩票字典列表
 	NSArray *lotteryDictionaryList = [GlobalDataCacheForMemorySingleton sharedInstance].lotteryDictionaryList;
 	for (LotteryDictionary *lotteryDictionary in lotteryDictionaryList) {
-    if (!lotteryDictionary.enable) {
-      continue;
-    }
+
     LotteryListTableCell *cell = [LotteryListTableCell cellFromNib:self.lotteryListTableCellNib];
 		
 		[cell bind:lotteryDictionary];

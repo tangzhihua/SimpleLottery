@@ -48,26 +48,8 @@
  */
 -(void)execute {
   
-  if (!_isExecuted) {
-    _isExecuted = YES;
-		
-		
-		// 读取本地彩票字典, 这是彩票的主字典(最重要的是彩票的 key/code/name)
-		NSString *filePathForLotteryDictionary = [[NSBundle mainBundle] pathForResource:@"lottery_list" ofType:@"plist"];
-    NSArray *plistForLotteryDictionary = [[NSArray alloc] initWithContentsOfFile:filePathForLotteryDictionary];
-		NSMutableArray *lotteryDictionaryList = [NSMutableArray arrayWithCapacity:30];
-		for (NSDictionary *dictionary in plistForLotteryDictionary) {
-			LotteryDictionary *lotteryDictionary = [[LotteryDictionary alloc] initWithDictionary:dictionary];
-      [lotteryDictionaryList addObject:lotteryDictionary];
-		}
-		// 缓存到内存中
-		[GlobalDataCacheForMemorySingleton sharedInstance].lotteryDictionaryList = lotteryDictionaryList;
-		
-		
-		
-		
-		
-		
+  if (!self.isExecuted) {
+    self.isExecuted = YES;
 		
 		// 启动 彩票当期期号到期倒计时观察者
 		[[CurrentLotteryIssueCountDownManager sharedInstance] startCountDownObserver];

@@ -75,7 +75,8 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 		
 		// 读取App配置文件
     [GlobalDataCacheForNeedSaveToFileSystem readAppConfigInfoToGlobalDataCacheForMemorySingleton];
-		
+		// 读取彩票字典数据
+    [GlobalDataCacheForNeedSaveToFileSystem readLotteryDictionaryInfoToGlobalDataCacheForMemorySingleton];
   }
   
 }

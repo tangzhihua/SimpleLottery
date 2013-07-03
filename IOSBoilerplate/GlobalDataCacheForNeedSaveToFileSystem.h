@@ -26,11 +26,12 @@
 + (void)readUserLoginInfoToGlobalDataCacheForMemorySingleton;
 // App配置 相关信息
 + (void)readAppConfigInfoToGlobalDataCacheForMemorySingleton;
-
+// 读取 "彩票字典" 相关数据到内存中
++ (void)readLotteryDictionaryInfoToGlobalDataCacheForMemorySingleton;
 ///
 
 + (void)writeUserLoginInfoToFileSystem;
 + (void)writeAppConfigInfoToFileSystem;
-
++ (void)writeLotteryDictionaryInfoToFileSystem;
  
 @end

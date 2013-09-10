@@ -47,7 +47,7 @@
 
 #import "DDLog.h"
 #import "MKNetworkKit.h"
- 
+
 
 /*
  UIApplicationDelegate 代理函数调用的时间（应用程序生命周期）
@@ -146,8 +146,8 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
  若由远程通知启动，则UIApplicationLaunchOptionsRemoteNotificationKey对应的是启动应用程序的的远程通知信息userInfo（NSDictionary）；
  
  其他key还有UIApplicationLaunchOptionsAnnotationKey,UIApplicationLaunchOptionsLocationKey,
- UIApplicationLaunchOptionsNewsstandDownloadsKey。        
- 如果要在启动时，做出一些区分，那就需要在下面的代码做处理。   
+ UIApplicationLaunchOptionsNewsstandDownloadsKey。
+ 如果要在启动时，做出一些区分，那就需要在下面的代码做处理。
  比如：应用可以被某个其它应用调起（作为该应用的子应用），要实现单点登录，那就需要在启动代码的地方做出合理的验证，并跳过登录
  */
 - (BOOL) application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
@@ -156,6 +156,8 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   PRPLog(@">>>>>>>>>>>>>>     application:didFinishLaunchingWithOptions:      <<<<<<<<<<<<<<<<<");
   PRPLog(@"launchOptions=%@", launchOptions);
 	
+  
+  
   id command = nil;
 	
   // 打印当前设备的信息
@@ -240,9 +242,9 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
   NSString *documentsDirectory = [paths objectAtIndex:0];
   DLog(@"%@", documentsDirectory);
-   
+  
   /////
- 
+  
   
   return YES;
 }
@@ -262,7 +264,7 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   
   // 在这里保存那些需要固化到文件系统的数据
   //[GlobalDataCacheForNeedSaveToFileSystem saveAllCacheDataToFileSystem];
-
+  
 }
 #pragma mark 4) 从后台返回前台
 // 当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反。

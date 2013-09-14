@@ -44,9 +44,9 @@
 // 网络引擎
 @property (nonatomic, strong) MKNetworkEngine *networkEngine;
 // 当前在并发请求的 MKNetworkOperation 队列
-@property (nonatomic, strong) NSMutableDictionary *synchronousNetRequestBuf;
+@property (atomic, strong) NSMutableDictionary *synchronousNetRequestBuf;
 // 网络请求索引 计数器
-@property (nonatomic, assign) NSInteger netRequestIndexCounter;
+@property (atomic, assign) NSInteger netRequestIndexCounter;
 @end
 
 

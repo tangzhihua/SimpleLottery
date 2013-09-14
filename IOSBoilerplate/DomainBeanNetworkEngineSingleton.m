@@ -225,7 +225,7 @@
 				// 业务字典是 Map<String, String> 格式的, 在这里要完成对 Map<String, String>格式的数据再次加工,
 				// 比如处理成 "key1=value1, key2=value2" 或者 "JSON格式" 或者 "XML格式" 或者 "自定义格式"
         // 可以在这里完成数据的加密工作
-				NSData *httpEntityData = [[[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRequestEntityDataPackageStrategyAlgorithm] packageNetRequestEntityDataWithDomainDataDictionary:fullDataDictionary];
+				NSData *httpEntityData = [[[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRequestEntityDataPackageStrategyAlgorithm] packageNetRequestEntityDataWithDomainDataDictionary:postDataDict];
 				return [[NSString alloc] initWithData:httpEntityData encoding:NSUTF8StringEncoding];
 			} else {
 				return nil;

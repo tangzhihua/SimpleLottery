@@ -1,9 +1,9 @@
 /***
  * Excerpted from "iOS Recipes",
  * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
+ * Copyrights apply to this code. It may not be used to create training material,
  * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
+ * We make no guarantees that this code is fit for any purpose.
  * Visit http://www.pragmaticprogrammer.com/titles/cdirec for more book information.
  ***/
 #import "PRPNibBasedTableViewCell.h"
@@ -14,7 +14,7 @@
 #pragma mark Cell generation
 
 + (NSString *)cellIdentifier {
-    return NSStringFromClass([self class]);
+  return NSStringFromClass([self class]);
 }
 
 + (id)cellFromNib:(UINib *)nib {
@@ -31,30 +31,33 @@
 }
 
 + (id)cellForTableView:(UITableView *)tableView fromNib:(UINib *)nib {
-    NSString *cellID = [self cellIdentifier];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil) {
-			cell = [self cellFromNib:nib];
-    }
-    
-    return cell;    
+  NSString *cellID = [self cellIdentifier];
+  
+  // 为了灵活操作是否使用 dequeueReusableCellWithIdentifier 缓存, 我们将 Identifier 的设置放到 .xib文件中,
+  // 这样就可以通过给 xib 是否设置Identifier 来决定是否使用 dequeueReusableCellWithIdentifier 缓存cell了.
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+  if (cell == nil) {
+    cell = [self cellFromNib:nib];
+  }
+  
+  return cell;
 }
 
 #pragma mark -
 #pragma mark Nib support
 
 + (UINib *)nib {
-    NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
-    return [UINib nibWithNibName:[self nibName] bundle:classBundle];
+  NSBundle *classBundle = [NSBundle bundleForClass:[self class]];
+  return [UINib nibWithNibName:[self nibName] bundle:classBundle];
 }
 
 + (NSString *)nibName {
-    return [self cellIdentifier];
+  return [self cellIdentifier];
 }
 
 +(CGRect)viewFrameRectFromNib {
-    NSArray *nibObjects = [[self nib] instantiateWithOwner:nil options:nil];
-    UIView *view = [nibObjects objectAtIndex:0];
-    return [view frame];
+  NSArray *nibObjects = [[self nib] instantiateWithOwner:nil options:nil];
+  UIView *view = [nibObjects objectAtIndex:0];
+  return [view frame];
 }
 @end

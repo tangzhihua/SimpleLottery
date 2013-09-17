@@ -7,6 +7,7 @@
 //
 
 #import "MKNetworkEngineSingleton.h"
+ 
 
 @interface MKNetworkEngineSingleton ()
 @property (nonatomic, assign) BOOL isConfigFinish;
@@ -41,4 +42,6 @@
   }
   return singletonInstance;
 }
+
+
 @end

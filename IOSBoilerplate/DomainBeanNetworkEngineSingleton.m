@@ -28,6 +28,7 @@
 
 
 #import "MKNetworkEngine.h"
+#import "MKNetworkOperationForDomainBean.h"
 #import "NetRequestErrorBean.h"
 
 
@@ -82,6 +83,7 @@
     // 初始化代码
     
     _networkEngine = [[MKNetworkEngine alloc] initWithHostName:kUrlConstant_MainUrl apiPath:kUrlConstant_MainPtah customHeaderFields:nil];
+    [_networkEngine registerOperationSubclass:[MKNetworkOperationForDomainBean class]];
     [_networkEngine useCache];
     
 		_synchronousNetRequestBuf = [NSMutableDictionary dictionary];
@@ -215,8 +217,8 @@
 		
 		
 		// 创建一个 Http Operation
-		MKNetworkOperation *netRequestOperation = [self.networkEngine operationWithURLString:url params:fullDataDictionary httpMethod:httpRequestMethod];
-		
+		MKNetworkOperationForDomainBean *netRequestOperation = (MKNetworkOperationForDomainBean *)[self.networkEngine operationWithURLString:url params:fullDataDictionary httpMethod:httpRequestMethod];
+    
 		[netRequestOperation addHeaders:httpRequestParameterMap];
 		[netRequestOperation setCustomPostDataEncodingHandler:^NSString *(NSDictionary *postDataDict) {
 			
@@ -284,49 +286,13 @@
         }
         // ------------------------------------- >>>
         
-				
-				// 检查服务器返回的数据是否有效, 如果无效, 要获取服务器返回的错误码和错误描述信息
-				// (比如说某次网络请求成功了, 但是服务器那边没有有效的数据给客户端, 所以服务器会返回错误码和描述信息告知客户端访问结果)
-				id<IServerRespondDataTest> serverRespondDataTest = [[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getServerRespondDataTestStrategyAlgorithm];
-				if (![serverRespondDataTest conformsToProtocol:@protocol(IServerRespondDataTest)]) {
-					RNAssert(NO, @"-->检查服务器返回是否有效(IServerRespondDataTest)的算法类, 是必须实现的");
-          
-					break;
-				}
-				serverRespondDataError = [serverRespondDataTest testServerRespondDataIsValid:netUnpackedDataOfUTF8String];
-				if (serverRespondDataError.errorCode != 200) {
-          PRPLog(@"-->服务器端告知客户端, 本次网络访问未获取到有效数据(具体情况, 可以查看服务器端返回的错误代码和错误信息)");
-          break;
-        }
-				
-        
-        // ------------------------------------- >>>
-        if ([completedOperation isCancelled]) {
-          // 本次网络请求被取消了
-          break;
-        }
-        // ------------------------------------- >>>
-        
         
 				// 将 "已经解包的可识别数据字符串" 解析成 "具体的业务响应数据Bean"
 				// note : 将服务器返回的数据字符串(已经解密, 解码完成了), 解析成对应的 "网络响应业务Bean"
         // 20130625 : 对于那种单一的项目, 就是不会同时有JSON/XML等多种数据格式的项目, 可以完全使用KVC来生成 NetRespondBean
 				id domainBeanAbstractFactoryObject = [[DomainBeanAbstractFactoryCacheSingleton sharedInstance] getDomainBeanAbstractFactoryObjectByKey:abstractFactoryMappingKey];
 				if ([domainBeanAbstractFactoryObject conformsToProtocol:@protocol(IDomainBeanAbstractFactory)]) {
-          /*
-					id domainBeanParseAlgorithm = [domainBeanAbstractFactoryObject getParseNetRespondStringToDomainBeanStrategy];
-					if ([domainBeanParseAlgorithm conformsToProtocol:@protocol(IParseNetRespondStringToDomainBean)]) {
-						netRespondDomainBean = [domainBeanParseAlgorithm parseNetRespondStringToDomainBean:netUnpackedDataOfUTF8String];
-						if (netRespondDomainBean == nil) {
-							// 异常 (NullPointerException)
-              RNAssert(NO, @"-->创建 网络响应业务Bean失败, 出现这种情况的业务Bean是:%@", abstractFactoryMappingKey);
-              serverRespondDataError.errorCode = -1;
-							break;
-						}
-						
-						PRPLog(@"%@ -->netRespondDomainBean->", netRespondDomainBean);
-					}
-           */
+ 
           id netRespondDataToNSDictionaryStrategyAlgorithm = [[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRespondDataToNSDictionaryStrategyAlgorithm];
 					if ([netRespondDataToNSDictionaryStrategyAlgorithm conformsToProtocol:@protocol(INetRespondDataToNSDictionary)]) {
             NSDictionary *dic = [netRespondDataToNSDictionaryStrategyAlgorithm netRespondDataToNSDictionary:netUnpackedDataOfUTF8String];
@@ -341,7 +307,7 @@
 						
 						PRPLog(@"%@ -->netRespondDomainBean->", netRespondDomainBean);
 					}
-
+          
 				}
         
 				// ----------------------------------------------------------------------------
@@ -351,11 +317,7 @@
 			
       // ------------------------------------- >>>
       if (![completedOperation isCancelled]) {
-        if (serverRespondDataError.errorCode != 200) {
-          failedBlock(requestEventEnum, netRequestIndex, serverRespondDataError);
-        } else {
-          successedBlock(requestEventEnum, netRequestIndex, netRespondDomainBean);
-        }
+        successedBlock(requestEventEnum, netRequestIndex, netRespondDomainBean);
       }
       // ------------------------------------- >>>
       

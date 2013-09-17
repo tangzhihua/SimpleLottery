@@ -295,6 +295,7 @@
 		68F6ECA2174B9D73003B1CC1 /* LotterySalesStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA1174B9D73003B1CC1 /* LotterySalesStatus.m */; };
 		68F6ECA5174BB532003B1CC1 /* LabelForTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F6ECA4174BB532003B1CC1 /* LabelForTitleBar.m */; };
 		68F6ECA7174BB54E003B1CC1 /* LabelForTitleBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */; };
+		75F21BFF17E7DFDF006A0258 /* MKNetworkOperationForDomainBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F21BFE17E7DFDF006A0258 /* MKNetworkOperationForDomainBean.m */; };
 		D70C36BD1781845400D4AE31 /* LotteryConfigActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C36BB1781845400D4AE31 /* LotteryConfigActivity.m */; };
 		D70C36BE1781845400D4AE31 /* LotteryConfigActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70C36BC1781845400D4AE31 /* LotteryConfigActivity.xib */; };
 		D71D93BA17811C4200F05064 /* lottery_key_mapping_table.plist in Resources */ = {isa = PBXBuildFile; fileRef = D71D93B917811C4200F05064 /* lottery_key_mapping_table.plist */; };
@@ -871,6 +872,8 @@
 		68F6ECA3174BB532003B1CC1 /* LabelForTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelForTitleBar.h; sourceTree = "<group>"; };
 		68F6ECA4174BB532003B1CC1 /* LabelForTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelForTitleBar.m; sourceTree = "<group>"; };
 		68F6ECA6174BB54E003B1CC1 /* LabelForTitleBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelForTitleBar.xib; sourceTree = "<group>"; };
+		75F21BFD17E7DFDF006A0258 /* MKNetworkOperationForDomainBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperationForDomainBean.h; sourceTree = "<group>"; };
+		75F21BFE17E7DFDF006A0258 /* MKNetworkOperationForDomainBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperationForDomainBean.m; sourceTree = "<group>"; };
 		C37BC8E3144C340600423D44 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C40EDC5CE7D546CFB731E1AB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		D70C36BA1781845400D4AE31 /* LotteryConfigActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryConfigActivity.h; sourceTree = "<group>"; };
@@ -2490,6 +2493,8 @@
 				D7B5ADED176056EC002AEB14 /* NetRequestErrorBean.m */,
 				D7B5ADE61760317B002AEB14 /* DomainBeanNetworkEngineSingleton.h */,
 				D7B5ADE71760317B002AEB14 /* DomainBeanNetworkEngineSingleton.m */,
+				75F21BFD17E7DFDF006A0258 /* MKNetworkOperationForDomainBean.h */,
+				75F21BFE17E7DFDF006A0258 /* MKNetworkOperationForDomainBean.m */,
 			);
 			name = DomainBeanNetworkEngineSingleton;
 			sourceTree = "<group>";
@@ -2911,6 +2916,7 @@
 				D7C6199D17793C960018EEF5 /* NetRespondDataToNSDictionaryForRuyicai.m in Sources */,
 				D7C619A0177970DD0018EEF5 /* UIAlertView+Blocks.m in Sources */,
 				D70C36BD1781845400D4AE31 /* LotteryConfigActivity.m in Sources */,
+				75F21BFF17E7DFDF006A0258 /* MKNetworkOperationForDomainBean.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

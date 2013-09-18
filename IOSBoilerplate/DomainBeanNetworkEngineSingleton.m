@@ -330,7 +330,11 @@
 			
       // ------------------------------------- >>>
       if (![completedOperation isCancelled]) {
-        successedBlock(requestEventEnum, netRequestIndex, netRespondDomainBean);
+        if (serverRespondDataError.errorCode != 200) {
+          failedBlock(requestEventEnum, netRequestIndex, serverRespondDataError);
+        } else {
+          successedBlock(requestEventEnum, netRequestIndex, netRespondDomainBean);
+        }
       }
       // ------------------------------------- >>>
       

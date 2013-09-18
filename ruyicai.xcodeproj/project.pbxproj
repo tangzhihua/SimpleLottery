@@ -72,7 +72,7 @@
 		587F1BE916BF96F200FF967C /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 587F1BE816BF96F200FF967C /* libMobClickLibrary.a */; };
 		587F6FAB16858A430004A23B /* FirstActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 587F6FA916858A430004A23B /* FirstActivity.m */; };
 		587F6FAC16858A430004A23B /* FirstActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587F6FAA16858A430004A23B /* FirstActivity.xib */; };
-		587FA69E16800D0400C90D4C /* NetEntityDataToolsFactoryMethodSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 587FA69D16800D0400C90D4C /* NetEntityDataToolsFactoryMethodSingleton.m */; };
+		587FA69E16800D0400C90D4C /* NetEntityDataToolsFactoryMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 587FA69D16800D0400C90D4C /* NetEntityDataToolsFactoryMethod.m */; };
 		587FA6A116800D1800C90D4C /* NetRequestEntityDataPackageForAirizu.m in Sources */ = {isa = PBXBuildFile; fileRef = 587FA6A016800D1800C90D4C /* NetRequestEntityDataPackageForAirizu.m */; };
 		587FA6A416800D2800C90D4C /* NetRespondEntityDataUnpackAirizu.m in Sources */ = {isa = PBXBuildFile; fileRef = 587FA6A316800D2800C90D4C /* NetRespondEntityDataUnpackAirizu.m */; };
 		587FA6A716800D3600C90D4C /* ServerRespondDataTestAirizu.m in Sources */ = {isa = PBXBuildFile; fileRef = 587FA6A616800D3600C90D4C /* ServerRespondDataTestAirizu.m */; };
@@ -445,8 +445,8 @@
 		587FA69816800C6900C90D4C /* INetEntityDataTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INetEntityDataTools.h; sourceTree = "<group>"; };
 		587FA69916800CBE00C90D4C /* INetRequestEntityDataPackage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INetRequestEntityDataPackage.h; sourceTree = "<group>"; };
 		587FA69A16800CCD00C90D4C /* INetRespondRawEntityDataUnpack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INetRespondRawEntityDataUnpack.h; sourceTree = "<group>"; };
-		587FA69C16800D0300C90D4C /* NetEntityDataToolsFactoryMethodSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetEntityDataToolsFactoryMethodSingleton.h; sourceTree = "<group>"; };
-		587FA69D16800D0400C90D4C /* NetEntityDataToolsFactoryMethodSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetEntityDataToolsFactoryMethodSingleton.m; sourceTree = "<group>"; };
+		587FA69C16800D0300C90D4C /* NetEntityDataToolsFactoryMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetEntityDataToolsFactoryMethod.h; sourceTree = "<group>"; };
+		587FA69D16800D0400C90D4C /* NetEntityDataToolsFactoryMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetEntityDataToolsFactoryMethod.m; sourceTree = "<group>"; };
 		587FA69F16800D1800C90D4C /* NetRequestEntityDataPackageForAirizu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestEntityDataPackageForAirizu.h; sourceTree = "<group>"; };
 		587FA6A016800D1800C90D4C /* NetRequestEntityDataPackageForAirizu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestEntityDataPackageForAirizu.m; sourceTree = "<group>"; };
 		587FA6A216800D2800C90D4C /* NetRespondEntityDataUnpackAirizu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRespondEntityDataUnpackAirizu.h; sourceTree = "<group>"; };
@@ -1168,8 +1168,8 @@
 		581ED7B5167EBD9B00862985 /* NetEntityDataTools */ = {
 			isa = PBXGroup;
 			children = (
-				587FA69C16800D0300C90D4C /* NetEntityDataToolsFactoryMethodSingleton.h */,
-				587FA69D16800D0400C90D4C /* NetEntityDataToolsFactoryMethodSingleton.m */,
+				587FA69C16800D0300C90D4C /* NetEntityDataToolsFactoryMethod.h */,
+				587FA69D16800D0400C90D4C /* NetEntityDataToolsFactoryMethod.m */,
 				587FA69616800BF600C90D4C /* interface */,
 				581ED7B6167EBDFD00862985 /* 爱日租项目 */,
 				68A6FE1D1722927400A79D25 /* 如意彩 */,
@@ -2797,7 +2797,7 @@
 				581ED7BD167ECB2000862985 /* StrategyClassNameMappingBase.m in Sources */,
 				581ED7C4167EDDBC00862985 /* DomainBeanHelperClassNameMapping.m in Sources */,
 				581ED7CA167EE2D500862985 /* DomainBeanAbstractFactoryCacheSingleton.m in Sources */,
-				587FA69E16800D0400C90D4C /* NetEntityDataToolsFactoryMethodSingleton.m in Sources */,
+				587FA69E16800D0400C90D4C /* NetEntityDataToolsFactoryMethod.m in Sources */,
 				587FA6A116800D1800C90D4C /* NetRequestEntityDataPackageForAirizu.m in Sources */,
 				587FA6A416800D2800C90D4C /* NetRespondEntityDataUnpackAirizu.m in Sources */,
 				587FA6A716800D3600C90D4C /* ServerRespondDataTestAirizu.m in Sources */,

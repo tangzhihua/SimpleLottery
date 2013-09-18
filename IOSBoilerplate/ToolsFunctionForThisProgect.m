@@ -105,11 +105,9 @@
     if (recervedData.length <= 0) {
       break;
     }
-    JSONDecoder *jsonDecoder = [[JSONDecoder alloc] init];
-    NSDictionary *jsonRootNSDictionary
-    = [jsonDecoder objectWithData:recervedData];
-    jsonDecoder = nil;
+  
     urlRequest = nil;
+    NSDictionary *jsonRootNSDictionary = [NSJSONSerialization JSONObjectWithData:recervedData options:0 error:&error];
     
     if (![jsonRootNSDictionary isKindOfClass:[NSDictionary class]]) {
       break;

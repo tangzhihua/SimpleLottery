@@ -11,12 +11,12 @@
 #import "IDomainBeanAbstractFactory.h"
 #import "IParseDomainBeanToDataDictionary.h"
 #import "DomainBeanAbstractFactoryCacheSingleton.h"
-#import "NetEntityDataToolsFactoryMethodSingleton.h"
+#import "NetEntityDataToolsFactoryMethod.h"
 #import "INetRequestEntityDataPackage.h"
 
 #import "SimpleCookieSingleton.h"
 #import "INetRespondRawEntityDataUnpack.h"
-#import "NetEntityDataToolsFactoryMethodSingleton.h"
+#import "NetEntityDataToolsFactoryMethod.h"
 #import "IServerRespondDataTest.h"
 #import "IParseNetRespondStringToDomainBean.h"
 #import "INetRespondDataToNSDictionary.h"
@@ -215,24 +215,37 @@
 		}
 		// //////////////////////////////////////////////////////////////////////////////
 		
+    //
+    id<INetEntityDataTools> netEntityDataTools = [[NetEntityDataToolsFactoryMethod alloc] init];
 		
 		// 创建一个 Http Operation
-		MKNetworkOperationForDomainBean *netRequestOperation = (MKNetworkOperationForDomainBean *)[self.networkEngine operationWithURLString:url params:fullDataDictionary httpMethod:httpRequestMethod];
+		MKNetworkOperationForDomainBean *netRequestOperation
+    = (MKNetworkOperationForDomainBean *)[self.networkEngine operationWithURLString:url params:fullDataDictionary httpMethod:httpRequestMethod];
     
 		[netRequestOperation addHeaders:httpRequestParameterMap];
 		[netRequestOperation setCustomPostDataEncodingHandler:^NSString *(NSDictionary *postDataDict) {
 			
-			if (postDataDict != nil) {
-				// 将业务参数字典, 拼装成HTTP请求实体字符串
+      do {
+        if (![postDataDict isKindOfClass:[NSDictionary class]]) {
+          break;
+        }
+        if (postDataDict.count <= 0) {
+          break;
+        }
+        
+        // 将业务参数字典, 拼装成HTTP请求实体字符串
 				// 业务字典是 Map<String, String> 格式的, 在这里要完成对 Map<String, String>格式的数据再次加工,
 				// 比如处理成 "key1=value1, key2=value2" 或者 "JSON格式" 或者 "XML格式" 或者 "自定义格式"
         // 可以在这里完成数据的加密工作
-				NSData *httpEntityData = [[[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRequestEntityDataPackageStrategyAlgorithm] packageNetRequestEntityDataWithDomainDataDictionary:postDataDict];
-				return [[NSString alloc] initWithData:httpEntityData encoding:NSUTF8StringEncoding];
-			} else {
-				return nil;
-			}
+        id<INetRequestEntityDataPackage> netRequestEntityDataPackage = [netEntityDataTools getNetRequestEntityDataPackageStrategyAlgorithm];
+        if (![netRequestEntityDataPackage conformsToProtocol:@protocol(INetRequestEntityDataPackage)]) {
+          break;
+        }
+        NSData *httpEntityData = [netRequestEntityDataPackage packageNetRequestEntityDataWithDomainDataDictionary:postDataDict];
+        return [[NSString alloc] initWithData:httpEntityData encoding:NSUTF8StringEncoding];
+      } while (NO);
 			
+			return nil;
 		} forType:nil];
     
     /**********************************************************************************/
@@ -265,7 +278,7 @@
         
 				// 将具体网络引擎层返回的 "原始未加工数据byte[]" 解包成 "可识别数据字符串(一般是utf-8)".
 				// 这里要考虑网络传回的原生数据有加密的情况, 比如MD5加密的数据, 那么在这里先解密成可识别的字符串
-				id<INetRespondRawEntityDataUnpack> netRespondRawEntityDataUnpackMethod = [[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRespondEntityDataUnpackStrategyAlgorithm];
+				id<INetRespondRawEntityDataUnpack> netRespondRawEntityDataUnpackMethod = [netEntityDataTools getNetRespondEntityDataUnpackStrategyAlgorithm];
 				if (![netRespondRawEntityDataUnpackMethod conformsToProtocol:@protocol(INetRespondRawEntityDataUnpack)]) {
           RNAssert(NO, @"-->解析服务器端返回的实体数据的 \"解码算法类(INetRespondRawEntityDataUnpack)\"是必须要实现的.");
           serverRespondDataError.errorCode = -1;
@@ -292,8 +305,8 @@
         // 20130625 : 对于那种单一的项目, 就是不会同时有JSON/XML等多种数据格式的项目, 可以完全使用KVC来生成 NetRespondBean
 				id domainBeanAbstractFactoryObject = [[DomainBeanAbstractFactoryCacheSingleton sharedInstance] getDomainBeanAbstractFactoryObjectByKey:abstractFactoryMappingKey];
 				if ([domainBeanAbstractFactoryObject conformsToProtocol:@protocol(IDomainBeanAbstractFactory)]) {
- 
-          id netRespondDataToNSDictionaryStrategyAlgorithm = [[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRespondDataToNSDictionaryStrategyAlgorithm];
+          
+          id netRespondDataToNSDictionaryStrategyAlgorithm = [netEntityDataTools getNetRespondDataToNSDictionaryStrategyAlgorithm];
 					if ([netRespondDataToNSDictionaryStrategyAlgorithm conformsToProtocol:@protocol(INetRespondDataToNSDictionary)]) {
             NSDictionary *dic = [netRespondDataToNSDictionaryStrategyAlgorithm netRespondDataToNSDictionary:netUnpackedDataOfUTF8String];
             

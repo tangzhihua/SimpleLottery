@@ -8,7 +8,7 @@
 
 #import "MKNetworkOperationForDomainBean.h"
 #import "INetRespondRawEntityDataUnpack.h"
-#import "NetEntityDataToolsFactoryMethodSingleton.h"
+#import "NetEntityDataToolsFactoryMethod.h"
 #import "IServerRespondDataTest.h"
 
 @implementation MKNetworkOperationForDomainBean
@@ -34,28 +34,30 @@
       break;
     }
     
+    //
+    id<INetEntityDataTools> netEntityDataTools = [[NetEntityDataToolsFactoryMethod alloc] init];
     
     // 将具体网络引擎层返回的 "原始未加工数据byte[]" 解包成 "可识别数据字符串(一般是utf-8)".
     // 这里要考虑网络传回的原生数据有加密的情况, 比如MD5加密的数据, 那么在这里先解密成可识别的字符串
-    id<INetRespondRawEntityDataUnpack> netRespondRawEntityDataUnpackMethod = [[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getNetRespondEntityDataUnpackStrategyAlgorithm];
+    id<INetRespondRawEntityDataUnpack> netRespondRawEntityDataUnpackMethod = [netEntityDataTools getNetRespondEntityDataUnpackStrategyAlgorithm];
     if (![netRespondRawEntityDataUnpackMethod conformsToProtocol:@protocol(INetRespondRawEntityDataUnpack)]) {
       errorMessage = @"-->解析服务器端返回的实体数据的 \"解码算法类(INetRespondRawEntityDataUnpack)\"是必须要实现的.";
-      RNAssert(NO, errorMessage);
+      RNAssert(NO, @"%@", errorMessage);
       break;
     }
     NSString *netUnpackedDataOfUTF8String = [netRespondRawEntityDataUnpackMethod unpackNetRespondRawEntityDataToUTF8String:netRawEntityData];
     if ([NSString isEmpty:netUnpackedDataOfUTF8String]) {
       errorMessage = @"-->解析服务器端返回的实体数据失败, 在netRawEntityData不为空的时候, netUnpackedDataOfUTF8String是绝对不能为空的.";
-      RNAssert(NO, errorMessage);
+      RNAssert(NO, @"%@", errorMessage);
       break;
     }
     
     // 检查服务器返回的数据是否有效, 如果无效, 要获取服务器返回的错误码和错误描述信息
     // (比如说某次网络请求成功了, 但是服务器那边没有有效的数据给客户端, 所以服务器会返回错误码和描述信息告知客户端访问结果)
-    id<IServerRespondDataTest> serverRespondDataTest = [[NetEntityDataToolsFactoryMethodSingleton sharedInstance] getServerRespondDataTestStrategyAlgorithm];
+    id<IServerRespondDataTest> serverRespondDataTest = [netEntityDataTools getServerRespondDataTestStrategyAlgorithm];
     if (![serverRespondDataTest conformsToProtocol:@protocol(IServerRespondDataTest)]) {
       errorMessage = @"-->检查服务器返回是否有效(IServerRespondDataTest)的算法类, 是必须实现的";
-      RNAssert(NO, errorMessage);
+      RNAssert(NO, @"%@", errorMessage);
       break;
     }
     NetRequestErrorBean *serverRespondDataError = [serverRespondDataTest testServerRespondDataIsValid:netUnpackedDataOfUTF8String];
@@ -65,13 +67,14 @@
       break;
     }
     
+    // 服务器告知客户端, 本次发起的网络请求接口业务上OK.(如 : 登录成功).
     [super operationSucceeded];
     
     return;
   } while (NO);
   
   
-  // 服务器返回的数据中包含有 error code
+  // 服务器返回的数据中包含有 error code, 证明本次发起的网络请求, 业务上失败(如 : 用户名密码错误等..)
   [super operationFailedWithError:[NSError errorWithDomain:errorMessage code:-1 userInfo:nil]];
 }
 

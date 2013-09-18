@@ -15,6 +15,7 @@
   if ((self = [super init])) {
 		PRPLog(@"init [0x%x]", [self hash]);
     
+    
     _isSale = isSale;
 		_lotteryOpenPrizeStatusEnum = lotteryOpenPrizeStatusEnum;
   }

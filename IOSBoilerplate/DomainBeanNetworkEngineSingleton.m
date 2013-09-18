@@ -205,8 +205,8 @@
                                   forKey:@"Cookie"];
     }
 		
-		[httpRequestParameterMap setObject:@"application/x-www-form-urlencoded"
-																forKey:@"Content-Type"];
+//		[httpRequestParameterMap setObject:@"application/x-www-form-urlencoded"
+//																forKey:@"Content-Type"];
     
     // 有时候, 控制层有些特殊的要求, 所以可以通过这个extraHttpRequestParameterMap参数, 来携带一些特殊的http请求参数
     // ???????? 这里目前的设计还没想好
@@ -308,9 +308,9 @@
           
           id netRespondDataToNSDictionaryStrategyAlgorithm = [netEntityDataTools getNetRespondDataToNSDictionaryStrategyAlgorithm];
 					if ([netRespondDataToNSDictionaryStrategyAlgorithm conformsToProtocol:@protocol(INetRespondDataToNSDictionary)]) {
-            NSDictionary *dic = [netRespondDataToNSDictionaryStrategyAlgorithm netRespondDataToNSDictionary:netUnpackedDataOfUTF8String];
-            
-						netRespondDomainBean = [[[domainBeanAbstractFactoryObject getClassOfNetRespondBean] alloc] initWithDictionary:dic];
+            NSDictionary *netRespondDictionary = [netRespondDataToNSDictionaryStrategyAlgorithm netRespondDataToNSDictionary:netUnpackedDataOfUTF8String];
+            // 可以将字典直接转成Bean
+						netRespondDomainBean = [[[domainBeanAbstractFactoryObject getClassOfNetRespondBean] alloc] initWithDictionary:netRespondDictionary];
 						if (netRespondDomainBean == nil) {
 							// 异常 (NullPointerException)
               RNAssert(NO, @"-->创建 网络响应业务Bean失败, 出现这种情况的业务Bean是:%@", abstractFactoryMappingKey);
@@ -350,7 +350,7 @@
       if (![completedOperation isCancelled]) {
         NetRequestErrorBean *serverRespondDataError = [[NetRequestErrorBean alloc] init];
         serverRespondDataError.errorCode = error.code;
-        serverRespondDataError.message = @"Error";
+        serverRespondDataError.message = error.localizedDescription;
         failedBlock(requestEventEnum, netRequestIndex, serverRespondDataError);
       }
       // ------------------------------------- >>>

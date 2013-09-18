@@ -90,6 +90,7 @@
  *
  */
 -(void) operationFailedWithError:(NSError*) error {
-  
+  PRPLog(@"网络访问发生错误, 错误描述->%@", error);
+  [super operationFailedWithError:error];
 }
 @end

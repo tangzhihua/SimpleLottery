@@ -21,7 +21,7 @@
 
 #import "LocalCacheDataPathConstant.h"
 
-#import "MKNetworkEngineSingleton.h"
+#import "MKNetworkEngineSingletonForUpAndDownLoadFile.h"
 
 
 
@@ -153,7 +153,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 							&& ![NSString isEmpty:adImageInWelcomePageNetRespondBean.imageID]
 							&& ![adImageInWelcomePageNetRespondBean.imageID isEqualToString:[GlobalDataCacheForMemorySingleton sharedInstance].adImageIDForLatest]) {
 						
-						self.adImageDownloadOperation = [[MKNetworkEngineSingleton sharedInstance] operationWithURLString:adImageInWelcomePageNetRespondBean.imageUrl];
+						self.adImageDownloadOperation = [[MKNetworkEngineSingletonForUpAndDownLoadFile sharedInstance] operationWithURLString:adImageInWelcomePageNetRespondBean.imageUrl];
 						[self.adImageDownloadOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
 							NSString *adImagePath = [[LocalCacheDataPathConstant adCachePath] stringByAppendingPathComponent:kAdImageNameForWelcomePage];
 							UIImage *image = [completedOperation responseImage];
@@ -166,7 +166,7 @@ typedef NS_ENUM(NSInteger, NetRequestTagEnum) {
 							
 						}];
 						
-						[[MKNetworkEngineSingleton sharedInstance] enqueueOperation:self.adImageDownloadOperation];
+						[[MKNetworkEngineSingletonForUpAndDownLoadFile sharedInstance] enqueueOperation:self.adImageDownloadOperation];
 					}
 				}
 			}

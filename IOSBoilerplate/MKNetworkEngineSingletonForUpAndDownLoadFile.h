@@ -8,6 +8,6 @@
 
 #import "MKNetworkEngine.h"
 
-@interface MKNetworkEngineSingleton : MKNetworkEngine
-+ (MKNetworkEngineSingleton *) sharedInstance;
+@interface MKNetworkEngineSingletonForUpAndDownLoadFile : NSObject
++ (MKNetworkEngine *) sharedInstance;
 @end

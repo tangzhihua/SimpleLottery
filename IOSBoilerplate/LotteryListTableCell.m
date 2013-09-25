@@ -24,9 +24,13 @@ static UIImage *kLotterySaleStatusImageOfJiajiang = nil;
 static UIImage *kLotterySaleStatusImageOfKaijiangAndJiajiang = nil;
 
 +(void) initialize {
-  kLotterySaleStatusImageOfKaijiang = [UIImage imageNamed:@"lottery_list_mark_for_kaijiang"];
-  kLotterySaleStatusImageOfJiajiang = [UIImage imageNamed:@"lottery_list_mark_for_jiajiang"];
-  kLotterySaleStatusImageOfKaijiangAndJiajiang = [UIImage imageNamed:@"lottery_list_mark_for_kaijiang_and_jiajiang"];
+  // 这是为了子类化当前类后, 父类的initialize方法会被调用2次
+  if (self == [LotteryListTableCell class]) {
+    
+    kLotterySaleStatusImageOfKaijiang = [UIImage imageNamed:@"lottery_list_mark_for_kaijiang"];
+    kLotterySaleStatusImageOfJiajiang = [UIImage imageNamed:@"lottery_list_mark_for_jiajiang"];
+    kLotterySaleStatusImageOfKaijiangAndJiajiang = [UIImage imageNamed:@"lottery_list_mark_for_kaijiang_and_jiajiang"];
+  }
 }
 
 -(void)setLotteryOpenPrizeStatusEnum:(LotteryOpenPrizeStatusEnum)lotteryOpenPrizeStatusEnum {

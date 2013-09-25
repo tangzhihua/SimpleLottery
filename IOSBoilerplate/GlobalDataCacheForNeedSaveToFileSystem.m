@@ -64,7 +64,9 @@ static NSString *const kLocalCacheDataName_LotteryListForHide             = @"Lo
 
 +(void) initialize {
   
-  // 内存告警
+  // 这是为了子类化当前类后, 父类的initialize方法会被调用2次
+  if (self == [GlobalDataCacheForNeedSaveToFileSystem class]) {
+    // 内存告警
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(saveMemoryCacheToDisk:)
                                                name:UIApplicationDidReceiveMemoryWarningNotification
@@ -79,6 +81,9 @@ static NSString *const kLocalCacheDataName_LotteryListForHide             = @"Lo
                                            selector:@selector(saveMemoryCacheToDisk:)
                                                name:UIApplicationWillTerminateNotification
                                              object:nil];
+  }
+  
+  
 }
 
 +(void) dealloc {

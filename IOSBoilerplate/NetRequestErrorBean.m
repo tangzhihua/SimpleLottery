@@ -13,16 +13,19 @@ static NSDictionary *NetRequestError_errorCodesDictionary = nil;
 @implementation NetRequestErrorBean
 
 + (void) initialize {
-	NSString *fileName = [NSString stringWithFormat:@"Errors_%@", [[NSLocale currentLocale] localeIdentifier]];
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
-	
-	if(filePath != nil) {
-		NetRequestError_errorCodesDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
-	} else {
-		// fall back to english for unsupported languages
-		NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Errors_en_US" ofType:@"plist"];
-		NetRequestError_errorCodesDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
-	}
+  // 这是为了子类化当前类后, 父类的initialize方法会被调用2次
+  if (self == [NetRequestErrorBean class]) {
+    NSString *fileName = [NSString stringWithFormat:@"Errors_%@", [[NSLocale currentLocale] localeIdentifier]];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    
+    if(filePath != nil) {
+      NetRequestError_errorCodesDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    } else {
+      // fall back to english for unsupported languages
+      NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Errors_en_US" ofType:@"plist"];
+      NetRequestError_errorCodesDictionary = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    }
+  }
 }
 
 + (void) dealloc {

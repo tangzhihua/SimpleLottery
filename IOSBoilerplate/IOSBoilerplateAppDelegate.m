@@ -243,6 +243,10 @@ typedef NS_ENUM(NSInteger, AlertTypeEnum) {
   NSString *documentsDirectory = [paths objectAtIndex:0];
   DLog(@"%@", documentsDirectory);
   
+  
+  NSArray *testarr = [NSArray arrayWithObjects:@"A", @"B", nil];
+  NSArray *test2 = [testarr copy];
+  DLog(@"%@", test2);
   /////
   
   

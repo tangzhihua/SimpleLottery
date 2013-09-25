@@ -12,7 +12,9 @@
 
 // 静态初始化方法
 +(void) initialize {
-  
+  // 这是为了子类化当前类后, 父类的initialize方法会被调用2次
+  if (self == [LocalCacheDataPathConstant class]) {
+  }
 }
 
 // 房间详情 (可以被清除) : 本地缓存目录路径

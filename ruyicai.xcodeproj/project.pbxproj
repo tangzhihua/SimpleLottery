@@ -271,7 +271,7 @@
 		68B0CC6B173406CF001661A6 /* lottery_list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68B0CC69173406CF001661A6 /* lottery_list.plist */; };
 		68B0CC6F1734196D001661A6 /* LotteryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B0CC6E1734196D001661A6 /* LotteryDictionary.m */; };
 		68B0CC701734196D001661A6 /* LotteryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B0CC6E1734196D001661A6 /* LotteryDictionary.m */; };
-		68C39BF2176F3C46009D74F9 /* MKNetworkEngineSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingleton.m */; };
+		68C39BF2176F3C46009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile.m */; };
 		68D384C2175B227800B9C413 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D384C1175B227800B9C413 /* Security.framework */; };
 		68E744F0173F803D00136C4B /* LotterySalesStatusNetRequestBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744EF173F803D00136C4B /* LotterySalesStatusNetRequestBean.m */; };
 		68E744F3173F817800136C4B /* LotterySalesStatusNetRespondBean.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E744F2173F817800136C4B /* LotterySalesStatusNetRespondBean.m */; };
@@ -823,8 +823,8 @@
 		68B0CC6D1734196D001661A6 /* LotteryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryDictionary.h; sourceTree = "<group>"; };
 		68B0CC6E1734196D001661A6 /* LotteryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryDictionary.m; sourceTree = "<group>"; };
 		68B0CC7117341B96001661A6 /* LotteryDictionaryDatabaseFieldsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryDictionaryDatabaseFieldsConstant.h; sourceTree = "<group>"; };
-		68C39BF0176F3C46009D74F9 /* MKNetworkEngineSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngineSingleton.h; sourceTree = "<group>"; };
-		68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngineSingleton.m; sourceTree = "<group>"; };
+		68C39BF0176F3C46009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngineSingletonForUpAndDownLoadFile.h; sourceTree = "<group>"; };
+		68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngineSingletonForUpAndDownLoadFile.m; sourceTree = "<group>"; };
 		68D384C1175B227800B9C413 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		68E744EA173F666600136C4B /* CurrentIssueCountDownDatabaseFieldsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentIssueCountDownDatabaseFieldsConstant.h; sourceTree = "<group>"; };
 		68E744EE173F803D00136C4B /* LotterySalesStatusNetRequestBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotterySalesStatusNetRequestBean.h; sourceTree = "<group>"; };
@@ -1532,7 +1532,7 @@
 		58815A151603112000155B44 /* 网络框架核心代码 */ = {
 			isa = PBXGroup;
 			children = (
-				68C39BEF176F2B28009D74F9 /* MKNetworkEngineSingleton */,
+				68C39BEF176F2B28009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile */,
 				D7B5ADE4176030EB002AEB14 /* DomainBeanNetworkEngineSingleton */,
 				581ED7B2167EBCEF00862985 /* DomainBeanStrategyMapping */,
 				581ED7B5167EBD9B00862985 /* NetEntityDataTools */,
@@ -2146,13 +2146,13 @@
 			name = "彩票字典Bean";
 			sourceTree = "<group>";
 		};
-		68C39BEF176F2B28009D74F9 /* MKNetworkEngineSingleton */ = {
+		68C39BEF176F2B28009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile */ = {
 			isa = PBXGroup;
 			children = (
-				68C39BF0176F3C46009D74F9 /* MKNetworkEngineSingleton.h */,
-				68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingleton.m */,
+				68C39BF0176F3C46009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile.h */,
+				68C39BF1176F3C46009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile.m */,
 			);
-			name = MKNetworkEngineSingleton;
+			name = MKNetworkEngineSingletonForUpAndDownLoadFile;
 			sourceTree = "<group>";
 		};
 		68E744EB173F7CA400136C4B /* 彩票销售状态(今日开奖,加奖,是否停售) */ = {
@@ -2909,7 +2909,7 @@
 				D768BCFC176F146800B871E3 /* Data+Helper.m in Sources */,
 				D768BCFD176F146800B871E3 /* String+Helper.m in Sources */,
 				D768BD01176F14A200B871E3 /* FastCell.m in Sources */,
-				68C39BF2176F3C46009D74F9 /* MKNetworkEngineSingleton.m in Sources */,
+				68C39BF2176F3C46009D74F9 /* MKNetworkEngineSingletonForUpAndDownLoadFile.m in Sources */,
 				D7A9075D1771B8DC0006DD81 /* SignUpActivity.m in Sources */,
 				D7A907621771B9050006DD81 /* SignInActivity.m in Sources */,
 				D7A907671771B93A0006DD81 /* ForgotPasswordActivity.m in Sources */,

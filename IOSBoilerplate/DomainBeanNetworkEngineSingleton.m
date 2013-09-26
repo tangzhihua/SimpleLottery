@@ -214,7 +214,7 @@
 			[httpRequestParameterMap addEntriesFromDictionary:extraHttpRequestParameterMap];
 		}
 		// //////////////////////////////////////////////////////////////////////////////
-		
+		__weak DomainBeanNetworkEngineSingleton *weakSelf = self;
     //
     id<INetEntityDataTools> netEntityDataTools = [[NetEntityDataToolsFactoryMethod alloc] init];
 		
@@ -303,10 +303,10 @@
 				// 将 "已经解包的可识别数据字符串" 解析成 "具体的业务响应数据Bean"
 				// note : 将服务器返回的数据字符串(已经解密, 解码完成了), 解析成对应的 "网络响应业务Bean"
         // 20130625 : 对于那种单一的项目, 就是不会同时有JSON/XML等多种数据格式的项目, 可以完全使用KVC来生成 NetRespondBean
-				id domainBeanAbstractFactoryObject = [[DomainBeanAbstractFactoryCacheSingleton sharedInstance] getDomainBeanAbstractFactoryObjectByKey:abstractFactoryMappingKey];
+				id<IDomainBeanAbstractFactory> domainBeanAbstractFactoryObject = [[DomainBeanAbstractFactoryCacheSingleton sharedInstance] getDomainBeanAbstractFactoryObjectByKey:abstractFactoryMappingKey];
 				if ([domainBeanAbstractFactoryObject conformsToProtocol:@protocol(IDomainBeanAbstractFactory)]) {
           
-          id netRespondDataToNSDictionaryStrategyAlgorithm = [netEntityDataTools getNetRespondDataToNSDictionaryStrategyAlgorithm];
+          id<INetRespondDataToNSDictionary> netRespondDataToNSDictionaryStrategyAlgorithm = [netEntityDataTools getNetRespondDataToNSDictionaryStrategyAlgorithm];
 					if ([netRespondDataToNSDictionaryStrategyAlgorithm conformsToProtocol:@protocol(INetRespondDataToNSDictionary)]) {
             NSDictionary *netRespondDictionary = [netRespondDataToNSDictionaryStrategyAlgorithm netRespondDataToNSDictionary:netUnpackedDataOfUTF8String];
             // 可以将字典直接转成Bean
@@ -340,8 +340,8 @@
       
       
       // 删除本地缓存的 MKNetworkOperation
-      [self.synchronousNetRequestBuf removeObjectForKey:[NSNumber numberWithInteger:netRequestIndex]];
-      PRPLog(@"当前网络接口请求队列长度=%i", self.synchronousNetRequestBuf.count);
+      [weakSelf.synchronousNetRequestBuf removeObjectForKey:[NSNumber numberWithInteger:netRequestIndex]];
+      PRPLog(@"当前网络接口请求队列长度=%i", weakSelf.synchronousNetRequestBuf.count);
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
       
       
@@ -357,8 +357,8 @@
       
       
       // 删除本地缓存的 MKNetworkOperation
-      [self.synchronousNetRequestBuf removeObjectForKey:[NSNumber numberWithInteger:netRequestIndex]];
-      PRPLog(@"当前网络接口请求队列长度=%i", self.synchronousNetRequestBuf.count);
+      [weakSelf.synchronousNetRequestBuf removeObjectForKey:[NSNumber numberWithInteger:netRequestIndex]];
+      PRPLog(@"当前网络接口请求队列长度=%i", weakSelf.synchronousNetRequestBuf.count);
     }];
     
     
